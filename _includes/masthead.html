@@ -13,9 +13,15 @@
         </a>
         <ul class="visible-links">
           {%- for link in site.data.navigation.main -%}
+          {% if link.dropdown.size == null %}
             <li class="masthead__menu-item">
               <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}>{{ link.title }}</a>
             </li>
+          {% else %}
+            <li class="masthead__menu-item">
+              <a href="">{{ link.title }} <i class="fas fa-caret-down"></i></a>
+            </li>
+          {% endif %}
           {%- endfor -%}
         </ul>
         {% if site.search == true %}
