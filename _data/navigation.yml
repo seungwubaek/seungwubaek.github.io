@@ -1,10 +1,20 @@
 # main links
 main:
+  # - title: "Quick-Start Guide"
+  #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "About"
     url: /about/
-  - title: "Menu"
+  - title: "TOC"
+  - title: "Menu1"
     dropdown:
-    - title: "Sub1"
-    - title: "Sub2"
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+    - title: "Sub1-1"
+      url: "#"
+    - title: "ThisIsReallyLongSubMenuEverISeenBefore1"
+      url: "#"
+  - title: "Menu2"
+    dropdown:
+    - title: "Sub2-1"
+    - title: "ThisIsReallyLongSubMenuEverISeenBeforeAnother2-1"
+    - title: "ThisIsReallyLongSubMenuEverISeenBeforeAnother2-2"
+    - title: "ThisIsReallyLongSubMenuEverISeenBeforeAnother2-3"
+    - title: "ThisIsReallyLongSubMenuEverISeenBeforeAnother2-4"

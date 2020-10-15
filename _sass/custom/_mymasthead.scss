@@ -1,0 +1,97 @@
+.masthead__inner-wrap {
+    padding-bottom: 0;
+}
+
+// responsive menu style
+.greedy-nav {
+    // Home Title and Logo at Left Top
+    .site-logo {
+        img {
+            height: 1.5em;
+        }
+    }
+    .site-title {
+        margin-top: 0.3em
+    }
+
+    // dropdown menu shared by visible- & hidden-links
+    .dropdown-set {
+        margin: 0 0.7rem 0 1rem;
+        display: table;
+
+        .dropdown-title {
+            height: $nav-height;
+            overflow: hidden;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .dropdown-icon {
+            height: $nav-height;
+            display: table-cell;
+            margin: 0;
+            vertical-align: middle;
+            text-align: right;
+            width: 100%;
+            padding-left: 0.3em;
+        }
+    }
+
+    .visible-links {
+        overflow: visible; //dropdown menu will appeared on the <nav> tag
+
+        a {  // it let be hard to understand for any other tag's padding or margin.
+            margin: 0;
+            padding: 0;
+        }
+
+        .masthead__menu-item {
+            position: relative; // for dropdown menu right align to it's parent.
+
+            &:hover {
+                background-color: $border-color;
+            }
+
+            &:hover .masthead__submenu {
+                clear: both;
+                left: auto;
+                right: 0;
+            }
+        }
+
+        .masthead__submenu {
+            left: -9999px;
+            position: absolute;
+            border: 1px solid $border-color;
+            background-color: $background-color;
+            min-width: 1rem;
+            
+            a {
+                padding: 0.1em 0.5em;
+            }
+            
+            .masthead__submenu-item {
+                &:hover {
+                    background-color: $navicon-link-color-hover;
+                }
+            }
+        }
+    }
+
+    .hidden-links {
+        a {
+            margin: 0;
+            padding: 0;
+        }
+
+        .masthead__submenu {
+            position: relative;
+            background: $background-color;
+        }
+
+        .masthead__submenu-item {
+            margin: 0 1rem;
+            font-size: 1em;
+        }
+    }
+}
