@@ -1,5 +1,14 @@
-.masthead__inner-wrap {
-    padding-bottom: 0;
+.masthead {
+    border: 0;
+    background-color: $border-color;
+    .masthead__inner-wrap {
+        padding-bottom: 0;
+        .masthead__menu {
+            .greedy-nav {
+                background-color: inherit;
+            }
+        }
+    }
 }
 
 // responsive menu style
@@ -49,7 +58,7 @@
             position: relative; // for dropdown menu right align to it's parent.
 
             &:hover {
-                background-color: $border-color;
+                background-color: $navicon-link-color-hover;
             }
 
             &:hover .masthead__submenu {
@@ -62,14 +71,16 @@
         .masthead__submenu {
             left: -9999px;
             position: absolute;
-            border: 1px solid $border-color;
+            border-width: 0px 1px 1px 1px;
+            border-color: $border-color;
+            border-style: solid;
             background-color: $background-color;
             min-width: 1rem;
-            
+
             a {
                 padding: 0.1em 0.5em;
             }
-            
+
             .masthead__submenu-item {
                 &:hover {
                     background-color: $navicon-link-color-hover;

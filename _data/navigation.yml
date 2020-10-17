@@ -4,17 +4,30 @@ main:
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "About"
     url: /about/
-  - title: "TOC"
-  - title: "Menu1"
+  - title: "Dropdown-Sample"
     dropdown:
     - title: "Sub1-1"
       url: "#"
     - title: "ThisIsReallyLongSubMenuEverISeenBefore1"
       url: "#"
-  - title: "Menu2"
-    dropdown:
-    - title: "Sub2-1"
-    - title: "ThisIsReallyLongSubMenuEverISeenBeforeAnother2-1"
-    - title: "ThisIsReallyLongSubMenuEverISeenBeforeAnother2-2"
-    - title: "ThisIsReallyLongSubMenuEverISeenBeforeAnother2-3"
-    - title: "ThisIsReallyLongSubMenuEverISeenBeforeAnother2-4"
+
+main-sidebar:
+  - title: "Computing"
+    children:
+    - title: "Linux"
+    - title: "Python"
+  - title: "Front-End"
+    children:
+    - title: "JavaScript"
+  - title: "Back-End"
+  - title: "Tools"
+    children:
+    - title: "Flask"
+    - title: "FAISS"
+    - title: "AIF360"
+  - title: "DeepLearning"
+    children:
+    - title: "CNN"
+      url: "#"
+    - title: "VGG"
+      url: "#"

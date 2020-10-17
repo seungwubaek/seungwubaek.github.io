@@ -1,0 +1,5 @@
+.archive {
+    @include breakpoint($large) {
+        width: 80%;
+    }
+}

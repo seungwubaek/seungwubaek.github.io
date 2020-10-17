@@ -1,0 +1,42 @@
+.sidebar {
+    opacity: 1;  // Remove row opacity animation After/Before hovering
+
+    &::-webkit-scrollbar {
+		width: 4px;
+	}
+	&::-webkit-scrollbar-thumb {
+        background: $navicon-link-color-hover;
+        border-radius: 10px;
+	    opacity: .4;
+	}
+	&::-webkit-scrollbar-track {
+	    background: none;
+	}
+
+    @include breakpoint($large) {
+        width: calc(20% - 1em);
+        margin-right: 0.5em;
+        padding-right: 0.5em;
+    }
+
+    .nav__list .nav__items li {
+        overflow-x: hidden;
+        & ul.nav__item-children {
+            text-align: right;
+        }
+    }
+}
+
+.author__urls a {
+    padding: 0;
+}
+
+.social-icons {
+    li {
+        display: inline-block;
+    }
+    li[itemprop="homeLocation"] {
+        display: list-item;
+        margin-bottom: 0;
+    }
+}

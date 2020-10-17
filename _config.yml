@@ -99,7 +99,7 @@ author:
   location         : "Seoul, Rep. of Korea"
   email            :
   links:
-    - label: "whitesw01@gmail.com"
+    - label: ""
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:whitesw01@gmail.com"
     - label: "Website"
@@ -111,10 +111,10 @@ author:
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
       # url: "https://facebook.com/"
-    - label: "github.com/seungwubaek"
+    - label: ""
       icon: "fab fa-fw fa-github"
       url: "https://github.com/seungwubaek"
-    - label: "instagram.com/sammy_baek"
+    - label: ""
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/sammy_baek"
 
