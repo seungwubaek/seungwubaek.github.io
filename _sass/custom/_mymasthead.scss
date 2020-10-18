@@ -1,6 +1,6 @@
 .masthead {
     border: 0;
-    background-color: $border-color;
+    background-color: $footer-background-color;
     .masthead__inner-wrap {
         padding-bottom: 0;
         .masthead__menu {
@@ -11,8 +11,14 @@
     }
 }
 
+$mymasthead-text-color: white;  // text color is white, basically.
+
 // responsive menu style
 .greedy-nav {
+    a {
+        color: $mymasthead-text-color;  // contrast skin has black text color and it is not suitable.
+    }
+
     // Home Title and Logo at Left Top
     .site-logo {
         img {
@@ -20,7 +26,12 @@
         }
     }
     .site-title {
-        margin-top: 0.3em
+        color: $mymasthead-text-color;
+        margin-top: 0.3em;
+
+        &:hover {  // prevent to change text color to black when a:hover in contrast skin.
+            color: $mymasthead-text-color;
+        }
     }
 
     // dropdown menu shared by visible- & hidden-links
@@ -57,8 +68,16 @@
         .masthead__menu-item {
             position: relative; // for dropdown menu right align to it's parent.
 
+            a, i {
+                transition: none;  // dont animate without my permission, please!!  ㅠㅠ
+            }
+
             &:hover {
-                background-color: $navicon-link-color-hover;
+                background-color: $mymasthead-text-color;
+                a {
+                    color: $text-color;
+                }
+                // transition: all 0.2s ease-in-out;  // i can't decide it is better or not.
             }
 
             &:hover .masthead__submenu {
@@ -71,8 +90,9 @@
         .masthead__submenu {
             left: -9999px;
             position: absolute;
+            margin-right: -1px;  // shift border line to right a little. It looks good more.
             border-width: 0px 1px 1px 1px;
-            border-color: $border-color;
+            border-color: $text-color;
             border-style: solid;
             background-color: $background-color;
             min-width: 1rem;
@@ -85,6 +105,9 @@
                 &:hover {
                     background-color: $navicon-link-color-hover;
                 }
+                .masthead__submenu-item-title {
+                    color: $text-color;
+                }
             }
         }
     }
@@ -93,6 +116,17 @@
         a {
             margin: 0;
             padding: 0;
+            color: $text-color;  // contrast skin has black text color and it is not suitable.
+        }
+        .masthead__menu-item {
+            .masthead__submenu {
+                display: none;
+            }
+            &:hover {
+                .masthead__submenu {
+                    display: block;
+                }
+            }
         }
 
         .masthead__submenu {

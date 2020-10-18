@@ -5,12 +5,12 @@
 		width: 4px;
 	}
 	&::-webkit-scrollbar-thumb {
-        background: $navicon-link-color-hover;
+        background: black;
         border-radius: 10px;
 	    opacity: .4;
 	}
 	&::-webkit-scrollbar-track {
-	    background: none;
+	    background: $navicon-link-color-hover;
 	}
 
     @include breakpoint($large) {
