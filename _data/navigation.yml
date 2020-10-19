@@ -31,3 +31,7 @@ main-sidebar:
       url: "#"
     - title: "VGG"
       url: "#"
+  - title: "ETC"
+    children:
+    - title: "Blog"
+      url: /ETC/Blog/
