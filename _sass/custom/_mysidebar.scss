@@ -21,6 +21,11 @@
 
     .nav__list .nav__items li {
         overflow-x: hidden;
+        .nav__sub-title {
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
         & ul.nav__item-children {
             text-align: right;
         }
