@@ -24,10 +24,27 @@
         .nav__sub-title {
             padding-bottom: 0;
             margin-bottom: 0;
+            cursor: pointer;
+
+            .nav__sub-title-set {
+                display: table;
+                width: 100%;
+                span {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+                .nav__sub-title-dropdownicon {
+                    text-align: right;
+                }
+            }
         }
 
         & ul.nav__item-children {
             text-align: right;
+            display: none;
+            &.show {
+                display: block;
+            }
         }
     }
 }

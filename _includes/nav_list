@@ -7,11 +7,19 @@
   <ul class="nav__items">
     {% for nav in navigation %}
       <li>
-        {% if nav.url %}
-          <a href="{{ nav.url | relative_url }}"><span class="nav__sub-title">{{ nav.title }}</span></a>
-        {% else %}
-          <span class="nav__sub-title">{{ nav.title }}</span>
-        {% endif %}
+        <!-- Disable URL on main menu -->
+        <!-- {% if nav.url %}
+          <a href="{{ nav.url | relative_url }}">
+            <div class="nav__sub-title"><div class="nav__sub-title-set"><span>{{ nav.title }}</span>
+              {% if nav.children != null %}<span class="nav__sub-title-dropdownicon"><i class="fas fa-caret-up"></i></span>{% endif %}</div>
+            </div>
+          </a>
+        {% else %} -->
+          <div class="nav__sub-title"><div class="nav__sub-title-set"><span>{{ nav.title }}</span>
+            <!-- {% if nav.children != null %}<span class="nav__sub-title-dropdownicon"><i class="fas fa-caret-up"></i></span>{% endif %}</div> -->
+            {% if nav.children != null %}<span class="nav__sub-title-dropdownicon"><i class="fas fa-plus"></i></span>{% endif %}</div>
+          </div>
+        <!-- {% endif %} -->
 
         {% if nav.children != null %}
         <ul class="nav__item-children">
