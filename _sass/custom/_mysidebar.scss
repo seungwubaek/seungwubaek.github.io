@@ -27,8 +27,18 @@
     }
 }
 
-.author__urls a {
-    padding: 0;
+.author__bio {
+    font-size: medium;
+}
+
+.author__urls {
+    &.social-icons li span {
+        font-size: small;
+    }
+
+    a {
+        padding: 0;
+    }
 }
 
 .social-icons {
