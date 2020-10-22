@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: posts
 ---
 # Git Page를 이용한 Blog 만들기
 
