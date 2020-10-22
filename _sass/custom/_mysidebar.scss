@@ -52,6 +52,8 @@
 
         .author__profile-set {
             width: $mysidebar-width - $mysidebar-scroll-width;
+            margin-bottom: 0;
+            
             .author__bio {
                 font-size: medium;
             }
@@ -69,10 +71,10 @@
             .social-icons {
                 li {
                     display: inline-block;
+                    margin-bottom: 0;
                 }
                 li[itemprop="homeLocation"] {
                     display: list-item;
-                    margin-bottom: 0;
                 }
             }
         }
