@@ -1,26 +1,5 @@
 .sidebar {
-    opacity: 1;  // Remove row opacity animation After/Before hovering
-
-    &::-webkit-scrollbar {
-		width: 4px;
-	}
-	&::-webkit-scrollbar-thumb {
-        background: black;
-        border-radius: 2px;
-	    opacity: .4;
-	}
-	&::-webkit-scrollbar-track {
-	    background: $navicon-link-color-hover;
-	}
-
-    @include breakpoint($large) {
-        width: $mysidebar-width;
-        padding-right: 8px;
-        margin-right: 8px;
-    }
-
     .nav__list {
-        width: $mysidebar-width - $mysidebar-scroll-width;
         & .nav__items li {
             .nav__sub-title {
                 padding-bottom: 0;
@@ -50,31 +29,52 @@
             }
         }
     }
-}
+    &.sticky { // Only when sidebar sticky
+        opacity: 1;  // Remove row opacity animation After/Before hovering
 
-.author__profile-set {
-    width: $mysidebar-width - $mysidebar-scroll-width;
-    .author__bio {
-        font-size: medium;
-    }
-
-    .author__urls {
-        &.social-icons li span {
-            font-size: small;
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: black;
+            border-radius: 2px;
+            opacity: .4;
+        }
+        &::-webkit-scrollbar-track {
+            background: $navicon-link-color-hover;
         }
 
-        a {
-            padding: 0;
-        }
-    }
+        width: $mysidebar-width;  // important! it decide scrollbar position!
 
-    .social-icons {
-        li {
-            display: inline-block;
+        .nav__list {
+            width: $mysidebar-width - $mysidebar-scroll-width;
         }
-        li[itemprop="homeLocation"] {
-            display: list-item;
-            margin-bottom: 0;
+
+        .author__profile-set {
+            width: $mysidebar-width - $mysidebar-scroll-width;
+            .author__bio {
+                font-size: medium;
+            }
+
+            .author__urls {
+                &.social-icons li span {
+                    font-size: small;
+                }
+
+                a {
+                    padding: 0;
+                }
+            }
+
+            .social-icons {
+                li {
+                    display: inline-block;
+                }
+                li[itemprop="homeLocation"] {
+                    display: list-item;
+                    margin-bottom: 0;
+                }
+            }
         }
     }
 }
