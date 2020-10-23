@@ -1,7 +1,7 @@
 $(document).ready(function() {
     // Can write additional js for cumtom without editting origin script from mmistake.
 
-    // Sidebar Toggle to collapse Submenu
+    // 1. Sidebar Toggle to collapse Submenu
     $('.nav__sub-title').click(function(){
         subtitleSet = $(this.children[0]).children();
         if (subtitleSet.length > 1) {  // children이 있을때만 <span> 태그 하나 더 생김
@@ -20,8 +20,8 @@ $(document).ready(function() {
         }
     })
 
-    // Sidebar Sub Menus dropdown animaion
-    // Set each Height of Sub Menu, corresponding num of sub menu's children elem.
+    // 2. Sidebar Sub Menus dropdown animaion
+    //   Set each Height of Sub Menu, corresponding num of sub menu's children elem.
     li_id = 0;  // Incremental Submenu ID
     arrLiIdHeight = [];  // Submenu ID, Height
     baseLiHeight = $('ul.nav__item-children > li').first().height();
