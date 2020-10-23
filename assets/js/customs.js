@@ -19,4 +19,26 @@ $(document).ready(function() {
             }
         }
     })
+
+    // Sidebar Sub Menus dropdown animaion
+    // Set each Height of Sub Menu, corresponding num of sub menu's children elem.
+    li_id = 0;  // Incremental Submenu ID
+    arrLiIdHeight = [];  // Submenu ID, Height
+    baseLiHeight = $('ul.nav__item-children > li').first().height();
+    $('ul.nav__item-children').each(function(){
+        numLi = $(this).find('li').length
+        liHeight = numLi * baseLiHeight;
+        liId = 'sidebarMenuId_' + ++li_id;
+        $(this).attr('id', liId);
+        arrLiIdHeight.push([liId, liHeight]);
+    });
+    
+    extra_css = '';
+    arrLiIdHeight.forEach(function(item, idx){
+        liId = item[0];
+        liHeight = item[1];
+        extra_css += '#'+liId+'.show { height: '+ liHeight + 'px; }\n';
+    })
+    extra_css = '<style type="text/css">\n'+extra_css+'</style>';
+    $('head').append(extra_css);
 });

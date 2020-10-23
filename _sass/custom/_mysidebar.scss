@@ -22,9 +22,14 @@
 
             & ul.nav__item-children {
                 text-align: right;
-                display: none;
+                height: 0;
+                overflow-y: hidden;
+                transition: height 0.1s ease-in-out;
+                -webkit-transition: height 0.1s ease-in-out;
                 &.show {
-                    display: block;
+                    // height MUST be in px, em, rem unit, NOT percentage. So, I applied that using custom js.
+                    transition: height 0.1s ease-in-out;
+                    -webkit-transition: height 0.1s ease-in-out;
                 }
             }
         }
