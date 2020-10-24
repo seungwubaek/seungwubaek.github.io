@@ -21,7 +21,7 @@ HTML, CSS 기본, class 선택자
 
 ### HTML
 
-아래와 같이 단순한 html이 있다. 가만히 있을때 `child`는 눈에 보이지 않는다. 그리고 `mother`에 마우스를 가져다 대면 `mother` 밑에서 `child` 가 쏘-옥 나왔다가 마우스를 밖으로 가져가면 다시 쓰-윽 들어다.
+아래와 같이 단순한 html이 있다. 가만히 있을때 `child`는 눈에 보이지 않는다. 그리고 `mother`에 마우스를 가져다 대면 `mother` 밑에서 `child` 가 쏘-옥 나왔다가 마우스를 밖으로 가져가면 다시 쓰-윽 들어간다.
 
 ```html
 <div class='mother'>
@@ -32,9 +32,9 @@ HTML, CSS 기본, class 선택자
 </div>
 ```
 
-여기에 아래와 같은 css를 적용한다.
+### CSS
 
-css를 적용하면 처음의 `child`의 `height`는 0이라서 그 내용물이 보이지 않는데, `mother`에 마우스를 가져다 대면(=`hover`) `child`의 `height`가 `1.5em`으로 변하면서 `child`의 내용물이 보이게 된다.
+위 HTML에 아래와 같은 css를 적용한다. css를 적용하면 처음의 `child`의 `height`는 0이라서 그 내용물이 보이지 않는데, `mother`에 마우스를 가져다 대면(=`hover`) `child`의 `height`가 `1.5em`으로 변하면서 `child`의 내용물이 보이게 된다.
 
 ```css
 .child {
@@ -58,7 +58,9 @@ css를 적용하면 처음의 `child`의 `height`는 0이라서 그 내용물이
 }
 ```
 
-위의 html과 css를 이용하면 아래 빨간 박스와 같은 효과를 낼수 있다.<br/>빨간 박스에 마우스를 가져다 대보자.
+### 시연
+
+위의 html과 css를 이용하면 아래 빨간 박스와 같은 효과를 낼 수 있다.<br/>빨간 박스에 마우스를 가져다 대보자.<br/>모바일로 접속했다면 마우스를 움직이는 대신 빨간 박스 안을 터치했다가 다시 밖을 터치하면 된다.
 
 <html>
     <head>
@@ -92,16 +94,16 @@ css를 적용하면 처음의 `child`의 `height`는 0이라서 그 내용물이
 
 이 `transition` property의 효과는 다양한 브라우저에서 호환성을 확보하기 위해 추가 CSS 속성 설정이 필요하다.
 
-정확하진 않지만 IE 브라우저 호환을 위해 `transition` 속성을 사용하고 Chrome, Safari 호환을 위해 `-webkit-transition` 속성을 함께 사용해야한다.
+정확하진 않지만 IE 브라우저 호환을 위해 `transition` 속성을 사용하고 Chrome, Safari 호환을 위해 `-webkit-transition` 속성을 같이 사용해야한다. 속성값은 동일하게 주면 된다. 위 [Example](#example)의 [CSS](#css)에서도 그렇게 했다.
 
 ### 올바로 적용되지 않는 `height` 단위
 
-위 [Example](#example)에서 `height` 값을 늘렸다 줄일때 `child`의 css `height` 값에 `%` 단위를 사용하면 transition이 올바르게 작동하지 않는다! 그리고 `px`, `em`, `rem`이 정상 작동하는 것은 확인하였다.
+`height` 값을 늘렸다 줄일때 css `height` 값에 `%` 단위를 사용하면 transition이 올바르게 작동하지 않는다! `px`, `em`, `rem`이 정상 작동하는 것은 확인하였다.
 
-#### 해결 방법
+* 해결 방법
 
-결국, CSS 만으로 이 문제를 해결하는 방법은 찾지 못했다... OTL.. 그래서 하는수 없이 Javascript를 사용했다.<br/>
-아래에 요약 설명이 있지만 이해가 어렵다면 코드를 직접 보는것이 더 빠를수도 있다. [여기]({{ site.repository | append: '/tree/master/assets/js/customs.js' }})에서 `2. Sidebar Sub Menus dropdown animaion`이라는 주석이 달린 세션을 보면 된다.
+    결국, CSS 만으로 이 문제를 해결하는 방법은 찾지 못했다... OTL.. 그래서 하는수 없이 Javascript를 사용했다.<br/>
+    아래에 요약 설명이 있지만 이해가 어렵다면 코드를 직접 보는것이 더 빠를수도 있다. [여기]({{ site.repository | append: '/tree/master/assets/js/customs.js' }})에서 `2. Sidebar Sub Menus dropdown animaion`이라는 주석이 달린 세션을 보면 된다.
 
 1. 각 메뉴에 ID 부여
 
