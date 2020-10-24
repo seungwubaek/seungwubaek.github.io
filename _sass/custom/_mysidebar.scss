@@ -58,7 +58,7 @@
         .author__profile-set {
             width: $mysidebar-width - $mysidebar-scroll-width;
             margin-bottom: 0;
-            
+
             .author__bio {
                 font-size: medium;
             }
@@ -83,5 +83,10 @@
                 }
             }
         }
+    }
+
+    // When sidebar is not sticky
+    & .author__urls-wrapper {
+        cursor: none;
     }
 }
