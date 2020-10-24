@@ -1,7 +1,7 @@
 $(document).ready(function() {
     // Can write additional js for cumtom without editting origin script from mmistake.
 
-    // 1. Sidebar Toggle to collapse Submenu
+    // [1] Sidebar Toggle to collapse Submenu
     $('.nav__sub-title').click(function(){
         subtitleSet = $(this.children[0]).children();
         if (subtitleSet.length > 1) {  // children이 있을때만 <span> 태그 하나 더 생김
@@ -20,25 +20,25 @@ $(document).ready(function() {
         }
     })
 
-    // 2. Sidebar Sub Menus dropdown animaion
-    //   Set each Height of Sub Menu, corresponding num of sub menu's children elem.
-    li_id = 0;  // Incremental Submenu ID
-    arrLiIdHeight = [];  // Submenu ID, Height
-    baseLiHeight = $('ul.nav__item-children > li').first().height();
+    // [2] Sidebar dropdown animaion of Sub Menus
+    //   Set each height of Sub Menu <ul> Element proportional to num of sub menu's children <li> elems.
+    ulCnt = 0;  // Incremental Submenu ID
+    arrUlIdHeight = [];  // The Array, consists of pair [Submenu <ul>'s ID, Height]
+    baseLiHeight = $('ul.nav__item-children > li').first().height();  // basic height of <li>
     $('ul.nav__item-children').each(function(){
         numLi = $(this).find('li').length
-        liHeight = numLi * baseLiHeight;
-        liId = 'sidebarMenuId_' + ++li_id;
-        $(this).attr('id', liId);
-        arrLiIdHeight.push([liId, liHeight]);
+        ulHeight = numLi * baseLiHeight;
+        ulId = 'sidebarMenuId_' + ++ulCnt;
+        $(this).attr('id', ulId);
+        arrUlIdHeight.push([ulId, ulHeight]);
     });
-    
+
+    // Make additional style
     extra_css = '';
-    arrLiIdHeight.forEach(function(item, idx){
-        liId = item[0];
-        liHeight = item[1];
-        extra_css += '#'+liId+'.show { height: '+ liHeight + 'px; }\n';
+    arrUlIdHeight.forEach(function(item, idx){
+        extra_css += '#'+item[0]+'.show { height: '+ item[1] + 'px; }\n';
     })
     extra_css = '<style type="text/css">\n'+extra_css+'</style>';
+    // Add additional style to <head>
     $('head').append(extra_css);
 });
