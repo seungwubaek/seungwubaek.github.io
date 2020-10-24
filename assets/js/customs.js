@@ -19,10 +19,9 @@ $(document).ready(function() {
     arrUlIdHeight = [];  // The Array, consists of pair [Submenu <ul>'s ID, Height]
     baseLiHeight = $('ul.nav__item-children > li').first().height();  // basic height of <li>
     $('ul.nav__item-children').each(function(){
+        ulId = $(this).attr('id');
         numLi = $(this).find('li').length
         ulHeight = numLi * baseLiHeight;
-        ulId = 'sidebarMenuId_' + ++ulCnt;
-        $(this).attr('id', ulId);
         arrUlIdHeight.push([ulId, ulHeight]);
     });
 

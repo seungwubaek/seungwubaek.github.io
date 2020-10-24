@@ -4,6 +4,7 @@
   {% if page.sidebar.title %}<h3 class="nav__title" style="padding-left: 0;">{{ page.sidebar.title }}</h3>{% endif %}
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
   <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle Menu" }}</label>
+  {% assign i = 0 %}
   <ul class="nav__items">
     {% for nav in navigation %}
       <li>
@@ -15,14 +16,16 @@
             </div>
           </a>
         {% else %} -->
-          <div class="nav__sub-title"><div class="nav__sub-title-set"><span>{{ nav.title }}</span>
-            <!-- {% if nav.children != null %}<span class="nav__sub-title-dropdownicon"><i class="fas fa-caret-up"></i></span>{% endif %}</div> -->
-            {% if nav.children != null %}<span class="nav__sub-title-dropdownicon"><i class="fas fa-plus"></i></span>{% endif %}</div>
+          <div class="nav__sub-title">
+            <div class="nav__sub-title-set"><span>{{ nav.title }}</span>
+            {% if nav.children != null %}<span class="nav__sub-title-dropdownicon"><i class="fas fa-plus"></i></span>{% endif %}
+            </div>
           </div>
         <!-- {% endif %} -->
 
         {% if nav.children != null %}
-        <ul class="nav__item-children">
+        {% assign i = i | plus: 1 %}
+        <ul class="nav__item-children" id="sidebarMenuId_{{ i }}">
           {% for child in nav.children %}
             <li><a href="{{ child.url | relative_url }}"{% if child.url == page.url %} class="active"{% endif %}>{{ child.title }}</a></li>
           {% endfor %}
