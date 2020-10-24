@@ -103,16 +103,18 @@ HTML, CSS 기본, class 선택자
 * 해결 방법
 
     결국, CSS 만으로 이 문제를 해결하는 방법은 찾지 못했다... OTL.. 그래서 하는수 없이 Javascript를 사용했다.<br/>
-    아래에 요약 설명이 있지만 이해가 어렵다면 코드를 직접 보는것이 더 빠를수도 있다. [여기]({{ site.repository | append: '/tree/master/assets/js/customs.js' }})에서 `[2] Sidebar dropdown animaion of Sub Menus`이라는 주석이 달린 세션을 보면 된다.
+    아래에 요약 설명이 있지만 이해가 어렵다면 코드를 직접 보는것이 더 빠를수도 있다.<br/>
+    [Liquid를 이용해 작성한 HTML 파일]({{ site.repository | append: '/tree/master/_includes/nav_list' }})에서 변수 `i` 변수가 assign 되는 것과 [Javascript]({{ site.repository | append: '/tree/master/assets/js/customs.js' }})의 `[2] Sidebar dropdown animaion of Sub Menus`이라는 주석이 달린 세션을 보면 된다.
 
-1. 각 메뉴에 ID 부여
+1. Liquid로 각 메뉴에 ID 부여
 
-    내 사이드바는 큰 주제가 하나의 `<ul>` 태그로 되어 있으므로 `Jquery`를 이용하여 iterate하면서 각 태그에 Incremental ID를 부여한다.
+    내 사이드바는 큰 주제가 하나의 `<ul>` 태그로 되어 있으므로 `liquid`를 이용하여 iterate할때 각 `<ul>` 태그에 Incremental ID를 부여한다.
 
 2. 각 메뉴가 가진 서브메뉴 개수에 비례하는 `height` 파악
 
-    그와 동시에 각 `<ul>` 태그가 가진 하위 항목의 개수를 파악했다. 하위 항목 개수가 많은 `<ul>` 태그는 그 양에 비례하게 `height`가 더 길어야 하기 때문이다.
+    Javascript에서는 각 `<ul>` 태그가 가진 하위 항목 '<li>'의 개수를 파악했다. 하위 항목 개수가 많은 `<ul>` 태그는 그 양에 비례하게 `height`가 더 길어야 하기 때문이다.
+    `ID`에 대응하는 `height` 측정한 후 (`ID`, `height`) 쌍을 원소로 갖는 Array로 저장한다.
 
 3. 각 ID에 대응하는 `height`를 css로 적용
 
-    `<ul>`태그에 `ID` 부여와 `ID`에 대응하는 `height` 측정이 완료되면, `<head>` 태그 안에 `<style>` 태그를 하나 만들어서 넣는다. `<style>` 태그의 내용도 Javascript를 이용해서 string으로 만들어 적용한다...
+    Array가 완성되면 Array를 iterate하면서 `ID`의 태그의 `height` 속성값을 변경하는 css 코드를 짠다. 이 css 코드는 `<head>` 태그 안에 `<style>` 태그를 하나 만들어서 넣는다.
