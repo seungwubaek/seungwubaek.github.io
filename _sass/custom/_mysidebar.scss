@@ -34,7 +34,7 @@
             }
         }
     }
-    &.sticky { // Only when sidebar sticky
+    &.sticky { // Only when sidebar sticky, specifically
         opacity: 1;  // Remove row opacity animation After/Before hovering
 
         &::-webkit-scrollbar {
@@ -72,21 +72,24 @@
                     padding: 0;
                 }
             }
-
-            .social-icons {
-                li {
-                    display: inline-block;
-                    margin-bottom: 0;
-                }
-                li[itemprop="homeLocation"] {
-                    display: list-item;
-                }
-            }
         }
     }
 
     // When sidebar is not sticky
     & .author__urls-wrapper {
         cursor: none;
+
+        .social-icons {
+            li {
+                display: inline-block;
+                margin-bottom: 0;
+            }
+            li[itemprop="homeLocation"] {
+                display: list-item;
+            }
+            a {
+                margin-bottom: 0;
+            }
+        }
     }
 }
