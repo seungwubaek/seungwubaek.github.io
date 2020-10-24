@@ -10,7 +10,7 @@ CSS를 이용해서 HTML의 특정 요소에 애니메이션 효과를 부여할
 
 ## Requirement
 
-HTML, CSS 기본, class 선택자
+HTML 기본, CSS 기본, class 선택자
 
 ## Example
 
@@ -105,13 +105,13 @@ HTML, CSS 기본, class 선택자
 
 1. Liquid로 각 메뉴에 ID 부여
 
-    내 사이드바는 큰 주제가 하나의 `<ul>` 태그로 되어 있으므로 `liquid`를 이용하여 iterate할때 각 `<ul>` 태그에 Incremental ID를 부여한다.
+    내 사이드바는 상위 메뉴가 `<ul>` 태그로 된 하나의 하위 항목을 가지므로 `liquid`를 이용하여 하위 항목(`<ul>` 태그)들을 iterate 하면서 Incremental ID를 부여한다.
 
-2. 각 메뉴가 가진 서브메뉴 개수에 비례하는 `height` 파악
+2. 각 하위 항목이 가진 메뉴 개수에 비례하는 `height` 파악
 
-    Javascript에서는 각 `<ul>` 태그가 가진 하위 항목 '<li>'의 개수를 파악했다. 하위 항목 개수가 많은 `<ul>` 태그는 그 양에 비례하게 `height`가 더 길어야 하기 때문이다.
+    Javascript에서는 각 `<ul>` 태그가 가진 메뉴 `<li>`의 개수를 파악했다. 메뉴 개수가 많은 `<ul>` 태그는 그 양에 비례하게 `height`가 더 길어야 하기 때문이다.
     `ID`에 대응하는 `height` 측정한 후 (`ID`, `height`) 쌍을 원소로 갖는 Array로 저장한다.
 
 3. 각 ID에 대응하는 `height`를 css로 적용
 
-    Array가 완성되면 Array를 iterate하면서 `ID`의 태그의 `height` 속성값을 변경하는 css 코드를 짠다. 이 css 코드는 `<head>` 태그 안에 `<style>` 태그를 하나 만들어서 넣는다.
+    Array가 완성되면 Array를 iterate하면서 `ID`에 해당하는 `<ul>` 태그의 `height` 속성값을 변경하는 css 코드를 짠다. 이 css 코드를 `<style>` 태그로 만들어서 `<head>` 태그 안에 넣는다.
