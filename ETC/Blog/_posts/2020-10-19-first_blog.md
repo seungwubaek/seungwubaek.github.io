@@ -5,7 +5,7 @@ layout: posts
 
 Github 서비스를 이용해서 나만의 Github Page를 만들자.
 
-## Requirment
+## Requirement
 
 * Git, Github<br/>
     Git을 사용하는 기본적인 방법을 알아야하고, Github ID와 Git Page 생성을 위한 Repository가 필요함.
@@ -40,10 +40,30 @@ Github 서비스를 이용해서 나만의 Github Page를 만들자.
 
 Ruby, Jekyll, VSCode
 
-### `Jekyll Theme` 가져오기
+### Jekyll Tutorial
+
+영문으로 되어있으며 한글 번역 버전이 있으나 100% 번역 돼있지는 않다.<br/>
+https://jekyllrb-ko.github.io/docs/step-by-step/01-setup/<br/>
+나는 튜토리얼을 완료한 후 오른쪽 리스트 중 <span style="padding: 2px; background-color: black;"><span style="border-bottom: 1px solid red; color: white; font-weight: bold;">컨텐츠</span></span> 항목에 있는 내용을 쭉 다 봤다.
+
+### Jekyll Theme 가져오기
 
 나는 2020년 10월 기준 가장 Fork가 많았던 [mmistakes theme](https://github.com/mmistakes/minimal-mistakes)을 가져왔다. 이 테마는 운영자가 오래전부터 지금까지 꾸준히 활동하면서 개선 하고 있는 테마이다. 그래서 최근의 트렌드가 가장 잘 반영되었을 것이라 생각했다. 당장 `Google Analytics` 연동, `댓글` 기능이 구현 돼 있는것 만으로도 만족한다.
 
 ### 테스트
 
+```shell
+gem install jekyll bundler
+```
+
+```shell
+bundle install
+```
+
+```shell
+bundle exec jekyll serve
+```
+
 ### 배포
+
+git page가 빌드되기까지 시간이 걸릴수 있음
