@@ -1,10 +1,7 @@
 ---
 layout: posts
+title: "CSS Property: `transition`"
 ---
-# Git Page를 이용한 Blog 만들기
-
-## CSS property: `transition`
-
 CSS를 이용해서 HTML의 특정 요소에 애니메이션 효과를 부여할 수 있는 방법 중 하나.
 
 특정 요소의 CSS 속성이 변화 할 때, 그 변화 과정 전과 후의 사이에 딜레이를 주어서 애니메이션 처럼 보이게 한다.
