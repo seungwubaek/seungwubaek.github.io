@@ -1,22 +1,15 @@
 $(document).ready(function() {
     // Can write additional js for cumtom without editting origin script from mmistake.
 
-    // [1] Sidebar Toggle to collapse Submenu
+    // [1] Sidebar Toggle to (un)fold Submenu
     $('.nav__sub-title').click(function(){
         subtitleSet = $(this.children[0]).children();
-        if (subtitleSet.length > 1) {  // children이 있을때만 <span> 태그 하나 더 생김
-            dropdownIcon = subtitleSet[1].children[0];  // dropdown icon element
+        if (subtitleSet.length > 1) {  // children이 있을때만 (+/-) 아이콘 표시를 위한 <span> 태그 하나 더 생김
+            dropdownIcon = subtitleSet[1].children[0];  // dropdown (+/-) icon element
             s = $(dropdownIcon);
-            if (s.hasClass('fa-plus')) {
-                s.removeClass('fa-plus');
-                s.addClass('fa-minus');
-                $(this).next().toggleClass('show');
-            }
-            else {
-                s.removeClass('fa-minus');
-                s.addClass('fa-plus');
-                $(this).next().toggleClass('show');
-            }
+            s.toggleClass('fa-plus');
+            s.toggleClass('fa-minus');
+            $(this).next().toggleClass('show');
         }
     })
 
