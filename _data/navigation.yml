@@ -19,6 +19,7 @@ main-sidebar:
     - title: "Python"
   - title: "Front-End"
     children:
+    - title: "CSS"
     - title: "JavaScript"
   - title: "Back-End"
   - title: "Tools"
