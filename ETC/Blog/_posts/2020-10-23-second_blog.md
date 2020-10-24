@@ -11,6 +11,10 @@ CSS를 이용해서 HTML의 특정 요소에 애니메이션 효과를 부여할
 
 [mmistake theme](https://github.com/mmistakes/minimal-mistakes)에서는 주로 이 속성을 통해 애니메이션을 연출한다.
 
+## Requirement
+
+HTML, CSS 기본, class 선택자
+
 ## Example
 
 1개의 HTML과 1개의 CSS 코드를 통해 transition 애니메이션 예를 들어본다.
