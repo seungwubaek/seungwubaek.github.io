@@ -51,7 +51,7 @@ HTML, CSS 기본, class 선택자
     background-color: red;
     .child {
         height: 1.5em;
-        
+
         transition: height 1s ease-in-out;
         -webkit-transition: height 1s ease-in-out;
     }
@@ -103,7 +103,7 @@ HTML, CSS 기본, class 선택자
 * 해결 방법
 
     결국, CSS 만으로 이 문제를 해결하는 방법은 찾지 못했다... OTL.. 그래서 하는수 없이 Javascript를 사용했다.<br/>
-    아래에 요약 설명이 있지만 이해가 어렵다면 코드를 직접 보는것이 더 빠를수도 있다. [여기]({{ site.repository | append: '/tree/master/assets/js/customs.js' }})에서 `2. Sidebar Sub Menus dropdown animaion`이라는 주석이 달린 세션을 보면 된다.
+    아래에 요약 설명이 있지만 이해가 어렵다면 코드를 직접 보는것이 더 빠를수도 있다. [여기]({{ site.repository | append: '/tree/master/assets/js/customs.js' }})에서 `[2] Sidebar dropdown animaion of Sub Menus`이라는 주석이 달린 세션을 보면 된다.
 
 1. 각 메뉴에 ID 부여
 
