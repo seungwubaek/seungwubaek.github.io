@@ -1,6 +1,6 @@
 ---
 layout: posts
-title: "CSS Property: `transition`"
+title: "CSS Property: transition"
 ---
 CSS를 이용해서 HTML의 특정 요소에 애니메이션 효과를 부여할 수 있는 방법 중 하나.
 
