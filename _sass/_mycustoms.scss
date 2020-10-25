@@ -1,9 +1,18 @@
 /* Variables */
 @import "custom/myvariables";
 
+/* Core CSS */
 @import "custom/mybase";
+
+/* Components */
 @import "custom/mymasthead";
-@import "custom/mysidebar";
-@import "custom/myarchive";
-@import "custom/mybreadcrumbs";
 @import "custom/mynavigation";
+
+/* Layout Specific */
+@import "custom/mypage";
+@import "custom/myarchive";
+@import "custom/mysidebar";
+
+/* Additional */
+@import "custom/mybreadcrumbs";
+

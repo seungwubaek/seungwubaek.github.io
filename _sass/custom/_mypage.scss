@@ -1,0 +1,5 @@
+.initial-content {
+    // masthead position is fixed. So, padding from masthead__inner-wrap + height masthead__menu
+    position: relative;
+    top: 1em + 2em;
+}

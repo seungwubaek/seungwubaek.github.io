@@ -1,4 +1,7 @@
 .sidebar {
+    // masthead position is fixed. So, padding from masthead__inner-wrap + height masthead__menu
+    top: 1em + 2em;
+
     .nav__list {
         & .nav__items li {
             .nav__sub-title {
@@ -35,6 +38,7 @@
         }
     }
     &.sticky { // Only when sidebar sticky, specifically
+        position: fixed;  // change 'sticky' to 'fixed'.
         opacity: 1;  // Remove row opacity animation After/Before hovering
 
         &::-webkit-scrollbar {
