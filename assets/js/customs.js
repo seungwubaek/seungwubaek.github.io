@@ -1,3 +1,9 @@
+// Navigation Functions
+function goToTop() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+
 $(document).ready(function() {
     // Can write additional js for cumtom without editting origin script from mmistake.
 
@@ -33,4 +39,6 @@ $(document).ready(function() {
     extra_css = '<style type="text/css">\n'+extra_css+'</style>';
     // Add additional style to <head>
     $('head').append(extra_css);
+
+
 });

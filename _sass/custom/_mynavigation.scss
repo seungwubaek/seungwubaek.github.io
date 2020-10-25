@@ -1,3 +1,31 @@
+.nav-buttons {
+    position: fixed;
+    margin: 0 1em 1em 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+
+    border: 2px solid gray;
+    border-radius: 4px;
+    background-color: white;
+
+    .nav-btn-set {
+        display: table;
+        cursor: pointer;
+        vertical-align: middle;
+        i, span {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .nav-btn {
+            font-size: 0.8em;
+            @include breakpoint($large) {
+                font-size: 0.5em;
+            }
+        }
+    }
+}
+
 .nav__sub-title {
     text-transform: none;
 }
