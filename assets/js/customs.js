@@ -4,6 +4,10 @@ function goToTop() {
     document.documentElement.scrollTop = 0;
 }
 
+function foldOnOff() {
+    $('li.nav-btn-set__foldable').toggleClass('.nav-btn-set__fold');
+}
+
 $(document).ready(function() {
     // Can write additional js for cumtom without editting origin script from mmistake.
 

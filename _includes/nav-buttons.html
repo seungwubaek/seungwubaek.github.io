@@ -1,9 +1,11 @@
 <div id='nav-remocon'>
     <div class='nav-remocon-wrapper'>
-        <div id='nav-collapse-button' onclick=''><i id='nav-collapse-icon' class="fas fa-plus"></i></div>
+        <!-- <div id='nav-collapse-button' onclick=''><i id='nav-collapse-icon' class="fas fa-plus"></i></div> -->
+        <div id='nav-fold-button' onclick="foldOnOff()"><div class='nav-arrow-up'></div></div>
         <ul class='nav-buttons'>
-            <li class='nav-btn-set' onclick="goToTop()"><i class='fas fa-angle-up collapsable'></i><span class="nav-btn-title collapsable">Top</span></li>
-            <li class='nav-btn-set collapsable' onclick="javascript: location.href= '/';"><i class='fas fa-home'></i><span class="nav-btn-title">Home</span></li>
+            <li class='nav-btn-set' onclick="goToTop()"><i class='fas fa-angle-up'></i><span class="nav-btn-title">Top</span></li>
+            <li class='nav-btn-set' onclick="javascript: location.href= '/';"><i class='fas fa-home'></i><span class="nav-btn-title">Home</span></li>
+            <li class='nav-btn-set nav-btn-set__foldable nav-btn-set__fold' onclick=""><i class='fas fa-pencil-alt'></i><span class="nav-btn-title">제안</span></li>
         </ul>
     </div>
 </div>

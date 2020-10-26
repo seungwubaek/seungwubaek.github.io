@@ -1,5 +1,18 @@
-.nav__collapse {
-    display: none;
+.nav-arrow-up {
+    height: 0;
+    width: 0;
+    padding: 0;
+    margin-top: 1px;
+    margin-bottom: 2px;
+    border-top-width: 0;
+    border-bottom-width: 0.5em;
+    border-left-width: 1.5em;
+    border-right-width: 1.5em;
+    border-style: solid;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color:  rgb(32, 32, 32);
+    border-left-color: transparent;
 }
 
 #nav-remocon {
@@ -11,9 +24,14 @@
     .nav-remocon-wrapper {
         position: relative;
     }
-    #nav-collapse-button {
-        text-align: right;
-        margin-bottom: -5px;  // why??
+    #nav-fold-button {
+        display: flex;
+        justify-content: center;
+        border-color: gray;
+        border-style: solid;
+        border-width: 2px 2px 0 2px;
+        border-radius: 4px 4px 0 0;
+        cursor: pointer;
     }
     #nav-collapse-icon {
         padding: 0;
@@ -29,7 +47,7 @@
         margin: 0;
         padding: 4px;
         border: 2px solid gray;
-        border-radius: 4px 0 4px 4px;
+        border-radius: 0px 0 4px 4px;
         background-color: white;
 
         li {
@@ -57,14 +75,19 @@
                     display: table-cell;
                 }
             }
+
+
+            &.nav-btn-set__fold {
+                display: none;
+            }
         }
     }
+}
 
-    .nav__sub-title {
-        text-transform: none;
-    }
+.nav__sub-title {
+    text-transform: none;
+}
 
-    .breadcrumbs ol {
-        width: 100%;
-    }
+.breadcrumbs ol {
+    width: 100%;
 }
