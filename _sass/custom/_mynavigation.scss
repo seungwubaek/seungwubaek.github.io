@@ -1,47 +1,70 @@
-.nav-buttons {
+.nav__collapse {
+    display: none;
+}
+
+#nav-remocon {
     position: fixed;
-    display: table;
     margin: 0 1em 1em 0;
-    padding: 4px;
     right: 0;
     bottom: 0;
     z-index: 99;
-
-    border: 2px solid gray;
-    border-radius: 4px;
-    background-color: white;
-
-    li {
-        display: table-row;
-        margin: 0;
+    .nav-remocon-wrapper {
+        position: relative;
+    }
+    #nav-collapse-button {
+        text-align: right;
+        margin-bottom: -5px;  // why??
+    }
+    #nav-collapse-icon {
         padding: 0;
-        cursor: pointer;
-        vertical-align: middle;
-        i, span {
-            display: table-cell;
-            vertical-align: middle;
-        }
-        i {
-            text-align: center;
-            padding-right: 2px;
-        }
-        span {
-            text-align: left;
-        }
+        margin: 0;
+        border-width: 2px 2px 0 2px;
+        border-style: solid;
+        border-color: gray;
+        border-radius: 4px 4px 0 0;
+        background-color: white;
+    }
+    .nav-buttons {
+        display: table;
+        margin: 0;
+        padding: 4px;
+        border: 2px solid gray;
+        border-radius: 4px 0 4px 4px;
+        background-color: white;
 
-        .nav-btn {
-            font-size: 0.8em;
-            @include breakpoint($large) {
-                font-size: 0.5em;
+        li {
+            display: table-row;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            vertical-align: middle;
+            i, span {
+                display: table-cell;
+                vertical-align: middle;
+            }
+            i {
+                text-align: center;
+                padding-right: 2px;
+            }
+            span {
+                text-align: left;
+            }
+
+            .nav-btn-title {
+                font-size: 0.8em;
+                @include breakpoint($large) {
+                    font-size: 0.5em;  // be smaller if large screen
+                    display: table-cell;
+                }
             }
         }
     }
-}
 
-.nav__sub-title {
-    text-transform: none;
-}
+    .nav__sub-title {
+        text-transform: none;
+    }
 
-.breadcrumbs ol {
-    width: 100%;
+    .breadcrumbs ol {
+        width: 100%;
+    }
 }
