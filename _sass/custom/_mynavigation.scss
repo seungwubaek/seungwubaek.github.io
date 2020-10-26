@@ -1,6 +1,8 @@
 .nav-buttons {
     position: fixed;
+    display: table;
     margin: 0 1em 1em 0;
+    padding: 4px;
     right: 0;
     bottom: 0;
     z-index: 99;
@@ -9,14 +11,24 @@
     border-radius: 4px;
     background-color: white;
 
-    .nav-btn-set {
-        display: table;
+    li {
+        display: table-row;
+        margin: 0;
+        padding: 0;
         cursor: pointer;
         vertical-align: middle;
         i, span {
             display: table-cell;
             vertical-align: middle;
         }
+        i {
+            text-align: center;
+            padding-right: 2px;
+        }
+        span {
+            text-align: left;
+        }
+
         .nav-btn {
             font-size: 0.8em;
             @include breakpoint($large) {
