@@ -1,6 +1,10 @@
 .sidebar {
+    // [Warning] fixed topbar covers content. If we use inner page link(move to #anchor),
+    //      the browser scroll view's top coordinate to #anchor's top coordinate.
+    //      but, top coordinate was occupied by topbar.
     // masthead position is fixed. So, padding from masthead__inner-wrap + height masthead__menu
-    top: 1em + 2em;
+    // top: 1em + 2em;
+    top: 0;
 
     .nav__list {
         & .nav__items li {
@@ -38,7 +42,10 @@
         }
     }
     &.sticky { // Only when sidebar sticky, specifically
-        position: fixed;  // change 'sticky' to 'fixed'.
+        // [Warning] fixed topbar covers content. If we use inner page link(move to #anchor),
+        //      the browser scroll view's top coordinate to #anchor's top coordinate.
+        //      but, top coordinate was occupied by topbar.
+        // position: fixed;  // change 'sticky' to 'fixed'.
         opacity: 1;  // Remove row opacity animation After/Before hovering
 
         &::-webkit-scrollbar {
