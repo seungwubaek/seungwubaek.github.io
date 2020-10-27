@@ -13,3 +13,9 @@
         width: calc(100% - #{$mysidebar-width} - 1em); // -1em from _mixins for padding of <div id='main'>.
     }
 }
+
+.md-monologue {
+    color: $base03;
+    font-style: italic;
+    font-size: 0.8em;
+}
