@@ -2,11 +2,11 @@
 layout: posts
 title: "CSS Property: transition"
 ---
-CSS를 이용해서 HTML의 특정 요소에 애니메이션 효과를 부여할 수 있는 방법 중 하나.
+CSS를 이용해서 HTML의 특정 요소에 애니메이션 효과를 부여할 수 있는 방법 중 하나.<br/>
+특정 요소의 CSS 속성이 변화 할 때, 그 변화 과정 전과 후의 사이에 딜레이를 주어서 애니메이션 처럼 보이게 한다.<br/>
+[mmistake theme](https://github.com/mmistakes/minimal-mistakes)에서도 이 속성을 통해 애니메이션을 연출하곤 한다.
 
-특정 요소의 CSS 속성이 변화 할 때, 그 변화 과정 전과 후의 사이에 딜레이를 주어서 애니메이션 처럼 보이게 한다.
-
-[mmistake theme](https://github.com/mmistakes/minimal-mistakes)에서는 주로 이 속성을 통해 애니메이션을 연출한다.
+---
 
 ## Requirement
 

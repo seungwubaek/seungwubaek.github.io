@@ -1,8 +1,10 @@
 ---
 layout: posts
-title: "[Git Page로 Blog 만들기] - 준비 및 시작"
+title: "[Git Page로 Blog 만들기] - [1] 준비 및 시작"
 ---
 Github 서비스를 이용해서 나만의 Github Page를 만들자.
+
+---
 
 ## Requirement
 
