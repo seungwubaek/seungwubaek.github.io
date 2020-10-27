@@ -68,7 +68,7 @@
         border-radius: 0px 0 4px 4px;
         background-color: $nav-remocon-background-color;
 
-        li {
+        .nav-btn-set {
             display: table-row;
             margin: 0;
             padding: 0;
@@ -93,7 +93,6 @@
                     display: table-cell;
                 }
             }
-
 
             &.nav-btn-set__fold {
                 display: none;
