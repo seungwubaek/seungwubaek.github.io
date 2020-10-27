@@ -279,6 +279,7 @@ defaults:
       comments: true # true
       share: true
       related: true
+      toc: true
       sidebar:
         nav: main-sidebar
   # all
