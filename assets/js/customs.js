@@ -5,7 +5,9 @@ function goToTop() {
 }
 
 function foldOnOff() {
-    $('li.nav-btn-set__foldable').toggleClass('.nav-btn-set__fold');
+    $('.nav-btn-set__foldable').toggleClass('nav-btn-set__fold');
+    $($('#nav-fold-button').children()[0]).toggleClass('nav-arrow-up');
+    $($('#nav-fold-button').children()[0]).toggleClass('nav-arrow-down');
 }
 
 $(document).ready(function() {
