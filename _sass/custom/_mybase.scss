@@ -1,3 +1,11 @@
+#main .page .page__content {
+    a {
+        // Without word-break, in mobile web, width size is broken because of line unbreakable of href text.
+        -ms-word-break: break-all;
+        word-break: break-all;
+    }
+}
+
 blockquote {
     border-left: 0.25em solid $success-color;
 }
