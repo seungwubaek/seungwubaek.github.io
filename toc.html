@@ -1,0 +1,9 @@
+---
+layout: archive
+title: "Table Of Contents"
+---
+{% assign indent = 0 %}
+{% assign indent_char = '    ' %}
+{% capture toc %}{% include functions/make_toc_tree.html toc_array=site.data.navigation.main-sidebar toc=toc indent=indent indent_char=indent_char%}{% endcapture %%}
+
+{{ toc | markdownify }}

@@ -1,0 +1,13 @@
+{% assign array_elem = include.array_elem %}
+{% assign indent = include.indent %}
+{% assign indent_char = include.indent_char | default: '#' %}
+
+{% assign indents = '' %}
+{% assign title = array_elem.title %}
+{% assign url = array_elem.url %}
+
+{% for i in (1..indent) %}
+{% assign indents = indents | append: indent_char %}
+{% endfor %}
+
+{{ indents }}* [{{title}}]({{url}})

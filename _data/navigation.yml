@@ -4,6 +4,8 @@ main:
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "About"
     url: /about/
+  - title: "TOC"
+    url: /toc/
   - title: "Dropdown-Sample"
     dropdown:
     - title: "Sub1-1"
