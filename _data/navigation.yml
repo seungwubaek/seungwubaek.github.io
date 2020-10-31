@@ -16,38 +16,60 @@ main:
 # main sidebar links
 main-sidebar:
   - title: "Computing"
+    url: "/Computing/"
     children:
     - title: "Linux"
+      url: "/Computing/Linux/"
     - title: "Python"
+      url: "/Computing/Python/"
   - title: "Deep Learning"
+    url: "/Deep-Learning/"
     children:
     - title: "CNN"
-      url: "#"
+      url: "/Deep-Learning/CNN/"
       children:
       - title: "CAM"
+        url: "/Deep-Learning/CNN/CAM/"
     - title: "VGG"
-      url: "#"
+      url: "/Deep-Learning/VGG/"
   - title: "Mathematics"
+    url: "/Mathematics/"
     children:
     - title: "Linear Algebra"
+      url: "/Mathematics/Linear-Algebra/"
     - title: "Statistics"
+      url: "/Mathematics/Statistics/"
   - title: "Data Engineering"
+    url: "/Data-Engineering/"
     children:
     - title: "Hadoop"
+      url: "/Data-Engineering/Hadoop/"
     - title: "Spark"
+      url: "/Data-Engineering/Spark/"
   - title: "Front-End"
+    url: "/Front-End/"
     children:
     - title: "HTML"
+      url: "/Front-End/HTML/"
     - title: "CSS"
+      url: "/Front-End/CSS/"
     - title: "JavaScript"
+      url: "/Front-End/JavaScript/"
     - title: "Jekyll"
+      url: "/Front-End/Jekyll/"
   - title: "Back-End"
+    url: "/Back-End/"
   - title: "Tools"
+    url: "/Tools/"
     children:
     - title: "Flask"
+      url: "/Tools/Flask/"
     - title: "FAISS"
+      url: "/Tools/FAISS/"
     - title: "AIF360"
+      url: "/Tools/AIF360/"
   - title: "ETC"
+    url: "/ETC/"
     children:
     - title: "Blog"
-      url: /ETC/Blog/
+      url: "/ETC/Blog/"
