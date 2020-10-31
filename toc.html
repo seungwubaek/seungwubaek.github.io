@@ -1,9 +1,9 @@
 ---
-layout: archive
+layout: archive-toc
 title: "Table Of Contents"
 ---
+<h1 id="wholetoc__title">Table Of Contents</h1>
 {% assign indent = 0 %}
-{% assign indent_char = '    ' %}
-{% capture toc %}{% include functions/make_toc_tree.html toc_array=site.data.navigation.main-sidebar toc=toc indent=indent indent_char=indent_char%}{% endcapture %%}
+{% capture toc %}{% include functions/make_toc_tree.html toc_array=site.data.navigation.main-sidebar toc=toc indent=indent %}{% endcapture %%}
 
-{{ toc | markdownify }}
+{{ toc }}

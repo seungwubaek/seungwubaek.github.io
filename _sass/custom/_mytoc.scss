@@ -1,0 +1,26 @@
+#wholetoc {
+    a {
+        color: $text-color;
+        text-decoration-line: none;
+    }
+    li {
+        list-style: none;
+    }
+    #wholetoc__title {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1.7em;
+        border-top: 4px inset $border-color;
+        border-bottom: 4px inset $border-color;
+    }
+    .wholetoc__item[indentation-level="0"] {
+        border-bottom: 1px solid $border-color;
+        a {
+            font-family: $sans-serif;
+            line-height: 1.5;
+            font-weight: bold;
+            font-size: $h-size-2;
+        }
+    }
+}

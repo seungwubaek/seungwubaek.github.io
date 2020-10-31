@@ -1,15 +1,15 @@
 {% assign toc_array = include.toc_array %}
 {% assign indent = include.indent %}
-{% assign indent_char = include.indent_char | default: '#' %}
 
+<ul indentation-level="{{ indent }}">
 {% for item in toc_array %}
-{% capture toc_item %}{% include functions/make_toc_title_with_indent.html array_elem=item indent=indent indent_char=indent_char %}{% endcapture%}
-{{ toc_item }}
-
+<li indentation-level="{{ indent }}"><div class="wholetoc__item" indentation-level="{{ indent }}"><a href="{{ item.url }}">{{ item.title }}</a></div>
 {% if item.children | size %}
 {% assign indent = indent | plus: 1 %}
-{% capture toc_item %}{% include functions/make_toc_tree.html toc_array=item.children indent=indent indent_char=indent_char %}{% endcapture %}
+{% capture toc_item %}{% include functions/make_toc_tree.html toc_array=item.children indent=indent %}{% endcapture %}
 {% assign indent = indent | minus: 1 %}
 {{ toc_item }}
+</li>
 {% endif %}
 {% endfor %}
+</ul>

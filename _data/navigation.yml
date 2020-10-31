@@ -19,22 +19,34 @@ main-sidebar:
     children:
     - title: "Linux"
     - title: "Python"
+  - title: "Deep Learning"
+    children:
+    - title: "CNN"
+      url: "#"
+      children:
+      - title: "CAM"
+    - title: "VGG"
+      url: "#"
+  - title: "Mathematics"
+    children:
+    - title: "Linear Algebra"
+    - title: "Statistics"
+  - title: "Data Engineering"
+    children:
+    - title: "Hadoop"
+    - title: "Spark"
   - title: "Front-End"
     children:
+    - title: "HTML"
     - title: "CSS"
     - title: "JavaScript"
+    - title: "Jekyll"
   - title: "Back-End"
   - title: "Tools"
     children:
     - title: "Flask"
     - title: "FAISS"
     - title: "AIF360"
-  - title: "Deep Learning"
-    children:
-    - title: "CNN"
-      url: "#"
-    - title: "VGG"
-      url: "#"
   - title: "ETC"
     children:
     - title: "Blog"
