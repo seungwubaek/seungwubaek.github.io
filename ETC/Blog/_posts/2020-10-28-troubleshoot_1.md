@@ -1,6 +1,7 @@
 ---
 layout: single
 title: "문제 해결 정리"
+post-order: 301
 ---
 
 이 포스트에서는 Blog를 만들면서 발생했던 문제들을 나열하고 그 해결법을 정리한다.
