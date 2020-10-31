@@ -31,25 +31,30 @@ $(document).ready(function() {
     })
 
     // [2] Sidebar dropdown animaion of Sub Menus
+    // !!!Not used!!!
+    // 아래 코드는 height 사이즈를 고정시킨다. 즉, 작은 화면에서 화면이 다 로드 된 이후 화면 사이즈를 바꾸면
+    // font size는 커지는데 작은 화면일때 계산한 height가 적용되므로 요소 안의 text가 밖으로 밀려 나온다
+    // 해결을 위해선 resize 이벤트마다 height를 다시 계산해서 적용해야하는데.. 그냥 안하기로 했다.
+    // 따라서 완전히 똑같진 않지만 animation으로 대체한다.
     //   Set each height of Sub Menu <ul> Element proportional to num of sub menu's children <li> elems.
-    ulCnt = 0;  // Incremental Submenu ID
-    arrUlIdHeight = [];  // The Array, consists of pair [Submenu <ul>'s ID, Height]
-    baseLiHeight = $('ul.nav__item-children > li').first().height();  // basic height of <li>
-    $('ul.nav__item-children').each(function(){
-        ulId = $(this).attr('id');
-        numLi = $(this).find('li').length
-        ulHeight = numLi * baseLiHeight;
-        arrUlIdHeight.push([ulId, ulHeight]);
-    });
+    // ulCnt = 0;  // Incremental Submenu ID
+    // arrUlIdHeight = [];  // The Array, consists of pair [Submenu <ul>'s ID, Height]
+    // baseLiHeight = $('ul.nav__item-children > li').first().height();  // basic height of <li>
+    // $('ul.nav__item-children').each(function(){
+    //     ulId = $(this).attr('id');
+    //     numLi = $(this).find('li').length
+    //     ulHeight = numLi * baseLiHeight;
+    //     arrUlIdHeight.push([ulId, ulHeight]);
+    // });
 
-    // Make additional style
-    extra_css = '';
-    arrUlIdHeight.forEach(function(item, idx){
-        extra_css += '#'+item[0]+'.show { height: '+ item[1] + 'px; }\n';
-    })
-    extra_css = '<style type="text/css">\n'+extra_css+'</style>';
-    // Add additional style to <head>
-    $('head').append(extra_css);
+    // // Make additional style
+    // extra_css = '';
+    // arrUlIdHeight.forEach(function(item, idx){
+    //     extra_css += '#'+item[0]+'.show { height: '+ item[1] + 'px; }\n';
+    // })
+    // extra_css = '<style type="text/css">\n'+extra_css+'</style>';
+    // // Add additional style to <head>
+    // $('head').append(extra_css);
 
 
 });

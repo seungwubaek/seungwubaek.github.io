@@ -27,16 +27,24 @@
                 }
             }
 
+            @keyframes growDown {
+                0% {
+                    transform: scaleY(0);
+                }
+                100% {
+                    transform: scaleY(1);
+                }
+            }
+
             & ul.nav__item-children {
                 text-align: right;
-                height: 0;
+                display: none;
                 overflow-y: hidden;
-                transition: height 0.1s ease-in-out;
-                -webkit-transition: height 0.1s ease-in-out;
+                animation: growDown 200ms ease-in-out forwards;
                 &.show {
-                    // height MUST be in px, em, rem unit, NOT percentage. So, I applied that using custom js.
-                    transition: height 0.1s ease-in-out;
-                    -webkit-transition: height 0.1s ease-in-out;
+                    height: fit-content;
+                    display: block;
+                    transform-origin: top;
                 }
             }
         }
