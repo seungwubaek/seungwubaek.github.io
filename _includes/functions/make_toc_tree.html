@@ -1,6 +1,7 @@
 {% assign toc_array = include.toc_array %}
 {% assign indent = include.indent %}
 
+ {% comment %} 재귀적 HTML 구현을 위해 특정 indentation level로 부터 시작할 수 있음 {% endcomment %}
 <ul indentation-level="{{ indent }}">
 {% for item in toc_array %}
 <li indentation-level="{{ indent }}"><div class="wholetoc__item" indentation-level="{{ indent }}"><a href="{{ item.url }}">{{ item.title }}</a></div>
