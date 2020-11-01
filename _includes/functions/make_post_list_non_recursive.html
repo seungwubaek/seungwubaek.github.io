@@ -1,0 +1,29 @@
+{% comment %} 현재 카테고리가 가진 직계 포스트들 post-order 변수로 정렬 후 나열하기 {% endcomment %}
+{% assign start_url_origin = include.start_url %}
+{% assign start_url = start_url_origin | downcase | replace: '%20', '-' %}
+
+{% assign children_posts = '' | split: '' %}
+
+{% for post in site.posts %}
+{% assign post_url = post.url | split: '/' %}
+{% comment %} 끝이 /로 끝나는 url은 size가 1 증가하므로 아래처럼 -1 해줘야함 {% endcomment %}
+{% assign post_url_size = post_url | size | minus: 1 %}
+{% assign post_url_size_sliced = post_url_size | minus: 1 %}
+
+{% assign post_url = post_url | slice: 1, post_url_size_sliced %}
+{% assign post_url = post_url | join: '/' %}
+{% assign post_url = '/' | append: post_url | append: '/' %}
+{% if post_url == start_url %}
+{% assign children_posts = children_posts | push: post %}
+{% endif %}
+{% endfor %}
+
+{% assign children_posts_size = children_posts | size %}
+{% if children_posts_size > 0 %}
+    {% assign children_posts = children_posts | sort: 'post-order' %}
+    <ul>
+    {% for post in children_posts %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor%}
+    </ul>
+{% endif %}
