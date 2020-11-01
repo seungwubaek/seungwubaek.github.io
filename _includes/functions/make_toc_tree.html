@@ -4,8 +4,9 @@
  {% comment %} 재귀적 HTML 구현을 위해 특정 indentation level로 부터 시작할 수 있음 {% endcomment %}
 <ul indentation-level="{{ indent }}">
 {% for item in toc_array %}
-<li indentation-level="{{ indent }}"><div class="wholetoc__item" indentation-level="{{ indent }}"><a href="{{ item.url }}">{{ item.title }}</a></div>
-{% include functions/make_post_list_non_recursive.html start_url=item.url %}
+{% assign item_url = item.url | downcase %}
+<li indentation-level="{{ indent }}"><div class="wholetoc__item" indentation-level="{{ indent }}"><a href="{{ item_url }}">{{ item.title }}</a></div>
+{% include functions/make_post_list_non_recursive.html start_url=item_url %}
 {% if item.children | size %}
 {% assign indent = indent | plus: 1 %}
 {% capture toc_item %}{% include functions/make_toc_tree.html toc_array=item.children indent=indent %}{% endcapture %}
