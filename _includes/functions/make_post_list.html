@@ -3,10 +3,9 @@
 
 {% assign children_posts = '' | split: '' %}
 
-<div>
 {% for post in site.posts %}
 {% assign post_url = post.url | split: '/' %}
-<!-- 끝이 /로 끝나는 url은 size가 1 증가하므로 아래처럼 -1 해줘야함 -->
+{% comment %} 끝이 /로 끝나는 url은 size가 1 증가하므로 아래처럼 -1 해줘야함 {% endcomment %}
 {% assign post_url_size = post_url | size | minus: 1 %}
 {% assign post_url_size_sliced = post_url_size | minus: 1 %}
 
@@ -17,36 +16,37 @@
 {% assign children_posts = children_posts | push: post %}
 {% endif %}
 {% endfor %}
-</div>
 
-{% assign children_posts = children_posts | sort: 'post-order' %}
-<ul>
-{% for post in children_posts %}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-{% endfor%}
-</ul>
+{% assign children_posts_size = children_posts | size %}
+{% if children_posts_size > 0 %}
+    {% assign children_posts = children_posts | sort: 'post-order' %}
+    <ul>
+    {% for post in children_posts %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor%}
+    </ul>
+{% endif %}
 
 {% assign s_url_orig_list = start_url_origin | split: '/' %}
 {% assign search_array = site.data.navigation.main-sidebar %}
 {% assign initial_search_array = search_array %}
 
 {% for s_url_item in s_url_orig_list %}
-    {% assign search_idx = 1 %}
     {% for search_item in search_array %}
         {% if search_item.title == s_url_item %}
             {% assign search_array = search_item.children %}
         {% endif %}
-        {% assign search_idx = search_idx | plus: 1 %}
     {% endfor %}
 {% endfor %}
 
-{% unless initial_search_array == search_array %}
-<div>
+{% assign search_array_size = search_array | size %}
+{% if search_array_size > 0 %}
+    {% unless initial_search_array == search_array %}
     <ul>
         {% for item in search_array %}
-        <h2>{{ item.title }}</h2>
+        <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
         {% include functions/make_post_list.html start_url=item.url %}
         {% endfor %}
     </ul>
-</div>
-{% endunless %}
+    {% endunless %}
+{% endif %}
