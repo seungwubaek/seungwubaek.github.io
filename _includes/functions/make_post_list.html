@@ -10,7 +10,7 @@
 
 {% for s_url_item in s_url_orig_list %}
     {% for search_item in search_array %}
-        {% assign search_item_title = search_item.title | replace: '%20', '-' | replace: ' ', '-'%}
+        {% assign search_item_title = search_item.title | downcase | replace: '%20', '-' | replace: ' ', '-'%}
         {% if search_item_title == s_url_item %}
             {% assign search_array = search_item.children %}
             {% assign children_depth =  children_depth | plus: 1 %}

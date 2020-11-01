@@ -32,7 +32,7 @@
         <li class="current">{{ page.title }}</li>
       {% else %}
         {% assign i = i | plus: 1 %}
-        {% assign crumb = crumb | downcase | replace: '%20', '-' %}
+        {% assign crumb = crumb | downcase | replace: '%20', '-' | replace: ' ', '-' %}
         {% assign prev_crumbs = prev_crumbs | push: crumb %}
         {% assign current_crumb_dir = prev_crumbs | join: '/' %}
         <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
