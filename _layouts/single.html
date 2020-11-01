@@ -26,7 +26,8 @@ layout: default
     <div class="page__inner-wrap">
       {% if page.url != "/" and site.breadcrumbs %}
         {% unless paginator %}
-          {% include breadcrumbs.html %}
+          {% comment %} {% include breadcrumbs.html %} {% endcomment %}
+          {% include my-breadcrumbs.html %}
         {% endunless %}
       {% endif %}
       {% unless page.header.overlay_color or page.header.overlay_image %}
