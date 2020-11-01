@@ -29,7 +29,7 @@ main-sidebar:
     - title: "Python"
       url: "/computing/python/"
   - title: "Deep Learning"
-    url: "/Deep-Learning/"
+    url: "/deep-learning/"
     children:
     - title: "CNN"
       url: "/deep-learning/cnn/"
