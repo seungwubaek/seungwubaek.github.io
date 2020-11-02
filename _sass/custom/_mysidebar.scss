@@ -3,31 +3,35 @@
     //      the browser scroll view's top coordinate to #anchor's top coordinate.
     //      but, top coordinate was occupied by topbar.
     // masthead position is fixed. So, padding from masthead__inner-wrap + height masthead__menu
-    // top: 1em + 2em;
-    top: 0;
+    top: calc(#{$mymasthead-height} + 0.5em);  // masthead height + a little additional space
 
     .nav__list {
-        & .nav__items li {
-            .nav__sub-title {
-                padding-bottom: 0;
-                margin-bottom: 0;
-                cursor: pointer;
+        margin-top: 0;
+        & .nav__items {
+            font-size: 1.5rem;
+            li {
+                .nav__sub-title {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    cursor: pointer;
 
-                .nav__sub-title-set {
-                    display: table;
-                    width: 100%;
-                    span {
-                        display: table-cell;
-                        vertical-align: middle;
-                        overflow-x: hidden;
-                    }
-                    .nav__sub-title-dropdownicon {
-                        text-align: right;
+                    .nav__sub-title-set {
+                        display: table;
+                        width: 100%;
+                        span {
+                            display: table-cell;
+                            vertical-align: middle;
+                            overflow-x: hidden;
+                        }
+                        .nav__sub-title-dropdownicon {
+                            text-align: right;
+                        }
                     }
                 }
             }
             & ul.nav__item-children {
                 text-align: right;
+                margin-bottom: 0;
                 overflow-y: hidden;
                 max-height: 0;
                 transition: all 200ms linear;
@@ -44,7 +48,7 @@
         // [Warning] fixed topbar covers content. If we use inner page link(move to #anchor),
         //      the browser scroll view's top coordinate to #anchor's top coordinate.
         //      but, top coordinate was occupied by topbar.
-        // position: fixed;  // change 'sticky' to 'fixed'.
+        position: fixed;  // change 'sticky' to 'fixed'.
         opacity: 1;  // Remove row opacity animation After/Before hovering
 
         &::-webkit-scrollbar {
@@ -63,6 +67,11 @@
 
         .nav__list {
             width: $mysidebar-width - $mysidebar-scroll-width;
+            & .nav__items {
+                @include breakpoint($large) {
+                    font-size: 1.25rem;
+                }
+            }
         }
 
         .author__profile-set {
