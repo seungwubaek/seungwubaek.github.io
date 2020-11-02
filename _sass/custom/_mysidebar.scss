@@ -26,25 +26,16 @@
                     }
                 }
             }
-
-            @keyframes growDown {
-                0% {
-                    transform: scaleY(0);
-                }
-                100% {
-                    transform: scaleY(1);
-                }
-            }
-
             & ul.nav__item-children {
                 text-align: right;
-                display: none;
                 overflow-y: hidden;
-                animation: growDown 200ms ease-in-out forwards;
-                &.show {
-                    height: fit-content;
-                    display: block;
-                    transform-origin: top;
+                max-height: 0;
+                transition: all 200ms linear;
+                @for $nitem from 0 through 20 {
+                    &.children-#{$nitem}.show {
+                        max-height: calc(2em * #{$nitem});
+                        transition: all 200ms linear;
+                    }
                 }
             }
         }

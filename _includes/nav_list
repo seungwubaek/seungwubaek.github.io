@@ -16,7 +16,7 @@
 
         {% if nav.children != null %}
         {% assign i = i | plus: 1 %}
-        <ul class="nav__item-children" id="sidebarMenuId_{{ i }}">
+        <ul class="nav__item-children children-{{ nav.children | size }}" id="sidebarMenuId_{{ i }}">
           {% for child in nav.children %}
             <li><a href="{{ child.url | relative_url }}"{% if child.url == page.url %} class="active"{% endif %}>{{ child.title }}</a></li>
           {% endfor %}
