@@ -1,6 +1,6 @@
 // Can write additional js for cumtom without editting origin script from mmistake.
 
-// Navigation Functions
+// Navigation Remocon Functions
 function navRemoconGoToTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -15,6 +15,16 @@ function navRemoconFold() {
 function navRemoconGoToUrl(targetUrl) {
     var win = window.open(targetUrl, '_blank');
     win.focus();
+};
+
+// TOC Functions
+function tocFoldFolder(call_obj) {
+    $(call_obj).toggleClass('fa-folder');
+    $(call_obj).toggleClass('fa-folder-open');
+    $(call_obj).parent().next().toggleClass('fold');
+    // $(call_obj).parent().siblings().each(function() {
+    //     if($(this).hasClass('wholetoc__list')) { $(this).toggleClass('fold'); }
+    // });
 };
 
 $(document).ready(function() {

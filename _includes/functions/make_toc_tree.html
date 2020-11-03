@@ -1,17 +1,29 @@
 {% assign toc_array = include.toc_array %}
 {% assign indent = include.indent %}
 
- {% comment %} 재귀적 HTML 구현을 위해 특정 indentation level로 부터 시작할 수 있음 {% endcomment %}
+{% comment %} 재귀적 HTML 구현을 위해 특정 indentation level로 부터 시작할 수 있음 {% endcomment %}
+{% assign default_fold_indent = 2 %}
 <ul indentation-level="{{ indent }}">
 {% for item in toc_array %}
 {% assign item_url = item.url | downcase %}
-<li indentation-level="{{ indent }}"><div class="wholetoc__item" indentation-level="{{ indent }}"><a href="{{ item_url }}">{{ item.title }}</a></div>
+{% if indent <= default_fold_indent %}
+    {% assign class_fold_folder = "fas fa-folder-open fa-fw" %}
+    {% assign class_fold_list = "" %}
+{% else %}
+    {% assign class_fold_folder = "fas fa-folder fa-fw" %}
+    {% assign class_fold_list = "fold" %}
+{% endif %}
+{% assign item_children_size = item.children | size %}
+<li indentation-level="{{ indent }}">
+<div class="wholetoc__item" indentation-level="{{ indent }}"><i class="{{ class_fold_folder }} wholetoc__item-icon" onclick="tocFoldFolder(this)"></i><a href="{{ item_url }}">{{ item.title }}</a></div>
+<div class="wholetoc__list {{ class_fold_list }}" indentation-level="{{ indent }}">
 {% include functions/make_post_list_non_recursive.html start_url=item_url %}
-{% if item.children | size %}
+{% if item_children_size > 0 %}
 {% assign indent = indent | plus: 1 %}
 {% capture toc_item %}{% include functions/make_toc_tree.html toc_array=item.children indent=indent %}{% endcapture %}
 {% assign indent = indent | minus: 1 %}
 {{ toc_item }}
+</div>
 </li>
 {% endif %}
 {% endfor %}
