@@ -1,10 +1,12 @@
 <div id='nav-remocon'>
     <div class='nav-remocon-wrapper'>
-        <div id='nav-fold-button' onclick="navRemoconFold()"><div class='nav-arrow-up'></div></div>
+        <div id='nav-fold-upper-button' onclick="navRemoconFold(this)"><div class='nav-arrow-up'></div></div>
         <ul class='nav-buttons'>
-            <li class='nav-btn-set' onclick="navRemoconGoToTop()"><i class='fas fa-angle-up'></i><span class="nav-btn-title">Top</span></li>
-            <li class='nav-btn-set' onclick="javascript: location.href= '/';"><i class='fas fa-home'></i><span class="nav-btn-title">Home</span></li>
-            <li class='nav-btn-set nav-btn-set__foldable nav-btn-set__fold' onclick="navRemoconGoToUrl('{{ site.repository }}')"><i class='fas fa-pencil-alt'></i><span class="nav-btn-title">제안</span></li>
+            <li class='nav-btn-set' onclick="navRemoconGoToTop()"><i class='fas fa-angle-up fa-fw'></i><span class="nav-btn-title">Top</span></li>
+            <li class='nav-btn-set' onclick="navRemoconGoToBottom()"><i class='fas fa-angle-down fa-fw'></i><span class="nav-btn-title">Bottom</span></li>
+            <li class='nav-btn-set nav-btn-set__foldable nav-btn-set__fold' onclick="javascript: location.href= '/';"><i class='fas fa-home fa-fw'></i><span class="nav-btn-title">Home</span></li>
+            <li class='nav-btn-set nav-btn-set__foldable nav-btn-set__fold' onclick="navRemoconGoToUrl('{{ site.repository }}')"><i class='fas fa-pencil-alt fa-fw'></i><span class="nav-btn-title">제안</span></li>
         </ul>
+        <div id='nav-fold-lower-button' onclick="navRemoconFold(this)"><div class='nav-arrow-down'></div></div>
     </div>
 </div>

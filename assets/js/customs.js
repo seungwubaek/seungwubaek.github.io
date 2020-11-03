@@ -1,17 +1,34 @@
 // Can write additional js for cumtom without editting origin script from mmistake.
 
 // Navigation Remocon Functions
+function navRemoconFold(call_obj) {
+    if(call_obj.id == 'nav-fold-upper-button') {
+        if($('#nav-remocon').hasClass('hide')) {
+            $('#nav-remocon').toggleClass('hide');
+        }
+        else {
+            $('.nav-btn-set__foldable').toggleClass('nav-btn-set__fold');
+            $($('#nav-fold-upper-button').children()[0]).toggleClass('nav-arrow-up');
+            $($('#nav-fold-upper-button').children()[0]).toggleClass('nav-arrow-down');
+        }
+    }
+    else if(call_obj.id == 'nav-fold-lower-button') {
+        $('#nav-remocon').toggleClass('hide');
+        if($($('#nav-fold-upper-button').children()[0]).hasClass('nav-arrow-down')) {
+            $('.nav-btn-set__foldable').toggleClass('nav-btn-set__fold');
+            $($('#nav-fold-upper-button').children()[0]).toggleClass('nav-arrow-up');
+            $($('#nav-fold-upper-button').children()[0]).toggleClass('nav-arrow-down');
+        }
+    }
+};
 function navRemoconGoToTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 };
-
-function navRemoconFold() {
-    $('.nav-btn-set__foldable').toggleClass('nav-btn-set__fold');
-    $($('#nav-fold-button').children()[0]).toggleClass('nav-arrow-up');
-    $($('#nav-fold-button').children()[0]).toggleClass('nav-arrow-down');
+function navRemoconGoToBottom() {
+    document.body.scrollTop = $(document).height();
+    document.documentElement.scrollTop = $(document).height();
 };
-
 function navRemoconGoToUrl(targetUrl) {
     var win = window.open(targetUrl, '_blank');
     win.focus();
