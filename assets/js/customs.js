@@ -1,18 +1,18 @@
 // Can write additional js for cumtom without editting origin script from mmistake.
 
 // Navigation Functions
-function goToTop() {
+function navRemoconGoToTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 };
 
-function foldOnOff() {
+function navRemoconFold() {
     $('.nav-btn-set__foldable').toggleClass('nav-btn-set__fold');
     $($('#nav-fold-button').children()[0]).toggleClass('nav-arrow-up');
     $($('#nav-fold-button').children()[0]).toggleClass('nav-arrow-down');
 };
 
-function goToUrl(targetUrl) {
+function navRemoconGoToUrl(targetUrl) {
     var win = window.open(targetUrl, '_blank');
     win.focus();
 };
