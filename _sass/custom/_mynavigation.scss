@@ -33,7 +33,7 @@
 
 #nav-remocon {
     position: fixed;
-    margin: 0 1em 1em 0;
+    margin: 0 1em 0 0;
     right: 0;
     bottom: 0;
     z-index: 99;
@@ -41,21 +41,13 @@
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
     &.hide {
-        // (arrow-height + margin-top + padding-top + border-width-top + border-width-top)
-        top: calc(100vh - (#{$nav-remocon-arrow-height} + 2px + 1px + 2px + 2px));
-        margin: 0 1em 0 0;
         -webkit-transition: all 200ms linear;
         transition: all 200ms linear;
-    }
-    .nav-remocon-wrapper {
-        position: relative;
     }
     #nav-fold-upper-button {
         display: flex;
         justify-content: center;
-        border-color: $nav-remocon-border-color;
-        border-style: solid;
-        border-width: 2px 2px 0 2px;
+        border: 2px solid $nav-remocon-border-color;
         border-radius: 4px 4px 0 0;
         background-color: $nav-remocon-background-color;
         cursor: pointer;
@@ -63,45 +55,58 @@
     #nav-fold-lower-button {
         display: flex;
         justify-content: center;
-        border-color: $nav-remocon-border-color;
-        border-style: solid;
-        border-width: 0 2px 2px 2px;
+        border: 2px solid $nav-remocon-border-color;
         border-radius: 0 0 4px 4px;
         background-color: $nav-remocon-background-color;
         cursor: pointer;
     }
-    .nav-buttons {
-        min-width: $nav-remocon-min-width;
-        margin: 0;
-        padding: 4px;
-        border: 2px solid $nav-remocon-border-color;
-        background-color: $nav-remocon-background-color;
-        .nav-btn-set {
-            list-style-type: none;
+    #nav-slider {
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+        &.fold {
+            #nav-buttons {
+                height: calc(2 * #{$nav-remocon-btn-set-height});  // 2 nav-btn-set height
+            }
+        }
+        #nav-buttons {
+            min-width: $nav-remocon-min-width;
             margin: 0;
-            padding: 0;
-            cursor: pointer;
-            vertical-align: middle;
-            i, span {
-                vertical-align: middle;
-            }
-            i {
-                text-align: center;
-                padding-right: 2px;
-            }
-            span {
-                text-align: left;
-            }
-
-            .nav-btn-title {
-                font-size: 0.8em;
-                @include breakpoint($large) {
-                    font-size: 0.6em;  // be smaller if large screen
+            padding: 0 4px 0 4px;
+            border-width: 0 2px 0 2px;
+            border-style: solid;
+            border-color: $nav-remocon-border-color;
+            background-color: $nav-remocon-background-color;
+            overflow-y: hidden;
+            -webkit-transition: all 200ms linear;
+            transition: all 200ms linear;
+            .nav-btn-set {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                height: $nav-remocon-btn-set-height;
+                border-bottom: 1px solid $nav-remocon-border-color;
+                &:last-child {
+                    border-bottom: 0;
                 }
-            }
-
-            &.nav-btn-set__fold {
-                display: none;
+                cursor: pointer;
+                i {
+                    text-align: center;
+                    padding-right: 2px;
+                }
+                .nav-btn-title-wrapper {
+                    display: flex;
+                    height: 100%;
+                    align-items: center;
+                    & span {
+                        text-align: left;
+                    }
+                }
+                .nav-btn-title {
+                    font-size: 0.8em;
+                    @include breakpoint($large) {
+                        font-size: 0.6em;  // be smaller if large screen
+                    }
+                }
             }
         }
     }

@@ -1,26 +1,57 @@
-// Can write additional js for cumtom without editting origin script from mmistake.
+// Can write additional js for custom without editting origin script from mmistake.
 
 // Navigation Remocon Functions
 function navRemoconFold(call_obj) {
+    var navBtnSetHeight = $('.nav-btn-set').css('height').split('px')[0];
+    var foldNavBtnHeight = 2*navBtnSetHeight+'px';
+    // when upper button pressed,
     if(call_obj.id == 'nav-fold-upper-button') {
+        // if remocon is hidden, show remocon
         if($('#nav-remocon').hasClass('hide')) {
-            $('#nav-remocon').toggleClass('hide');
+            $('#nav-remocon').css('bottom', 0);
+            if(!$('#nav-slider').hasClass('fold')) {
+                $('#nav-fold-arraw-upper').removeClass('nav-arrow-up');
+                $('#nav-fold-arraw-upper').addClass('nav-arrow-down');
+            }
+            $('#nav-remocon').removeClass('hide');
+        } else {  // if remocon is shown,
+            var slider = $('#nav-slider');
+            var btns = $('#nav-buttons');
+            if(slider.hasClass('fold')){  // unfold remocon
+                adjustRemoconStyle(true)
+                // btns.css('height', btns.children().length+'em');
+                btns.css('height', btns.children().length*navBtnSetHeight+'px');
+                slider.css('bottom', 0);
+                $('#nav-fold-arraw-upper').removeClass('nav-arrow-up');
+                $('#nav-fold-arraw-upper').addClass('nav-arrow-down');
+                slider.removeClass('fold');
+            } else {  // fold remocon
+                adjustRemoconStyle(true)
+                btns.css('height', foldNavBtnHeight);
+                slider.css('bottom', 'calc(-('+slider.outerHeight()+'px - '+foldNavBtnHeight+' - '+$('#nav-fold-upper-button').outerHeight()+'px))');
+                $('#nav-fold-arraw-upper').addClass('nav-arrow-up');
+                $('#nav-fold-arraw-upper').removeClass('nav-arrow-down');
+                slider.addClass('fold');
+            }
         }
-        else {
-            $('.nav-btn-set__foldable').toggleClass('nav-btn-set__fold');
-            $($('#nav-fold-upper-button').children()[0]).toggleClass('nav-arrow-up');
-            $($('#nav-fold-upper-button').children()[0]).toggleClass('nav-arrow-down');
-        }
+    } else if(call_obj.id == 'nav-fold-lower-button') {  // when lower button is pressed, hide remocon
+        var remocon = $('#nav-remocon');
+        remocon.css('bottom', -(remocon.outerHeight() - $('#nav-fold-upper-button').outerHeight()));
+        $('#nav-fold-arraw-upper').addClass('nav-arrow-up');
+        $('#nav-fold-arraw-upper').removeClass('nav-arrow-down');
+        remocon.addClass('hide');
     }
-    else if(call_obj.id == 'nav-fold-lower-button') {
-        $('#nav-remocon').toggleClass('hide');
-        if($($('#nav-fold-upper-button').children()[0]).hasClass('nav-arrow-down')) {
-            $('.nav-btn-set__foldable').toggleClass('nav-btn-set__fold');
-            $($('#nav-fold-upper-button').children()[0]).toggleClass('nav-arrow-up');
-            $($('#nav-fold-upper-button').children()[0]).toggleClass('nav-arrow-down');
-        }
+}
+function adjustRemoconStyle(reverse){
+    reverse = (reverse >= true);  // it makes number, bigger than 1, to 'true'
+    var decision = $('#nav-slider').hasClass('fold');
+    decision = decision^reverse;
+    if(decision) {
+        $($('#nav-buttons').children()[1]).css('border-bottom', 0);
+    } else {
+        $($('#nav-buttons').children()[1]).css('border-bottom', '');
     }
-};
+}
 function navRemoconGoToTop() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -39,12 +70,13 @@ function tocFoldFolder(call_obj) {
     $(call_obj).toggleClass('fa-folder');
     $(call_obj).toggleClass('fa-folder-open');
     $(call_obj).parent().next().toggleClass('fold');
-    // $(call_obj).parent().siblings().each(function() {
-    //     if($(this).hasClass('wholetoc__list')) { $(this).toggleClass('fold'); }
-    // });
 };
 
 $(document).ready(function() {
+    // [0] Run some codes immediately after complete page load
+    // It may need to style some html..
+    adjustRemoconStyle();
+
     // [1] Sidebar Toggle to (un)fold Submenu
     $('.nav__sub-title').click(function(){
         subtitleSet = $(this.children[0]).children();
