@@ -1376,7 +1376,7 @@ pa: &DEFAULT_PA
   results_found              : "ਨਤੀਜਾ ਮਿਲਿਆ/ਮਿਲੇ"
   back_to_top                : "ਵਾਪਸ ਚੋਟੀ 'ਤੇ ਜਾਓ"
 pa-IN:
-  <<: *DEFAULT_PA  
+  <<: *DEFAULT_PA
 
 # Persian (Farsi)
 # --------------
@@ -1795,5 +1795,5 @@ my-MM:
   <<: *DEFAULT_MY
 
 # Another locale
->>>>>>> 599847bf... Persian Translation of UI Elements (#2004)
+# --------------
 #
