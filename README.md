@@ -10,4 +10,4 @@ The blog contains various technical articles like Front-End building current blo
 
 ---
 
-### Blog URL: [seungwubaek.github.io](seungwubaek.github.io)
+### Blog URL: [seungwubaek.github.io](https://seungwubaek.github.io/)
