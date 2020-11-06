@@ -74,6 +74,8 @@ main-sidebar:
       url: "/tools/faiss/"
     - title: "AIF360"
       url: "/tools/aif360/"
+    - title: "Git"
+      url: "/tools/git/"
   - title: "ETC"
     url: "/etc/"
     children:
