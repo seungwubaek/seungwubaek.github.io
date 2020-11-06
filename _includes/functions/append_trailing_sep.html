@@ -1,0 +1,10 @@
+{% assign target = include.target %}
+{% assign sep = include.sep %}
+{% assign slice_from = target.size | minus: 1 %}
+{% assign slice_to = target.size %}
+{% assign last_char = target | slice: slice_from, slice_to %}
+{% unless last_char == sep %}
+{% assign target = target | append: sep %}
+{% endunless %}
+{% assign target = target | strip %}
+{{ target }}

@@ -1,11 +1,17 @@
 {% comment %} 현재 카테고리가 가진 직계 포스트들 post-order 변수로 정렬 후 나열하기 {% endcomment %}
 {% assign start_url_origin = include.start_url %}
 {% assign start_url = start_url_origin | downcase | replace: '%20', '-' %}
+{% capture start_url %}{% include functions/append_trailing_sep.html target=start_url sep='/' %}{% endcapture %}
+{% comment %}
+I will use - (dash) for stripping whitespace, but it's not working ;( I dont know why.. So, i use filter 'strip' instead.
+{% endcomment %}
+{% assign start_url = start_url | strip %}
 
 {% assign children_posts = '' | split: '' %}
 
 {% for post in site.posts %}
-{% assign post_url = post.url | split: '/' %}
+{% capture post_url %}{% include functions/append_trailing_sep.html target=post.url sep='/' %}{% endcapture %}
+{% assign post_url = post_url | split: '/' %}
 {% comment %} 끝이 /로 끝나는 url은 size가 1 증가하므로 아래처럼 -1 해줘야함 {% endcomment %}
 {% assign post_url_size = post_url | size | minus: 1 %}
 {% assign post_url_size_sliced = post_url_size | minus: 1 %}
