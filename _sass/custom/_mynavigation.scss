@@ -40,6 +40,10 @@
     line-height: 1;
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
     &.hide {
         -webkit-transition: all 200ms linear;
         transition: all 200ms linear;
