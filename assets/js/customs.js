@@ -1,44 +1,56 @@
 // Can write additional js for custom without editting origin script from mmistake.
 
 // Navigation Remocon Functions
+var navBtnSetHeight = $('.nav-btn-set').css('height').split('px')[0];
+var foldNavBtnHeight = 2*navBtnSetHeight+'px';
+var navRemoconSlider = $('#nav-slider');
+var navRemoconBtns = $('#nav-buttons');
+function navRemoconFoldItem() {
+    adjustNavRemoconStyle(true);
+    navRemoconBtns.css('height', foldNavBtnHeight);
+    navRemoconSlider.css('bottom', 'calc(-('+navRemoconSlider.outerHeight()+'px - '+foldNavBtnHeight+' - '+$('#nav-fold-upper-button').outerHeight()+'px))');
+    $('#nav-fold-arraw-upper').addClass('nav-arrow-up');
+    $('#nav-fold-arraw-upper').removeClass('nav-arrow-down');
+    navRemoconSlider.addClass('fold');
+}
+function navRemoconUnfoldItem() {
+    navRemoconBtns.css('height', navRemoconBtns.children().length*navBtnSetHeight+'px');
+    navRemoconSlider.css('bottom', 0);
+    adjustNavRemoconStyle(true);
+    $('#nav-fold-arraw-upper').removeClass('nav-arrow-up');
+    $('#nav-fold-arraw-upper').addClass('nav-arrow-down');
+    navRemoconSlider.removeClass('fold');
+}
+function navRemoconHide() {
+    var remocon = $('#nav-remocon');
+    remocon.css('bottom', -(remocon.outerHeight() - $('#nav-fold-upper-button').outerHeight()));
+    $('#nav-fold-arraw-upper').addClass('nav-arrow-up');
+    $('#nav-fold-arraw-upper').removeClass('nav-arrow-down');
+    remocon.addClass('hide');
+}
+function navRemoconShow() {
+    $('#nav-remocon').css('bottom', 0);
+    if(!$('#nav-slider').hasClass('fold')) {
+        $('#nav-fold-arraw-upper').removeClass('nav-arrow-up');
+        $('#nav-fold-arraw-upper').addClass('nav-arrow-down');
+    }
+    $('#nav-remocon').removeClass('hide');
+}
 function navRemoconFold(call_obj) {
-    var navBtnSetHeight = $('.nav-btn-set').css('height').split('px')[0];
-    var foldNavBtnHeight = 2*navBtnSetHeight+'px';
     // when upper button pressed,
     if(call_obj.id == 'nav-fold-upper-button') {
         // if remocon is hidden, show remocon
         if($('#nav-remocon').hasClass('hide')) {
-            $('#nav-remocon').css('bottom', 0);
-            if(!$('#nav-slider').hasClass('fold')) {
-                $('#nav-fold-arraw-upper').removeClass('nav-arrow-up');
-                $('#nav-fold-arraw-upper').addClass('nav-arrow-down');
-            }
-            $('#nav-remocon').removeClass('hide');
+            navRemoconShow();
         } else {  // if remocon is shown,
-            var slider = $('#nav-slider');
-            var btns = $('#nav-buttons');
-            if(slider.hasClass('fold')){  // unfold remocon
-                btns.css('height', btns.children().length*navBtnSetHeight+'px');
-                slider.css('bottom', 0);
-                adjustNavRemoconStyle(true);
-                $('#nav-fold-arraw-upper').removeClass('nav-arrow-up');
-                $('#nav-fold-arraw-upper').addClass('nav-arrow-down');
-                slider.removeClass('fold');
+            if(navRemoconSlider.hasClass('fold')){  // unfold remocon
+                navRemoconUnfoldItem();
             } else {  // fold remocon
-                adjustNavRemoconStyle(true);
-                btns.css('height', foldNavBtnHeight);
-                slider.css('bottom', 'calc(-('+slider.outerHeight()+'px - '+foldNavBtnHeight+' - '+$('#nav-fold-upper-button').outerHeight()+'px))');
-                $('#nav-fold-arraw-upper').addClass('nav-arrow-up');
-                $('#nav-fold-arraw-upper').removeClass('nav-arrow-down');
-                slider.addClass('fold');
+                navRemoconFoldItem();
             }
         }
     } else if(call_obj.id == 'nav-fold-lower-button') {  // when lower button is pressed, hide remocon
-        var remocon = $('#nav-remocon');
-        remocon.css('bottom', -(remocon.outerHeight() - $('#nav-fold-upper-button').outerHeight()));
-        $('#nav-fold-arraw-upper').addClass('nav-arrow-up');
-        $('#nav-fold-arraw-upper').removeClass('nav-arrow-down');
-        remocon.addClass('hide');
+        navRemoconHide();
     }
 }
 function adjustNavRemoconStyle(reverse){
