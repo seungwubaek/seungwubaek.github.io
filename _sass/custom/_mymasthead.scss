@@ -10,7 +10,7 @@
     border: 0;
     background-color: $footer-background-color;
     .masthead__inner-wrap {
-        padding: 0.5em 1em 0 1em;
+        padding: .8em 1em 0em 1em;
         .masthead__menu {
             .greedy-nav {
                 background-color: inherit;
@@ -34,7 +34,7 @@
     }
     .site-title {
         color: $mymasthead-text-color;
-        margin-top: 0.3em;
+        font-size: 1.3rem;
 
         &:hover {  // prevent to change text color to black when a:hover in contrast skin.
             color: $mymasthead-text-color;
@@ -66,6 +66,7 @@
 
     .visible-links {
         overflow: visible; //dropdown menu will appeared on the <nav> tag
+        font-size: 1.1rem;
 
         a {  // it let be hard to understand for any other tag's padding or margin.
             margin: 0;

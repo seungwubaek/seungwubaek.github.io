@@ -69,11 +69,6 @@
 
         .nav__list {
             width: $mysidebar-width - $mysidebar-scroll-width;
-            & .nav__items {
-                @include breakpoint($large) {
-                    font-size: 1.25rem;
-                }
-            }
         }
 
         .author__profile-set {
