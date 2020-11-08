@@ -119,11 +119,13 @@
 
     & .author__urls-wrapper {
         cursor: none;
-
+        ul.social-icons {
+            margin-top: 10px;
+        }
         .social-icons {
             li {
                 display: inline-block;
-                margin-bottom: 0;
+                margin: 4px 0 0 0;
                 a {
                     padding: 0;
                     margin-bottom: 0;
@@ -135,6 +137,7 @@
             }
             li[itemprop="homeLocation"] {
                 display: list-item;
+                padding-top: 0;
                 i {
                     font-size: 1.2em;
                 }
