@@ -88,12 +88,20 @@
             }
 
             .author__urls {
-                &.social-icons li span {
-                    font-size: small;
-                }
-
-                a {
-                    padding: 0;
+                &.social-icons {
+                    a, span {
+                        padding: 0;
+                    }
+                    li {
+                       a {
+                           font-size: 1.5em;
+                       }
+                    }
+                    li[itemprop="homeLocation"] {
+                        i {
+                            font-size: 1.2em;
+                        }
+                    }
                 }
             }
         }
@@ -116,12 +124,20 @@
             li {
                 display: inline-block;
                 margin-bottom: 0;
+                a {
+                    padding: 0;
+                    margin-bottom: 0;
+                    font-size: 1.5em;
+                }
+                span {
+                    padding: 0 5px 0 0;
+                }
             }
             li[itemprop="homeLocation"] {
                 display: list-item;
-            }
-            a {
-                margin-bottom: 0;
+                i {
+                    font-size: 1.2em;
+                }
             }
         }
     }
