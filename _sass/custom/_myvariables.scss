@@ -5,7 +5,10 @@ $nav-remocon-border-color: $border-color;
 $nav-remocon-arrow-height: 7px;
 $nav-remocon-arrow-width: 50px;
 $nav-remocon-arrow-color: $base02;
-$nav-remocon-btn-set-height: 1.2em;
+$nav-remocon-btn-set-font-size: 1em;
+$nav-remocon-btn-set-padding-top: .4em;
+$nav-remocon-btn-set-padding-bottom: .4em;
+$nav-remocon-btn-set-height: calc(#{$nav-remocon-btn-set-font-size} + #{$nav-remocon-btn-set-padding-top} + #{$nav-remocon-btn-set-padding-bottom});
 
 // masthead
 $mymasthead-text-color: white;  // text color is white, basically.

@@ -50,6 +50,8 @@
         border: 2px solid $nav-remocon-border-color;
         border-radius: 4px 4px 0 0;
         background-color: $nav-remocon-background-color;
+        height: 1em;
+        align-items: flex-end;
         cursor: pointer;
     }
     #nav-fold-lower-button {
@@ -58,6 +60,8 @@
         border: 2px solid $nav-remocon-border-color;
         border-radius: 0 0 4px 4px;
         background-color: $nav-remocon-background-color;
+        height: 1em;
+        align-items: flex-start;
         cursor: pointer;
     }
     #nav-slider {
@@ -99,12 +103,6 @@
                     align-items: center;
                     & span {
                         text-align: left;
-                    }
-                }
-                .nav-btn-title {
-                    font-size: 0.8em;
-                    @include breakpoint($large) {
-                        font-size: 0.6em;  // be smaller if large screen
                     }
                 }
             }
