@@ -14,15 +14,3 @@ $mymasthead-height: 2.5em;
 // sidebar
 $mysidebar-width: 216px;  // sidebar width + scroll bar space
 $mysidebar-scroll-width: 16px;
-
-// post
-.page {
-  @include breakpoint($large) {
-    font-size: $type-size-6;
-  }
-}
-.archive {
-    @include breakpoint($large) {
-      font-size: $type-size-6;
-    }
-}
