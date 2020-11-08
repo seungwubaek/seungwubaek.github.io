@@ -75,8 +75,16 @@
             width: $mysidebar-width - $mysidebar-scroll-width;
             margin-bottom: 0;
 
-            .author__bio {
-                font-size: medium;
+            .author__avatar {
+                width: auto;
+                height: auto;
+            }
+
+            .author__content {
+                padding-right: 0;
+                .author__bio {
+                    font-size: medium;
+                }
             }
 
             .author__urls {
@@ -92,6 +100,15 @@
     }
 
     // When sidebar is not sticky
+    .author__avatar {
+        width: 70px;
+        height: 70px;
+    }
+
+    .author__content {
+        padding-right: 15px;
+    }
+
     & .author__urls-wrapper {
         cursor: none;
 
