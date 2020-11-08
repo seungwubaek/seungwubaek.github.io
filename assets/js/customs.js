@@ -18,15 +18,14 @@ function navRemoconFold(call_obj) {
             var slider = $('#nav-slider');
             var btns = $('#nav-buttons');
             if(slider.hasClass('fold')){  // unfold remocon
-                adjustRemoconStyle(true)
-                // btns.css('height', btns.children().length+'em');
                 btns.css('height', btns.children().length*navBtnSetHeight+'px');
                 slider.css('bottom', 0);
+                adjustNavRemoconStyle(true);
                 $('#nav-fold-arraw-upper').removeClass('nav-arrow-up');
                 $('#nav-fold-arraw-upper').addClass('nav-arrow-down');
                 slider.removeClass('fold');
             } else {  // fold remocon
-                adjustRemoconStyle(true)
+                adjustNavRemoconStyle(true);
                 btns.css('height', foldNavBtnHeight);
                 slider.css('bottom', 'calc(-('+slider.outerHeight()+'px - '+foldNavBtnHeight+' - '+$('#nav-fold-upper-button').outerHeight()+'px))');
                 $('#nav-fold-arraw-upper').addClass('nav-arrow-up');
@@ -42,7 +41,7 @@ function navRemoconFold(call_obj) {
         remocon.addClass('hide');
     }
 }
-function adjustRemoconStyle(reverse){
+function adjustNavRemoconStyle(reverse){
     reverse = (reverse >= true);  // it makes number, bigger than 1, to 'true'
     var decision = $('#nav-slider').hasClass('fold');
     decision = decision^reverse;
@@ -75,7 +74,7 @@ function tocFoldFolder(call_obj) {
 $(document).ready(function() {
     // [0] Run some codes immediately after complete page load
     // It may need to style some html..
-    adjustRemoconStyle();
+    adjustNavRemoconStyle();
 
     // [1] Sidebar Toggle to (un)fold Submenu
     $('.nav__sub-title').click(function(){
