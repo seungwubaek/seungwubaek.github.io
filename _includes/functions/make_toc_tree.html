@@ -3,7 +3,7 @@
 
 {% comment %} 재귀적 HTML 구현을 위해 특정 indentation level로 부터 시작할 수 있음 {% endcomment %}
 {% assign default_fold_indent = 2 %}
-<ul indentation-level="{{ indent }}">
+<ul class="wholetoc__category-list" indentation-level="{{ indent }}">
 {% for item in toc_array %}
 {% assign item_url = item.url | downcase %}
 {% if indent <= default_fold_indent %}
@@ -14,9 +14,9 @@
     {% assign class_fold_list = "fold" %}
 {% endif %}
 {% assign item_children_size = item.children | size %}
-<li indentation-level="{{ indent }}">
-<div class="wholetoc__item" indentation-level="{{ indent }}"><i class="{{ class_fold_folder }} wholetoc__item-icon" onclick="tocFoldFolder(this)"></i><a href="{{ item_url }}">{{ item.title }}</a></div>
-<div class="wholetoc__list {{ class_fold_list }}" indentation-level="{{ indent }}">
+<li class="wholetoc__category-item" indentation-level="{{ indent }}">
+<div class="wholetoc__category-title" indentation-level="{{ indent }}"><i class="{{ class_fold_folder }} wholetoc__category-title-icon" onclick="tocFoldFolder(this)"></i><a href="{{ item_url }}">{{ item.title }}</a></div>
+<div class="wholetoc__category-inner {{ class_fold_list }}" indentation-level="{{ indent }}">
 {% include functions/make_post_list_non_recursive.html start_url=item_url %}
 {% if item_children_size > 0 %}
 {% assign indent = indent | plus: 1 %}

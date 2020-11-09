@@ -3,7 +3,7 @@
         color: $text-color;
         text-decoration-line: none;
     }
-    .wholetoc__list {
+    .wholetoc__category-inner {
         overflow-y: hidden;
         height: auto;
         &.fold {
@@ -21,7 +21,7 @@
         border-top: 4px inset $border-color;
         border-bottom: 4px inset $border-color;
     }
-    .wholetoc__item {
+    .wholetoc__category-title {
         &[indentation-level="0"] {
             border-bottom: 1px solid $border-color;
             a {
@@ -31,7 +31,7 @@
                 font-size: $h-size-2;
             }
         }
-        & .wholetoc__item-icon {
+        & .wholetoc__category-title-icon {
             display: inline-block;
             padding-right: 1.5em;
             font-size: .8em;
