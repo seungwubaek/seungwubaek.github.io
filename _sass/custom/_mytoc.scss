@@ -1,18 +1,4 @@
 #wholetoc {
-    a {
-        color: $text-color;
-        text-decoration-line: none;
-    }
-    .wholetoc__category-inner {
-        overflow-y: hidden;
-        height: auto;
-        &.fold {
-            height: 0;
-        }
-    }
-    li {
-        list-style: none;
-    }
     #wholetoc__title {
         width: fit-content;
         margin-left: auto;
@@ -20,6 +6,13 @@
         font-size: 1.7em;
         border-top: 4px inset $border-color;
         border-bottom: 4px inset $border-color;
+    }
+    a {
+        color: $text-color;
+        text-decoration-line: none;
+    }
+    li {
+        list-style: none;
     }
     .wholetoc__category-title {
         &[indentation-level="0"] {
@@ -36,6 +29,13 @@
             padding-right: 1.5em;
             font-size: .8em;
             cursor: pointer;
+        }
+    }
+    .wholetoc__category-inner {
+        overflow-y: hidden;
+        height: auto;
+        &.fold {
+            height: 0;
         }
     }
 }
