@@ -3,6 +3,7 @@ layout: archive-toc
 title: "Table Of Contents"
 ---
 {% assign indent = 0 %}
-{% capture toc %}{% include functions/make_toc_tree.html toc_array=site.data.navigation.main-sidebar indent=indent %}{% endcapture %%}
-
+<ul class="wholetoc__category-list" indentation-level="0">
+{% capture toc %}{% include functions/make_toc_tree_v2.html toc_array=site.data.navigation.main-sidebar indent=indent %}{% endcapture %%}
 {{ toc }}
+</ul>

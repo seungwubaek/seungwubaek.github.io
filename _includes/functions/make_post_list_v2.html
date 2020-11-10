@@ -1,0 +1,42 @@
+{% comment %} 현재 카테고리가 가진 직계 포스트들 post-order 변수로 정렬 후 나열하기 {% endcomment %}
+{% assign item = include.item %}
+{% assign start_url_origin = include.start_url %}
+{% assign start_url = start_url_origin | downcase | replace: '%20', '-' %}
+{% capture start_url %}{% include functions/append_trailing_sep.html target=start_url sep='/' %}{% endcapture %}
+{% comment %}
+I will use - (dash) for stripping whitespace, but it's not working ;( I dont know why.. So, i use filter 'strip' instead.
+{% endcomment %}
+{% assign start_url = start_url | strip %}
+{% assign indent = include.indent %}
+
+{% assign children_posts = '' | split: '' %}
+
+{% for post in site.posts %}
+{% capture post_url %}{% include functions/append_trailing_sep.html target=post.url sep='/' %}{% endcapture %}
+{% assign post_url = post_url | split: '/' %}
+{% comment %} 끝이 /로 끝나는 url은 size가 1 증가하므로 아래처럼 -1 해줘야함 {% endcomment %}
+{% assign post_url_size = post_url | size | minus: 1 %}
+{% assign post_url_size_sliced = post_url_size | minus: 1 %}
+
+{% assign post_url = post_url | slice: 1, post_url_size_sliced %}
+{% assign post_url = post_url | join: '/' %}
+{% assign post_url = '/' | append: post_url | append: '/' %}
+{% if post_url == start_url %}
+{% assign children_posts = children_posts | push: post %}
+{% endif %}
+{% endfor %}
+
+{% assign children_posts_size = children_posts | size %}
+{% assign children_posts = children_posts | sort: 'post-order' %}
+<ul class="wholetoc__inner-list">
+{% for post in children_posts %}
+    <li class="wholetoc__post-item"><div><a href="{{ post.url }}">{{ post.title }}</a></div></li>
+{% endfor%}
+{% assign item_children_size = item.children | size %}
+{% if item_children_size > 0 %}
+{% assign indent = indent | plus: 1 %}
+{% capture toc_item %}{% include functions/make_toc_tree_v2.html toc_array=item.children indent=indent %}{% endcapture %}
+{% assign indent = indent | minus: 1 %}
+{{ toc_item }}
+{% endif %}
+</ul>
