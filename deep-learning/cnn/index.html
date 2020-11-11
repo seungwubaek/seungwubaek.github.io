@@ -3,4 +3,17 @@ layout: archive-toc
 title: CNN
 ---
 <h1>{{ page.title }}</h1>
-{% include functions/make_post_list.html start_url=page.url %}
+{% comment %} 카테고리 계층 구조(category class) 얻어오기 {% endcomment %}
+{% capture page_url %}{% include functions/append_trailing_sep.html target=page.url sep='/' %}{% endcapture %}
+{% assign page_url = page_url | split: '/' %}
+{% assign page_url_size = page_url | size | minus: 1 %}
+{% assign page_url_size_sliced = page_url_size %}
+{% assign category_class = page_url | slice: 1, page_url_size_sliced %}
+{% assign category_class = category_class | join: '/' %}
+{% assign category_class = '/' | append: category_class | append: '/' %}
+{% comment %} 현재 카테고리가 속하는 위치를 navigation array에서 찾고 그 하위 카테고리들만 추려서 TOC로 출력 {% endcomment %}
+{% include functions/find_matched_category_item.html find_array=site.data.navigation.main-sidebar target_category=category_class %}
+{% assign item = matched_category %}
+{% assign item_url = item.url | downcase %}
+{% assign indent = 0 %}
+{% include functions/make_post_list_v2.html item=item start_url=item_url indent=indent %}
