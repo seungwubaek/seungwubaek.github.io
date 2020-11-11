@@ -1,12 +1,10 @@
-<div id='nav-remocon'>
-    <div id='nav-slider' class='fold'>
-        <div id='nav-fold-upper-button' onclick="navRemoconFold(this)"><div id='nav-fold-arraw-upper' class='nav-arrow-up'></div></div>
-        <ul id='nav-buttons' class='nav-buttons'>
-            <li class='nav-btn-set' onclick="navRemoconGoToTop()"><div class='nav-btn-title-wrapper'><i class='fas fa-angle-up fa-fw'></i><span class="nav-btn-title">Top</span></div></li>
-            <li class='nav-btn-set' onclick="navRemoconGoToBottom()"><div class='nav-btn-title-wrapper'><i class='fas fa-angle-down fa-fw'></i><span class="nav-btn-title">Bottom</span></div></li>
-            <li class='nav-btn-set nav-btn-set__foldable nav-btn-set__fold' onclick="javascript: location.href= '/';"><div class='nav-btn-title-wrapper'><i class='fas fa-home fa-fw'></i><span class="nav-btn-title">Home</span></div></li>
-            <li class='nav-btn-set nav-btn-set__foldable nav-btn-set__fold' onclick="navRemoconGoToUrl('{{ site.repository }}')"><div class='nav-btn-title-wrapper'><i class='fas fa-pencil-alt fa-fw'></i><span class="nav-btn-title">제안</span></div></li>
-        </ul>
-    </div>
+<div id='nav-remocon' class='fold'>
+    <div id='nav-fold-upper-button' onclick="navRemoconFold(this)"><div id='nav-fold-arraw-upper' class='nav-arrow-up'></div></div>
+    <ul id='nav-buttons' class='nav-buttons'>
+        <li class='nav-btn-set' onclick="navRemoconGoToTop()"><div class='nav-btn-title-wrapper'><i class='fas fa-angle-up fa-fw'></i><span class="nav-btn-title">Top</span></div></li>
+        <li class='nav-btn-set' onclick="navRemoconGoToBottom()"><div class='nav-btn-title-wrapper'><i class='fas fa-angle-down fa-fw'></i><span class="nav-btn-title">Bottom</span></div></li>
+        <li class='nav-btn-set nav-btn-set__foldable nav-btn-set__fold' onclick="javascript: location.href= '/';"><div class='nav-btn-title-wrapper'><i class='fas fa-home fa-fw'></i><span class="nav-btn-title">Home</span></div></li>
+        <li class='nav-btn-set nav-btn-set__foldable nav-btn-set__fold' onclick="navRemoconGoToUrl('{{ site.repository }}')"><div class='nav-btn-title-wrapper'><i class='fas fa-pencil-alt fa-fw'></i><span class="nav-btn-title">제안</span></div></li>
+    </ul>
     <div id='nav-fold-lower-button' onclick="navRemoconFold(this)"><div id='nav-fold-arraw-lower' class='nav-arrow-down'></div></div>
 </div>
