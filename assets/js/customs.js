@@ -60,7 +60,7 @@ function adjustNavRemoconStyle(reverse){
     reverse = (reverse >= true);  // it makes number, bigger than 1, to 'true'
     // if has 'fold' and reverse is F, border will be 0.
     // if has 'fold' and reverse is T, border will be return to initial.
-    var decision = navRemoconBtns.hasClass('fold');
+    var decision = navRemocon.hasClass('fold');
     decision = decision^reverse;
     if(decision) {
         $(navRemoconBtns.children()[1]).css('border-bottom', 0);
