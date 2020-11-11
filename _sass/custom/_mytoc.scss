@@ -1,4 +1,5 @@
 #wholetoc {
+    line-height: 1;
     #wholetoc__title {
         width: fit-content;
         margin-left: auto;
@@ -11,12 +12,18 @@
         color: $text-color;
         text-decoration-line: none;
     }
+    ul, li {
+        padding: 0;
+        margin: 0;
+    }
     li {
         list-style: none;
     }
     .wholetoc__category-title {
+        padding-top: $wholetoc-item-padding-top;
+        padding-bottom: 0;
         &[indentation-level="0"] {
-            border-bottom: 1px solid $border-color;
+            border-bottom: 1px solid black;
             a {
                 font-family: $sans-serif;
                 line-height: 1.5;
@@ -26,16 +33,49 @@
         }
         & .wholetoc__category-title-icon {
             display: inline-block;
-            padding-right: 1.5em;
+            text-align: left;
+            width: $wholetoc-indent-size;
             font-size: .8em;
             cursor: pointer;
         }
     }
     .wholetoc__category-inner {
-        overflow-y: hidden;
+        overflow-y: visible;
         height: auto;
         &.fold {
+            overflow-y: hidden;
             height: 0;
         }
+    }
+    .wholetoc__post-item {
+        div {
+            padding-top: $wholetoc-item-padding-top;
+            padding-bottom: 0;
+            margin: 0;
+        }
+    }
+    .wholetoc__post-item:not([indentation-level="0"]), .wholetoc__category-item:not([indentation-level="0"]) {
+        position: relative;
+        padding-left: $wholetoc-indent-size;
+    }
+    .wholetoc__post-item:not([indentation-level="0"]):before, .wholetoc__category-item:not([indentation-level="0"]):before {
+        content: '';
+        position: absolute;
+        left: $wholetoc-inherit-vline-left;
+        border-left: 1px solid $border-color;
+        width: 1px;
+        height: 100%;
+    }
+    .wholetoc__post-item:not([indentation-level="0"]):last-child:before, .wholetoc__category-item:not([indentation-level="0"]):last-of-type:before {
+        height: $wholetoc-inherit-vline-last-height;
+    }
+    .wholetoc__post-item:not([indentation-level="0"]):after, .wholetoc__category-item:not([indentation-level="0"]):after {
+        content: '';
+        position: absolute;
+        top: $wholetoc-inherit-vline-last-height;
+        left: $wholetoc-inherit-vline-left;
+        border-top: 1px solid $border-color;
+        width: $wholetoc-inherit-hline-width;
+        height: 1px;
     }
 }

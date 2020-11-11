@@ -17,3 +17,11 @@ $mymasthead-height: 3em;
 // sidebar
 $mysidebar-width: 216px;  // sidebar width + scroll bar space
 $mysidebar-scroll-width: 16px;
+
+// Whole TOC
+$wholetoc-indent-size: 18px;
+$wholetoc-item-height: 16px;
+$wholetoc-item-padding-top: 12px;
+$wholetoc-inherit-vline-left: $wholetoc-indent-size / 2 - 4px;
+$wholetoc-inherit-vline-last-height: $wholetoc-item-padding-top + $wholetoc-item-height / 2;
+$wholetoc-inherit-hline-width: $wholetoc-indent-size / 2;
