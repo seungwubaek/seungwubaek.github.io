@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "[Git Page로 Blog 만들기] - [4] 네비게이션 리모컨"
-post-order: 4
+title: "[Git Page로 Blog 만들기] - [6] 네비게이션 리모컨"
+post-order: 6
 ---
 
 스크롤을 해도 화면 오른쪽 하단의 일정한 위치에 항상 표시되는 간단한 네비게이션 메뉴를 구현해보자.
