@@ -96,29 +96,3 @@ HTML 기본, CSS 기본, class 선택자
 ### 올바로 적용되지 않는 `height` 단위
 
 `height` 값을 늘렸다 줄일때 css `height` 값에 `%` 단위를 사용하면 transition이 올바르게 작동하지 않는다! `px`, `em`, `rem`이 정상 작동하는 것은 확인하였다.
-
-<span style="color: red;">아래 해결 방법에 이슈가 하나 있다!!!</span>
-
-아래 해결 방법은 Javascript로 height 값을 부여하는 방법인데 만약 브라우저가 작은 화면일때 height 값을 부여 했다면
-사용자가 브라우저 창을 최대화 했을때 페이지가 새로 로드되지 않았으므로 여전히 height는 작은 화면일때 font size에 맞춰져 있기 때문에 내용물이 밖으로 밀려 나온다.<br/>
-따라서 resize 이벤트 또는 브라우저 사이즈가 일정 수준에 도달할때 height 값을 재부여하는 js 코드가 추가 되어야 한다.
-그런데 그러면 연산이 좀 무거워질 것 같고.. 또.. 귀찮아서.. CSS animation으로 대체하여 유사하게 표현하기로 했다.
-
-* 해결 방법
-
-    결국, CSS 만으로 이 문제를 해결하는 방법은 찾지 못했다... OTL.. 그래서 하는수 없이 Javascript를 사용했다.<br/>
-    아래에 요약 설명이 있지만 이해가 어렵다면 코드를 직접 보는것이 더 빠를수도 있다.<br/>
-    [Liquid를 이용해 작성한 HTML 파일]({{ site.repository | append: '/tree/master/_includes/nav_list' }})에서 변수 `i` 변수가 assign 되는 것과 [Javascript]({{ site.repository | append: '/tree/master/assets/js/customs.js' }})의 `[2] Sidebar dropdown animaion of Sub Menus`이라는 주석이 달린 세션을 보면 된다.
-
-1. Liquid로 각 메뉴에 ID 부여
-
-    내 사이드바는 상위 메뉴가 `<ul>` 태그로 된 하나의 하위 항목을 가지므로 `liquid`를 이용하여 하위 항목(`<ul>` 태그)들을 iterate 하면서 Incremental ID를 부여한다.
-
-2. 각 하위 항목이 가진 메뉴 개수에 비례하는 `height` 파악
-
-    Javascript에서는 각 `<ul>` 태그가 가진 메뉴 `<li>`의 개수를 파악했다. 메뉴 개수가 많은 `<ul>` 태그는 그 양에 비례하게 `height`가 더 길어야 하기 때문이다.
-    `ID`에 대응하는 `height` 측정한 후 (`ID`, `height`) 쌍을 원소로 갖는 Array로 저장한다.
-
-3. 각 ID에 대응하는 `height`를 css로 적용
-
-    Array가 완성되면 Array를 iterate하면서 `ID`에 해당하는 `<ul>` 태그의 `height` 속성값을 변경하는 css 코드를 짠다. 이 css 코드를 `<style>` 태그로 만들어서 `<head>` 태그 안에 넣는다.
