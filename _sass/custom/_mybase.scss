@@ -1,7 +1,13 @@
+/* ==========================================================================
+   BASE ELEMENTS - Customize
+   ========================================================================== */
+
+/* html */
 html {
     margin-top: calc(#{$mymasthead-height} + 0.5em);  // masthead height + a little additional space
 }
 
+/* transition */
 .notransition {
     -webkit-transition: none !important;
     -moz-transition: none !important;
@@ -9,6 +15,7 @@ html {
     transition: none !important;
 }
 
+/* page */
 #main .page .page__content {
     a {
         // Without word-break, in mobile web, width size is broken because of line unbreakable of href text.
