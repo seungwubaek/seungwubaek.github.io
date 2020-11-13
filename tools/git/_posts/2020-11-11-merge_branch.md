@@ -7,15 +7,15 @@ style-branch: "color: yellow; background-color: black;"
 
 여러개의 branch를 하나로 합치는 방법을 알아보자. 단, git 충돌(Confilct)은 다루지 않는다.
 
-## 작업 요약
+# 작업 요약
 
 우리가 하려는 작업은 아래 그림으로 요약 할 수 있다. 시간적으로 아래가 과거, 위로 갈수록 현재이다. 여기서, merge를 하면 "merge commit"이 하나 추가된다는 사실을 알아두자.
 
 ![]({{ page.gdrive_url_prefix }}1ZbZLYojV78SrE57jS4oCIejZ4PSysJ4c){:style="max-height: 450px;" class="align-center"}
 
-## 예제
+# 예제
 
-### 1. 초기 상태 - 여러개의 브랜치
+## 1. 초기 상태 - 여러개의 브랜치
 
 먼저 아래 그림의 commit log 처럼 브랜치가 여러개로 나뉘어 있는 상황에서 시작한다.<br/>
 commit log가 위에 있을수록 최근의 commit이다. 위에서 부터 순서대로<br/>
@@ -33,7 +33,7 @@ commit log가 위에 있을수록 최근의 commit이다. 위에서 부터 순�
 
 ![](https://drive.google.com/uc?export=view&id=1eNAYkcIuBbURG3FQ_-umSDP2GfUVYESB)
 
-### 2. Git Merge (1/3)회
+## 2. Git Merge (1/3)회
 
 제일 먼저 나의 로컬 브랜치 master가 원격 브랜치 origin/master 와 같은 위치에 가 있도록 하고 HEAD가 master를 보도록 하자.
 
@@ -59,7 +59,7 @@ commit 메시지는 `Merge remote-tracking branch 'origin/navremocon'` 라고 �
 
 ![](https://drive.google.com/uc?export=view&id=1pqfgkBaOljayRqBs1hN79C5VhHORHQL_)
 
-### 3. Git Merge (2/3)회
+## 3. Git Merge (2/3)회
 
 그러면 이제 HEAD는 윗단계 merge로 생성한 새로운 commit에 위치해 있다. 그 새로운 commit 에 다음 브랜치를 또 merge 시킨다.
 
@@ -77,7 +77,7 @@ git merge origin/new_post
 
 ![](https://drive.google.com/uc?export=view&id=1IuOl2dNru7oa3CSSntC_q0r-pNSiFqsw)
 
-### 4. Git Merge (3/3)회
+## 4. Git Merge (3/3)회
 
 마찬가지로 마지막으로 한번 더 merge 한다.
 
@@ -91,7 +91,7 @@ git merge origin/toc_v2
 
 ![](https://drive.google.com/uc?export=view&id=1j608tjzNIMngPWvnbLD0uwvXLh3w758X)
 
-### 5. 원격 브랜치 업데이트
+## 5. 원격 브랜치 업데이트
 
 내 컴퓨터의 디렉토리(로컬)에서 일어난 작업은 아직 github 원격 저장소에 아무것도 반영되지 않았다. 따라서 위의 merge 작업은 원격 저장소에는 아무 영향이 없다.<br/>
 이제 실제로 원격 저장소에 merge 결과를 반영 시켜보자.
@@ -102,7 +102,7 @@ git merge origin/toc_v2
 git push origin/master
 ```
 
-### 6. Github 확인
+## 6. Github 확인
 
 원격 저장소에 push가 완료되면 이제 모든 브랜치가 합쳐진 소스가 반영됐을 것이다. github으로 들어가보면 아래와 같은 커밋 히스토리가 올라가 있는 것을 볼 수 있다.
 
