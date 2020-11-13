@@ -2,6 +2,7 @@
 layout: single
 title: About
 author_profile: true
+toc: true
 ---
 
 나는 기억력이 좋지 못하다. 그래서 기억력을 향상 시키기 위해 훈련해야겠지만 그전에 먼저 장단기적으로 기억 해야할 것들을 잊지 않기위해 어딘가에 잘 보관해 두는 것이 중요했다.
