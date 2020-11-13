@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Rebase - 과거 커밋들을 하나로 합치기(Squash)"
-post-order: 1
+title: "[Rebase] (Squash) 과거 커밋들을 하나로 합치기"
+post-order: 4
 ---
 
 과거의 커밋들을 하나로 합쳐서 commit tree를 정리하자. 이를 위해 `git rebase` 커맨드를 사용한다.<br/>

@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "master vs origin/master"
-post-order: 2
+title: "[개념] master vs origin/master"
+post-order: 1
 ---
 
 master 와 origin/master 의 차이는 뭘까? 이 포스트를 통해 그 의미들을 이해해보자.

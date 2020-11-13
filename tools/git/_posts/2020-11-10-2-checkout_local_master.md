@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "특정 commit으로 checkout 하기"
-post-order: 3
+title: "[Checkout] 특정 commit으로 checkout 하기"
+post-order: 2
 ---
 
 미래, 현재, 과거 등 여러 상태에 놓인 commit들에서 현재 내 코드의 상태를 특정 과거의 상태로 돌리려면 어떻게 해야할까?

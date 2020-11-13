@@ -1,7 +1,7 @@
 ---
 layout: single
-title: "Merge - 여러 branch를 하나로 합치기"
-post-order: 4
+title: "[Merge] 여러 branch를 하나로 합치기"
+post-order: 3
 style-branch: "color: yellow; background-color: black;"
 ---
 
