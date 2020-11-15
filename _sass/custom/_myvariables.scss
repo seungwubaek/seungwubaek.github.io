@@ -25,3 +25,6 @@ $wholetoc-item-padding-top: 12px;
 $wholetoc-inherit-vline-left: $wholetoc-indent-size / 2 - 4px;
 $wholetoc-inherit-vline-last-height: $wholetoc-item-padding-top + $wholetoc-item-height / 2;
 $wholetoc-inherit-hline-width: $wholetoc-indent-size / 2;
+
+// page
+$code-light-gray: mix(#fff, $gray, 70%);
