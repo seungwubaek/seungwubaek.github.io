@@ -15,6 +15,12 @@
 }
 
 /* Posting */
+.page__content h1 {
+    margin-top: 2em;
+    padding-bottom: 0.5em;
+    border-bottom: 4px solid $border-color;
+}
+/* Posting - Special Style */
 .md-monologue {
     color: $base03;
     font-style: italic;
