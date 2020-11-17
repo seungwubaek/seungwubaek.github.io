@@ -1,25 +1,31 @@
 ---
 layout: single
-title: "[Git Page로 Blog 만들기] - [6] Google Analytics / Search Console 연동"
+title: "[Git Page로 Blog 만들기] - [6] Google Analytics 연동"
 post-order: 6
-date: 2020-11-16 21:43:00 +0900
+date: "2020-11-16 21:43:00 +0900"
+last_modified_at: "2020-11-17 14:48:00"
 ---
 
-Google Analytics와 Google Search Console을 이용해서 내 블로그의 방문자 통계와 구글 검색 엔진을 통한 검색 현황을 살펴보자.<span class="md-monologue">무료이다.</span>
+Google Analytics를 이용해서 내 블로그의 방문자 통계를 추적하고 감시해보자. <span class="md-monologue">무료이다.</span><br/>
+그리고 Google의 또 다른 Web Service들과 연동해서 효과적인 수익 창출을 노려볼 수 있다. <span class="md-monologue">무료로.</span>
 
 # Google Analytics
 
 Google Analytics는 내 블로그의 이용자 통계를 추적하는 서비스를 제공한다.
 
-__아래는 mmistakes 테마를 사용한다는 가정하의 설명글이다.__ mmistakes 테마를 사용하지 않는 경우, Google Analytics의 gtag라는 javascript를 내 블로그 <head> tag에 넣는 과정을 먼저 이해하면 따라올 수 있다.
+2020년 10월, GA4(Google Analytics 4)가 출시되었다. Google Analytics 3를 UA(Universal Analytics)라 일컫는다. GA4는 앱 + 웹 속성을 기반으로 한다고 한다. 즉, 모바일 앱 관련 기능을 강화하려는 것 같다.
 
-## 옵션 1. 기존 사용자: Google Analytics 4
+Google Analytics에 대한 개념과 상세 정보는 [애널리틱스 고객센터](https://support.google.com/analytics#topic=9143232) 에서 대충 확인했다.
 
-2020년 10월, 기존의 Google Analytics 3의 버전 4가 출시되었다. 이에 따라 기존의 Google Analytics를 사용하던 사람이 GA4(Google Analytics 4)로 이전하려고 한다면 이 섹션의 내용을 읽어보자. 근데, 이전 통계 정보를 유지한채로 이전하는 방법을 모르겠다;; 까짓거.. 처음부터 다시 시작하기로 했다.
+__아래는 mmistakes 테마를 사용한다는 가정하의 설명글이다.__ 
 
-기존 사용자가 아니라면 [다음 섹션](#옵션-2-신규-사용자-처음부터-google-analytics-연동)부터 보자.
+mmistakes 테마를 사용하지 않는 경우, Google Analytics를 내 사이트에 등록할때 gtag라는 javascript를 `<head>` tag에 넣는 과정을 먼저 이해하면 따라올 수 있다. mmistakes 테마는 그 과정이 이미 이뤄져있다. 어렵진 않다. Google Analytics 등록을 진행하다보면 자연스레 할 수 있을것이다.
 
-그런데 GA3에서 GA4로 이전의 개념이 맞는지 헤깔린다. 앞으로 어떻게 될진 모르겠지만 현재로써는 GA3의 tracking_id와 GA4의 새로운 id를 모두 추적하는 '이중 속성' 형태로 구현하도록 하겠다.
+## 옵션 1. 기존 사이트: Google Analytics 4 연결
+
+기존의 UA를 사용하던 사이트에 GA4(Google Analytics 4) 사용 하려고 한다면 이 섹션의 내용을 읽어보자. 근데, 이전 통계 데이터를 GA4 이전하는 방법을 모르겠다;; 까짓거.. 처음부터 다시 시작하기로 했다.
+
+그런데 GA4가 UA의 기능을 모두 포함하는게 아닌것 같다. 따라서 앞으로 어떻게 될진 모르겠지만 현재로써는 UA의 tracking_id와 GA4의 새로운 id인 '측정 ID'를 모두 추적하는 '이중 속성' 형태로 구현하도록 하겠다.
 
 Analytics 홈 화면 왼쪽 하단의 있는 관리 페이지 버튼(톱니바퀴)을 클릭하자. 그러면 아래처럼 'GA4로 업그레이드'라는 메뉴가 보인다. 클릭하자.
 
@@ -46,7 +52,7 @@ GA 속성 보기 버튼을 누르면 새로운 Analytics의 관리 화면으로 
 
 ![]({{ page.gdrive_url_prefix }}1sBhDtp4TR75TYKezIaabT8WVyxgVbtaZ)
 
-`/_includes/analytics-providers/google-gtag.html` 파일에 기존에 있던 javascript 코드가 있는데, 다음의 마지막 줄을 추가한다.
+`/_includes/analytics-providers/google-gtag.html` 파일에 기존에 있던 gtag javascript 코드가 있는데, 다음의 마지막 줄을 추가한다.
 
 ```javascript
 gtag('config', '{% raw %}{{ site.analytics.google.stream_id }}{% endraw %}');
@@ -58,9 +64,15 @@ gtag('config', '{% raw %}{{ site.analytics.google.stream_id }}{% endraw %}');
 
 이러면 설정이 완료 됬다. 아래는 처음부터 GA4를 설정하는 과정이므로 아래 섹션은 [건너뛰자](#적용-및-테스트).
 
-## 옵션 2. 신규 사용자: 처음부터 Google Analytics 연동
+## 옵션 2. 신규 사이트: 처음부터 Google Analytics 4 연결
 
-이 서비스를 이용하기 위해서 먼저 구글에 __google analytics__ 라고 검색하자. 그리고 검색된 구글 애널리틱스 페이지로 들어가면 아래와같이 환영해준다. 🎉
+<div class="notice--warning" markdown="1">
+#### 주의
+{: class="no_toc"}
+Google Analytics에 Google Search Console를 연결하려면 GA4가 아니라 UA가 필요하다. 둘 모두 등록 방법은 비슷하므로 GA4에 대한 설명만 하겠다.
+</div>
+
+이 서비스를 이용하기 위해서 먼저 구글에 __google analytics__ 라고 검색하자. 그리고 검색된 구글 애널리틱스 페이지로 들어가면 아래와 같이 환영해준다. 🎉
 
 ![]({{ page.gdrive_url_prefix }}1HHPfyPY0FFeVdhyflH-yNGBX1by22_vo)
 
@@ -92,7 +104,7 @@ gtag('config', '{% raw %}{{ site.analytics.google.stream_id }}{% endraw %}');
 
 그리고 `provider: "google-gtag"` 라고 입력한다.
 
-사진 속의 `tracking-id`는 내 블로그의 GA3(Google Analytics3) ID 값이다. 우리는 GA4이므로 무시하고 공란으로 둔다.
+사진 속의 `tracking-id`는 내 블로그의 GA3(Google Analytics 3) ID 값이다. 우리는 GA4이므로 무시하고 공란으로 둔다.
 
 그 다음 `tracking_id`의 값 아래에 `stream_id`를 새로 만들어서 복사했던 '측정 ID'를 값으로 넣는다.
 
@@ -113,7 +125,3 @@ gtag('config', '{% raw %}{{ site.analytics.google.stream_id }}{% endraw %}');
 제대로 적용됐는지 테스트 해보기 위해 내 블로그에 한번 접속한 다음 구글 애널리틱스로 들어가서 왼쪽 사이드의 홈 또는 실시간 메뉴를 누르고 '지난 30분 동안 사용자' 정보가 1 증가하는 것을 확인하자.
 
 ![]({{ page.gdrive_url_prefix }}1-KiIgVG9l1Y_vdx7gOJLkENOYM53k9k3)
-
-# Google Search Console
-
-Google Search Console은 구글 크롤러에게 내 블로그를 등록함으로써 보다 효과적으로 구글 검색 엔진에 노출시킬수 있게한다.
