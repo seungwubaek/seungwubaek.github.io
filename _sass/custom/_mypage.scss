@@ -32,3 +32,13 @@
     font-style: italic;
     font-size: 0.8em;
 }
+
+kbd {
+    font-size: .9em;
+    padding: .1em .4em;
+    margin: 0 .1em;
+    border: 1px solid mix(#fff, black, 50%);
+    border-radius: 3px;
+    background-color: $code-light-gray;
+    box-shadow: 0 1px 1px rgba(12,13,14,0.15), inset 0 1px 0 0 #fff;
+}
