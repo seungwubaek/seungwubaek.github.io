@@ -2,6 +2,8 @@
 layout: single
 title: "[Git Page로 Blog 만들기] - [2] mmistakes의 config"
 post-order: 2
+date: "2020-11-14 00:00:00 +0900"
+last_modified_at: "2020-11-17 15:02:00"
 ---
 mmistakes에서 제공하는 config을 내 입맛에 맞게 변경해보자.
 
@@ -36,7 +38,7 @@ mmistakes에서 제공하는 config을 내 입맛에 맞게 변경해보자.
   내 이름을 지정한다. 작성자 프로필과 화면 아래의 저작권 표시등에 출력된다.
 
 * description<br/>
-  브라우저에의해 내 블로그에 대해 소개되는 문구. 어디서 출력되는지 잊어버렸는데.. 쉽게 찾을수 없는것을 보니 중요한 요소는 아니다. <span class="md-monologue">누구 맘대로 중요하지 않대!</span>
+  HTML `<head>`에 실리는 내 블로그 소개 문구. [5번째 포스트]({{ page.base_url }}/etc/blog/seo_robots)에서 다룰 SEO 기능에서 사용하는 중요한 값이다. 내 블로그의 정체성을 분명히 표현하면서 핵심이 되는 키워드가 들어가도록 작성하자.
 
 * repository<br/>
   liquid 문법에 의해 사용되는 전역변수 중 하나로 생각하면 되는데, 테스트 해본 결과 full url을 다 써줘야 정상적으로 연결이 되었다. 블로그의 특정 포스트 등에서 `{% raw %}{{ site.repository }}{% endraw %}`라고 입력하여 url 값을 가져올 수 있다.
