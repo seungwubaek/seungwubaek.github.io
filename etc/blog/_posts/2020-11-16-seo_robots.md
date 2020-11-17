@@ -77,4 +77,4 @@ mmistakes 테마를 사용하는 경우 `/Gemfile` 안에 `gem "minimal-mistakes
 
 브라우저 주소창에 `https://[내 블로그 url]/sitemap.xml` 이라고 입력하면 아래 그림처럼 자동 생성된 내용을 볼 수 있다.
 
-![]({{ page.gdrive_url_prefix }}12LItOXiHhquv9_eWsASLQc143UU5O7yW)
+![]({{ site.gdrive_url_prefix }}12LItOXiHhquv9_eWsASLQc143UU5O7yW)

@@ -283,7 +283,6 @@ defaults:
       toc: true
       sidebar:
         nav: main-sidebar
-      gdrive_url_prefix: "https://drive.google.com/uc?export=view&id="
   # all
   - scope:
       path: ""
@@ -300,3 +299,6 @@ defaults:
 footer_scripts:
   - /assets/js/main.min.js
   - /assets/js/customs.js
+
+# Global Variables
+gdrive_url_prefix: "https://drive.google.com/uc?export=view&id="

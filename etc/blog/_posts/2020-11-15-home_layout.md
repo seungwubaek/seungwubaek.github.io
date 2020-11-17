@@ -54,11 +54,11 @@ layout: home
 
 `/index.html`에는 아무 내용이 없지만 원래 layout은 아래 그림처럼 다양한 레이아웃을 미리 만들어놓고 내용을 끼워 넣는 방식으로 동일 HTML 구조를 재사용 해야할때 용이하다.
 
-![]({{ page.gdrive_url_prefix }}1yhLz-54gzofEghboheErvMAt3zCFPoTR)
+![]({{ site.gdrive_url_prefix }}1yhLz-54gzofEghboheErvMAt3zCFPoTR)
 
 같은 layout을 유지하면서 contents만 바꿔쓰는 방법도 가능하다. 내 블로그도 이를 이용해서 모든 포스트 내용(contents)이 같은 layout 하나에 들어간다.
 
-![]({{ page.gdrive_url_prefix }}1LpHiAN6UqcETQdU4TRzvgVbYTd7NnZRG)
+![]({{ site.gdrive_url_prefix }}1LpHiAN6UqcETQdU4TRzvgVbYTd7NnZRG)
 
 `home` 레이아웃에는 최근 포스트를 보여주는 liquid 코드로 작성한 html이 포함되어 있다. 더 자세한 화면 구성은 `/_layouts/home.html` 파일을 참고하자.
 
