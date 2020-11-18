@@ -25,7 +25,7 @@ toc: true
 그런 모습은 점점 기계 의존적으로 변해가는 현대인과 다를것이 없었다. 물론 싫지 않았다.<br/>
 우리는 미래에 결국 우리 손으로 만들어낸 '우리'와 융합될 것이 분명하다. 그것이 기계공학의 정수이든 생명공학의 정수이든 둘 다 이든 지금으로써는 그것을 반도체 칩으로 형상화하고 싶다.
 
-![](/favicon.png){:class="align-left" style="width: 200px;"}
+![My Blog Logo](/favicon.png){:class="align-left" style="width: 200px;"}
 
 |요소|의미|
 |:---:|:---:|

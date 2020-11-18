@@ -12,7 +12,7 @@ master 와 origin/master 의 차이는 뭘까? 이 포스트를 통해 그 의�
 
 로그 내용 중 <span style="color: yellow; background-color: black;">(HEAD -> master, origin/master...</span> 라고 쓰여진 것들을 통해 branch 등을 볼 수 있다.
 
-![](https://drive.google.com/uc?export=view&id=1BwE3ZHoUhTLLaHQcs26fLf77QC46RMII)
+![commit log](https://drive.google.com/uc?export=view&id=1BwE3ZHoUhTLLaHQcs26fLf77QC46RMII)
 
 # Repository vs Branch
 

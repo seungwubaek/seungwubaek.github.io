@@ -28,7 +28,7 @@ git checkout -B master <이동 목적지 commit hash>
 
 다음과 같은 commit log를 가지는 Repository가 있다고 하자. <span class='md-monologue'>(내 블로그임ㅋ)</span>
 
-![](https://drive.google.com/uc?export=view&id=1BwE3ZHoUhTLLaHQcs26fLf77QC46RMII)
+![commit log](https://drive.google.com/uc?export=view&id=1BwE3ZHoUhTLLaHQcs26fLf77QC46RMII)
 
 여기서 아래와 같이 명령어 실행한다.
 
@@ -39,4 +39,4 @@ git checkout -B master fe2317c
 그러면 아래 그림에서 보듯, HEAD -> master의 위치가 바뀐 것을 볼수있다.<br/>
 이것은 로컬 브랜치 master가 commit <span style="color: blue;">fe2317c</span> 을 보는 것으로 변경되었고 내 현재 코드의 상태가 master 브랜치를 보고있다는 뜻이다.
 
-![](https://drive.google.com/uc?export=view&id=1RJ3YbUNaFu0E7g7_nOWXRrMdax3vM_jo)
+![commit log, changed master](https://drive.google.com/uc?export=view&id=1RJ3YbUNaFu0E7g7_nOWXRrMdax3vM_jo)

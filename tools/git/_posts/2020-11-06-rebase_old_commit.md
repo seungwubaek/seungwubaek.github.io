@@ -44,8 +44,8 @@ git rebase -i --root
 
 rebase 전 2621개 commits
 
-![](https://drive.google.com/uc?export=view&id=11_W6jtat2998f2Tehkfhx_ABmKmYRflv)
+![Github - my commits before rebase](https://drive.google.com/uc?export=view&id=11_W6jtat2998f2Tehkfhx_ABmKmYRflv)
 
 rebase 후 117개 commits
 
-![](https://drive.google.com/uc?export=view&id=1jJeNyyJ7YwzG6PmPbahAmo0G-89Lddlc)
+![Github - my commits after rebase](https://drive.google.com/uc?export=view&id=1jJeNyyJ7YwzG6PmPbahAmo0G-89Lddlc)

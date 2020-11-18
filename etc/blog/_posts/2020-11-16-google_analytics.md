@@ -29,38 +29,38 @@ mmistakes 테마를 사용하지 않는 경우, Google Analytics를 내 사이�
 
 Analytics 홈 화면 왼쪽 하단의 있는 관리 페이지 버튼(톱니바퀴)을 클릭하자. 그러면 아래처럼 'GA4로 업그레이드'라는 메뉴가 보인다. 클릭하자.
 
-![]({{ site.gdrive_url_prefix }}1xe6oRIST8BgnSK9ZCHsY-i8zLT1EdpGx)
+![Upgrade to GA4]({{ site.gdrive_url_prefix }}1xe6oRIST8BgnSK9ZCHsY-i8zLT1EdpGx)
 
 시작한다.
 
-![]({{ site.gdrive_url_prefix }}1R2wd1TQor9tyBkcE6oQ3s15e4FJ6D4Ts)
+![Start to upgrade to GA4]({{ site.gdrive_url_prefix }}1R2wd1TQor9tyBkcE6oQ3s15e4FJ6D4Ts)
 
 읽어보고 쭉쭉 넘긴다.
 
-![]({{ site.gdrive_url_prefix }}1jq0ENoZrPSV7JVTV43hUtydBZ1i_4bxB)
+![Create new Google Analytics 4 Property]({{ site.gdrive_url_prefix }}1jq0ENoZrPSV7JVTV43hUtydBZ1i_4bxB)
 
 그러면 금방 연결되었다. 이제 태그 ID를 연결시킬 차례이다.
 
-![]({{ site.gdrive_url_prefix }}1WvYnm6vXbOjySw6Lo5BAJe4Wboz9CqIQ)
+![The result of upgrading to GA4]({{ site.gdrive_url_prefix }}1WvYnm6vXbOjySw6Lo5BAJe4Wboz9CqIQ)
 
 GA 속성 보기 버튼을 누르면 새로운 Analytics의 관리 화면으로 넘어간다. 데이터 스트림 메뉴로 들어가자.
 그러면 그곳에 내 블로그 URL이 보인다. 클릭하면 이전의 tracking id와 같이 'G-'로 시작하는 '측정 ID'라는 항목이 있다.
 
-![]({{ site.gdrive_url_prefix }}1RAg9EL-Ury475HLjCLsISVbG1y1jwQYR)
+![Check Measurement ID starting with G]({{ site.gdrive_url_prefix }}1RAg9EL-Ury475HLjCLsISVbG1y1jwQYR)
 
 `_config.yml` 파일에서 전에 설정했던 `tracking_id`의 값 아래에 `stream_id`를 만들어서 '측정 ID'를 값으로 넣는다.
 
-![]({{ site.gdrive_url_prefix }}1sBhDtp4TR75TYKezIaabT8WVyxgVbtaZ)
+![easy insert measurement id to config in mmistakes theme]({{ site.gdrive_url_prefix }}1MqYY0G1PRf1BS5xozVyv0P9K-mFvV37O)
 
 `/_includes/analytics-providers/google-gtag.html` 파일에 기존에 있던 gtag javascript 코드가 있는데, 다음의 마지막 줄을 추가한다.
 
 ```javascript
-gtag('config', '{% raw %}{{ site.analytics.google.stream_id }}{% endraw %}');
+gtag('config', '{% raw %}{{ site.analytics.google.measurement_id }}{% endraw %}');
 ```
 
 그럼 코드가 아래처럼 된다.
 
-![]({{ site.gdrive_url_prefix }}1ZWmJFhiD1jfQGAgS6ocOpZqOdPiOa_5c)
+![gtag javascript code for GA4]({{ site.gdrive_url_prefix }}1tBeNprIjAJ9FGfKMsxJvkcq2P3M1n2QL)
 
 이러면 설정이 완료 됬다. 아래는 처음부터 GA4를 설정하는 과정이므로 아래 섹션은 [건너뛰자](#적용-및-테스트).
 
@@ -74,31 +74,31 @@ Google Analytics에 Google Search Console를 연결하려면 GA4가 아니라 UA
 
 이 서비스를 이용하기 위해서 먼저 구글에 __google analytics__ 라고 검색하자. 그리고 검색된 구글 애널리틱스 페이지로 들어가면 아래와 같이 환영해준다. 🎉
 
-![]({{ site.gdrive_url_prefix }}1HHPfyPY0FFeVdhyflH-yNGBX1by22_vo)
+![The Page of Welcome to Google Analytics]({{ site.gdrive_url_prefix }}1HHPfyPY0FFeVdhyflH-yNGBX1by22_vo)
 
 계정 이름(구글 계정 ID가 아니고 애널리틱스 내에서만 쓰인다)을 원하는대로 만든다.
 
-![]({{ site.gdrive_url_prefix }}1WjIfgJw3SFowi2op0im8NfpOSGXoEYdY)
+![Create GA4 - Account Name]({{ site.gdrive_url_prefix }}1WjIfgJw3SFowi2op0im8NfpOSGXoEYdY)
 
 속성 이름은 다중의 애널리틱스 서비스를 이용할때, 현재 서비스를 부르는 별칭이라고 보면 된다. 난 내 블로그 URL로 했다. 뭘하든 상관없다.
 
-![]({{ site.gdrive_url_prefix }}1l7TUeQBjVf4DMDWPztrnntozIXhrKYUI)
+![Create GA4 - Property]({{ site.gdrive_url_prefix }}1l7TUeQBjVf4DMDWPztrnntozIXhrKYUI)
 
 비즈니스 정보를 입력한다. <span class="md-monologue">지..직원이요..?</span>
 
-![]({{ site.gdrive_url_prefix }}1uNv7SS0TuRYSZie-dlcBjUzR1pkA6kUV)
+![Create GA4 - Business Infomation]({{ site.gdrive_url_prefix }}1uNv7SS0TuRYSZie-dlcBjUzR1pkA6kUV)
 
 동의 동의 동의..!!
 
-![]({{ site.gdrive_url_prefix }}1GVlZx2pT1jyr61pbyhBy_M3agR7GUdB8)
+![Create GA4 - Agreements]({{ site.gdrive_url_prefix }}1GVlZx2pT1jyr61pbyhBy_M3agR7GUdB8)
 
 'iOS', 'Android', '웹' 중 하나의 플랫폼을 선택하라는 화면이 보인다. Git Page이므로 제일 오른쪽의 웹을 선택한다.
 
-![]({{ site.gdrive_url_prefix }}1BUpWxkzqoE2GCZ7h5Hlv9U4qpVDioRp1)
+![Create GA4 - Choosing platform]({{ site.gdrive_url_prefix }}1BUpWxkzqoE2GCZ7h5Hlv9U4qpVDioRp1)
 
 그다음 나오는 관리 화면에서는 '데이터 스트림' 설정을 하라고 한다. 그리고 'G-'로 시작하는 측정 ID가 보인다. 그 ID를 복사하자.
 
-![]({{ site.gdrive_url_prefix }}1RAg9EL-Ury475HLjCLsISVbG1y1jwQYR)
+![Create GA4 - Measurement ID]({{ site.gdrive_url_prefix }}1RAg9EL-Ury475HLjCLsISVbG1y1jwQYR)
 
 `_config.yml` 파일에서 아래 그림과 같은 위치를 찾는다.
 
@@ -108,7 +108,7 @@ Google Analytics에 Google Search Console를 연결하려면 GA4가 아니라 UA
 
 그 다음 `tracking_id`의 값 아래에 `stream_id`를 새로 만들어서 복사했던 '측정 ID'를 값으로 넣는다.
 
-![]({{ site.gdrive_url_prefix }}1sBhDtp4TR75TYKezIaabT8WVyxgVbtaZ)
+![easy insert measurement id to config in mmistakes theme]({{ site.gdrive_url_prefix }}1MqYY0G1PRf1BS5xozVyv0P9K-mFvV37O)
 
 `/_includes/analytics-providers/google-gtag.html` 파일에 기존에 있던 javascript 코드가 있는데, 아래와 같은 마지막 줄을 추가한다.
 
@@ -116,7 +116,7 @@ Google Analytics에 Google Search Console를 연결하려면 GA4가 아니라 UA
 gtag('config', '{% raw %}{{ site.analytics.google.stream_id }}{% endraw %}');
 ```
 
-![]({{ site.gdrive_url_prefix }}1ZWmJFhiD1jfQGAgS6ocOpZqOdPiOa_5c)
+![gtag javascript code for GA4]({{ site.gdrive_url_prefix }}1tBeNprIjAJ9FGfKMsxJvkcq2P3M1n2QL)
 
 ## 적용 및 테스트
 
@@ -124,4 +124,4 @@ gtag('config', '{% raw %}{{ site.analytics.google.stream_id }}{% endraw %}');
 
 제대로 적용됐는지 테스트 해보기 위해 내 블로그에 한번 접속한 다음 구글 애널리틱스로 들어가서 왼쪽 사이드의 홈 또는 실시간 메뉴를 누르고 '지난 30분 동안 사용자' 정보가 1 증가하는 것을 확인하자.
 
-![]({{ site.gdrive_url_prefix }}1-KiIgVG9l1Y_vdx7gOJLkENOYM53k9k3)
+![GA4 - Realtime num of users in 30 minutes]({{ site.gdrive_url_prefix }}1-KiIgVG9l1Y_vdx7gOJLkENOYM53k9k3)

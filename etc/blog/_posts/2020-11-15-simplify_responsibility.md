@@ -15,7 +15,7 @@ mmistakes 테마는 웹 브라우저의 사이즈에 따라서 블로그 구성 
 
 `/_sass/minimal-mistakes/_reset.scss` 경로의 파일을 열어보면 아래와 같은 코드를 볼 수 있다.
 
-![]({{ site.gdrive_url_prefix }}1DMHnYMX2wAi7NroJGSYMOj1BwOLAqo97)
+![mmistakes responsive font-size css]({{ site.gdrive_url_prefix }}1DMHnYMX2wAi7NroJGSYMOj1BwOLAqo97)
 
 한눈에 보이겠지만, SASS를 이용한 함수 코드가 보인다. `@include`로 시작하는 코드가 3군데가 있다. 3개의 코드는 브라우저 화면 사이즈(`$small`, `$large`, `$x-large`)에 따라 `font-size`를 변화시킨다.
 
