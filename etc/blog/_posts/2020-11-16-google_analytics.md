@@ -50,7 +50,7 @@ GA 속성 보기 버튼을 누르면 새로운 Analytics의 관리 화면으로 
 
 `_config.yml` 파일에서 전에 설정했던 `tracking_id`의 값 아래에 `stream_id`를 만들어서 '측정 ID'를 값으로 넣는다.
 
-![easy insert measurement id to config in mmistakes theme]({{ site.gdrive_url_prefix }}1MqYY0G1PRf1BS5xozVyv0P9K-mFvV37O)
+![easy insert measurement id to config in mmistakes theme][1]
 
 `/_includes/analytics-providers/google-gtag.html` 파일에 기존에 있던 gtag javascript 코드가 있는데, 다음의 마지막 줄을 추가한다.
 
@@ -60,7 +60,7 @@ gtag('config', '{% raw %}{{ site.analytics.google.measurement_id }}{% endraw %}'
 
 그럼 코드가 아래처럼 된다.
 
-![gtag javascript code for GA4]({{ site.gdrive_url_prefix }}1tBeNprIjAJ9FGfKMsxJvkcq2P3M1n2QL)
+![gtag javascript code for GA4][2]
 
 이러면 설정이 완료 됬다. 아래는 처음부터 GA4를 설정하는 과정이므로 아래 섹션은 [건너뛰자](#적용-및-테스트).
 
@@ -108,7 +108,7 @@ Google Analytics에 Google Search Console를 연결하려면 GA4가 아니라 UA
 
 그 다음 `tracking_id`의 값 아래에 `stream_id`를 새로 만들어서 복사했던 '측정 ID'를 값으로 넣는다.
 
-![easy insert measurement id to config in mmistakes theme]({{ site.gdrive_url_prefix }}1MqYY0G1PRf1BS5xozVyv0P9K-mFvV37O)
+![easy insert measurement id to config in mmistakes theme][1]
 
 `/_includes/analytics-providers/google-gtag.html` 파일에 기존에 있던 javascript 코드가 있는데, 아래와 같은 마지막 줄을 추가한다.
 
@@ -116,7 +116,7 @@ Google Analytics에 Google Search Console를 연결하려면 GA4가 아니라 UA
 gtag('config', '{% raw %}{{ site.analytics.google.stream_id }}{% endraw %}');
 ```
 
-![gtag javascript code for GA4]({{ site.gdrive_url_prefix }}1tBeNprIjAJ9FGfKMsxJvkcq2P3M1n2QL)
+![gtag javascript code for GA4][2]
 
 ## 적용 및 테스트
 
@@ -125,3 +125,6 @@ gtag('config', '{% raw %}{{ site.analytics.google.stream_id }}{% endraw %}');
 제대로 적용됐는지 테스트 해보기 위해 내 블로그에 한번 접속한 다음 구글 애널리틱스로 들어가서 왼쪽 사이드의 홈 또는 실시간 메뉴를 누르고 '지난 30분 동안 사용자' 정보가 1 증가하는 것을 확인하자.
 
 ![GA4 - Realtime num of users in 30 minutes]({{ site.gdrive_url_prefix }}1-KiIgVG9l1Y_vdx7gOJLkENOYM53k9k3)
+
+[1]: {{ site.gdrive_url_prefix }}1MqYY0G1PRf1BS5xozVyv0P9K-mFvV37O
+[2]: {{ site.gdrive_url_prefix }}1tBeNprIjAJ9FGfKMsxJvkcq2P3M1n2QL
