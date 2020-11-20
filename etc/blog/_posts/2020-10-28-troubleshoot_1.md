@@ -3,8 +3,7 @@ layout: single
 title: "문제 해결 정리"
 post-order: 301
 ---
-
-이 포스트에서는 Blog를 만들면서 발생했던 문제들을 나열하고 그 해결법을 정리한다.
+이 포스트는 Jekyll 과 Jelyll Theme [minimal-mistakes] 테마에 대한 Trouble Shooting 포스트이다. Jekyll과 mmistakes 테마를 이용하면서 경험했던 문제들을 나열하고 문제들을 해결하기 위해 내가 했던 방법들을 설명한다.
 
 ## 웹 페이지의 가로 길이가 멋대로 짧아진다
 
@@ -37,3 +36,5 @@ HTML 요소의 CSS에는 분명 width: 100%가 지정되어 있는데 일정 수
 ![breakable word style url](/assets/images/ETC/Blog/weired_width_solved.jpg)
 
 Good Job!
+
+[mmistakes]: https://github.com/mmistakes/minimal-mistakes

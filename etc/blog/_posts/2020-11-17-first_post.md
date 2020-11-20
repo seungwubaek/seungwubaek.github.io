@@ -5,7 +5,12 @@ post-order: 8
 date: "2020-11-17 23:52:07 +0900"
 last_modified_at: "2020-11-17 23:52:07 +0900"
 ---
-포스트를 게시하는 법을 알아보자. 아주아주 간단하다. 이 주제를 먼저 다뤘어야 하는데, 사이트를 실행하고 환경을 구성하는데에만 어느새 7개의 포스트를 썼다...
+Jekyll에서 포스트를 게시하는 법을 알아보자.
+Jekyll의 머릿말과 레이아웃, Liquid, 그리고 Markdown을 사용해서 포스트에 들어갈 텍스트 작성과 링크와 이미지를 삽입 방법을 알아보자.
+뿐만 아니라 작성한 텍스트를 스타일링하고 화면을 효과적으로 꾸미는 방법을 알아보자.
+
+HTML, CSS 등으로 웹을 꾸미는 것에 비하면 포스트의 글쓰기는 간단하다.
+이 주제를 빠르게 다뤘어야 하는데, 사이트를 실행하고 환경을 구성하는데에만 어느새 7개의 포스트를 썼다...
 지금이라도 간단히 포스트를 만들어보자.
 
 # Markdown
@@ -172,7 +177,7 @@ console.log('hihi');
 <div class="notice--info" markdown="1">
 #### Liquid
 {: class="no_toc"}
-Liquid는 Ruby로 작성된 오픈소스 Template Language이다. 또한 Jekyll에서도 Liuquid 문법을 지원한다.<br/>
+Liquid는 Ruby로 작성된 오픈소스 Template Language이다. 또한 Jekyll에서도 Liquid 문법을 지원한다.<br/>
 Liquid의 문법은 [공식 사이트](https://shopify.github.io/liquid/)에 자세히 나와있다. 영어로 되어있지만 템플릿 언어를 이용하면 HTML 문서를 더욱 풍부하게 만들수 있고 Jekyll의 많은 부분에서 Liquid를 사용하므로 영어를 두려워 말고 도전하자!
 </div>
 
@@ -184,7 +189,9 @@ Liquid의 문법은 [공식 사이트](https://shopify.github.io/liquid/)에 자
 다음 문서의 title은 '{% raw %}{{ page.title | append: "에 이어 두번째 포스트" }}{% endraw %}' 이다!
 ```
 
-이중괄호 대신 `{- [내용] -}` 형태로 사용하면 변수의 앞뒤에 붙는 공백을 제거 할 수 있다.
+윗 줄은 문서의 머릿말에 작성한 `title`의 값을 가져오는 liquid 문법이고, 아랫줄은 문서의 머릿말에 "에 이어 두번째 포스트"라는 텍스트를 붙이는 liquid 문법이다.
+
+이중괄호 `{% raw %}{{ [내용] }}{% endraw %}` 대신 `{% raw %}{- [내용] -}{% endraw %}` 형태로 사용하면 변수의 앞뒤에 붙는 공백을 제거 할 수 있다. <span class="md-monologue">라고 공식 문서에 나와 있는데, 실제로 써보니 공백 제거가 안되는 부분이 있다.</span>
 
 ## 이미지
 

@@ -5,7 +5,8 @@ post-order: 7
 date: "2020-11-17 17:16:00 +0900"
 last_modified_at: "2020-11-17 17:16:00 +0900"
 ---
-Google Search Console은 구글 Crawler에게 내 블로그의 존재를 알려서 보다 효과적으로 구글 검색 엔진에 노출 시킬 수 있게하고 내 사이트에 대한 검색 통계를 제공해준다.
+Google Search Console은 구글 검색 엔진에 노출 시킬 수 있게하고 내 사이트에 대한 검색 통계를 제공해준다.
+또한 구글 Crawler에게 내 블로그의 존재를 알려서 보다 효과적으로 구글 검색 엔진이 내 블로그를 인식할 수 있도록 한다.
 
 ## Google Search Console에 내 사이트 등록
 

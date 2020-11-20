@@ -5,7 +5,6 @@ post-order: 6
 date: "2020-11-16 21:43:00 +0900"
 last_modified_at: "2020-11-17 14:48:00"
 ---
-
 Google Analytics를 이용해서 내 블로그의 방문자 통계를 추적하고 감시해보자. <span class="md-monologue">무료이다.</span><br/>
 그리고 Google의 또 다른 Web Service들과 연동해서 효과적인 수익 창출을 노려볼 수 있다. <span class="md-monologue">무료로.</span>
 

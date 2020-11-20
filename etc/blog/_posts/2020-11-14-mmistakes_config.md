@@ -1,11 +1,12 @@
 ---
 layout: single
-title: "[Git Page로 Blog 만들기] - [2] mmistakes의 config"
+title: "[Git Page로 Blog 만들기] - [2] Jekyll과 mmistakes의 config"
 post-order: 2
 date: "2020-11-14 00:00:00 +0900"
 last_modified_at: "2020-11-17 15:02:00"
 ---
-mmistakes에서 제공하는 config을 내 입맛에 맞게 변경해보자.
+Jekyll config의 주요 값들을 소개한다. 포스트를 보고 해당 값들을 내 입맛에 맞게 변경해보자.<br/>
+Jekyll 서버는 작동할 때 yaml 형식의 `_config.yml` 파일을 읽어들인다. 그리고 Jekyll과 Jekyll [minimal-mistakes][mmistakes] 테마는 config 값에 따라 약속되어 있는 작업들을 수행하고 서버의 기능이나 화면 구성을 변화시킨다. 그외에도 사용자 설정값을 얼마든지 마음대로 정의할 수도 있다.
 
 # _config.yml
 
@@ -72,3 +73,5 @@ mmistakes에서 제공하는 config을 내 입맛에 맞게 변경해보자.
 
 어느날 나만의 javascript를 추가하고 싶다면? 이곳에 내 자바스크립트가 위치한 경로를 입력하자. 나의 경우는 `/assets/js/customs.js` 파일이 등록 돼있다.<br/>
 여기에 설정한 값은 Jekyll이 HTML을 생성할때 Liquid를 이용해서 설정된 경로에 있는 javascript를 HTML 문서 하단에 등록한다.
+
+ [mmistakes]: https://github.com/mmistakes/minimal-mistakes
