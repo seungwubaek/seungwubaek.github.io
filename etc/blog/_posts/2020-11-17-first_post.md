@@ -25,11 +25,12 @@ Markdown의 문법은 구글링으로 통해 쉽게 찾아볼수 있는데 급�
 
 Markdown Style의 몇가지 Case를 보고 넘어가자
 
-### Header (대주제, 소주제 등)
+### 1. Header (대주제, 소주제 등)
 문단의 주제를 표현하기 위해 큰 글귀, 조금 큰 글귀 등을 적을 수 있다. 글 앞에 # 을 붙이면 되고 적게 붙일수록 상위 주제를 의미한다. 보통 최상위 1부터 6단계 소주제까지 표현 가능하다.<br/>
 내 포스트에서는 1, 2단계 헤더에 약간 스타일의 변형을 적용했다.<br/>
 특히 주제는 HTML로 변형될때 `<h1 id="주제명">` 형태로 `id` 속성이 추가 되어 해당 주제의 위치로 이동하려할 때(navigation)에 유용하다.
 
+<div style="max-width: 400px; border: 1px solid gray; padding: 1em;" markdown="1">
 # # 제일 큼
 {: class="no_toc"}
 ## ## 두번째
@@ -38,28 +39,41 @@ Markdown Style의 몇가지 Case를 보고 넘어가자
 {: class="no_toc"}
 ###### ###### 여섯번째
 {: class="no_toc"}
+</div>
 
 &nbsp;
 
-### Bold(굵은 글씨)
+### 2. Bold(굵은 글씨)
 
 어떤 글자를 Bold로 표현하기 위해서는 글자 앞뒤로 __(언더바 2개)를 붙인다.
 
+<div style="max-width: 400px; border: 1px solid gray; padding: 1em;">
+<div style="width: fit-content; margin-left: auto; margin-right: auto;" markdown="1">
 __\_\_굵은 글씨\_\___
+{: style="margin: 0;"}
+</div></div>
 
-### Italic(기울임꼴)
+### 3. Italic(기울임꼴)
 
 기울임꼴 글자를 표현하기 위해서는 글자 앞위로 _(언더바 1개)를 붙인다.
 
+<div style="max-width: 400px; border: 1px solid gray; padding: 1em;">
+<div style="width: fit-content; margin-left: auto; margin-right: auto;" markdown="1">
 _\_기울임꼴\__
+{: style="margin: 0;"}
+</div></div>
 
-### Inline Code (한 줄 코드)
+### 4. Inline Code (한 줄 코드)
 
 내가 쓴 글에서 특정 단어가 코드의 일부 임을 말하고 싶을때, `(backtick)으로 글을 감싼다.
 
+<div style="border: 1px solid gray; padding: 1em;">
+<div style="width: fit-content; margin-left: auto; margin-right: auto;" markdown="1">
 코드를 `` `print('코드입니다')` `` 이렇게 줄 사이에 넣는다.
+{: style="margin: 0;"}
+</div></div>
 
-### Code Block(코드 블록)
+### 5. Code Block(코드 블록)
 
 한 줄 짜리 코드가 아니라 코드로 된 단락을 만드려면 코드로 작성할 단락의 위와 아래를 ```(backtick 3개)로 감싼다.
 
@@ -71,7 +85,7 @@ def main():
 ```
 ````
 
-### Code Language Specific (특정 언어의 코드 블록)
+### 6. Code Language Specific (특정 언어의 코드 블록)
 
 코드 단락을 만들되 특정 언어만의 Highlight를 적용 할 수 있다. 코드를 감싸는 ```(backtick 3개) 중 윗줄에 언어명을 붙여쓴다.
 
@@ -83,9 +97,16 @@ def main():
 ```
 ````
 
-### 링크
+### 7. Link (링크)
 
-문서 내에 다른 곳으로 가는 링크를 걸수 있다. `[링크명](링크 URL)` 형태로 작성한다.
+문서 내에 다른 곳으로 가는 링크를 걸수 있다.<br/>
+`[링크명](링크 URL)`<br/>
+형태로 작성한다.
+
+예를들어,<br/>
+<span markdown="0">[목차 페이지로 이동]({{ site.baseurl }}/toc)</span> 이라고 쓰면<br/>
+[목차 페이지로 이동]({{ site.baseurl }}/toc)<br/>
+링크로 변환된다.
 
 # 내용 작성하기
 
