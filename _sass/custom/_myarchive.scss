@@ -2,4 +2,12 @@
     @include breakpoint($large) {
         width: calc(100% - #{$mysidebar-width} - 1em); // -1em from _mixins for padding of <div id='main'>.
     }
+    .entries-list {
+        a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }
