@@ -145,3 +145,14 @@
         }
     }
 }
+
+.sidebar__right {
+    &.sticky {
+        top: calc(#{$mymasthead-height} + 0.5em);
+    }
+    .toc {
+        .nav__title {
+            margin-top: 0;
+        }
+    }
+}

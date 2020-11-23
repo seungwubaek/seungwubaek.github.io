@@ -281,6 +281,7 @@ defaults:
       share: true
       related: true
       toc: true
+      toc_sticky: true
       sidebar:
         nav: main-sidebar
   # all
