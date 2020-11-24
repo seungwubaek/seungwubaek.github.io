@@ -21,6 +21,15 @@ Markdown의 문법은 구글링으로 통해 쉽게 찾아볼수 있는데 급�
 
 일단은 한번 빠르게 읽어보자. 그리고 직접 Markdown으로 포스트를 작성하면서 익히는게 가장 빠르다. '어떤 스타일을 적용하고 싶은데 기억이 안난다' 할때 마다 Markdown Cheatsheet를 찾아보면 좋을것이다.
 
+<div class="notice--info" markdown="1">
+#### Kramdown
+{: class="no_toc"}
+Kramdown은 Markdown 형식으로 쓰여진 문서를 이쁘게 변환하는 Markdown 렌더러이다.
+Kramdown은 Markdown의 문법을 지원하면서 자체적으로 그 이상의 문법과 기능들을 포함하는 더 큰 집합의 Markdown이라고 이해하면 된다.<br/>
+Jekyll에서 Kramdown을 지원하며 특히, Github Page는 Kramdown만 지원한다.<br/>
+다음부터 Markdown 관련 이야기가 나왔을 때 특별히 'Kramdown'에 대한 이야기를 하는것이 아니면 편의상 'Markdown' 키워드를 사용할 것이다.
+</div>
+
 ## Markdown Style Case
 
 Markdown Style의 몇가지 Case를 보고 넘어가자
