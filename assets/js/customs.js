@@ -161,5 +161,13 @@ $(document).ready(function() {
     // // Add additional style to <head>
     // $('head').append(extra_css);
 
-
+    if(location.hash.length > 0) {
+        var h = decodeURIComponent(location.hash);
+        // actual html margin top size is 56 (=3em+0.5em).
+        // But if we set 56, header of page toc may not be given class "activate" by gumshoe correctly.
+        // So, scrollTo Y position is needed tiny pulling to downward
+        //   for getting class "activate" by gumshoe more clearly.
+        var yPos = $(h).offset().top - 55;
+        scrollTo({'top': yPos});
+    }
 });
