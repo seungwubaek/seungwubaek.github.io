@@ -39,7 +39,7 @@ Jekyll은 우리가 작성한 liquid html, markdown 문서들로 부터 빌드�
 # 레이아웃 적용하기
 
 우리는 대문 페이지를 작성하기 위해 최상위 경로에 `/index.html`을 만들 것이다. mmistakes 테마에 의해 이미 만들어진 `/index.html`이 존재할텐데 그래도 어떻게 만드는지 확인하고 가자.<br/>
-그리고 반드시 front-matter (머릿말)를 붙여야 Jekyll이 해당 파일을 블로그 페이지로 인식한다는 것을 기억하자.
+그리고 반드시 front-matter (머리말)를 붙여야 Jekyll이 해당 파일을 블로그 페이지로 인식한다는 것을 기억하자.
 
 `/index.html` 파일을 열고 그곳에 아래와 같이 작성해보자.
 
