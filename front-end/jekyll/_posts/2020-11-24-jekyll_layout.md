@@ -5,7 +5,7 @@ post-order: 1
 date: "2020-11-24 11:22:00 +0900"
 last_modified_at: "2020-11-24 23:50:00 +0900"
 ---
-Jekyll의 Layout이란 무엇인지 간략히 살펴보자. 앞으로 블로그의 HTML 구조를 Custom 하고 싶다면, Jekyll Layout의 구조를 이해해야만 한다.
+Jekyll Layout이란 HTML 문서 덩어리(HTML 템플릿)이다. 특징은 특정 Layout을 사용하는 모든 HTML 문서에게 동일한 구조의 HTML 요소들을 제공한다는 점이다. 앞으로 블로그의 HTML 구조를 Custom 하고 싶다면, Jekyll Layout의 구조를 이해해야만 한다.
 
 # Jekyll Layout
 
