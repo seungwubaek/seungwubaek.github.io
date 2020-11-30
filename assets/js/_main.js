@@ -73,7 +73,9 @@ $(document).ready(function() {
       nestedClass: "active", // applied to the parent items
 
       // Offset & reflow
-      offset: 56, // how far from the top of the page to activate a content area
+      // if you change this offset, You must consider the variable 'top_offset' in my javascript code,
+      //    section '[2] Auto Scroll' at /assets/js/custom.js.
+      offset: 100, // how far from the top of the page to activate a content area
       reflow: true, // if true, listen for reflows
 
       // Event support
