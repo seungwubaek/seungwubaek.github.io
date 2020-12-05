@@ -14,6 +14,12 @@
     }
 }
 
+.page__related {
+    @include breakpoint($large) {
+        width: calc(100% - #{$mysidebar-width} - 1em); // -1em from _mixins for padding of <div id='main'>.
+    }
+}
+
 /* Posting */
 .page__content {
     h1 {
