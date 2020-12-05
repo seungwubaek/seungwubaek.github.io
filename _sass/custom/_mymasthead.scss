@@ -35,10 +35,6 @@
     .site-title {
         color: $mymasthead-text-color;
         font-size: 1.3rem;
-
-        &:hover {  // prevent to change text color to black when a:hover in contrast skin.
-            color: $mymasthead-text-color;
-        }
     }
 
     // dropdown menu shared by visible- & hidden-links
