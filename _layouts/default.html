@@ -30,12 +30,12 @@
       </div>
     {% endif %}
 
-    {% comment %} <div id="footer" class="page__footer">
+    <div id="footer" class="page__footer">
       <footer>
         {% include footer/custom.html %}
-        {% include_cached footer.html %}
+        {% comment %} {% include_cached footer.html %} {% endcomment %}
       </footer>
-    </div> {% endcomment %}
+    </div>
 
     {% include scripts.html %}
 

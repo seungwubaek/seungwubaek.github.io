@@ -50,7 +50,7 @@
         // [Warning] fixed topbar covers content. If we use inner page link(move to #anchor),
         //      the browser scroll view's top coordinate to #anchor's top coordinate.
         //      but, top coordinate was occupied by topbar.
-        position: fixed;  // change 'sticky' to 'fixed'.
+        position: sticky;  // change 'sticky' to 'fixed'.
         opacity: 1;  // Remove row opacity animation After/Before hovering
 
         &::-webkit-scrollbar {
