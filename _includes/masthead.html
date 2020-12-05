@@ -17,7 +17,7 @@
           {% else %}
             <li class="masthead__menu-item dropdown">
               <a href="javascript:;"><div class="dropdown-set"><div class="dropdown-title">{{ link.title }}</div><div class="dropdown-icon"><i class="fas fa-caret-down"></i></div></div></a>
-              <ul class="masthead__submenu">
+              <ul class="masthead__submenu hidden">
               {% for sublink in link.dropdown %}
                 <li class="masthead__submenu-item"><a href="{{ sublink.url | relative_url }}"{% if sublink.description %} title="{{ sublink.description }}"{% endif %}>
                   <div class="masthead__submenu-item-title">{{ sublink.title }}</div></a></li>

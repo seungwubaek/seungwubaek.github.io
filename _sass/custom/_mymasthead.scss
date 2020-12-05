@@ -126,16 +126,6 @@
             padding: 0;
             color: $text-color;  // contrast skin has black text color and it is not suitable.
         }
-        .masthead__menu-item {
-            .masthead__submenu {
-                display: none;
-            }
-            &:hover {
-                .masthead__submenu {
-                    display: block;
-                }
-            }
-        }
 
         .masthead__submenu {
             position: relative;

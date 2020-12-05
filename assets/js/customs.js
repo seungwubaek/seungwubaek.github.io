@@ -193,4 +193,16 @@ $(document).ready(function() {
     navHamburgBtn.click(function (e) {
         navHLinks.toggleClass('hidden');
     });
+
+    $('.hidden-links .masthead__menu-item').click(function(e){
+        $(this).children('.masthead__submenu').toggleClass('hidden');
+        arrow = $(this).children('a').children('.dropdown-set').children('.dropdown-icon').children('i');
+        if(arrow.hasClass('fa-caret-down')){
+            arrow.removeClass('fa-caret-down');
+            arrow.addClass('fa-caret-up');
+        } else {
+            arrow.addClass('fa-caret-down');
+            arrow.removeClass('fa-caret-up');
+        }
+    });
 });
