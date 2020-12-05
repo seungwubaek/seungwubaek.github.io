@@ -98,11 +98,11 @@ author:
   avatar           : "/assets/images/2020-08-28-18-37-15-269.jpg"  # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
   bio              : "Data Scientist & Software Engineer.<br>Senior Engineer, AI Platform Research Team, Mobigen Co."
   location         : "Seoul, Rep. of Korea"
-  email            :
+  email            : "whitesw01@gmail.com"
   links:
     - label: ""
       icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:whitesw01@gmail.com"
+      # url: "mailto:whitesw01@gmail.com"
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
@@ -115,13 +115,15 @@ author:
     - label: ""
       icon: "fab fa-fw fa-github"
       url: "https://github.com/seungwubaek"
+      itemprop: "sameAs"
     - label: ""
       icon: "fab fa-fw fa-instagram"
       url: "https://www.instagram.com/sammy_baek"
+      itemprop: "sameAs"
 
 # Site Footer
 footer:
-  links:
+  links:  # not used
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url:
