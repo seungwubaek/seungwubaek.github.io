@@ -127,6 +127,14 @@
             color: $text-color;  // contrast skin has black text color and it is not suitable.
         }
 
+        .masthead__menu-item {
+            .masthead__submenu {
+                .masthead__submenu-item {
+                    overflow-x: hidden;
+                }
+            }
+        }
+
         .masthead__submenu {
             position: relative;
             background: $background-color;
