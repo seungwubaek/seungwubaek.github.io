@@ -156,4 +156,41 @@ $(document).ready(function() {
         var yPos = $(h).offset().top - top_offset;
         scrollTo({'top': yPos});
     });
+
+    // [3] greedy-navigation
+    var navVLinks = $(".greedy-nav .visible-links");
+    var navHamburgBtn = $(".greedy-nav .greedy-nav__toggle");
+    var navHLinks = $(".greedy-nav .hidden-links");
+    var menuTotWidth = 0;
+    navVLinks.children().outerWidth(function(i, oW){
+        menuTotWidth += oW;
+    });
+
+    function showNavBtn() {
+        if(navHamburgBtn.hasClass('hidden')){
+            navVLinksAvailWidth = navVLinks.width();
+        } else {
+            navVLinksAvailWidth = navVLinks.width() + navHamburgBtn.outerWidth();
+        }
+
+        if(navVLinksAvailWidth <= menuTotWidth){
+            navVLinks.children().each(function(i, o) {
+                $(o).appendTo(navHLinks)
+            });
+            navHamburgBtn.removeClass('hidden');
+        } else {
+            navHLinks.children().each(function(i, o) {
+                $(o).appendTo(navVLinks)
+            });
+            navHamburgBtn.addClass('hidden');
+            navHLinks.addClass('hidden');
+        }
+    }
+    showNavBtn();  // first page load.
+    $(window).resize(function(){
+        showNavBtn();
+    })
+    navHamburgBtn.click(function (e) {
+        navHLinks.toggleClass('hidden');
+    });
 });
