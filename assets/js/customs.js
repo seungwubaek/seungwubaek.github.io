@@ -158,32 +158,30 @@ $(document).ready(function() {
     });
 
     // [3] greedy-navigation
-    var navVLinks = $(".greedy-nav .visible-links");
+    var navVisibleLinks = $(".greedy-nav .visible-links");
     var navHamburgBtn = $(".greedy-nav .greedy-nav__toggle");
-    var navHLinks = $(".greedy-nav .hidden-links");
+    var navHiddenLinks = $(".greedy-nav .hidden-links");
     var menuTotWidth = 0;
-    navVLinks.children().outerWidth(function(i, oW){
+    navVisibleLinks.children().outerWidth(function(i, oW){
         menuTotWidth += oW;
     });
 
     function showNavBtn() {
         if(navHamburgBtn.hasClass('hidden')){
-            navVLinksAvailWidth = navVLinks.width();
+            navVLinksAvailWidth = navVisibleLinks.width();
         } else {
-            navVLinksAvailWidth = navVLinks.width() + navHamburgBtn.outerWidth();
+            navVLinksAvailWidth = navVisibleLinks.width() + navHamburgBtn.outerWidth();
         }
 
         if(navVLinksAvailWidth <= menuTotWidth){
-            navVLinks.children().each(function(i, o) {
-                $(o).appendTo(navHLinks)
-            });
-            navHamburgBtn.removeClass('hidden');
+            navVisibleLinks.addClass('hidden');  // hide visible
+            navVisibleLinks.css('overflow', 'hidden');  // hide visible. It cause hiding dropdown.
+            navHamburgBtn.removeClass('hidden');  // show hamburg
         } else {
-            navHLinks.children().each(function(i, o) {
-                $(o).appendTo(navVLinks)
-            });
-            navHamburgBtn.addClass('hidden');
-            navHLinks.addClass('hidden');
+            navVisibleLinks.removeClass('hidden');  // show visible
+            navVisibleLinks.css('overflow', 'visible');  // show visible dropdown
+            navHamburgBtn.addClass('hidden');  // hide hamburg
+            navHiddenLinks.addClass('hidden');  // hide hidden
         }
     }
     showNavBtn();  // first page load.
@@ -191,7 +189,7 @@ $(document).ready(function() {
         showNavBtn();
     })
     navHamburgBtn.click(function (e) {
-        navHLinks.toggleClass('hidden');
+        navHiddenLinks.toggleClass('hidden');
     });
 
     $('.hidden-links .masthead__menu-item').click(function(e){

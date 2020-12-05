@@ -9,23 +9,7 @@
         {% endunless %}
         <a class="site-title" href="{{ '/' | relative_url }}">{{ site.masthead_title | default: site.title }}{% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}</a>
         <ul class="visible-links">
-          {%- for link in site.data.navigation.main -%}
-          {% if link.dropdown.size == null %}
-            <li class="masthead__menu-item">
-              <a href="{{ link.url | relative_url }}"{% if link.description %} title="{{ link.description }}"{% endif %}><div class="dropdown-set"><div class="dropdown-title">{{ link.title }}</div><div class="dropdown-icon"></div></div></a>
-            </li>
-          {% else %}
-            <li class="masthead__menu-item dropdown">
-              <a href="javascript:;"><div class="dropdown-set"><div class="dropdown-title">{{ link.title }}</div><div class="dropdown-icon"><i class="fas fa-caret-down"></i></div></div></a>
-              <ul class="masthead__submenu hidden">
-              {% for sublink in link.dropdown %}
-                <li class="masthead__submenu-item"><a href="{{ sublink.url | relative_url }}"{% if sublink.description %} title="{{ sublink.description }}"{% endif %}>
-                  <div class="masthead__submenu-item-title">{{ sublink.title }}</div></a></li>
-              {% endfor %}
-              </ul>
-            </li>
-          {% endif %}
-          {%- endfor -%}
+        {% include masthead-items.html %}
         </ul>
         {% if site.search == true %}
         <button class="search__toggle" type="button">
@@ -39,7 +23,9 @@
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
           <div class="navicon"></div>
         </button>
-        <ul class="hidden-links hidden"></ul>
+        <ul class="hidden-links hidden">
+        {% include masthead-items.html submenu_class="hidden"%}
+        </ul>
       </nav>
     </div>
   </div>
