@@ -158,36 +158,8 @@ $(document).ready(function() {
     });
 
     // [3] greedy-navigation
-    var navVisibleLinks = $(".greedy-nav .visible-links");
     var navHamburgBtn = $(".greedy-nav .greedy-nav__toggle");
     var navHiddenLinks = $(".greedy-nav .hidden-links");
-    var menuTotWidth = 0;
-    navVisibleLinks.children().outerWidth(function(i, oW){
-        menuTotWidth += oW;
-    });
-
-    function showNavBtn() {
-        if(navHamburgBtn.hasClass('hidden')){
-            navVLinksAvailWidth = navVisibleLinks.width();
-        } else {
-            navVLinksAvailWidth = navVisibleLinks.width() + navHamburgBtn.outerWidth();
-        }
-
-        if(navVLinksAvailWidth <= menuTotWidth){
-            navVisibleLinks.addClass('hidden');  // hide visible
-            navVisibleLinks.css('overflow', 'hidden');  // hide visible. It cause hiding dropdown.
-            navHamburgBtn.removeClass('hidden');  // show hamburg
-        } else {
-            navVisibleLinks.removeClass('hidden');  // show visible
-            navVisibleLinks.css('overflow', 'visible');  // show visible dropdown
-            navHamburgBtn.addClass('hidden');  // hide hamburg
-            navHiddenLinks.addClass('hidden');  // hide hidden
-        }
-    }
-    showNavBtn();  // first page load.
-    $(window).resize(function(){
-        showNavBtn();
-    })
     navHamburgBtn.click(function (e) {
         navHiddenLinks.toggleClass('hidden');
     });

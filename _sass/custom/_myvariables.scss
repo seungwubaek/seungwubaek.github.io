@@ -11,8 +11,11 @@ $nav-remocon-btn-set-padding-bottom: .4em;
 $nav-remocon-btn-set-height: calc(#{$nav-remocon-btn-set-font-size} + #{$nav-remocon-btn-set-padding-top} + #{$nav-remocon-btn-set-padding-bottom});
 
 // masthead
+$mymasthead-font-size: 16px;  // it is equal with _reset.
 $mymasthead-text-color: white;  // text color is white, basically.
-$mymasthead-height: 3em;
+$mymasthead-height: calc(3 * #{$mymasthead-font-size});
+$mymasthead-home-height: calc(2 * #{$mymasthead-font-size});
+$mymasthead-menu-height: calc(1.1 * #{$mymasthead-home-height});
 
 // sidebar
 $mysidebar-width: 216px;  // sidebar width + scroll bar space

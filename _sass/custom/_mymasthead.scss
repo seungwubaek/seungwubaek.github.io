@@ -10,10 +10,21 @@
     border: 0;
     background-color: $footer-background-color;
     .masthead__inner-wrap {
-        padding: .8em 1em 0em 1em;
+        padding: 0 1em 0;
+        width: 100%;
+        height: 100%;
         .masthead__menu {
+            width: inherit;
+            height: inherit;
             .greedy-nav {
                 background-color: inherit;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 100%;
+                @include breakpoint($medium) {
+                    align-items: flex-end;
+                }
             }
         }
     }
@@ -27,6 +38,9 @@
 
     // Home Title and Logo at Left Top
     .site-logo {
+        height: $mymasthead-home-height;
+        display: flex;
+        align-items: center;
         img {
             max-width: 1.5em;
             max-height: 1.5em;
@@ -34,7 +48,10 @@
     }
     .site-title {
         color: $mymasthead-text-color;
-        font-size: 1.3rem;
+        font-size: 1.3em;
+        height: $mymasthead-home-height;
+        display: flex;
+        align-items: center;
     }
 
     // dropdown menu shared by visible- & hidden-links
@@ -62,7 +79,8 @@
 
     .visible-links {
         overflow: visible; //dropdown menu will appeared on the <nav> tag
-        font-size: 1.1rem;
+        font-size: 1.1em;
+        height: $mymasthead-menu-height;
 
         a {  // it let be hard to understand for any other tag's padding or margin.
             margin: 0;
@@ -70,6 +88,10 @@
         }
 
         .masthead__menu-item {
+            display: none;
+            @include breakpoint($medium) {
+                display: block;
+            }
             position: relative; // for dropdown menu right align to it's parent.
 
             a, i {
@@ -113,6 +135,21 @@
                     color: $text-color;
                 }
             }
+        }
+    }
+
+    .search__toggle {
+        align-self: center;
+        @include breakpoint($medium) {
+            align-self: flex-end;
+        }
+    }
+
+    .greedy-nav__toggle {
+        display: block;
+        visibility: visible;
+        @include breakpoint($medium) {
+            display: none;
         }
     }
 
