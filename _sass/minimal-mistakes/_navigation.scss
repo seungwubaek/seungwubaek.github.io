@@ -445,33 +445,36 @@
     font-weight: bold;
   }
 
-  @include breakpoint(max-width $large - 1px) {
-    position: relative;
-    max-height: 0;
-    opacity: 0%;
-    overflow: hidden;
-    z-index: 10;
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-    -webkit-transform: translate(0, 10%);
-    -ms-transform: translate(0, 10%);
-    transform: translate(0, 10%);
-  }
+  // @include breakpoint(max-width $large - 1px) {
+  //   position: relative;
+  //   max-height: 0;
+  //   opacity: 0%;
+  //   overflow: hidden;
+  //   z-index: 10;
+  //   -webkit-transition: 0.3s ease-in-out;
+  //   transition: 0.3s ease-in-out;
+  //   -webkit-transform: translate(0, 10%);
+  //   -ms-transform: translate(0, 10%);
+  //   transform: translate(0, 10%);
+  // }
+  // Always showing
+  max-height: 9999px;
+  overflow: visible;
 }
 
-@include breakpoint(max-width $large - 1px) {
-  .nav__list input:checked ~ .nav__items {
-    -webkit-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
-    max-height: 9999px; /* exaggerate max-height to accommodate tall lists*/
-    overflow: visible;
-    opacity: 1;
-    margin-top: 1em;
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
-  }
-}
+// @include breakpoint(max-width $large - 1px) {
+//   .nav__list input:checked ~ .nav__items {
+//     -webkit-transition: 0.5s ease-in-out;
+//     transition: 0.5s ease-in-out;
+//     max-height: 9999px; /* exaggerate max-height to accommodate tall lists*/
+//     overflow: visible;
+//     opacity: 1;
+//     margin-top: 1em;
+//     -webkit-transform: translate(0, 0);
+//     -ms-transform: translate(0, 0);
+//     transform: translate(0, 0);
+//   }
+// }
 
 .nav__title {
   margin: 0;

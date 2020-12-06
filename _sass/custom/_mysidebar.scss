@@ -43,6 +43,9 @@
                 }
             }
         }
+        #ac-toc, label[for=ac-toc] {
+            display: none;
+        }
     }
     &.sticky { // Only when sidebar sticky, specifically
         // [Warning] fixed topbar covers content. If we use inner page link(move to #anchor),
