@@ -8,7 +8,7 @@
     .nav__list {
         margin-top: 0;
         & .nav__items {
-            font-size: 1.5rem;
+            font-size: $mysidebar-font-size;
             li {
                 .nav__sub-title {
                     padding-bottom: 0;
@@ -16,12 +16,10 @@
                     cursor: pointer;
 
                     .nav__sub-title-set {
-                        display: table;
+                        display: flex;
                         width: 100%;
-                        span {
-                            display: table-cell;
-                            vertical-align: middle;
-                            overflow-x: hidden;
+                        .nav__sub-title-name {
+                            flex: 1 0 auto;
                         }
                         .nav__sub-title-dropdownicon {
                             text-align: right;

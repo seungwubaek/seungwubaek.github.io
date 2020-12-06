@@ -9,8 +9,8 @@
     {% for nav in navigation %}
       <li>
         <div class="nav__sub-title">
-          <div class="nav__sub-title-set"><span>{{ nav.title }}</span>
-          {% if nav.children != null %}<span class="nav__sub-title-dropdownicon"><i class="fas fa-plus"></i></span>{% endif %}
+          <div class="nav__sub-title-set"><div class="nav__sub-title-name">{{ nav.title }}</div>
+          {% if nav.children != null %}<div class="nav__sub-title-dropdownicon"><i class="fas fa-plus"></i></div>{% endif %}
           </div>
         </div>
 
