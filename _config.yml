@@ -303,6 +303,7 @@ defaults:
 footer_scripts:
   - /assets/js/main.min.js
   - /assets/js/customs.js
+  - /assets/js/theme.christmas-2020.js
 
 # Global Variables
 gdrive_url_prefix: "https://drive.google.com/uc?export=view&id="
