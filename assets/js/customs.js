@@ -141,20 +141,25 @@ $(document).ready(function() {
     // So, scrollTo Y position is needed tiny pulling to downward ( -1 px )
     //   for getting class "activate" by gumshoe more clearly.
     top_offset = 99;
+    function scrollToHash(h) {
+        var yPos = $(h).offset().top - top_offset;
+        scrollTo({'top': yPos});
+    }
     // [2-1] If came from external page.
     //       You'd clicked link, has 'id' attr, from other page and moved to this page.
     if(location.hash.length > 0) {
         var h = decodeURIComponent(location.hash);
-        var yPos = $(h).offset().top - top_offset;
-        scrollTo({'top': yPos});
+        scrollToHash(h);
     }
     // [2-2] If came from internal page.
     //       You just clicked some anchor in this page.
-    $('.header-link, .toc li a').click(function (e) {
-        e.preventDefault();  // disable standard hash navigation
-        var h = $(this).attr('href');
-        var yPos = $(h).offset().top - top_offset;
-        scrollTo({'top': yPos});
+    $('a').click(function (e) {
+        if($(this)[0].origin == location.origin &&
+           $(this)[0].pathname == location.pathname) {
+            e.preventDefault();
+            var h = $(this).attr('href');
+            scrollToHash(h);
+        }
     });
 
     // [3] greedy-navigation
