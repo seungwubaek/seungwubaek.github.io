@@ -32,7 +32,7 @@
     {% assign minHeader = include.h_min | default: 1 %}
     {% assign maxHeader = include.h_max | default: 6 %}
     {% assign nodes = include.html | split: '<h' %}
-    {% assign firstHeader = true %}
+    {% assign firstHeader = false %}
 
     {% capture listModifier %}{% if orderedList %}1.{% else %}-{% endif %}{% endcapture %}
 
@@ -83,6 +83,9 @@
         {% capture my_toc %}{{ my_toc }}
 {{ space }}{{ listModifier }} {{ listItemClass }} [{{ heading_body | replace: "|", "\|" }}]({% if include.baseurl %}{{ include.baseurl }}{% endif %}#{{ html_id }}){% if include.anchor_class %}{:.{{ include.anchor_class }}}{% endif %}{% endcapture %}
     {% endfor %}
+
+    {% capture heading_body %}{{ page.title }}{% endcapture %}
+    {% capture my_toc %}{{ space }}{{ listModifier }} {{ listItemClass }} [{{ heading_body | replace: "|", "\|" }}]({% if include.baseurl %}{{ include.baseurl }}{% endif %}#page-title){% if include.anchor_class %}{:.{{ include.anchor_class }}}{% endif %}{{ my_toc }}{% endcapture %}
 
     {% if include.class %}
         {% capture my_toc %}{:.{{ include.class }}}
