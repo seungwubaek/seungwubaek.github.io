@@ -95,7 +95,8 @@ analytics:
 # Site Author
 author:
   name             : "Sammy Baek"
-  avatar           : "/assets/images/2020-08-28-18-37-15-269.jpg"  # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  # avatar           : "/assets/images/2020-08-28-18-37-15-269.jpg"  # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar           : "/assets/images/christmas2020/my_face.jpg"  # for 2020 X-mas Theme
   bio              : "Data Scientist & Software Engineer.<br>Senior Engineer, AI Platform Research Team, Mobigen Co."
   location         : "Seoul, Rep. of Korea"
   email            : "whitesw01@gmail.com"

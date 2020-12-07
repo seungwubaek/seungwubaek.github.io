@@ -57,7 +57,6 @@ $(function(){
         }
         $(o).prepend('<img src="{{ site.gdrive_url_prefix }}' + gid + '" class="nav__sub-title-set-icon" alt="Merry X-Mas"/>&nbsp;');
     });
-    $('.author__avatar').children('img').attr('src', '{{ site.gdrive_url_prefix }}1wCJck88s0P1dN_UN_60pe0jL1kEt7cx8');
 
     // Post in Home Layout
     $('.archive').children('.archive__subtitle').prepend('\
