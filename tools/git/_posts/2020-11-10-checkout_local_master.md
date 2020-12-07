@@ -8,11 +8,13 @@ post-order: 2
 
 `git checkout <이동 목적지 commit hash>` 명령어를 사용하면 detach 상태가 된다. 이럴때는 아래와 같이 하면 된다.
 
-# 주의사항
+<div class="notice--warning" markdown="1">
+#### 주의사항
+{: class="no_toc"}
+아래 커맨드를 이용하면 저장(backup or commit) 되지 않은 변경 사항들이 날아가 버리므로 주의해서 백업 해놓자.
+</div>
 
-  아래 커맨드를 이용하면 저장(backup or commit) 되지 않은 변경 사항들이 날아가 버리므로 주의해서 백업 해놓자.
-
-# Command
+## Command
 
 아래 git 명령어를 사용해서 로컬 브랜치 master 의 상태를 원하는 commit으로 바꿔버릴 수 있다.
 
@@ -24,7 +26,7 @@ git checkout -B master <이동 목적지 commit hash>
 
     `<branch name>`이라는 이름으로 새로운 브랜치를 만든다. 만약 `<branch name>`이름의 브랜치가 이미 존재한다면, 해당 브랜치를 checkout 하려는 목적지 commit의 상태로 되돌린다.
 
-# Example
+## Example
 
 다음과 같은 commit log를 가지는 Repository가 있다고 하자. <span class='md-monologue'>(내 블로그임ㅋ)</span>
 

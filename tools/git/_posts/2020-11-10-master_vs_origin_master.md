@@ -6,7 +6,7 @@ post-order: 1
 
 master 와 origin/master 의 차이는 뭘까? 이 포스트를 통해 그 의미들을 이해해보자.
 
-# Git Commit Log
+## Git Commit Log
 
 아래 그림은 내 블로그 Repository의 commit log들을 보여준다. 위에 있을수록 최근이며 아래로 갈수록 과거이다.
 

@@ -16,7 +16,7 @@ post-order: 4
 
     그래서 내 블로그를 Fork한 Repository가 아닌 새로운 Repository로 만들되 원래 의도대로 Fork 했었던 commit들은 다 가져오고 대신, 내가 한 commit이 아닌 Fork된 commit들은 전부 rebase 시키자
 
-# 과정
+## 과정
 
 1. 새 보금자리 만들기
 
@@ -24,13 +24,13 @@ post-order: 4
 
 3. 다른 사람의 commit들을 Squash
 
-# 과정 수행
+## 과정 수행
 
-## 1. 새 보금자리 만들기
+### 1. 새 보금자리 만들기
 
-## 2. 다른 사람의 Source 가져오기
+### 2. 다른 사람의 Source 가져오기
 
-## 3. 다른 사람의 commit들을 Squash
+### 3. 다른 사람의 commit들을 Squash
 
 아래 커맨드를 이용해서 rebase 시작
 

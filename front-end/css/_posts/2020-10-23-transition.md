@@ -10,7 +10,9 @@ CSS를 이용해서 HTML의 특정 요소에 애니메이션 효과를 부여할
 
 ## Requirement
 
-HTML 기본, CSS 기본, class 선택자
+* HTML tag 읽는법
+* CSS 적용법
+  * CSS class selection(선택자)
 
 ## Example
 

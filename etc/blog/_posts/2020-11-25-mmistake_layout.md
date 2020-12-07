@@ -9,7 +9,7 @@ Jekyll Theme [Minimal-Mistakes](https://github.com/mmistakes/minimal-mistakes)�
 이 과정을 통해 테마에서 사용하는 주요한 Layout의 구조를 이해하고 Custom 할 때 도움이 되었으면 좋겠다.
 <span class="md-monologue">주요한 Layout이라기 보단 내가 사용한 Layout 위주이다...</span>
 
-# Requirement
+## Requirement
 
 * Jekyll Layout<br/>
     Jekyll Layout에 대한 이해가 필요하다면 Jekyll 카테고리에서 "[[Layout] Jekyll Layout 이란]({{ site.base_url }}/front-end/jekyll/jekyll_layout/)" 포스트를 참조하자.
