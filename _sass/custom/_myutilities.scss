@@ -1,0 +1,13 @@
+/*
+Responsive Size Format: [size attr]-[PC]-[Mobile]
+*/
+.width-100-100 {
+    width: 100%;
+}
+
+.width-80-100 {
+    width: 100%;
+    @include breakpoint($medium) {
+        width: 80%;
+    }
+}

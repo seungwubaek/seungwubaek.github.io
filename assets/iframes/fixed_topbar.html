@@ -1,0 +1,70 @@
+<html>
+<head>
+<style>
+body {
+    padding: 0;
+    margin: 0;
+}
+.topbar {
+    position: fixed;
+    background: rgba(0, 0, 0, .75);
+    color: white;
+    width: 100%;
+    height: 32px;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 4px solid red;
+}
+.content {
+    font-size: 16px;
+    padding-top: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.header {
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid gray;
+}
+</style>
+
+</head>
+<body>
+<div class='topbar'>Topbar</div>
+<div class='content'>
+    <h1 class="header" id="섹션-1">섹션 1</h1>
+    <p>섹션 1의 내용입니다.<br/>
+       섹션 1의 내용입니다.<br/>
+    <a href="#섹션-3">여기</a>를 클릭하면 섹션3로 자동 스크롤합니다.</p>
+    <h1 class="header" id="섹션-2">섹션 2</h1>
+    <p>섹션 2의 내용입니다.<br/>
+       섹션 2의 내용입니다.</p>
+    <h1 class="header" id="섹션-3">섹션 3</h1>
+    <p>섹션 3의 내용입니다.<br/>
+       섹션 3의 내용입니다.<br/>
+       <a href="#섹션-1">여기</a>를 클릭하면 섹션1로 자동 스크롤합니다.</p>
+    <h1 class="header" id="섹션-4">섹션 4</h1>
+    <p>섹션 4의 내용입니다.<br/>
+       섹션 4의 내용입니다.</p>
+    <h1 class="header" id="섹션-5">섹션 5</h1>
+    <p>섹션 5의 내용입니다.<br/>
+       섹션 5의 내용입니다.</p>
+</div>
+<script src="/assets/js/main.min.js"></script>
+<script>
+$(function(){
+    var top_offset = 40;
+    $('a').click(function (e) {
+        if($(this)[0].origin == location.origin &&
+           $(this)[0].pathname == location.pathname) {
+            e.preventDefault();
+            var h = $(this).attr('href');
+            var yPos = $(h).offset().top - top_offset;
+            scrollTo({top: yPos, behavior: 'smooth'});
+        }
+    });
+});
+</script>
+</body>
+</html>
