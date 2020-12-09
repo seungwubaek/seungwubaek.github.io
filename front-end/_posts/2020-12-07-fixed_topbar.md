@@ -11,10 +11,12 @@ last_modified_at: "2020-12-07 22:49:00 +0900"
 이때 CSS `position: fixed` 속성값 설정과 몇가지 보완을 통해
 내 블로그의 Topbar 처럼 화면을 스크롤 했을때에도 항상 화면의 최상단에 위치해 있는 Fixed Topbar를 구현하자.
 
-아래는 Fixed Topbar 예제이다. 직접 스크롤을 내려보자. Topbar가 항상 최상위에 고정 되어있다.
+## Fixed Topbar 샘플
+
+아래는 Fixed Topbar 샘플이다. Topbar가 항상 최상위에 고정 되어있다.
 
 <iframe class="width-80-100" style="height: 300px;"
-        src="/assets/iframes/fixed_topbar.html">Fixed Topbar Example</iframe>
+        src="/assets/iframes/fixed_topbar.html">Fixed Topbar Sample</iframe>
 
 Fixed Topbar를 구현하는 방법은 2가지가 있다.<br/>
 둘 모두 설명할 것인데 [첫번째](#구현-method-1)는 약간 문제가 있지만 구현이 매우 간단하고<br/>
@@ -22,7 +24,7 @@ Fixed Topbar를 구현하는 방법은 2가지가 있다.<br/>
 
 ## Fixed Topbar 장점과 문제점
 
-먼저 일반 Topbar 대비 Fixed Topbar의 장점과 윗 단락에서 언급한 문제란 무엇인지 알아본다.
+먼저 일반 Topbar 대비 Fixed Topbar의 장점과 위에서 언급한 문제란 무엇인지 알아본다.
 
 ### 장점: 연산 효율 증가
 
@@ -47,50 +49,148 @@ Topbar가 독립된다는 것은 다른 HTML 요소의 형태 변화에 영향�
 
 내용 가림 문제는 Fixed Topbar가 전체 HTML 구조에서 독립되어 있기 때문에 발생한다.
 
+문제를 해결하지 않고 일반적으로 Fixed Topbar를 구현하면 아래 처럼 된다.
+
+<iframe class="width-80-100" style="height: 300px;"
+    src="/assets/iframes/fixed_topbar-hide_html.html">Fixed Topbar Sample - Hide HTML</iframe>
+
+겹침을 보여주기 위해 Topbar를 약간 투명하게 했다. Topbar와 내용이 겹치는것을 볼수 있다.<br/>
+그리고 "여기를 클릭하면..." 이라는 메시지의 링크를 클릭하면 자동 스크롤이 되지만 Topbar에 가려진다.
+
 * HTML 요소 가림
 
-    Topbar가 Fixed가 아니라면 전체 HTML 구조 최상위에 있게 되고
-    내용 요소는 Topbar 아래에 붙는다.<br/>
-    Topbar가 Fixed라면 HTML 구조에서 독립되므로 내용 요소가 구조 최상위에 있게 된다.
-    그래서 Fixed Topbar와 내용 요소가 같은 최상위 위치에서 겹치는 문제가 발생한다.
+  Fixed Topbar가 다른 HTML 요소를 가린다.<br/>
+  Topbar가 Fixed가 아니라면 전체 HTML 구조의 최상위에 있게 되고
+  내용 요소는 Topbar 아래에 붙는다.<br/>
+  Topbar가 Fixed라면 HTML 구조에서 독립되므로 내용 요소가 구조 최상위에 있게 된다.
+  그래서 Fixed Topbar와 내용 요소가 같은 최상위 위치에서 겹치는 문제가 발생한다.
 
-* 자동 스크롤 가림
-
-    페이지 이동 이벤트에서 `href`에 `hash` 값
-    (예: `href`가 `https://[blog url]/page1/#주제-1` 일 때 `hash` 값은 `#주제-1` 이다.)이 있을때,
-    또는 페이지 내에서 `hash` 값의 위치로 스크롤 할 때,
-    브라우저는 `hash`가 가르키는 요소의 y 좌표가
-    브라우저 화면의 꼭대기(Top)에 오도록 자동 스크롤 한다.
-    이때 Fixed Topbar는 항상 Top에 위치하므로 스크롤한 위치의 라인을 가리게 된다.
+* 자동 스크롤 시 HTML 요소 가림
+  {: id="자동-스크롤-시-HTML-요소-가림"}
+  특정 위치로 자동 스크롤 할때 우리는 스크롤이 Fixed Topbar 바로 아래로 스크롤 되기를 기대하지만<br/>
+  브라우저는 이동하려는 위치의 y 좌표가 브라우저 화면의 꼭대기(Top)에 오도록 자동 스크롤 한다.
+  이때 Fixed Topbar는 항상 Top에 위치하므로 스크롤한 위치의 라인을 가리게 된다.
 
 따라서 Fixed Topbar를 구현할때엔 이러한 가림 문제를 해결해야 한다.
 
+#### 문제가 발생하는 이벤트
+
+위의 HTML 요소 가림 문제는 구체적으로 아래와 같은 상황에서 발생한다.
+
+* 상황 1<br/>
+  링크를 클릭하여 다른 페이지로 부터 이동해 온 다음 특정 위치로 자동 스크롤 할 때
+* 상황 2<br/>
+  링크를 클릭하여 같은 페이지 내에서 다른 위치로 자동 스크롤 할 때
+* 상황 3<br/>
+  URL 주소값을 Browser에 직접 입력해서 자동 스크롤 할 때
+
 # 구현 Method 1
 
-첫번째 방법은 오직 CSS만 사용해서 Topbar를 구현한다.
+첫번째 방법은 오직 __CSS만 사용해서__ Fixed Topbar를 구현한다.
 
-이 방법은 아래 2가지 이벤트가 발생할 때 [자동 스크롤 가림 문제](#문제점-fixed-topbar가-내용을-가림)를 해결하지 못한다.<br/>
-* (해결) 다른 페이지에서 이동해 왔을 때
-* (미해결) URL 주소값을 Browser에 직접 입력해서 화면을 스크롤 할 때
+이 방법은 위의 [HTML 요소 가림 문제](#문제점-fixed-topbar가-내용을-가림) 중
+[자동 스크롤 시 HTML 요소 가림 문제](#자동-스크롤-시-HTML-요소-가림)를 해결하지 못한다.<br/>
+오직 처음 페이지가 로드 되었을 때만 Fixed Topbar가 내용을 가리지 않도록 한다.
 
-하지만 해결하지 못한 부분이 사용자 경험에 큰 영향을 주지 않을 수 있고
-CSS 만 사용하기 때문에 구현이 쉽다는 장점이 있다.<br/>
-때문에 다른 블로그들을 보면 문제를 그냥 안고 가는 경우도 있다.
+이 방법은 CSS 만 사용하기 때문에 구현이 쉽다는 장점이 있는데다가
+HTML 요소 가림 문제가 사용자 경험에 큰 영향을 주지 않을 수 있기 때문에
+다른 블로그들을 보면 문제를 그냥 안고 가는 경우가 많은 것 같다.
 
 자동 스크롤 가림 문제를 좀더 해결해보고 싶다면, 두번째 방법 [구현 Method 2](#구현-method-2)를 보자.
 
 ## 과정
 
-### Topbar 만들기
+* Topbar를 최상단에 고정시키는 CSS 속성을 부여한다
 
-### Topbar에 CSS 속성 부여
+```css
+.topbar {
+    position: fixed;
+    top: 0;
+}
+```
 
-### Navigation 구현
+* 다른 요소들이 Topbar에 겹치지 않도록 한다<br/>
+  Topbar가 차지하는 높이 만큼 `<html>` 태그에 윗 여백을 준다.
+  <span class="md-monologue">인터넷을 다 뒤져봐도 이렇게 하는 경우가 없었다.
+  순수 내 Try&Error로 찾은것. 그래서 오히려 문제가 생길수도 있겠지..</span>
+
+```css
+html {
+    margin-top:
+}
+```
+
+## 샘플
+
+<iframe class="width-80-100" style="height: 300px;"
+    src="/assets/iframes/fixed_topbar-method1.html">Fixed Topbar Sample - Method 1</iframe>
+
+## 샘플 코드
+
+```html
+<html>
+<head>
+<style>
+html {
+    margin-top: 40px;   /* topbar 높이 만큼 윗 여백 설정 */
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+.topbar {
+    position: fixed;    /* 요소 고정 */
+    top: 0;             /* 최상위에 위치 시킴 */
+    background: rgba(0, 0, 0, .75);
+    color: white;
+    width: 100%;
+    height: 32px;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 4px solid red;
+}
+.content {
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.header {
+    font-size: 20px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid gray;
+}
+</style>
+</head>
+<body>
+<div class='topbar'>Topbar</div>
+<div class='content'>
+    <h1 class="header" id="섹션-1">섹션 1</h1>
+    <p>섹션 1의 내용입니다.<br/>
+       섹션 1의 내용입니다.<br/>
+    <a href="#섹션-3">여기</a>를 클릭하면 섹션3로 자동 스크롤합니다.</p>
+    <h1 class="header" id="섹션-2">섹션 2</h1>
+    <p>섹션 2의 내용입니다.<br/>
+       섹션 2의 내용입니다.</p>
+    <h1 class="header" id="섹션-3">섹션 3</h1>
+    <p>섹션 3의 내용입니다.<br/>
+       섹션 3의 내용입니다.<br/>
+       <a href="#섹션-1">여기</a>를 클릭하면 섹션1로 자동 스크롤합니다.</p>
+    <h1 class="header" id="섹션-4">섹션 4</h1>
+    <p>섹션 4의 내용입니다.<br/>
+       섹션 4의 내용입니다.</p>
+    <h1 class="header" id="섹션-5">섹션 5</h1>
+    <p>섹션 5의 내용입니다.<br/>
+       섹션 5의 내용입니다.</p>
+</div>
+</body>
+</html>
+
+```
 
 # 구현 Method 2
 
 두번째 방법은 CSS를 사용해서 Topbar를 구현하고 Javascript를 사용해서
-[가림 문제](#문제점-fixed-topbar가-내용을-가림)를 일부 해결한다.
+[HTML 요소 가림 문제](#문제점-fixed-topbar가-내용을-가림)를 일부 해결한다.
 
 [구현 Method 1](#구현-method-1)의 가림 문제 중 해결되는 문제는 아래와 같다.<br/>
 * (해결) 다른 페이지에서 이동해 왔을 때
@@ -98,8 +198,100 @@ CSS 만 사용하기 때문에 구현이 쉽다는 장점이 있다.<br/>
 
 ## 과정
 
-### Topbar 만들기
+* [구현 Method 1](#구현-method-1)과 같이 Topbar를 최상단에 고정시키는 CSS 속성을 부여한다
 
-### Topbar에 CSS 속성 부여
+```css
+.topbar {
+    position: fixed;
+    top: 0;
+}
+```
 
-### Navigation 구현
+* 다른 요소들이 Topbar에 겹치지 않도록 한다<br/>
+  구현 Method 1과 달리 Topbar가 차지하는 높이 만큼 `<html>` 태그가 아닌
+  `<div class="content">` 태그에 윗 여백을 준다. 이것이 더 reasonable 하다.
+
+```css
+.content {
+    padding-top: 40px;
+}
+```
+
+## 샘플
+
+이 포스트 [최상단에 샘플](#fixed-topbar-샘플)을 실었으므로 참고하자.
+
+## 샘플 코드
+
+```html
+<html>
+<head>
+<style>
+body {
+    padding: 0;
+    margin: 0;
+}
+.topbar {
+    position: fixed;    /* 요소 고정 */
+    top: 0;             /* 최상위에 위치 시킴 */
+    background: rgba(0, 0, 0, .75);
+    color: white;
+    width: 100%;
+    height: 32px;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 4px solid red;
+}
+.content {
+    font-size: 16px;
+    padding-top: 40px;  /* topbar 높이 만큼 윗 여백 설정 */
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.header {
+    font-size: 20px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid gray;
+}
+</style>
+
+</head>
+<body>
+<div class='topbar'>Topbar</div>
+<div class='content'>
+    <h1 class="header" id="섹션-1">섹션 1</h1>
+    <p>섹션 1의 내용입니다.<br/>
+       섹션 1의 내용입니다.<br/>
+    <a href="#섹션-3">여기</a>를 클릭하면 섹션3로 자동 스크롤합니다.</p>
+    <h1 class="header" id="섹션-2">섹션 2</h1>
+    <p>섹션 2의 내용입니다.<br/>
+       섹션 2의 내용입니다.</p>
+    <h1 class="header" id="섹션-3">섹션 3</h1>
+    <p>섹션 3의 내용입니다.<br/>
+       섹션 3의 내용입니다.<br/>
+       <a href="#섹션-1">여기</a>를 클릭하면 섹션1로 자동 스크롤합니다.</p>
+    <h1 class="header" id="섹션-4">섹션 4</h1>
+    <p>섹션 4의 내용입니다.<br/>
+       섹션 4의 내용입니다.</p>
+    <h1 class="header" id="섹션-5">섹션 5</h1>
+    <p>섹션 5의 내용입니다.<br/>
+       섹션 5의 내용입니다.</p>
+</div>
+<script src="/assets/js/main.min.js"></script>
+<script>
+$(function(){
+    var top_offset = 40;
+    $('a').click(function (e) {
+        if($(this)[0].origin == location.origin &&
+           $(this)[0].pathname == location.pathname) {
+            e.preventDefault();
+            var h = $(this).attr('href');
+            var yPos = $(h).offset().top - top_offset;
+            scrollTo({top: yPos, behavior: 'smooth'});
+        }
+    });
+});
+</script>
+</body>
+</html>
+```
