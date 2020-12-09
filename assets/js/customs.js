@@ -158,7 +158,6 @@ $(document).ready(function() {
            $(this)[0].pathname == location.pathname) {
             e.preventDefault();
             var h = $(this).attr('href');
-            // window.location.hash=h;  // I couldn't solve this.. but someday.. ;)
             scrollToHash(h);
             // For changing url's hash without scrolling.
             //   the 'history' is used when you want to go back/forward page.
