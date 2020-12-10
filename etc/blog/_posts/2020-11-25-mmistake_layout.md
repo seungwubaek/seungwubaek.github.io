@@ -121,6 +121,4 @@ classes: wide
   관련 포스트를 나열해준다. 어떤 기준으로 나열하는 건지 모르겠지만 정말로 관련성이 있는 포스트를 보여주는 기능은 아닌것 같다.
   <span class="md-monologue">에이... Deeplearning Recommendation Engine 정도 기대했는데...ㅋ</span>
 
----
-
 [^masthead]: masthead: 돛대의 꼭대기, 신문 1면의 발행사 이름을 의미한다. 즉, Topbar와 크게 다르지 않은 의미이다.

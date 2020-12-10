@@ -11,3 +11,19 @@ Responsive Size Format: [size attr]-[PC]-[Mobile]
         width: 80%;
     }
 }
+
+/* Footnotes */
+.footnote {
+    color: $link-color;
+}
+
+.footnotes {
+    color: $text-color;
+    margin-top: 16px;
+    border-top: 1px solid #bfbfbf;
+
+}
+
+a.reversefootnote {
+    color: $link-color;
+}

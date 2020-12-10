@@ -365,6 +365,4 @@ $(function(){
 </html>
 ```
 
----
-
 [^hash]: hash: href 끝에 `#`으로 시작하는 문자열. 요소의 id를 의미.
