@@ -225,6 +225,16 @@ body {
   페이지 로드가 완료 됐을때 주소에 `hash`[^hash]가 있으면 자동 스크롤이 발생한다.<br/>
   그런데 자동 스크롤의 위치가 올바르지 않으므로 올바른 `hash` 위치로 스크롤 하는 코드를 삽입한다.
 
+<div class="notice--info" markdown="1">
+## 문제 해결의 핵심
+{: style="margin-top: 0.5em;"}
+함수 `scrollTo`는 지정한 y좌표를 브라우저 화면의 꼭대기에 오도록 스크롤한다.<br/>
+이점을 이용해서, `hash`의 y좌표로 스크롤 하는 것이 아니고 그것보다 일정 값(`top_offset` 변수) 만큼
+더 위에 있는 y좌표로 스크롤 하게 한다.<br/>
+그렇게 하면 스크롤 됐을때 화면의 꼭대기에는 `hash`의 y좌표보다 일정 값 만큼 더 위에 있는 y좌표가 위치해
+있을 것이다.
+</div>
+
 ```javascript
 $(function() {  // 페이지 로드가 완료된 이후 실행되게 한다.
     // top_offset: Fixed Topbar가 차지하는 높이를 고려해서 스크롤을 내리고 싶은 만큼 입력. (px 단위)
@@ -244,6 +254,7 @@ $(function() {  // 페이지 로드가 완료된 이후 실행되게 한다.
 
 ```javascript
 $(function() {
+    top_offset = 99;
     // <a> tag 에만 적용한다. 모든 태그에 적용시키는 어렵다. 필요한 순간에 그때그때 적용하기로 한다.
     // <a> tag가 페이지 내에서 움직이는 용도임을 구별하기 위한 조건문
     $('a').click(function (e) {
@@ -252,7 +263,8 @@ $(function() {
             $(this)[0].pathname == location.pathname) {
             e.preventDefault();
             var h = $(this).attr('href');
-            scrollToHash(h);
+            var yPos = $(h).offset().top - top_offset;
+            scrollTo({top: yPos, behavior: 'smooth'});
             history.pushState({}, null, h);  // 주소표시줄의 hash를 이동한 위치의 값으로 변경해줌
         }
     });
@@ -322,14 +334,28 @@ body {
 <script src="/assets/js/main.min.js"></script>
 <script>
 $(function(){
+    // 스크롤 목적지 y좌표를 40px 만큼 위로 올린다
     var top_offset = 40;
+
+    // (부드러운) 스크롤을 수행하는 함수
+    function scrollToHash(h) {
+        var yPos = $(h).offset().top - top_offset;
+        scrollTo({top: yPos, behavior: 'smooth'});
+    }
+
+    // 다른 페이지에서 넘어왔을 때 올바른 자동 스크롤
+    if(location.hash.length > 0) {
+        var h = decodeURIComponent(location.hash);  // 한글 hash를 인식하기 위한 조치
+        scrollToHash(h);
+    }
+
+    // 같은 페이지에서 다른 위치로 스크롤 할 때 올바른 자동 스크롤
     $('a').click(function (e) {
         if($(this)[0].origin == location.origin &&
            $(this)[0].pathname == location.pathname) {
             e.preventDefault();
             var h = $(this).attr('href');
-            var yPos = $(h).offset().top - top_offset;
-            scrollTo({top: yPos, behavior: 'smooth'});
+            scrollToHash(h);
             history.pushState({}, null, h);
         }
     });
