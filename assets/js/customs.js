@@ -140,7 +140,7 @@ $(document).ready(function() {
     // But if we set 56, header of page toc may not be given class "activate" by gumshoe correctly.
     // So, scrollTo Y position is needed tiny pulling to downward ( -1 px )
     //   for getting class "activate" by gumshoe more clearly.
-    top_offset = 99;
+    top_offset = window.innerHeight * 0.27 - 1;
     function scrollToHash(h) {
         var yPos = $(h).offset().top - top_offset;
         scrollTo({top: yPos, behavior: 'smooth'});

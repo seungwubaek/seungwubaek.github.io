@@ -75,7 +75,7 @@ $(document).ready(function() {
       // Offset & reflow
       // if you change this offset, You must consider the variable 'top_offset' in my javascript code,
       //    section '[2] Auto Scroll' at /assets/js/custom.js.
-      offset: 100, // how far from the top of the page to activate a content area
+      offset: window.innerHeight * 0.27, // how far from the top of the page to activate a content area
       reflow: true, // if true, listen for reflows
 
       // Event support
