@@ -123,7 +123,7 @@ def main():
 
 모든 포스트에 front-matter (머리말)이라고 하는 내용이 들어가있다. 머리말이 있어야만 Jekyll은 해당 문서를 블로그의 페이지로 인식한다. 머리말이 없으면 해당 문서는 무시된다.
 
-머리말에는 페이지에 대한 여러가지 정보를 담고 있다. [블로그 만들기 첫번째 포스트]({{ site.base_url }}/etc/blog/post_1/#3-jekyll-tutorial)에서 언급했던 [Jekyll Tutorial](https://jekyllrb-ko.github.io/docs/step-by-step/01-setup/)을 진행했다면 알겠지만 포스트의 화면을 일관되게 구성하는 방법과 글로벌 변수 또는 사용자 정의 변수를 선언해서 사용할 수도 있다.
+머리말에는 페이지에 대한 여러가지 정보를 담고 있다. [블로그 만들기 첫번째 포스트]({{ site.baseurl }}/etc/blog/post_1/#3-jekyll-tutorial)에서 언급했던 [Jekyll Tutorial](https://jekyllrb-ko.github.io/docs/step-by-step/01-setup/)을 진행했다면 알겠지만 포스트의 화면을 일관되게 구성하는 방법과 글로벌 변수 또는 사용자 정의 변수를 선언해서 사용할 수도 있다.
 
 내가 머리말에 지정해서 사용하는 설정들은 아래와 같다.
 
@@ -163,8 +163,8 @@ last_modified_at: "2020-11-17 21:19:00 +0900"  # 마지막 수정 날짜.
 mmistakes 테마를 사용한다면 `single` 레이아웃이 내장 돼있다.
 일단 지금은 `single` 레이아웃을 별도 설명 없이 사용한다.
 
-`single` 레이아웃에 대해서는 [다음 포스트]({{ site.base_url }}/etc/blog/mmistake_layout/)에서 조금 더 자세히 살펴볼 예정이다.
-혹시 Jekyll 레이아웃이 뭔지 궁금하다면 [이 포스트]({{ site.base_url }}/front-end/jekyll/jekyll_layout/)를 참조하자.
+`single` 레이아웃에 대해서는 [다음 포스트]({{ site.baseurl }}/etc/blog/mmistake_layout/)에서 조금 더 자세히 살펴볼 예정이다.
+혹시 Jekyll 레이아웃이 뭔지 궁금하다면 [이 포스트]({{ site.baseurl }}/front-end/jekyll/jekyll_layout/)를 참조하자.
 
 연습을 위해 위에서 `post-order`만 제외하고 비슷한 머리말을 갖도록 포스트를 하나 만들어 보자.
 

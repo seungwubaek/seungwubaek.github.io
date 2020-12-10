@@ -12,7 +12,7 @@ Jekyll Theme [Minimal-Mistakes](https://github.com/mmistakes/minimal-mistakes)�
 ## Requirement
 
 * Jekyll Layout<br/>
-    Jekyll Layout에 대한 이해가 필요하다면 Jekyll 카테고리에서 "[[Layout] Jekyll Layout 이란]({{ site.base_url }}/front-end/jekyll/jekyll_layout/)" 포스트를 참조하자.
+    Jekyll Layout에 대한 이해가 필요하다면 Jekyll 카테고리에서 "[[Layout] Jekyll Layout 이란]({{ site.baseurl }}/front-end/jekyll/jekyll_layout/)" 포스트를 참조하자.
 
 * Jekyll Include<br/>
     [Jekyll 공식 사이트](https://jekyllrb.com/)의 [한국어 번역 사이트](https://jekyllrb-ko.github.io/)를 보면 Jekyll Include를 '조각파일'이라고 번역하였다.

@@ -8,7 +8,7 @@ mmistakes 테마를 사용했다면 이미 그렇게 나오도록 세팅되어 �
 
 # index.html
 
-[이전 포스트]({{ site.base_url }}/etc/blog/mmistakes_config/)에서 다뤘던 `_config.yml`을 보면 mmistakes 테마에의해 모든 페이지의 URL을 `[카테고리명]/[페이지 타이틀명]` 구조로 생성하게끔 되어있다. (`permalink` 키로 변경 가능. URL 규칙에 관한 추가 설명은 [http://jekyllrb-ko.github.io/docs/permalinks/](http://jekyllrb-ko.github.io/docs/permalinks/) 참조)
+[이전 포스트]({{ site.baseurl }}/etc/blog/mmistakes_config/)에서 다뤘던 `_config.yml`을 보면 mmistakes 테마에의해 모든 페이지의 URL을 `[카테고리명]/[페이지 타이틀명]` 구조로 생성하게끔 되어있다. (`permalink` 키로 변경 가능. URL 규칙에 관한 추가 설명은 [http://jekyllrb-ko.github.io/docs/permalinks/](http://jekyllrb-ko.github.io/docs/permalinks/) 참조)
 
 인터넷 상의 어떤 유저가 내 블로그의 홈 화면으로 가려고 한다면 `https://[내 블로그 URL]` 또는 `https://[내 블로그 URL]/` 라고 입력해서 접속 할 것이다. 두 url 모두 url의 끝에 `/`가 붙어있다(`/`를 생략할경우에도 끝에 `/`가 붙은것과 같다).
 
@@ -63,6 +63,6 @@ layout: home
 
 대문 페이지 `/index.html`에 front-matter가 있고 `home` 레이아웃이 적용 돼 있으므로 Jekyll은 `index.html`을 올바른 빌드 파일로 인식하고 `home` 레이아웃에 작성된 코드대로 HTML을 빌드한다(`index.md` 마크다운 확장자 파일로 작성해도 `index.html`로 변환해준다.).
 
-여기까지 했다면 [처음 포스트]({{ site.base_url}}/etc/blog/post_1/#7-블로그-테스트)에서 설명했던 테스트 방법으로 블로그를 실행시켜 보자.
+여기까지 했다면 [처음 포스트]({{ site.baseurl}}/etc/blog/post_1/#7-블로그-테스트)에서 설명했던 테스트 방법으로 블로그를 실행시켜 보자.
 
 대문 페이지가 타나날 것이다.
