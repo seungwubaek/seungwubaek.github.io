@@ -142,6 +142,7 @@ $(document).ready(function() {
     //   for getting class "activate" by gumshoe more clearly.
     top_offset = window.innerHeight * 0.27 - 1;
     function scrollToHash(h) {
+        console.log(h);
         var yPos = $(h).offset().top - top_offset;
         scrollTo({top: yPos, behavior: 'smooth'});
     }
@@ -158,6 +159,7 @@ $(document).ready(function() {
            $(this)[0].pathname == location.pathname) {
             e.preventDefault();
             var h = $(this).attr('href');
+            var h = h.replace(':', '\\:');  // escaping char for kramdown footnote id.
             scrollToHash(h);
             // For changing url's hash without scrolling.
             //   the 'history' is used when you want to go back/forward page.
