@@ -142,7 +142,6 @@ $(document).ready(function() {
     //   for getting class "activate" by gumshoe more clearly.
     top_offset = window.innerHeight * 0.27 - 1;
     function scrollToHash(h) {
-        console.log(h);
         var yPos = $(h).offset().top - top_offset;
         scrollTo({top: yPos, behavior: 'smooth'});
     }
