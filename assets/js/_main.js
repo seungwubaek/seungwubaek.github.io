@@ -131,7 +131,10 @@ $(document).ready(function() {
       anchor.className = 'header-link';
       anchor.href = '#' + id;
       anchor.innerHTML = '<span class=\"sr-only\">Permalink</span><i class=\"fas fa-link\"></i>';
-      anchor.title = "Permalink";
+      // sammy baek custom
+      anchor.title = 'Copy this URL'
+      var addr = location.origin + location.pathname + '#' + id;
+      anchor.setAttribute('data-clipboard-text', addr);
       $(this).append(anchor);
     }
   });

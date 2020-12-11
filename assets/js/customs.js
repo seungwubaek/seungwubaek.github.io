@@ -154,6 +154,10 @@ $(document).ready(function() {
     // [2-2] If came from internal page.
     //       You just clicked some anchor in this page.
     $('a').click(function (e) {
+        if($(this).hasClass('header-link')){
+            // Do not scroll. It will be function of copying url.
+            e.preventDefault();
+        } else {
         if($(this)[0].origin == location.origin &&
            $(this)[0].pathname == location.pathname) {
             e.preventDefault();
@@ -164,6 +168,7 @@ $(document).ready(function() {
             //   the 'history' is used when you want to go back/forward page.
             //   and you can use not only 'pushState' but also 'replaceState'.
             history.pushState({}, null, h);
+        }
         }
     });
     // [2-3] Trying to move page by typing url into address bar.
@@ -189,4 +194,12 @@ $(document).ready(function() {
             arrow.removeClass('fa-caret-up');
         }
     });
+
+    // [4] Copy URL to Clipboard
+    var clipboard = new ClipboardJS('.header-link');
+    clipboard.on('success', function(e) {
+        e.clearSelection();
+    });
+    // clipboard.on('error', function(e) {
+    // });
 });
