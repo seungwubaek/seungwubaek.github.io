@@ -81,6 +81,7 @@
         -webkit-transition: all 200ms linear;
         transition: all 200ms linear;
         .nav-btn-set {
+            display: flex;
             list-style-type: none;
             margin: 0;
             padding: 0;
@@ -89,18 +90,24 @@
             &:last-child {
                 border-bottom: 0;
             }
-            cursor: pointer;
             i {
                 text-align: center;
                 padding-right: 2px;
             }
             .nav-btn-title-wrapper {
                 display: flex;
+                flex-grow: 1;
+                justify-content: center;
                 height: 100%;
                 align-items: center;
+                cursor: pointer;
                 & span {
                     text-align: left;
                 }
+            }
+            .nav-btn-vl {
+                border-left: 1px dashed $nav-remocon-border-color;
+                margin: 4px 0;
             }
         }
     }
