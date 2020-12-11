@@ -110,8 +110,8 @@ HTML 요소 가림 문제가 사용자 경험에 큰 영향을 주지 않을 수
 
 ```css
 .topbar {
-    position: fixed;
-    top: 0;
+  position: fixed;
+  top: 0;
 }
 ```
 
@@ -122,7 +122,7 @@ HTML 요소 가림 문제가 사용자 경험에 큰 영향을 주지 않을 수
 
 ```css
 html {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 ```
 
@@ -138,55 +138,55 @@ html {
 <head>
 <style>
 html {
-    margin-top: 40px;   /* topbar 높이 만큼 윗 여백 설정 */
+  margin-top: 40px;   /* topbar 높이 만큼 윗 여백 설정 */
 }
 body {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 .topbar {
-    position: fixed;    /* 요소 고정 */
-    top: 0;             /* 최상위에 위치 시킴 */
-    background: rgba(0, 0, 0, .75);
-    color: white;
-    width: 100%;
-    height: 32px;
-    font-size: 20px;
-    text-align: center;
-    border-bottom: 4px solid red;
+  position: fixed;    /* 요소 고정 */
+  top: 0;             /* 최상위에 위치 시킴 */
+  background: rgba(0, 0, 0, .75);
+  color: white;
+  width: 100%;
+  height: 32px;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 4px solid red;
 }
 .content {
-    font-size: 16px;
-    padding-left: 10px;
-    padding-right: 10px;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .header {
-    font-size: 20px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid gray;
+  font-size: 20px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid gray;
 }
 </style>
 </head>
 <body>
 <div class='topbar'>Topbar</div>
 <div class='content'>
-    <h1 class="header" id="섹션-1">섹션 1</h1>
-    <p>섹션 1의 내용입니다.<br/>
-       섹션 1의 내용입니다.<br/>
-    <a href="#섹션-3">여기</a>를 클릭하면 섹션3로 자동 스크롤합니다.</p>
-    <h1 class="header" id="섹션-2">섹션 2</h1>
-    <p>섹션 2의 내용입니다.<br/>
-       섹션 2의 내용입니다.</p>
-    <h1 class="header" id="섹션-3">섹션 3</h1>
-    <p>섹션 3의 내용입니다.<br/>
-       섹션 3의 내용입니다.<br/>
-       <a href="#섹션-1">여기</a>를 클릭하면 섹션1로 자동 스크롤합니다.</p>
-    <h1 class="header" id="섹션-4">섹션 4</h1>
-    <p>섹션 4의 내용입니다.<br/>
-       섹션 4의 내용입니다.</p>
-    <h1 class="header" id="섹션-5">섹션 5</h1>
-    <p>섹션 5의 내용입니다.<br/>
-       섹션 5의 내용입니다.</p>
+  <h1 class="header" id="섹션-1">섹션 1</h1>
+  <p>섹션 1의 내용입니다.<br/>
+     섹션 1의 내용입니다.<br/>
+  <a href="#섹션-3">여기</a>를 클릭하면 섹션3로 자동 스크롤합니다.</p>
+  <h1 class="header" id="섹션-2">섹션 2</h1>
+  <p>섹션 2의 내용입니다.<br/>
+     섹션 2의 내용입니다.</p>
+  <h1 class="header" id="섹션-3">섹션 3</h1>
+  <p>섹션 3의 내용입니다.<br/>
+     섹션 3의 내용입니다.<br/>
+     <a href="#섹션-1">여기</a>를 클릭하면 섹션1로 자동 스크롤합니다.</p>
+  <h1 class="header" id="섹션-4">섹션 4</h1>
+  <p>섹션 4의 내용입니다.<br/>
+     섹션 4의 내용입니다.</p>
+  <h1 class="header" id="섹션-5">섹션 5</h1>
+  <p>섹션 5의 내용입니다.<br/>
+     섹션 5의 내용입니다.</p>
 </div>
 </body>
 </html>
@@ -206,8 +206,8 @@ body {
 
 ```css
 .topbar {
-    position: fixed;
-    top: 0;
+  position: fixed;
+  top: 0;
 }
 ```
 
@@ -217,7 +217,7 @@ body {
 
 ```css
 .content {
-    padding-top: 40px;
+  padding-top: 40px;
 }
 ```
 
@@ -237,13 +237,13 @@ body {
 
 ```javascript
 $(function() {  // 페이지 로드가 완료된 이후 실행되게 한다.
-    // top_offset: Fixed Topbar가 차지하는 높이를 고려해서 스크롤을 내리고 싶은 만큼 입력. (px 단위)
-    top_offset = 99;
-    if(location.hash.length > 0) {
-        var h = decodeURIComponent(location.hash);  // 한글 hash를 인식하기 위한 조치
-        var yPos = $(h).offset().top - top_offset;
-        scrollTo({top: yPos, behavior: 'smooth'});
-    }
+  // top_offset: Fixed Topbar가 차지하는 높이를 고려해서 스크롤을 내리고 싶은 만큼 입력. (px 단위)
+  top_offset = 99;
+  if(location.hash.length > 0) {
+    var h = decodeURIComponent(location.hash);  // 한글 hash를 인식하기 위한 조치
+    var yPos = $(h).offset().top - top_offset;
+    scrollTo({top: yPos, behavior: 'smooth'});
+  }
 });
 ```
 
@@ -254,20 +254,20 @@ $(function() {  // 페이지 로드가 완료된 이후 실행되게 한다.
 
 ```javascript
 $(function() {
-    top_offset = 99;
-    // <a> tag 에만 적용한다. 모든 태그에 적용시키는 어렵다. 필요한 순간에 그때그때 적용하기로 한다.
-    // <a> tag가 페이지 내에서 움직이는 용도임을 구별하기 위한 조건문
-    $('a').click(function (e) {
-        // 현위치의 href와 이동하려는 곳의 href가 hash 값만 빼고 일치
-        if($(this)[0].origin == location.origin &&
-            $(this)[0].pathname == location.pathname) {
-            e.preventDefault();
-            var h = $(this).attr('href');
-            var yPos = $(h).offset().top - top_offset;
-            scrollTo({top: yPos, behavior: 'smooth'});
-            history.pushState({}, null, h);  // 주소표시줄의 hash를 이동한 위치의 값으로 변경해줌
-        }
-    });
+  top_offset = 99;
+  // <a> tag 에만 적용한다. 모든 태그에 적용시키는 어렵다. 필요한 순간에 그때그때 적용하기로 한다.
+  // <a> tag가 페이지 내에서 움직이는 용도임을 구별하기 위한 조건문
+  $('a').click(function (e) {
+    // 현위치의 href와 이동하려는 곳의 href가 hash 값만 빼고 일치
+    if($(this)[0].origin == location.origin &&
+      $(this)[0].pathname == location.pathname) {
+      e.preventDefault();
+      var h = $(this).attr('href');
+      var yPos = $(h).offset().top - top_offset;
+      scrollTo({top: yPos, behavior: 'smooth'});
+      history.pushState({}, null, h);  // 주소표시줄의 hash를 이동한 위치의 값으로 변경해줌
+    }
+  });
 });
 ```
 
@@ -282,30 +282,30 @@ $(function() {
 <head>
 <style>
 body {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 .topbar {
-    position: fixed;    /* 요소 고정 */
-    top: 0;             /* 최상위에 위치 시킴 */
-    background: rgba(0, 0, 0, .75);
-    color: white;
-    width: 100%;
-    height: 32px;
-    font-size: 20px;
-    text-align: center;
-    border-bottom: 4px solid red;
+  position: fixed;    /* 요소 고정 */
+  top: 0;             /* 최상위에 위치 시킴 */
+  background: rgba(0, 0, 0, .75);
+  color: white;
+  width: 100%;
+  height: 32px;
+  font-size: 20px;
+  text-align: center;
+  border-bottom: 4px solid red;
 }
 .content {
-    font-size: 16px;
-    padding-top: 40px;  /* topbar 높이 만큼 윗 여백 설정 */
-    padding-left: 10px;
-    padding-right: 10px;
+  font-size: 16px;
+  padding-top: 40px;  /* topbar 높이 만큼 윗 여백 설정 */
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .header {
-    font-size: 20px;
-    margin-bottom: 5px;
-    border-bottom: 1px solid gray;
+  font-size: 20px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid gray;
 }
 </style>
 
@@ -313,52 +313,52 @@ body {
 <body>
 <div class='topbar'>Topbar</div>
 <div class='content'>
-    <h1 class="header" id="섹션-1">섹션 1</h1>
-    <p>섹션 1의 내용입니다.<br/>
-       섹션 1의 내용입니다.<br/>
-    <a href="#섹션-3">여기</a>를 클릭하면 섹션3로 자동 스크롤합니다.</p>
-    <h1 class="header" id="섹션-2">섹션 2</h1>
-    <p>섹션 2의 내용입니다.<br/>
-       섹션 2의 내용입니다.</p>
-    <h1 class="header" id="섹션-3">섹션 3</h1>
-    <p>섹션 3의 내용입니다.<br/>
-       섹션 3의 내용입니다.<br/>
-       <a href="#섹션-1">여기</a>를 클릭하면 섹션1로 자동 스크롤합니다.</p>
-    <h1 class="header" id="섹션-4">섹션 4</h1>
-    <p>섹션 4의 내용입니다.<br/>
-       섹션 4의 내용입니다.</p>
-    <h1 class="header" id="섹션-5">섹션 5</h1>
-    <p>섹션 5의 내용입니다.<br/>
-       섹션 5의 내용입니다.</p>
+  <h1 class="header" id="섹션-1">섹션 1</h1>
+  <p>섹션 1의 내용입니다.<br/>
+     섹션 1의 내용입니다.<br/>
+  <a href="#섹션-3">여기</a>를 클릭하면 섹션3로 자동 스크롤합니다.</p>
+  <h1 class="header" id="섹션-2">섹션 2</h1>
+  <p>섹션 2의 내용입니다.<br/>
+     섹션 2의 내용입니다.</p>
+  <h1 class="header" id="섹션-3">섹션 3</h1>
+  <p>섹션 3의 내용입니다.<br/>
+     섹션 3의 내용입니다.<br/>
+     <a href="#섹션-1">여기</a>를 클릭하면 섹션1로 자동 스크롤합니다.</p>
+  <h1 class="header" id="섹션-4">섹션 4</h1>
+  <p>섹션 4의 내용입니다.<br/>
+     섹션 4의 내용입니다.</p>
+  <h1 class="header" id="섹션-5">섹션 5</h1>
+  <p>섹션 5의 내용입니다.<br/>
+     섹션 5의 내용입니다.</p>
 </div>
 <script src="/assets/js/main.min.js"></script>
 <script>
 $(function(){
-    // 스크롤 목적지 y좌표를 40px 만큼 위로 올린다
-    var top_offset = 40;
+  // 스크롤 목적지 y좌표를 40px 만큼 위로 올린다
+  var top_offset = 40;
 
-    // (부드러운) 스크롤을 수행하는 함수
-    function scrollToHash(h) {
-        var yPos = $(h).offset().top - top_offset;
-        scrollTo({top: yPos, behavior: 'smooth'});
+  // (부드러운) 스크롤을 수행하는 함수
+  function scrollToHash(h) {
+    var yPos = $(h).offset().top - top_offset;
+    scrollTo({top: yPos, behavior: 'smooth'});
+  }
+
+  // 다른 페이지에서 넘어왔을 때 올바른 자동 스크롤
+  if(location.hash.length > 0) {
+    var h = decodeURIComponent(location.hash);  // 한글 hash를 인식하기 위한 조치
+    scrollToHash(h);
+  }
+
+  // 같은 페이지에서 다른 위치로 스크롤 할 때 올바른 자동 스크롤
+  $('a').click(function (e) {
+    if($(this)[0].origin == location.origin &&
+       $(this)[0].pathname == location.pathname) {
+      e.preventDefault();
+      var h = $(this).attr('href');
+      scrollToHash(h);
+      history.pushState({}, null, h);
     }
-
-    // 다른 페이지에서 넘어왔을 때 올바른 자동 스크롤
-    if(location.hash.length > 0) {
-        var h = decodeURIComponent(location.hash);  // 한글 hash를 인식하기 위한 조치
-        scrollToHash(h);
-    }
-
-    // 같은 페이지에서 다른 위치로 스크롤 할 때 올바른 자동 스크롤
-    $('a').click(function (e) {
-        if($(this)[0].origin == location.origin &&
-           $(this)[0].pathname == location.pathname) {
-            e.preventDefault();
-            var h = $(this).attr('href');
-            scrollToHash(h);
-            history.pushState({}, null, h);
-        }
-    });
+  });
 });
 </script>
 </body>

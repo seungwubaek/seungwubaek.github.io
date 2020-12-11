@@ -24,10 +24,10 @@ CSS를 이용해서 HTML의 특정 요소에 애니메이션 효과를 부여할
 
 ```html
 <div class='mother'>
-    여기로 마우스를 가져다 대세요!
-    <div class='child'>
-        까꿍
-    </div>
+  여기로 마우스를 가져다 대세요!
+  <div class='child'>
+    까꿍
+  </div>
 </div>
 ```
 
@@ -37,23 +37,23 @@ CSS를 이용해서 HTML의 특정 요소에 애니메이션 효과를 부여할
 
 ```css
 .child {
-    height: 0px;
-    overflow-y: hidden;
+  height: 0px;
+  overflow-y: hidden;
+
+  transition: height 1s ease-in-out;
+  -webkit-transition: height 1s ease-in-out;
+}
+.mother {
+  width: 200px;
+}
+.mother:hover {
+  background-color: red;
+  .child {
+    height: 1.5em;
 
     transition: height 1s ease-in-out;
     -webkit-transition: height 1s ease-in-out;
-}
-.mother {
-    width: 200px;
-}
-.mother:hover {
-    background-color: red;
-    .child {
-        height: 1.5em;
-
-        transition: height 1s ease-in-out;
-        -webkit-transition: height 1s ease-in-out;
-    }
+  }
 }
 ```
 
@@ -62,29 +62,29 @@ CSS를 이용해서 HTML의 특정 요소에 애니메이션 효과를 부여할
 위의 html과 css를 이용하면 아래 빨간 박스와 같은 효과를 낼 수 있다.<br/>빨간 박스에 마우스를 가져다 대보자.<br/>모바일로 접속했다면 마우스를 움직이는 대신 빨간 박스 안을 터치했다가 다시 밖을 터치하면 된다.
 
 <html>
-    <head>
-        <style>
-            .mother { text-align: center; }
-            .child {
-                height: 0px;
-                overflow-y: hidden;
-                transition: height 0.5s ease-in-out;
-                -webkit-transition: height 0.5s ease-in-out;
-            }
-            .mother:hover .child {
-                height: 1.5em;
-                transition: height 0.5s ease-in-out;
-                -webkit-transition: height 0.5s ease-in-out;
-            }
-        </style>
-    </head>
-    <body>
-        <div style='border: 1px solid red;'>
-        <div class='mother'>여기로 마우스를 가져다 대세요!
-            <div class='child'>까꿍</div>
-        </div>
-        </div>
-    </body>
+<head>
+<style>
+.mother { text-align: center; }
+.child {
+  height: 0px;
+  overflow-y: hidden;
+  transition: height 0.5s ease-in-out;
+  -webkit-transition: height 0.5s ease-in-out;
+}
+.mother:hover .child {
+  height: 1.5em;
+  transition: height 0.5s ease-in-out;
+  -webkit-transition: height 0.5s ease-in-out;
+}
+</style>
+</head>
+<body>
+  <div style='border: 1px solid red;'>
+  <div class='mother'>여기로 마우스를 가져다 대세요!
+    <div class='child'>까꿍</div>
+  </div>
+  </div>
+</body>
 </html>
 
 ## 주의

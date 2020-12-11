@@ -25,15 +25,15 @@ mmistakes 테마는 웹 브라우저의 사이즈의 변화에 따라서 웹 화
 
 ```sass
 @include breakpoint($small) {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 @include breakpoint($large) {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 @include breakpoint($x-large) {
-    font-size: 22px;
+  font-size: 22px;
 }
 ```
 

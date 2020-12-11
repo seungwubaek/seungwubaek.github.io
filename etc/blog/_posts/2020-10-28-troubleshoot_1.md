@@ -22,10 +22,10 @@ HTML 요소의 CSS에는 분명 width: 100%가 지정되어 있는데 일정 수
 
 ```css
 #main .page .page__content {
-    a {
-        -ms-word-break: break-all;
-        word-break: break-all;
-    }
+  a {
+    -ms-word-break: break-all;
+    word-break: break-all;
+  }
 }
 ```
 
