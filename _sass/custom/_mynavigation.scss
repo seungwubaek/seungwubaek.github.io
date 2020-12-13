@@ -132,3 +132,11 @@
         }
     }
 }
+
+.toc {
+    // Scrollspy marks toc items as .active when they are in focus
+    .active > a {
+        @include yiq-contrasted($active-color);
+        text-decoration: underline;
+    }
+}
