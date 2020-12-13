@@ -118,6 +118,42 @@ function tocFoldFolder(call_obj) {
     $(call_obj).parent().next().toggleClass('fold');
 };
 
+// Simple Alarm
+var mobile_width = 768;
+class SimpleAlarm {
+    constructor(name) {
+        this.name = name;
+        var alarmBoard = $('<div></div>')
+        alarmBoard.attr('id', 'simple-alarm')
+                  .addClass('simple-alarm');
+        $('body').append(alarmBoard);
+        alarmBoard.css('bottom', -alarmBoard.outerHeight());
+    }
+    show(message, hideInterval = 3000){
+        var alarmBoard = $('.simple-alarm')
+        if(alarmBoard.hasClass('onShow')) { }
+        else {
+            if(window.innerWidth > mobile_width) {
+                alarmBoard.text(message);
+                alarmBoard.css({'bottom': -alarmBoard.outerHeight(),
+                                'opacity': 1})
+                        .addClass('onShow');
+                alarmBoard.outerHeight();  // force redraw for transition
+                alarmBoard.css('bottom', 16);
+                setInterval(this.hide, hideInterval);
+            }
+        }
+    }
+    hide(){
+        var alarmBoard = $('.simple-alarm');
+        alarmBoard.outerHeight();
+        alarmBoard.css({'bottom': -alarmBoard.outerHeight(),
+                        'opacity': 0})
+                  .removeClass('onShow');
+    }
+}
+var simpleAlarm = new SimpleAlarm('main');
+
 $(document).ready(function() {
     // [0] Run some codes immediately after complete page load
     // It may need to style some html..
@@ -198,6 +234,7 @@ $(document).ready(function() {
     // [4] Copy URL to Clipboard
     var clipboard = new ClipboardJS('.header-link');
     clipboard.on('success', function(e) {
+        simpleAlarm.show('클립보드에 복사되었습니다.');
         e.clearSelection();
     });
     // clipboard.on('error', function(e) {

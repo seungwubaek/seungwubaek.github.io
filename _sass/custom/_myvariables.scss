@@ -1,3 +1,6 @@
+// default
+$font-size: 16px;  // it is equal with _reset.
+
 // nav-remocon
 $nav-remocon-min-width: 70px;
 $nav-remocon-background-color: rgba(255,255,255,.8);
@@ -11,7 +14,7 @@ $nav-remocon-btn-set-padding-bottom: .4em;
 $nav-remocon-btn-set-height: calc(#{$nav-remocon-btn-set-font-size} + #{$nav-remocon-btn-set-padding-top} + #{$nav-remocon-btn-set-padding-bottom});
 
 // masthead
-$mymasthead-font-size: 16px;  // it is equal with _reset.
+$mymasthead-font-size: $font-size;
 $mymasthead-text-color: white;  // text color is white, basically.
 $mymasthead-height: calc(3 * #{$mymasthead-font-size});
 $mymasthead-home-height: calc(2 * #{$mymasthead-font-size});
