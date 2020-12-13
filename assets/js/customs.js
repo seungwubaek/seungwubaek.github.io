@@ -127,9 +127,7 @@ class SimpleAlarm {
         // If alarm alrady exist, hide it first. So, alarm is always made only one.
         if(alarmBoard.length > 0) {
             var self = this;
-            alarmBoard.each(function(idx, elem){
-                console.log(self);
-                self.hide($(elem)); });
+            alarmBoard.each(function(idx, elem){ self.hide($(elem)); });
         }
 
         // Make alarm.
