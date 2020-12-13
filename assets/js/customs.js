@@ -119,37 +119,39 @@ function tocFoldFolder(call_obj) {
 };
 
 // Simple Alarm
-var mobile_width = 768;
 class SimpleAlarm {
-    constructor(name) {
-        this.name = name;
+    constructor(name) { this.name = name; }
+    show(message, hideInterval = 3000){
+        var alarmBoard = $('#simple-alarm');
+
+        // If alarm alrady exist, hide it first. So, alarm is always made only one.
+        if(alarmBoard.length > 0) {
+            var self = this;
+            alarmBoard.each(function(idx, elem){
+                console.log(self);
+                self.hide($(elem)); });
+        }
+
+        // Make alarm.
         var alarmBoard = $('<div></div>')
         alarmBoard.attr('id', 'simple-alarm')
-                  .addClass('simple-alarm');
+                    .text(message);
         $('body').append(alarmBoard);
-        alarmBoard.css('bottom', -alarmBoard.outerHeight());
-    }
-    show(message, hideInterval = 3000){
-        var alarmBoard = $('.simple-alarm')
-        if(alarmBoard.hasClass('onShow')) { }
-        else {
-            if(window.innerWidth > mobile_width) {
-                alarmBoard.text(message);
-                alarmBoard.css({'bottom': -alarmBoard.outerHeight(),
-                                'opacity': 1})
-                        .addClass('onShow');
-                alarmBoard.outerHeight();  // force redraw for transition
-                alarmBoard.css('bottom', 16);
-                setInterval(this.hide, hideInterval);
-            }
-        }
-    }
-    hide(){
-        var alarmBoard = $('.simple-alarm');
-        alarmBoard.outerHeight();
         alarmBoard.css({'bottom': -alarmBoard.outerHeight(),
-                        'opacity': 0})
-                  .removeClass('onShow');
+                        'opacity': 1})
+                .addClass('onShow');
+        alarmBoard.outerHeight();  // force redraw for transition
+        alarmBoard.css('bottom', 16);
+        setTimeout(this.hide.bind(null, alarmBoard), hideInterval);
+    }
+    hide(selector){
+        // Destory Alarm.
+        selector.outerHeight();
+        selector.css({'bottom': -selector.outerHeight(),
+                      'opacity': 0});
+        selector.one('transitionend webkitTransitionEnd oTransitionEnd', function () {
+            selector.remove();
+        });
     }
 }
 var simpleAlarm = new SimpleAlarm('main');
