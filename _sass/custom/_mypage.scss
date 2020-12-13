@@ -1,13 +1,3 @@
-// [Warning] fixed topbar covers content. If we use inner page link(move to #anchor),
-//      the browser scroll view's top coordinate to #anchor's top coordinate.
-//      but, top coordinate was occupied by topbar.
-// .initial-content {
-//     // masthead position is fixed.
-//     // So, move content down as (padding from masthead__inner-wrap) + (height masthead__menu)
-//     position: relative;
-//     // top: 1em + 2em;
-// }
-
 .page {
     @include breakpoint($large) {
         width: calc(100% - #{$mysidebar-width} - 1em); // -1em from _mixins for padding of <div id='main'>.
