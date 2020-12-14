@@ -45,6 +45,16 @@
             display: none;
         }
     }
+
+    .author__content {
+        .author__bio {
+            font-size: $author-bio-font-size;
+        }
+    }
+    .author__urls-wrapper {
+        font-size: $author-bio-font-size;
+    }
+
     &.sticky { // Only when sidebar sticky, specifically
         // [Warning] fixed topbar covers content. If we use inner page link(move to #anchor),
         //      the browser scroll view's top coordinate to #anchor's top coordinate.
@@ -81,9 +91,6 @@
 
             .author__content {
                 padding-right: 0;
-                .author__bio {
-                    font-size: medium;
-                }
             }
 
             .author__urls {
@@ -141,6 +148,9 @@
                     font-size: 1.2em;
                 }
             }
+        }
+        .btn {
+            font-size: 1em;
         }
     }
 }
