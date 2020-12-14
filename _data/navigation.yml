@@ -76,8 +76,5 @@ main-sidebar:
       url: "/tools/aif360/"
     - title: "Git"
       url: "/tools/git/"
-  - title: "ETC"
-    url: "/etc/"
-    children:
-    - title: "Blog"
-      url: "/etc/blog/"
+  - title: "Blog"
+    url: "/blog/"
