@@ -92,10 +92,10 @@
     }
   }
 
-  @include breakpoint($x-large) {
-    width: $right-sidebar-width;
-    margin-right: -1 * $right-sidebar-width;
-  }
+  // @include breakpoint($x-large) {
+  //   width: $right-sidebar-width;
+  //   margin-right: -1 * $right-sidebar-width;
+  // }
 }
 
 .splash .sidebar__right {
