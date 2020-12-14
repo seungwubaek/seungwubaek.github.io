@@ -8,9 +8,9 @@
     .nav__list {
         margin-top: 0;
         & .nav__items {
-            font-size: $mysidebar-font-size;
             li {
                 .nav__sub-title {
+                    font-size: $mysidebar-font-size;
                     padding-bottom: 0;
                     margin-bottom: 0;
                     cursor: pointer;
@@ -21,6 +21,8 @@
                         .nav__sub-title-dropdownicon {
                             flex: 1 0 auto;
                             text-align: right;
+                            margin-top: auto;
+                            margin-bottom: auto;
                         }
                     }
                 }
@@ -38,6 +40,9 @@
                         -webkit-transition: all 200ms linear;
                         transition: all 200ms linear;
                     }
+                }
+                & > li {
+                    font-size: $mysidebar-item-font-size;
                 }
             }
         }
