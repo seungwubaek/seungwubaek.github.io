@@ -160,14 +160,14 @@ $(document).ready(function() {
     reloadNavRemocon();
 
     // [1] Sidebar Toggle to (un)fold Submenu
-    $('.nav__sub-title').click(function(){
-        subtitleSet = $(this.children[0]).children();
-        if (subtitleSet.length > 1) {  // children이 있을때만 (+/-) 아이콘 표시를 위한 <span> 태그 하나 더 생김
-            dropdownIcon = subtitleSet[1].children[0];  // dropdown (+/-) icon element
-            s = $(dropdownIcon);
+    $('.nav__sub-title-dropdownicon').click(function(){
+        var $root_parent = $($(this).closest('li')[0]);
+        var $navItems = $($root_parent.find('.nav__item-children')[0]).children();
+        if ($navItems.length > 0) {  // children이 있을때만 (+/-) 아이콘 표시를 위한 <span> 태그 하나 더 생김
+            s = $(this).children('i');
             s.toggleClass('fa-plus');
             s.toggleClass('fa-minus');
-            $(this).next().toggleClass('show');
+            $root_parent.children('ul').toggleClass('show');
         }
     })
 
@@ -194,7 +194,8 @@ $(document).ready(function() {
             // Do not scroll. It will be function of copying url.
             e.preventDefault();
         } else {
-        if($(this)[0].origin == location.origin &&
+        if($(this)[0].hash.length < 1) { } // if hash not exist, do nothing.
+        else if($(this)[0].origin == location.origin &&
            $(this)[0].pathname == location.pathname) {
             e.preventDefault();
             var h = $(this).attr('href');

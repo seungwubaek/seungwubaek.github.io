@@ -9,7 +9,7 @@
     {% for nav in navigation %}
       <li>
         <div class="nav__sub-title">
-          <div class="nav__sub-title-set"><div class="nav__sub-title-name">{{ nav.title }}</div>
+          <div class="nav__sub-title-set"><div class="nav__sub-title-name"><a href="{{ nav.url }}">{{ nav.title }}</a></div>
           {% if nav.children != null %}<div class="nav__sub-title-dropdownicon"><i class="fas fa-plus"></i></div>{% endif %}
           </div>
         </div>
