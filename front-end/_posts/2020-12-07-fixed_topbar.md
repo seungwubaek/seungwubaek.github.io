@@ -16,7 +16,7 @@ last_modified_at: "2020-12-09 21:26:00 +0900"
 아래는 Fixed Topbar 샘플이다. Topbar가 항상 최상위에 고정 되어있다.
 
 <iframe class="width-80-100" style="height: 300px;"
-        src="/assets/iframes/fixed_topbar.html">Fixed Topbar Sample</iframe>
+        src="/assets/iframes/fixed_topbar/fixed_topbar.html">Fixed Topbar Sample</iframe>
 
 Fixed Topbar를 구현하는 방법은 2가지가 있다.<br/>
 둘 모두 설명할 것인데 [첫번째](#구현-method-1)는 약간 문제가 있지만 구현이 매우 간단하고<br/>
@@ -52,7 +52,7 @@ Topbar가 독립된다는 것은 다른 HTML 요소의 형태 변화에 영향�
 문제를 해결하지 않고 일반적으로 Fixed Topbar를 구현하면 아래 처럼 된다.
 
 <iframe class="width-80-100" style="height: 300px;"
-    src="/assets/iframes/fixed_topbar-hide_html.html">Fixed Topbar Sample - Hide HTML</iframe>
+    src="/assets/iframes/fixed_topbar/fixed_topbar-hide_html.html">Fixed Topbar Sample - Hide HTML</iframe>
 
 겹침을 보여주기 위해 Topbar를 약간 투명하게 했다. Topbar와 내용이 겹치는것을 볼수 있다.<br/>
 그리고 "여기를 클릭하면..." 이라는 메시지의 링크를 클릭하면 자동 스크롤이 되지만 Topbar에 가려진다.
@@ -129,7 +129,7 @@ html {
 ## 샘플
 
 <iframe class="width-80-100" style="height: 300px;"
-    src="/assets/iframes/fixed_topbar-method1.html">Fixed Topbar Sample - Method 1</iframe>
+    src="/assets/iframes/fixed_topbar/fixed_topbar-method1.html">Fixed Topbar Sample - Method 1</iframe>
 
 ## 샘플 코드
 
