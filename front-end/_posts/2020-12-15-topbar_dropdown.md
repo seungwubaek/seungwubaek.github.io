@@ -3,7 +3,7 @@ layout: single
 title: "Topbar Dropdown Menu"
 post-order: 2
 date: "2020-12-15 20:07:00 +0900"
-last_modified_at: "2020-12-15 23:16:00 +0900"
+last_modified_at: "2020-12-15 23:28:00 +0900"
 ---
 Topbar의 특정 메뉴에 마우스를 갖다대면 그 아래로 하위 메뉴들이 펼쳐지는 드롭다운 메뉴를 만들자.
 이때 퍼포먼스를 위해 `CSS`를 활용하고 `Javascript`의 사용을 최소화 한다.
