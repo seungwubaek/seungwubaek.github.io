@@ -1,0 +1,141 @@
+<html>
+<head>
+<style>
+/* Dropdown 설정 */
+.main-menu-item {
+  position: relative;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.main-menu-item:hover {
+  color: black;
+  background-color: white;
+}
+.menu-title {
+  padding: 0 10px 0;
+}
+.sub-menus {
+  position: absolute;
+  left: -9999px;
+  margin-left: -1;
+}
+.main-menu-item:hover .sub-menus {
+  left: 0;
+}
+.sub-menu-item {
+  white-space: nowrap;
+  cursor: pointer;
+}
+.sub-menu-item:hover {
+  background-color: #ccc;
+}
+
+/* 기타 설정: 모양과 요소 정렬 등 */
+body {
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+ul, li {
+  margin-block: 0;
+  margin-inline: 0;
+  padding-inline: 0;
+  list-style: none;
+}
+a {
+  cursor: pointer;
+}
+.topbar {
+  top: 0;
+  background: black;
+  color: white;
+  width: 100%;
+  height: 32px;
+  font-size: 20px;
+}
+.topbar-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  height: 100%;
+  padding: 0 10px 0;
+}
+.main-menus {
+  display: flex;
+}
+.sub-menus {
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-color: black;
+  background-color: white;
+  color: black;
+}
+.content {
+  font-size: 16px;
+  color: black;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.header {
+  font-size: 20px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid gray;
+}
+</style>
+</head>
+<body>
+<div class='topbar'>
+  <div class='topbar-wrapper'>
+    <ul class='main-menus'>
+      <li class='main-menu-item'>
+        <a class='menu-title'>ShortMenu</a>
+        <ul class='sub-menus'>
+          <li class='sub-menu-item'><a class='menu-title'>Sub Menu</a></li>
+          <li class='sub-menu-item'><a class='menu-title'>Looong Sub Menu</a></li>
+        </ul>
+      </li>
+      <li class='main-menu-item'>
+        <a class='menu-title'>LooooooogMenu</a>
+        <ul class='sub-menus'>
+          <li class='sub-menu-item'><a class='menu-title'>Sub Menu 1</a></li>
+          <li class='sub-menu-item'><a class='menu-title'>Hello World !</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class='content'>
+  <h1 class="header" id="섹션-1">섹션 1</h1>
+  <p>
+  본문입니다. 본문입니다. 본문입니다. 본문입니다.
+  본문입니다. 본문입니다. 본문입니다. 본문입니다.
+  본문입니다. 본문입니다. 본문입니다. 본문입니다.
+  본문입니다. 본문입니다. 본문입니다. 본문입니다.
+  본문입니다. 본문입니다. 본문입니다. 본문입니다.
+  본문입니다. 본문입니다. 본문입니다. 본문입니다.
+  본문입니다. 본문입니다. 본문입니다. 본문입니다.</p>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(function(){
+  // for responsive web, unrelated with dropdown
+  var frameWidth = $(window).outerWidth();
+  if(frameWidth <= 450) {
+    $('.topbar, .header').css('font-size', 15);
+    $('.content').css('font-size', 12);
+  }
+  // for dropdown
+  var $allMainMenuItem = $('.main-menu-item');
+  $allMainMenuItem.each(function(idx, elem){
+    var $mainMenuItem = $(this);
+    var $subMenus = $($mainMenuItem.children('.sub-menus'));
+    var mainMenuWidth = $mainMenuItem.width();
+    var subMenuWidth = $subMenus.width();
+    if(mainMenuWidth > subMenuWidth) {
+      $subMenus.width(mainMenuWidth);
+    }
+  });
+});
+</script>
+</body>
+</html>
