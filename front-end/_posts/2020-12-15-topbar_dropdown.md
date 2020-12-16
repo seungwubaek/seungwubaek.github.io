@@ -324,49 +324,49 @@ CSS만 3가지 수정하면 구현할 수 있다.
 * 첫번째<br/>
   Dropdown에 직접적 영향을 주는 한가지
 
-  ```css
-  .main-menu-item:hover .sub-menus {
-    left: auto;   // -9999px 해제
-    right: 0;     // 오른쪽 정렬
-  }
-  ```
+```css
+.main-menu-item:hover .sub-menus {
+  left: auto;   // -9999px 해제
+  right: 0;     // 오른쪽 정렬
+}
+```
 
-  Sub Menu는 원래 `left: -9999px` 속성을 가지고 화면 밖으로 나가 있다.
-  그리고 마우스가 Main Menu에 `hover`하면 Sub Menu가 화면의 특정 위치(이하 offset)로 돌아온다.
+Sub Menu는 원래 `left: -9999px` 속성을 가지고 화면 밖으로 나가 있다.
+그리고 마우스가 Main Menu에 `hover`하면 Sub Menu가 화면의 특정 위치(이하 offset)로 돌아온다.
 
-  좌측 정렬 Dropdown Menu에서는 Sub Menu의 좌측 정렬을 위해 offset 값으로 `left: 0`를 줬었다.
+좌측 정렬 Dropdown Menu에서는 Sub Menu의 좌측 정렬을 위해 offset 값으로 `left: 0`를 줬었다.
 
-  우측 정렬에서는 Sub Menu가 부모 요소 기준 오른쪽 편에 정렬하도록 `right: 0`를 주면 된다.
-  그리고 `left: auto`를 추가해서 `-9999px` 값을 해제시키자.
+우측 정렬에서는 Sub Menu가 부모 요소 기준 오른쪽 편에 정렬하도록 `right: 0`를 주면 된다.
+그리고 `left: auto`를 추가해서 `-9999px` 값을 해제시키자.
 
 * 두번째<br/>
   Sub Menu 간격 미세 조정
 
-  좌측 정렬 Dropdown Menu에서 Border가 1px를 차지하므로 `margin-left: -1px`를 부여했었다.
-  비슷하지만 이번엔 오른쪽으로 `margin`을 부여한다.
+```css
+.sub-menus {
+  position: absolute;
+  left: -9999px;
+  margin-right: -1;  // 간격 미세 조정값
+}
+```
 
-  ```css
-  .sub-menus {
-    position: absolute;
-    left: -9999px;
-    margin-right: -1;  // 간격 미세 조정값
-  }
-  ```
+좌측 정렬 Dropdown Menu에서 Border가 1px를 차지하므로 `margin-left: -1px`를 부여했었다.
+비슷하지만 이번엔 오른쪽으로 `margin`을 부여한다.
 
 * 세번째<br/>
   Main Menu 우측 정렬
 
-  ```css
-  .topbar-wrapper {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;  // 우측 정렬
-    height: 100%;
-    padding: 0 10px 0;
-  }
-  ```
+```css
+.topbar-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;  // 우측 정렬
+  height: 100%;
+  padding: 0 10px 0;
+}
+```
 
-  이러한 우측 정렬 설정은 Main Menu의 상위 요소가 `display: flex`로 설정되었을 때 사용 할 수 있는 방법이다.
+이러한 우측 정렬 설정은 Main Menu의 상위 요소가 `display: flex`로 설정되었을 때 사용 할 수 있는 방법이다.
 
 ## Sample Code
 
