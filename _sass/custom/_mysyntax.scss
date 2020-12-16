@@ -1,6 +1,9 @@
 .highlighter-rouge {
     .highlight {
         border-radius: 4px;
+        pre.highlight {
+            padding: 8px;
+        }
     }
 }
 
@@ -8,12 +11,10 @@ table.rouge-table {
     overflow-x: hidden;
     tbody {
         td.rouge-gutter {
-            pre {
-                padding-bottom: 1em;  // equal with td.rouge-code pre height
-            }
+            padding: 0 8px 0 8px;
         }
         td.rouge-code {
-            padding-left: 0.5em;
+            padding-left: 8px;
             // very challenging scrollbar...
             //   I don't know why it work...
             display: table-cell;
