@@ -4,15 +4,10 @@
 /* Dropdown 설정 */
 .main-menu-item {
   position: relative;
-  white-space: nowrap;
-  cursor: pointer;
 }
 .main-menu-item:hover {
   color: black;
   background-color: white;
-}
-.menu-title {
-  padding: 0 10px 0;
 }
 .sub-menus {
   position: absolute;
@@ -22,10 +17,6 @@
 .main-menu-item:hover .sub-menus {
   left: auto;
   right: 0;
-}
-.sub-menu-item {
-  white-space: nowrap;
-  cursor: pointer;
 }
 .sub-menu-item:hover {
   background-color: #ccc;
@@ -64,12 +55,23 @@ a {
 .main-menus {
   display: flex;
 }
+.main-menu-item {
+  white-space: nowrap;
+  cursor: pointer;
+}
+.menu-title {
+  padding: 0 10px 0;
+}
 .sub-menus {
   border-width: 0 1px 1px 1px;
   border-style: solid;
   border-color: black;
   background-color: white;
   color: black;
+}
+.sub-menu-item {
+  white-space: nowrap;
+  cursor: pointer;
 }
 .content {
   font-size: 16px;
