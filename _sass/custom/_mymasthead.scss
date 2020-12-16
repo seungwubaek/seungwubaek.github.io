@@ -94,10 +94,6 @@
             }
             position: relative; // for dropdown menu right align to it's parent.
 
-            a, i {
-                transition: none;  // dont animate without my permission, please!!  ㅠㅠ
-            }
-
             &:hover {
                 background-color: $mymasthead-text-color;
                 a {
