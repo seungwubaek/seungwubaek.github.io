@@ -135,7 +135,7 @@ $(function(){
     var mainMenuWidth = $mainMenuItem.width();
     var subMenuWidth = $subMenus.width();
     if(mainMenuWidth > subMenuWidth) {
-      $subMenus.width(mainMenuWidth);
+      $subMenus.css('min-width', mainMenuWidth);
     }
   });
 });
