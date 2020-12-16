@@ -160,6 +160,7 @@ $allMainMenuItem.each(function(idx, elem){
 
 아래는 Topbar에서부터 Dropdown Menu를 구현하는 전체 코드이다.
 
+<div class='code-reducible code-reduce' markdown="1">
 ```html
 <html>
 <head>
@@ -298,6 +299,7 @@ $(function(){
 </body>
 </html>
 ```
+</div>
 
 # 2. 우측 정렬 Dropdown Menu
 
@@ -370,6 +372,7 @@ CSS만 3가지 수정하면 구현할 수 있다.
 
 아래는 Sample을 구현하는 전체 코드이다.
 
+<div class='code-reducible code-reduce' markdown="1">
 ```html
 <html>
 <head>
@@ -510,3 +513,4 @@ $(function(){
 </body>
 </html>
 ```
+</div>
