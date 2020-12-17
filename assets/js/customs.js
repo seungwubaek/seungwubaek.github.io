@@ -251,10 +251,6 @@ $(document).ready(function() {
     // [5] Reduce / Unfold long Code Block Height
     $('.code-reducible').each(function(idx, elem){
         var $elem = $(elem);
-        var childrenElems = $elem.children();
-        var $reduceWrapper = $('<div class="code-reduce-wrapper"></div>');
-        $reduceWrapper.append(childrenElems);
-        $elem.append($reduceWrapper);
         var $iconPlus = $('<div class="code-reducible-icon"><i class="far fa-plus-square"></i></div>');
         var $iconMinus = $('<div class="code-reducible-icon"><i class="far fa-minus-square"></i></div>');
         if($elem.hasClass('code-reduce')) $elem.prepend($iconPlus);

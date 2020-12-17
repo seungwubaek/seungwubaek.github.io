@@ -58,10 +58,8 @@ kbd {
         display: flex;
         cursor: pointer;
     }
-    &.code-reduce .code-reduce-wrapper {
+    &.code-reduce table.rouge-table {
         max-height: 350px;
-        overflow-y: auto;
-        border-radius: 4px;
     }
 }
 

@@ -7,38 +7,26 @@
     }
 }
 
-table.rouge-table {
-    overflow-x: hidden;
-    tbody {
-        td.rouge-gutter {
-            padding: 0 8px 0 8px;
-        }
-        td.rouge-code {
-            padding-left: 8px;
-            // very challenging scrollbar...
-            //   I don't know why it work...
-            display: table-cell;
-            max-width: 0;
-            width: 100%;
-            pre::-webkit-scrollbar {
-                height: 1em;
-            }
-            pre::-webkit-scrollbar-thumb {
-                border: 3px solid rgba(0, 0, 0, 0);
-                background-clip: padding-box;
-                -webkit-border-radius: 8px;
-                background-color: #6272a4;
-                opacity: .4;
-                width: 100px;
-            }
-            pre::-webkit-scrollbar-button {
-                width: 0;
-                height: 0;
-                display: none;
-            }
-            pre::-webkit-scrollbar-corner {
-                background-color: transparent;
-            }
-        }
+table.rouge-table{
+    overflow: auto;
+    &::-webkit-scrollbar {
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar:horizontal {
+        height: 8px;
+    }
+    &::-webkit-scrollbar:vertical {
+        width: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+        background-color: #6272a4;
+    }
+    &::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-button {
+        display: none;
     }
 }
