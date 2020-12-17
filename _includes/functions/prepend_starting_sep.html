@@ -1,0 +1,9 @@
+{% assign target = include.target %}
+{% assign sep = include.sep %}
+
+{% assign target_end_idx = target.size | minus: 1 %}
+{% assign target_start_char = target | slice: 0 %}
+{% unless target_start_char == sep %}
+{% assign target = target | prepend: sep %}
+{% endunless%}
+{{ target }}
