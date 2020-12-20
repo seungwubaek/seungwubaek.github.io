@@ -118,32 +118,32 @@ function tocFoldFolder(call_obj) {
     $(call_obj).parent().next().toggleClass('fold');
 };
 
-// Simple Alarm
-class SimpleAlarm {
+// Simple Notice
+class SimpleNotice {
     constructor(name) { this.name = name; }
     show(message, hideInterval = 3000){
-        var alarmBoard = $('#simple-alarm');
+        var noticeBoard = $('#simple-notice');
 
-        // If alarm alrady exist, hide it first. So, alarm is always made only one.
-        if(alarmBoard.length > 0) {
+        // If notice alrady exist, hide it first. So, notice is always made only one.
+        if(noticeBoard.length > 0) {
             var self = this;
-            alarmBoard.each(function(idx, elem){ self.hide($(elem)); });
+            noticeBoard.each(function(idx, elem){ self.hide($(elem)); });
         }
 
-        // Make alarm.
-        var alarmBoard = $('<div></div>')
-        alarmBoard.attr('id', 'simple-alarm')
+        // Make notice.
+        var noticeBoard = $('<div></div>')
+        noticeBoard.attr('id', 'simple-notice')
                     .text(message);
-        $('body').append(alarmBoard);
-        alarmBoard.css({'bottom': -alarmBoard.outerHeight(),
+        $('body').append(noticeBoard);
+        noticeBoard.css({'bottom': -noticeBoard.outerHeight(),
                         'opacity': 1})
                 .addClass('onShow');
-        alarmBoard.outerHeight();  // force redraw for transition
-        alarmBoard.css('bottom', 16);
-        setTimeout(this.hide.bind(null, alarmBoard), hideInterval);
+        noticeBoard.outerHeight();  // force redraw for transition
+        noticeBoard.css('bottom', 16);
+        setTimeout(this.hide.bind(null, noticeBoard), hideInterval);
     }
     hide(selector){
-        // Destory Alarm.
+        // Destory notice.
         selector.outerHeight();
         selector.css({'bottom': -selector.outerHeight(),
                       'opacity': 0});
@@ -152,7 +152,7 @@ class SimpleAlarm {
         });
     }
 }
-var simpleAlarm = new SimpleAlarm('main');
+var simpleNotice = new SimpleNotice('main');
 
 $(document).ready(function() {
     // [0] Run some codes immediately after complete page load
@@ -242,7 +242,7 @@ $(document).ready(function() {
     // [4] Copy URL to Clipboard
     var clipboard = new ClipboardJS('.header-link');
     clipboard.on('success', function(e) {
-        simpleAlarm.show('클립보드에 복사되었습니다.');
+        simpleNotice.show('클립보드에 복사되었습니다.');
         e.clearSelection();
     });
     // clipboard.on('error', function(e) {
