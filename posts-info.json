@@ -1,0 +1,16 @@
+---
+layout: empty
+---
+[
+{% for post in site.posts %}
+    {%- assign postCats = '' | split: '' -%}
+    {%- for cat in post.categories -%}
+        {%- capture quotedCat -%}"{{ cat }}"{%- endcapture -%}
+        {%- assign postCats = postCats | push: quotedCat -%}
+    {%- endfor -%}
+{
+"categories": [{{ postCats | join: ", "}}],
+"url": "{{ post.url }}"
+}{%- unless forloop.last -%},{% endunless %}
+{% endfor %}
+]

@@ -23,6 +23,19 @@
                             text-align: right;
                             margin-top: auto;
                             margin-bottom: auto;
+                            .nav__sub-title-stat {
+                                margin-right: 4px;
+                                background-color: mix(orangered, #fff, 85%);
+                                color: white;
+                                font-size: 11px;
+                                padding-left: 6px;
+                                padding-right: 6px;
+                                border-radius: 8px;
+                                font-weight: normal;
+                            }
+                            .fas.fa-plus.empty-icon {
+                                opacity: 0;
+                            }
                         }
                     }
                 }

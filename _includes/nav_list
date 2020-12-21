@@ -9,8 +9,8 @@
     {% for nav in navigation %}
       <li>
         <div class="nav__sub-title">
-          <div class="nav__sub-title-set"><div class="nav__sub-title-name"><a href="{{ site.baseurl }}{{ nav.url }}#wholetoc__title">{{ nav.title }}</a></div>
-          {% if nav.children != null %}<div class="nav__sub-title-dropdownicon"><i class="fas fa-plus"></i></div>{% endif %}
+          <div class="nav__sub-title-set"><div class="nav__sub-title-name"><a href="{{ site.baseurl }}{{ nav.url }}#wholetoc__title" id="sidebar-{{ nav.title | downcase | replace: ' ', '-' }}">{{ nav.title }}</a></div>
+          <div class="nav__sub-title-dropdownicon">{% if nav.children != null %}<i class="fas fa-plus"></i>{% else %}<i class="fas fa-plus empty-icon"></i>{% endif %}</div>
           </div>
         </div>
 
@@ -18,7 +18,7 @@
         {% assign i = i | plus: 1 %}
         <ul class="nav__item-children children-{{ nav.children | size }}" id="sidebarMenuId_{{ i }}">
           {% for child in nav.children %}
-            <li><a href="{{ child.url | relative_url }}"{% if child.url == page.url %} class="active"{% endif %}>{{ child.title }}</a></li>
+            <li><a href="{{ child.url | relative_url }}"{% if child.url == page.url %} class="active"{% endif %} id="sidebar-{{ nav.title | downcase | replace: ' ', '-' }}|{{ child.title | downcase | replace: ' ', '-' }}">{{ child.title }}</a></li>
           {% endfor %}
         </ul>
         {% endif %}
