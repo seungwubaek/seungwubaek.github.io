@@ -161,6 +161,7 @@ exclude:
   - assets/js/plugins
   - assets/js/_main.js
   - assets/js/vendor
+  - assets/js/customs/
   - Capfile
   - CHANGELOG
   - config
@@ -306,7 +307,7 @@ defaults:
 
 footer_scripts:
   - /assets/js/main.min.js
-  - /assets/js/customs.js
+  - /assets/js/customs.min.js
   - /assets/js/theme.christmas-2020.js
 
 # Global Variables
