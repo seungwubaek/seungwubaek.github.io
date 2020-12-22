@@ -47,13 +47,6 @@
                 max-height: 0;
                 -webkit-transition: all 200ms linear;
                 transition: all 200ms linear;
-                @for $nitem from 0 through 20 {
-                    &.children-#{$nitem}.show {
-                        max-height: calc(2em * #{$nitem});
-                        -webkit-transition: all 200ms linear;
-                        transition: all 200ms linear;
-                    }
-                }
                 & > li {
                     font-size: $mysidebar-item-font-size;
                 }
