@@ -7,30 +7,27 @@
 
     .nav__list {
         margin-top: 0;
-        & .nav__items {
-            li {
-                .nav__sub-title {
-                    font-size: $mysidebar-font-size;
-                    padding-bottom: 0;
-                    margin-bottom: 0;
-                    cursor: pointer;
-
-                    .nav__sub-title-set {
-                        display: flex;
-                        width: 100%;
-                        .nav__sub-title-dropdownicon {
-                            flex: 1 0 auto;
-                            text-align: right;
-                            margin-top: auto;
-                            margin-bottom: auto;
-                            .fas.fa-plus.empty-icon {
-                                opacity: 0;
-                            }
+        .nav__items {
+            .nav__sub-title {
+                font-size: $mysidebar-font-size;
+                padding-bottom: 0;
+                margin-bottom: 0;
+                cursor: pointer;
+                .nav__sub-title-set {
+                    display: flex;
+                    width: 100%;
+                    .nav__sub-title-dropdownicon {
+                        flex: 1 0 auto;
+                        text-align: right;
+                        margin-top: auto;
+                        margin-bottom: auto;
+                        .fas.fa-plus.empty-icon {
+                            opacity: 0;
                         }
                     }
                 }
             }
-            & ul.nav__item-children {
+            ul.nav__item-children {
                 text-align: right;
                 margin-bottom: 0;
                 overflow-y: hidden;
