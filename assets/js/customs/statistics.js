@@ -43,6 +43,7 @@ $(function(){
             });
 
             // Sidebar Num of Posts
+            //   Main Menu
             $('.nav__sub-title-name > a').each(function(idx, item){
                 var itemId = $(item).attr('id');
                 var itemCat = itemId.split('sidebar-')[1];
@@ -50,6 +51,17 @@ $(function(){
                 if(postsGroupByCats[itemCat]) numTot = postsGroupByCats[itemCat]['numTot'];
                 $('#'+itemId).parents('.nav__sub-title-set').find('.nav__sub-title-dropdownicon')
                              .prepend('<span class="nav__sub-title-stat">' + numTot + '</span>');
+            });
+            //   Sub Menu
+            var catSep = '|';
+            $('.nav__item-children > li > a').each(function(idx, item){
+                var $item = $(item);
+                var itemCats = $item.attr('id').split('sidebar-')[1].split(catSep);
+                var numTot = 0;
+                if(postsGroupByCats[itemCats[0]] && postsGroupByCats[itemCats[0]].children[itemCats[1]]) {
+                    numTot = postsGroupByCats[itemCats[0]].children[itemCats[1]]['numTot'];
+                }
+                $($item).append('<span class="nav__item-children-stat">' + numTot + '</span>');
             });
         },
         statusCode: {

@@ -23,16 +23,6 @@
                             text-align: right;
                             margin-top: auto;
                             margin-bottom: auto;
-                            .nav__sub-title-stat {
-                                margin-right: 4px;
-                                background-color: mix(orangered, #fff, 85%);
-                                color: white;
-                                font-size: 11px;
-                                padding-left: 6px;
-                                padding-right: 6px;
-                                border-radius: 8px;
-                                font-weight: normal;
-                            }
                             .fas.fa-plus.empty-icon {
                                 opacity: 0;
                             }
@@ -50,6 +40,20 @@
                 & > li {
                     font-size: $mysidebar-item-font-size;
                 }
+            }
+            .nav__sub-title-stat, .nav__item-children-stat {
+                margin-right: 4px;
+                background-color: mix(orangered, #fff, 85%);
+                color: white;
+                font-size: 11px;
+                padding-left: 6px;
+                padding-right: 6px;
+                border-radius: 8px;
+                font-weight: normal;
+            }
+            .nav__item-children-stat {
+                margin-left: 8px;
+                margin-right: 0;
             }
         }
         #ac-toc, label[for=ac-toc] {
