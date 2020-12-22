@@ -45,12 +45,11 @@ $(function(){
             // Sidebar Num of Posts
             //   Main Menu
             $('.nav__sub-title-name > a').each(function(idx, item){
-                var itemId = $(item).attr('id');
-                var itemCat = itemId.split('sidebar-')[1];
+                var $item = $(item);
+                var itemCat = $item.attr('id').split('sidebar-')[1];
                 var numTot = 0;
                 if(postsGroupByCats[itemCat]) numTot = postsGroupByCats[itemCat]['numTot'];
-                $('#'+itemId).parents('.nav__sub-title-set').find('.nav__sub-title-dropdownicon')
-                             .prepend('<span class="nav__sub-title-stat">' + numTot + '</span>');
+                $item.append('<span class="nav__sub-title-stat">' + numTot + '</span>');
             });
             //   Sub Menu
             var catSep = '|';

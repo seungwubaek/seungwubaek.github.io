@@ -16,8 +16,16 @@
                 .nav__sub-title-set {
                     display: flex;
                     width: 100%;
+                    .nav__sub-title-name {
+                        display: flex;
+                        width: 100%;
+                        a {
+                            display: flex;
+                            width: 100%;
+                            justify-content: space-between;
+                        }
+                    }
                     .nav__sub-title-dropdownicon {
-                        flex: 1 0 auto;
                         text-align: right;
                         margin-top: auto;
                         margin-bottom: auto;
@@ -39,6 +47,7 @@
                 }
             }
             .nav__sub-title-stat, .nav__item-children-stat {
+                align-self: center;
                 margin-right: 4px;
                 background-color: mix(orangered, #fff, 85%);
                 color: white;
