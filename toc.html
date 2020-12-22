@@ -4,6 +4,6 @@ title: "Table Of Contents"
 ---
 {% assign indent = 0 %}
 <ul class="wholetoc__category-list" indentation-level="0">
-{% capture toc %}{% include functions/make_toc_tree_v2.html toc_array=site.data.navigation.main-sidebar indent=indent %}{% endcapture %%}
+{% capture toc %}{% include functions/make_toc_tree_v2.html toc_array=site.data.navigation.main-sidebar indent=indent prefix_category_id=true %}{% endcapture %%}
 {{ toc }}
 </ul>

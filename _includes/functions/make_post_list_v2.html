@@ -9,6 +9,8 @@ I will use - (dash) for stripping whitespace, but it's not working ;( I dont kno
 {% assign start_url = start_url | strip %}
 {% assign indent = include.indent %}
 
+{% assign parent_category_id = include.parent_category_id %}
+
 {% assign children_posts = '' | split: '' %}
 
 {% for post in site.posts %}
@@ -35,7 +37,7 @@ I will use - (dash) for stripping whitespace, but it's not working ;( I dont kno
 {% assign item_children_size = item.children | size %}
 {% if item_children_size > 0 %}
 {% assign indent = indent | plus: 1 %}
-{% capture toc_item %}{% include functions/make_toc_tree_v2.html toc_array=item.children indent=indent %}{% endcapture %}
+{% capture toc_item %}{% include functions/make_toc_tree_v2.html toc_array=item.children indent=indent parent_category_id=parent_category_id %}{% endcapture %}
 {% assign indent = indent | minus: 1 %}
 {{ toc_item }}
 {% endif %}

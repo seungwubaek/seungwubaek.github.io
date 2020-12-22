@@ -1,9 +1,9 @@
 {% assign toc_array = include.toc_array %}
 {% assign indent = include.indent %}
+{% assign parent_category_id = include.parent_category_id %}
 
 {% comment %} 재귀적 HTML 구현을 위해 특정 indentation level로 부터 시작할 수 있음 {% endcomment %}
 {% assign default_fold_indent = 2 %}
-{% comment %} <ul class="wholetoc__category-list" indentation-level="{{ indent }}"> {% endcomment %}
 {% for item in toc_array %}
 {% assign item_url = item.url | downcase %}
 {% if indent <= default_fold_indent %}
@@ -14,11 +14,18 @@
     {% assign class_fold_list = "fold" %}
 {% endif %}
 
+{% assign category_id = item.title | downcase | replace: " ", "-" %}
+{% if include.prefix_category_id %}
+    {% assign category_id = "toc-" | append: category_id %}
+{% else %}
+    {% assign category_id = parent_category_id | append: "|" | append: category_id %}
+{% endif %}
+
 <li class="wholetoc__category-item" indentation-level="{{ indent }}">
-<div class="wholetoc__category-title" indentation-level="{{ indent }}"><i class="{{ class_fold_folder }} wholetoc__category-title-icon" onclick="tocFoldFolder(this)"></i><a href="{{ item_url }}">{{ item.title }}</a></div>
+<div class="wholetoc__category-title" indentation-level="{{ indent }}"><i class="{{ class_fold_folder }} wholetoc__category-title-icon" onclick="tocFoldFolder(this)"></i><a href="{{ item_url }}" id="{{ category_id }}">{{ item.title }}</a></div>
 <div class="wholetoc__category-inner {{ class_fold_list }}" indentation-level="{{ indent }}">
-{% include functions/make_post_list_v2.html item=item start_url=item_url indent=indent %}
+{% include functions/make_post_list_v2.html item=item start_url=item_url indent=indent parent_category_id=category_id %}
+{% assign parent_category_id = include.parent_category_id %}
 </div>
 </li>
 {% endfor %}
-{% comment %} </ul> {% endcomment %}
