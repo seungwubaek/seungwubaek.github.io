@@ -5,7 +5,7 @@ main:
   - title: "About"
     url: /about/
   - title: "TOC"
-    url: /toc/
+    url: /toc/#wholetoc__title
   - title: "Dropdown-Sample"
     dropdown:
     - title: "Sub1-1"
