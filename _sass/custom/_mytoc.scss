@@ -25,6 +25,7 @@
         a {
             display: inline-flex;
             align-items: center;
+            font-weight: bold;
         }
         &[indentation-level="0"] {
             border-bottom: 1px solid black;
