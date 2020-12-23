@@ -74,14 +74,17 @@ $(function(){
             });
 
             // Whole TOC Page
-            if(location.pathname == '/toc/'){
-                $('.wholetoc__category-title > a').each(function(idx, item){
-                    var $item = $(item);
-                    var itemCats = $item.attr('id').split('toc-')[1].split(catSep);
-                    var numTot = getStatFromGroupByCategories(postsGroupByCats, itemCats, 'numTot', 0);
-                    $item.append('<span class="wholetoc__category-stat">(' + numTot + ')</span>');
-                });
-            }
+            $('.memo').each(function(idx, item) {
+                var $item = $(item);
+                if($item.attr('data-type') == 'toc') {
+                    $('.wholetoc__category-title > a').each(function(idx, item) {
+                        var $item = $(item);
+                        var itemCats = $item.attr('id').split('toc-')[1].split(catSep);
+                        var numTot = getStatFromGroupByCategories(postsGroupByCats, itemCats, 'numTot', 0);
+                        $item.append('<span class="wholetoc__category-stat">(' + numTot + ')</span>');
+                    });
+                }
+            });
         },
         statusCode: {
             404: function() {

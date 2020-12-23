@@ -1,7 +1,11 @@
 ---
 layout: archive-toc
 ---
-<h1>{{ page.title }}</h1>
+{% assign prefix_category_id = "toc-" %}
+{% assign page_categories = page.url | remove_first: "/" | split: "/" | join: "|" %}
+{% assign category_id = page_categories | prepend: prefix_category_id %}
+
+<h1 class="wholetoc__category-title"><a href="" id="{{ category_id }}">{{ page.title }}</a></h1>
 {% comment %} 카테고리 계층 구조(category class) 얻어오기 {% endcomment %}
 {% capture page_url %}{% include functions/append_trailing_sep.html target=page.url sep='/' %}{% endcapture %}
 {% assign page_url = page_url | split: '/' %}
@@ -15,5 +19,5 @@ layout: archive-toc
 {% assign item = matched_category %}
 {% assign item_url = item.url | downcase %}
 {% assign indent = 0 %}
-{% include functions/make_post_list_v2.html item=item start_url=item_url indent=indent %}
+{% include functions/make_post_list_v2.html item=item start_url=item_url indent=indent parent_category_id=category_id %}
 {{ content }}
