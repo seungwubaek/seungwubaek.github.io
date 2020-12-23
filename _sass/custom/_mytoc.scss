@@ -22,6 +22,10 @@
     .wholetoc__category-title {
         padding-top: $wholetoc-item-padding-top;
         padding-bottom: 0;
+        a {
+            display: inline-flex;
+            align-items: center;
+        }
         &[indentation-level="0"] {
             border-bottom: 1px solid black;
             a {
@@ -38,6 +42,12 @@
             font-size: .8em;
             cursor: pointer;
         }
+    }
+    .wholetoc__category-stat {
+        margin-left: 6px;
+        font-weight: normal;
+        color: gray;
+        font-size: .8em;
     }
     .wholetoc__category-inner {
         overflow-y: visible;

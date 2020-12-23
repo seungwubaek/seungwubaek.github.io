@@ -25,6 +25,20 @@ function countPostsGroupByCats(group) {
     return group
 };
 
+function getStatFromGroupByCategories(postsGroupByCats, targetCategories, targetStat='numTot', defaultVal=0, nestedIdx=0) {
+    if(!Array.isArray(targetCategories)) targetCategories = [targetCategories];
+    var res = defaultVal;
+    var catKey = targetCategories[nestedIdx];
+    if(!postsGroupByCats[catKey]) return defaultVal;
+
+    if(nestedIdx < targetCategories.length - 1) {  // if not last nested
+        res = getStatFromGroupByCategories(postsGroupByCats[catKey]['children'], targetCategories, targetStat, defaultVal, ++nestedIdx);
+    } else {  // if last nested
+        res = postsGroupByCats[catKey][targetStat];
+    }
+    return res
+}
+
 $(function(){
     var postsGroupByCats = {};
     $.ajax({
@@ -47,8 +61,7 @@ $(function(){
             $('.nav__sub-title-name > a').each(function(idx, item){
                 var $item = $(item);
                 var itemCat = $item.attr('id').split('sidebar-')[1];
-                var numTot = 0;
-                if(postsGroupByCats[itemCat]) numTot = postsGroupByCats[itemCat]['numTot'];
+                var numTot = getStatFromGroupByCategories(postsGroupByCats, itemCat, 'numTot', 0);
                 $item.append('<span class="nav__sub-title-stat">' + numTot + '</span>');
             });
             //   Sub Menu
@@ -56,12 +69,19 @@ $(function(){
             $('.nav__item-children > li > a').each(function(idx, item){
                 var $item = $(item);
                 var itemCats = $item.attr('id').split('sidebar-')[1].split(catSep);
-                var numTot = 0;
-                if(postsGroupByCats[itemCats[0]] && postsGroupByCats[itemCats[0]].children[itemCats[1]]) {
-                    numTot = postsGroupByCats[itemCats[0]].children[itemCats[1]]['numTot'];
-                }
-                $($item).append('<span class="nav__item-children-stat">' + numTot + '</span>');
+                var numTot = getStatFromGroupByCategories(postsGroupByCats, itemCats, 'numTot', 0);
+                $item.append('<span class="nav__item-children-stat">' + numTot + '</span>');
             });
+
+            // Whole TOC Page
+            if(location.pathname == '/toc/'){
+                $('.wholetoc__category-title > a').each(function(idx, item){
+                    var $item = $(item);
+                    var itemCats = $item.attr('id').split('toc-')[1].split(catSep);
+                    var numTot = getStatFromGroupByCategories(postsGroupByCats, itemCats, 'numTot', 0);
+                    $item.append('<span class="wholetoc__category-stat">(' + numTot + ')</span>');
+                });
+            }
         },
         statusCode: {
             404: function() {
