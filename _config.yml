@@ -308,6 +308,7 @@ defaults:
 footer_scripts:
   - /assets/js/main.min.js
   - /assets/js/customs.min.js
+  - /assets/js/theme.christmas-2020-snowing.js
   - /assets/js/theme.christmas-2020.js
 
 # Global Variables
