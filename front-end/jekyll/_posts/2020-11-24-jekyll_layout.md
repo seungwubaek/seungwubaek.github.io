@@ -3,7 +3,7 @@ layout: single
 title: "[Layout] Jekyll Layout 이란"
 post-order: 1
 date: "2020-11-24 11:22:00 +0900"
-last_modified_at: "2020-11-24 23:50:00 +0900"
+last_modified_at: "2020-12-26 12:07:00 +0900"
 ---
 Jekyll Layout이란 HTML 문서 덩어리(HTML 템플릿)이다. 특징은 특정 Layout을 사용하는 모든 HTML 문서에게 동일한 구조의 HTML 요소들을 제공한다는 점이다. 앞으로 블로그의 HTML 구조를 Custom 하고 싶다면, Jekyll Layout의 구조를 이해해야만 한다.
 
@@ -31,7 +31,9 @@ Layout을 만드는 것이 먼저지만 이해를 위해 만들어진 Layout을 
 ### 1. Layout 가져오기
 
 HTML로 작성한 `mypost.html` 페이지에  `basic` 이라는 이름의 Layout을 적용하는 예시이다.
-머리말에 `layout` 값을 지정해 주면 된다.
+머리말에 `layout` 값을 지정해 주면 된다.</br>
+`mypost.html`은 전체 `HTML` 페이지의 일부가 될것이기 때문에
+`<html>`, `<head>` 등 완성된 HTML 구조를 갖추지 않은 것이 특징이다.
 
 ```html
 ---
@@ -44,7 +46,8 @@ layout: basic
 
 ### 2. Layout 만들기
 
-그렇다면, 위 예의 HTML 문서에 나온 `basic` 이라는 Layout은 어떻게 HTML 문서(내용물)를 받아들일 수 있을까?
+그렇다면, 위 예의 HTML 문서에 나온 `basic` 이라는 Layout은 어떻게 Layout의 역할을 하고
+어떻게 HTML 문서(내용물)를 받아들일 수 있을까?
 
 아래 코드는 `/_layouts/basic.html` 이라는 Layout의 예시이다.
 문서의 완성을 위해 위의 `mypost.html`과 달리 `<html>`, `<head>` 등 완성된 HTML 구조를 가지도록 만든다.
@@ -75,6 +78,9 @@ Layout 또한 Jekyll이 인식할 수 있도록 머리말을 넣어준다. 머�
 
 위와 같이 작성하면 `mypost.html` 파일에 `basic` Layout이 입혀지고 Jekyll에 의해 최종적으로 아래처럼 변환된다.
 
+실제로 Layout이 입혀진 페이지를 확인해보고 싶다면 `/_site` 폴더에서 그 결과물을 볼 수 있다.<br/>
+유저에게 제공하는 페이지는 `/_site` 에 있는 변환된 `HTML` 파일들이다.
+
 ```html
 <html>
 <head></head>
@@ -96,6 +102,8 @@ Layout 또한 Jekyll이 인식할 수 있도록 머리말을 넣어준다. 머�
 Layout을 여러겹으로 입히는것도 얼마든지 가능하다. 그 방식은 바로 위에서 본 1개 Layout 적용 방법과 크게 다를 것이 없다.
 
 3개의 Layout과 1개의 포스트로 예를 들어본다.
+
+![Jekyll Multi-Layered Layout and Content]({{ site.gdrive_url_prefix }}146--hHOK4od4vqv9yaHzPFpd8zEFn3nx)
 
 ### 1. 바깥 Layout 만들기
 
@@ -182,5 +190,3 @@ layout: inner
 </body>
 </html>
 ```
-
-![Jekyll Multi-Layered Layout and Content]({{ site.gdrive_url_prefix }}146--hHOK4od4vqv9yaHzPFpd8zEFn3nx)
