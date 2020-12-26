@@ -4,7 +4,7 @@ main:
   #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "About"
     url: /about/
-  - title: "TOC"
+  - title: "목차"
     url: /toc/#wholetoc__title
   - title: "Dropdown-Sample"
     dropdown:
