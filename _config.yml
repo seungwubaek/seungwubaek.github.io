@@ -96,7 +96,8 @@ analytics:
 author:
   name             : "Sammy Baek"
   # avatar           : "/assets/images/2020-08-28-18-37-15-269.jpg"  # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  avatar           : "/assets/images/christmas2020/my_face.jpg"  # for 2020 X-mas Theme
+  # avatar           : "/assets/images/christmas2020/my_face.jpg"  # for 2020 X-mas Theme
+  avatar: "/assets/images/happy_new_year_2021/my_face.jpg"  # for 2021 Happy New Year
   bio              : "Data Scientist & Software Engineer.<br>Senior Engineer, AI Platform Research Team, Mobigen Co."
   location         : "Seoul, Rep. of Korea"
   email            : "whitesw01@gmail.com"
@@ -308,8 +309,7 @@ defaults:
 footer_scripts:
   - /assets/js/main.min.js
   - /assets/js/customs.min.js
-  - /assets/js/theme.christmas-2020-snowing.js
-  - /assets/js/theme.christmas-2020.js
+  - /assets/js/theme.newYear-2021-poppers.js
 
 # Global Variables
 gdrive_url_prefix: "https://drive.google.com/uc?export=view&id="
