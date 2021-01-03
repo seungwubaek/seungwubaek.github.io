@@ -1,0 +1,17 @@
+---
+layout: single
+toc: false
+poem-date: ""
+poem-author: "백승우"
+---
+<div class="poem-wrapper">
+<div class="poem">
+<div class="poem-title">{{ page.title }}</div>
+<div class="poem-author">
+<div class="poem-date">{{ page.poem-date | default: "now" | date: "%Y-%m-%d" }}</div>
+{{ page.poem-author | default: layout.poem-author }}</div>
+<div class="poem-body" markdown="0">
+{{ content | strip | remove: "<p>" | remove: "</p>"}}
+</div>
+</div>
+</div>

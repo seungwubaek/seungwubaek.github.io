@@ -81,6 +81,42 @@ kbd {
     }
 }
 
+/* Posting - Special Style: Poem */
+.poem-wrapper {
+    width: 100%;
+    padding-top: 132px;
+    padding-bottom: 100px;
+    border-top: 1px solid $border-color;
+}
+.poem {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    .poem-title {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 20px;
+        padding-bottom: 20px;
+        font-weight: bold;
+    }
+    .poem-author {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: 0;
+        text-align: right;
+        .poem-date {
+            font-size: 12px;
+        }
+    }
+    .poem-body {
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+        white-space: pre-wrap;
+    }
+}
+
 /* Simple Notice */
 #simple-notice {
     position: fixed;
