@@ -4,6 +4,18 @@
     }
 }
 
+.page__header {
+    border-top: 6px ridge $border-color;
+    padding-top: .5em;
+    border-bottom: 6px groove $border-color;
+    padding-bottom: .5em;
+    margin-bottom: 1em;
+    .page__header-meta {
+        padding-top: $font-size;
+        font-size: .75em;
+    }
+}
+
 .page__related {
     @include breakpoint($large) {
         width: calc(100% - #{$mysidebar-width} - 1em); // -1em from _mixins for padding of <div id='main'>.
@@ -84,9 +96,8 @@ kbd {
 /* Posting - Special Style: Poem */
 .poem-wrapper {
     width: 100%;
-    padding-top: 132px;
+    padding-top: calc(100px + 1em);
     padding-bottom: 100px;
-    border-top: 1px solid $border-color;
 }
 .poem {
     width: fit-content;

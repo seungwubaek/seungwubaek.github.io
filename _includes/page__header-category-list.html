@@ -1,0 +1,15 @@
+{% capture page_categories %}{% for category in page.categories %}{{ category | downcase }}|{{ category }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign page_categories = page_categories | split: ',' %}
+<span class="page__header-taxonomy">
+  <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].categories_label | default: "Categories:" }} </strong>
+  <span itemprop="keywords">
+  {% assign category_word_arr = '' | split: '' %}
+  {% for cat in page_categories %}
+    {% assign keyValue = cat | split: '|' %}
+    {% capture category_word %}{{ keyValue[1] | strip_newlines }}{% endcapture %}
+    {% assign category_word = category_word | slugify %}
+    {% assign category_word_arr = category_word_arr | push: category_word %}
+    <a href="{{ category_word_arr | join: '/' | relative_url }}#wholetoc__title" class="page__header-taxonomy-item" rel="tag">{{ category_word }}</a>{% unless forloop.last %}<span class="sep">, </span>{% endunless %}
+  {% endfor %}
+  </span>
+</span>
