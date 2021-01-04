@@ -6,7 +6,7 @@
       <span class="page__meta-date">
         <i class="far {% if include.type == 'grid' and document.read_time and document.show_date %}fa-fw {% endif %}fa-calendar-alt" aria-hidden="true"></i>
         {% comment %} <time datetime="{{ date | date_to_xmlschema }}">{{ date | date: "%B %-d, %Y" }}</time> {% endcomment %}
-        <strong>{{ site.data.ui-text[site.locale].date_label | default: "Uploaded:" }}</strong> <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ document.date | date: "%Y-%m-%d %H:%M:%S %z" }}</time>
+        <strong>{{ site.data.ui-text[site.locale].date_label | default: "Uploaded:" }}</strong> <time datetime="{{ page.date | date_to_xmlschema }}">{{ document.date | date: "%Y-%m-%d %H:%M:%S %z" }}</time>
       </span>
       {% if document.last_modified_at %}
       <br/>
