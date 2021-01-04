@@ -32,7 +32,7 @@ I will use - (dash) for stripping whitespace, but it's not working ;( I dont kno
 {% assign children_posts = children_posts | sort: 'post-order' %}
 <ul class="wholetoc__inner-list">
 {% for post in children_posts %}
-    <li class="wholetoc__post-item"><div><a href="{{ post.url }}/#page-title">{{ post.title }}</a></div></li>
+    <li class="wholetoc__post-item"><div><a href="{{ post.url }}#page-title">{{ post.title }}</a></div></li>
 {% endfor%}
 {% assign item_children_size = item.children | size %}
 {% if item_children_size > 0 %}
