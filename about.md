@@ -1,6 +1,7 @@
 ---
 layout: single
 title: About
+title_align-center: true
 author_profile: true
 toc: true
 related: false
