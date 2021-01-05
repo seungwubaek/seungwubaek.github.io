@@ -4,7 +4,6 @@ title: "너의 모습"
 post-order: 3
 date: "2021-01-03 02:31:00 +0900"
 last_modified_at: "2021-01-03 23:06:00 +0900"
-toc: false
 poem-date: "2018-11-21"
 ---
 내 뜻대로 풀리지 않아

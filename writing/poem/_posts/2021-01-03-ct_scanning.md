@@ -4,7 +4,6 @@ title: "CT 촬영"
 post-order: 2
 date: "2021-01-03 02:25:00 +0900"
 last_modified_at: "2021-01-03 23:05:00 +0900"
-toc: false
 poem-date: "2018-11-13"
 ---
 씨티 촬영으로 몸 속을 들여다본다

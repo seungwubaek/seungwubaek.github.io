@@ -278,6 +278,14 @@ compress_html:
 
 # Defaults
 defaults:
+  # default
+  - scope:
+      path: ""
+    values:
+      layout: home
+      author_profile: true
+      sidebar:
+        nav: main-sidebar
   # _posts
   - scope:
       path: ""
@@ -288,25 +296,21 @@ defaults:
       show_date: true
       show_header-meta: true
       read_time: false
-      comments: true # true
+      comments: true
       share: true
       related: true
       toc: true
       toc_sticky: true
       sidebar:
         nav: main-sidebar
-  # all
+  # poem in _posts
   - scope:
-      path: ""
+      path: "writing/poem"
+      type: posts
     values:
-      layout: home
-      author_profile: true
-      read_time: false
-      comments: # true
-      share: true
-      related: true
-      sidebar:
-        nav: main-sidebar
+      title_align-center: true
+      classes: wide
+      toc: false
 
 footer_scripts:
   - /assets/js/main.min.js
