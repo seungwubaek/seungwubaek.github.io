@@ -3,6 +3,12 @@ layout: single
 poem-date: ""
 poem-author: "백승우"
 ---
+{% if page.author_note_top %}
+<div class="poem-author-note-top">
+  <span>들어가며:</span><br/>
+  {{ page.author_note_top }}
+</div>
+{% endif %}
 <div class="poem-wrapper">
 <div class="poem">
 <div class="poem-title">{{ page.title }}</div>
@@ -14,3 +20,8 @@ poem-author: "백승우"
 </div>
 </div>
 </div>
+{% if page.author_note_bottom %}
+<div class="poem-author-note-bottom">
+  <span>마치며:</span><br/>
+  {{ page.author_note_bottom }}
+{% endif %}

@@ -97,6 +97,18 @@ kbd {
 }
 
 /* Posting - Special Style: Poem */
+.poem-author-note-top, .poem-author-note-bottom {
+    font-size: .8em;
+    span {
+        font-weight: bold;
+    }
+}
+.poem-author-note-top {
+    margin-bottom: 50px;
+}
+.poem-author-note-bottom {
+    margin-top: 50px;
+}
 .poem-wrapper {
     width: 100%;
     padding-top: calc(50px + 1em);
