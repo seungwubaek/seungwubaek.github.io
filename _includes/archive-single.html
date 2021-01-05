@@ -24,7 +24,10 @@
         <a href="{{ post.url | relative_url }}#page-title" rel="permalink">{{ title }}</a>
       {% endif %}
     </h3>
-    {% include page__meta.html type=include.type %}
+    <div class="page-meta">
+      {% include page__header-category-list.html target=post %}
+      {% include page__header-meta.html target=post %}
+    </div>
     {% if post.excerpt %}<p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify | strip_html | truncate: 160 }}</p>{% endif %}
   </article>
 </div>

@@ -1,4 +1,4 @@
-{% assign document = post | default: page %}
+{% assign document = include.target | default: page %}
 
 {% if document.show_header-meta %}
 <div class="page__header-meta">
