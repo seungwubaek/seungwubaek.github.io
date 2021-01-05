@@ -286,6 +286,7 @@ defaults:
       layout: single
       author_profile: true
       show_date: true
+      show_header-meta: true
       read_time: false
       comments: true # true
       share: true
