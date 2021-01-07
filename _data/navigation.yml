@@ -78,6 +78,9 @@ main-sidebar:
       url: "/tools/git/"
   - title: "Blog"
     url: "/blog/"
+    children:
+    - title: "Tips"
+      url: "/blog/tips/"
   - title: "Writing"
     url: "/writing/"
     children:
