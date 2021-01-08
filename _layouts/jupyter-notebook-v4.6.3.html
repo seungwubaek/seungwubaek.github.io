@@ -90,5 +90,17 @@ init_mathjax();
 <!-- End of mathjax configuration -->
 <body>
 {{ content }}
+<script>
+function resizeParentIframe() {
+  $(parent.document.getElementById(window.name)).css({
+    'border': 0,
+    'width': '100%',
+    'height': document.body.scrollHeight
+  });
+}
+window.onload = resizeParentIframe;
+window.onresize = resizeParentIframe;
+$('img').on('load', resizeParentIframe);
+</script>
 </body>
 </html>
