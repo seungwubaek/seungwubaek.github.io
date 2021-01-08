@@ -32,7 +32,7 @@ Markdown 셀, Python Code 셀, Pandas Dataframe, Matplotlib Plot이 있다. (코
 
 ![Jupyter Notebook Sample]({{ site.gdrive_url_prefix }}1whqzf_6jM2CAbnlDd0jKOeDXfHiuqTbj)
 
-위 이미지의 Jupyter Notebook 파일은 [이곳]({{ site.gdrive_url_prefix }}https://docs.google.com/document/d/1GLRmvwCrdG7q-UG_lfyzMxhXhOZ7-W9sZWDpMG6hbhs/edit?usp=drivesdk)에서 다운로드 할 수 있다.
+위 이미지의 Jupyter Notebook 파일은 [이곳](https://docs.google.com/document/d/1GLRmvwCrdG7q-UG_lfyzMxhXhOZ7-W9sZWDpMG6hbhs/edit?usp=drivesdk)에서 다운로드 할 수 있다.
 
 ## 2. Notebook 파일 위치 확인
 
