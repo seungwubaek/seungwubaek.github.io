@@ -319,3 +319,4 @@ footer_scripts:
 
 # Global Variables
 gdrive_url_prefix: "https://drive.google.com/uc?export=view&id="
+raw_github_prefix: "https://raw.githubusercontent.com/seungwubaek/seungwubaek.github.io/master"
