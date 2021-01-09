@@ -2,7 +2,7 @@
 layout: single
 title: "Jupyter Notebook 화면을 블로그로 가져오기"
 date: "2021-01-07 09:18:00 +0900"
-last_modified_at: "2021-01-09 21:59:00 +0900"
+last_modified_at: "2021-01-09 22:07:00 +0900"
 ---
 Data Science 관련 작업을 하면 Jupyter Notebook을 사용하는 경우가 많다.<br/>
 이 포스트에서는 작성한 Notebook의 Python 코드 셀, Markdown 셀,
@@ -34,6 +34,12 @@ Jekyll, Jupyter Notebook
    `/_layouts/jupyter-notebook-v4.6.3.html` 경로의 파일로 저장한다.
 3. `[파일명].html`에서 `<body>` 태그의 하위 내용만 복사하여
    `/assets/iframes/jupyter-notebook/[파일명].html`을 만든다.<br/>
+   이때 파일 내용 제일 위에 아래의 머리말을 붙인다.
+   ````html
+   ```
+   layout: jupyter-notebook-v4.6.3
+   ```
+   ````
    예를 들면 <a href="{{ site.raw_github_url_prefix }}/assets/iframes/jupyter-notebooks/2021-01-07-simple.html">
    이런식</a>으로 만든다.
 4. 포스트할 페이지를 하나 만들고 거기에
