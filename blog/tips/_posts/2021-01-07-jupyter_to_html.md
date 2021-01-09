@@ -10,18 +10,35 @@ Pandas Dataframe Output, Matplotlib Plot Image Output을 있는 그대로 Jekyll
 포스팅 하는 방법을 알아본다.<br/>
 nbconvert를 사용해서 html로 변환하며 iframe으로 가져올 것이다.
 
+__들어가며:__<br/>
+Jupyter Notebook을 Jekyll 블로그에 넣는 방법에 대해 문의주신 Liam427 님께 감사드립니다~<br/>
+더 완벽한 답을 드리려고 하다보니 이것저것 내용이 많아졌네요..<br/>
+이 글을 통해 문제를 해결하셨으면 좋겠습니다! 새해복 많이 받으세요~
+
 ## Requirement
 
 Jekyll, Jupyter Notebook
 
 # 방법 요약
 
-1. nbconvert로 ipynb 파일을 HTML로 변환한다.
-2. nbconvert 변환에 사용한 template과 변환된 HTML을 열어서 그 안에서 사용된 CSS, Javascript를 그대로 옮겨서
-   Jekyll Layout (/_layout/jupyter-notebook.html)을 하나 만든다.
-3. 방금 만든 Jekyll Layout으로 iframe으로 사용할 HTML 파일(/assets/iframes/jupyter-notebook/simple.html)을
-   하나 만들고 nbconvert로 변환했던 HTML에서 `<head>` 내용만 제외하고 복붙한다.(`<head>`는 layout에 들어있게 할것)
-4. 포스트를 하나 만들고 `<iframe>` 태그 안에 3에서 만든 simple.html을 넣는다.
+1. nbconvert의 다음 명령어로 `[파일명].ipynb` 파일을 `[파일명].html`로 HTML 변환한다.<br/>
+   `jupyter nbconvert --to html --template classic --no-prompt ./[파일명].ipynb`
+2. nbconvert 변환에 사용한 template과 변환된 HTML을 열어서 그 안에 정의된 CSS, Javascript를 그대로 옮기고
+   약간의 javascript 코드를 추가해서 Jekyll Layout (/_layout/jupyter-notebook-v4.6.3.html)을 만든다.
+   아래에 만들어놓은 CSS 파일과 Layout을 공유한다.<br/>
+   <a href="{{ site.raw_github_url_prefix }}/assets/css/jupyter-highlighter.scss">이곳</a>의 내용을 복사해서
+   `/assets/css/jupyter-highlighter.scss` 경로의 파일로 저장한다.<br/>
+   <a href="{{ site.raw_github_url_prefix }}/assets/css/jupyter-notebook.scss">이곳</a>의 내용을 복사해서
+   `/assets/css/jupyter-notebook.scss` 경로의 파일로 저장한다.<br/>
+   <a href="{{ site.raw_github_url_prefix }}/_layouts/jupyter-notebook-v4.6.3.html">이곳</a>에서
+   `/_layouts/jupyter-notebook-v4.6.3.html` 경로의 파일로 저장한다.
+3. `[파일명].html`에서 `<body>` 영역만 복사하여 `/assets/iframes/jupyter-notebook/[파일명].html`을 만든다.<br/>
+   예를 들면 <a href="{{ site.raw_github_url_prefix }}/assets/iframes/jupyter-notebooks/2021-01-07-simple.html">이런식</a>으로 만든다.
+4. 포스트할 페이지를 하나 만들고 거기에
+   `<iframe id="[iframe ID]" name="[iframe ID와 같은 값]" src="/assets/iframes/jupyter-notebooks/[파일명].html">`
+   태그를 써서 3에서 만든 파일의 경로를 넣는다.
+   단, `<iframe>` 태그의 id와 name 속성은 반드시 있어야하며 두 값이 같고 Unique 해야한다.
+5. 블로그에 접속해서 포스트 페이지에 제대로 Jupyter Notebook 내용이 나오는지 확인하면 끝
 
 # 방법 상세
 
@@ -32,7 +49,8 @@ Markdown 셀, Python Code 셀, Pandas Dataframe, Matplotlib Plot이 있다. (코
 
 ![Jupyter Notebook Sample]({{ site.gdrive_url_prefix }}1whqzf_6jM2CAbnlDd0jKOeDXfHiuqTbj)
 
-위 이미지의 Jupyter Notebook 파일은 [이곳](https://docs.google.com/document/d/1GLRmvwCrdG7q-UG_lfyzMxhXhOZ7-W9sZWDpMG6hbhs/edit?usp=drivesdk)에서 다운로드 할 수 있다.
+위 이미지의 Jupyter Notebook 파일은
+<a href="/downloads/jupyter-notebook/simple.ipynb" download>이곳</a>을 클릭하여 다운로드 할 수 있다.
 
 ## 2. Notebook 파일 위치 확인
 
@@ -119,7 +137,8 @@ Jupyter Notebook을 사용해본 사람은 짐작 할 수 있겠지만 위의 Ja
 
 그러므로 일단 동일하게 반복될거라 예상되는 Javascript, CSS 부분으로 Jupyter Notebook 전용의 Jekyll Layout을 만들자.<br/>
 그러면 Jupyter Notebook을 포스트 할 때 마다 Javascript, CSS를 넣는 것을 자동화 할 수 있다.
-그리고 Jekyll Layout 안에 Jupyter Notebook의 셀 내용만 채워서 포스트를 빠르게 생산할 수 있게 된다.
+그리고 Jekyll Layout 안에 Jupyter Notebook의 셀 내용을 넣고, 새로운 포스트에서는 이 부분만 바꿔 넣는 방식으로
+포스트를 빠르게 생산할 수 있게 된다.
 
 그런데 Jekyll Layout에 Javascript, CSS를 넣으면 Jupyter Notebook을 포스트 할 때 마다 1만 3천줄에 달하는 CSS가 생긴다.
 따라서 내 Git Repository 용량을 아끼기 위해 `<link rel="stylesheet">` 태그를 이용해서 CSS를 주소로 대체한다.<br/>
@@ -410,43 +429,50 @@ iframe을 쓰면 내부 HTML(자식)이 부모에서 독립되므로 자식이 �
 
 ### 7-2. CSS 등록
 
-위의 Jupyter Notebook 전용 Jekyll Layout에서 사용할 CSS를 내 Jekyll 서버의 리소스로 저장해놓자.
-
+위의 Jupyter Notebook 전용 Jekyll Layout에서 사용할 CSS를 내 Jekyll 서버의 리소스로 저장해놓자.<br/>
 파일 내용의 양이 너무 많아서 링크로 대체한다.
 
-<a href="{{ site.repository }}/blob/master/assets/css/jupyter-highlighter.scss">이곳</a>의 내용을 복사해서
- `/assets/css/jupyter-highlighter.scss` 경로에 파일로 저장한다.
+<a href="{{ site.raw_github_url_prefix }}/assets/css/jupyter-highlighter.scss">이곳</a>의 내용을 복사해서
+ `/assets/css/jupyter-highlighter.scss` 경로의 파일로 저장한다.<br/>
+<a href="{{ site.raw_github_url_prefix }}/assets/css/jupyter-notebook.scss">이곳</a>의 내용을 복사해서
+ `/assets/css/jupyter-notebook.scss` 경로의 파일로 저장한다.
 
-<a href="{{ site.repository }}/blob/master/assets/css/jupyter-notebook.scss">이곳</a>의 내용을 복사해서
- `/assets/css/jupyter-notebook.scss` 경로에 파일으로 저장한다.
+위 두 파일의 경로는 우리가 만든 Jekyll Layout에서 `<link rel="stylesheet">`가 참조하는 경로이다.
 
-위 두 파일의 경로는 `<link rel="stylesheet">`에서 링크가 걸리는 위치이다.
-
-CSS의 파일 이름이 SCSS인데, Jekyll이 블로그를 빌드할때 이것을 CSS 파일로 변환해주므로 걱정하지 않아도 된다.
+CSS의 파일 확장자가 `.css` 가 아니고 `.scss`인데 파일의 머리말에 `---` 이 있으므로
+Jekyll이 블로그를 빌드하면서 이 파일들을 `.css` 확장자를 가진 CSS 파일로 변환한다.
 
 ## 8. Jupyter Notebook 포스팅 하기
 
-Jupyter Notebook 1개를 포스팅하려면 파일을 2개 만들어야한다.
+Jupyter Notebook 1개를 포스팅하려면 파일을 최소 2개 만들어야한다.
 일단 여기서는 이 포스트 맨위의 [샘플](#1-샘플)의 내용을 포스트하는 코드를 만들 것이다.
 
 우리가 만들 파일 2개 중<br/>
-하나는 `<iframe>`에 들어갈 실제 Jupyter Notebook 내용을 담은 파일이고,<br/>
+하나는 `<iframe>`으로 들어갈 Jupyter Notebook 내용을 담은 파일이고,<br/>
 하나는 `<iframe>` 태그를 넣은 포스트이다.
 
 ### 8-1. Jupyter Notebook Iframe
 
 `<iframe>` 태그에 들어갈 내용을 만들어보자.
 
-`/assets/iframes/jupyter-notebooks/2021-01-07-simple.html` 이라는 이름의 파일을 만들고 아래 내용을 넣는다.
+Jupyter nbconvert 로 위 [샘플](#1-샘플)을 HTML로 변환 했을때 실제 Jupyter 셀 코드는
+아래 그림처럼 13094줄부터 `<body>` 태그로 시작한다.
 
-아래 내용이 바로 nbconvert를 이용해서 `simple.ipynb` 파일을 `simple.html`로 변환했을때, `<body>` 태그 안에 들어있는 코드이다.
+![Jupyter nbconvert result body]({{ site.gdrive_url_prefix }}13bI8AHcsMfOIteVYdrAQ3PNQdAnspbi4)
 
-머리말에 `layout: jupyter-notebook-v4.6.3` 이 적용돼 있으므로 Jekyll이 빌드를 통해 Javascript, CSS 등을 붙여줄 것이다.
+우리가 필요한것은 바로 이 `<body>` 태그의 내용이다.
 
-따라서 앞으로는 포스트를 만들때 이 부분의 내용만 바꿔주면 된다.
+`<body>` 태그의 하위 내용 즉, 바로 밑 `<div tabindex="-1" id="notebook">` 태그 덩어리를 복사해서
+`/assets/iframes/jupyter-notebooks/2021-01-07-simple.html` 이라는 이름의 파일로 만든다.
+
+그리고 아래 코드 처럼 머리말에 `layout: jupyter-notebook-v4.6.3` 을 적용시킨다.
+이렇게 하면 Jekyll이 빌드를 통해 Javascript, CSS 등을 자동으로 붙여줄 것이다.
+
+앞으로도 포스트에 Jupyter Notebook 코드를 싣고 싶을때는 `<body>` 태그의 하위 내용에
+머리말 `layout: jupyter-notebook-v4.6.3`을 붙여서 파일을 하나 만들면 된다.
 
 <div class='code-reducible code-reduce' markdown="1">
-```
+```html
 {% raw %}
 ---
 layout: jupyter-notebook-v4.6.3
@@ -628,14 +654,14 @@ layout: jupyter-notebook-v4.6.3
 
 대충 아래와 같이 간단한 포스트를 만든다고 가정한다.
 
-````
+````html
 ```
 ```
 포스트 입니다.
 
 아래는 Jupyter Notebook 코드 입니다.
 
-<iframe id="frame1" name="frame1" src="/assets/iframes/jupyter-notebooks/2021-01-07-simple/">Faild to load.</iframe>
+<iframe id="frame1" name="frame1" src="/assets/iframes/jupyter-notebooks/2021-01-07-simple/">Jupyter Notebook</iframe>
 ````
 
 위에 보이는 `<iframe>` 태그에 Jupyter Notebook 코드가 들어가게된다.
@@ -655,7 +681,11 @@ layout: jupyter-notebook-v4.6.3
 
 참고로 나는 구글 드라이브에 업로드 시켜놓고 가져온다.<br/>
 위 섹션 [8-1. Jupyter Notebook Iframe](#8-1-jupyter-notebook-iframe) 내용 중에
-`<img>` 태그의 `src` 값을 구글 드라이브 링크로 바꾸었다.<br/>
+`<img>` 태그의 `src` 값을 구글 드라이브 링크로 바꾸었다.
+
+```html
+<img src="{{ site.gdrive_url_prefix }}1DVcquKL6H9UpwlGdsLWERY98nohgpq_i">
+```
 
 ## 결과
 
@@ -669,9 +699,13 @@ layout: jupyter-notebook-v4.6.3
 
 <iframe id="f1" name="f1" src="/assets/iframes/jupyter-notebooks/2021-01-07-simple/">Jupyter Notebook</iframe>
 
-이번 포스트는 양이 매우 많았다...
+`<iframe>`을 쓰고 있기 때문에 한 포스트에 다른 Jupyter Notebook 코드를 또 넣을수도 있다!
 
-__마치며:__<br/>
-Jupyter Notebook을 Jekyll 블로그에 넣는 방법에 대해 문의주신 Liam427 님께 감사드립니다~<br/>
-더 완벽한 답을 드리려고 하다보니 이것저것 내용이 많아졌네요..<br/>
-이 글을 통해 문제를 해결하셨으면 좋겠습니다! 새해복 많이 받으세요~
+```html
+<iframe id="f2" name="f2" src="/assets/iframes/jupyter-notebooks/2021-01-07-simple/">Jupyter Notebook</iframe>
+```
+
+<iframe id="f2" name="f2" src="/assets/iframes/jupyter-notebooks/2021-01-07-simple/">Jupyter Notebook</iframe>
+
+이번 포스트는 양이 매우 많았다...
+여기까지 포스팅을 마친다
