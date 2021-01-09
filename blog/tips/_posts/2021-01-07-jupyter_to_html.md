@@ -32,8 +32,10 @@ Jekyll, Jupyter Notebook
    `/assets/css/jupyter-notebook.scss` 경로의 파일로 저장한다.<br/>
    <a href="{{ site.raw_github_url_prefix }}/_layouts/jupyter-notebook-v4.6.3.html">이곳</a>에서
    `/_layouts/jupyter-notebook-v4.6.3.html` 경로의 파일로 저장한다.
-3. `[파일명].html`에서 `<body>` 영역만 복사하여 `/assets/iframes/jupyter-notebook/[파일명].html`을 만든다.<br/>
-   예를 들면 <a href="{{ site.raw_github_url_prefix }}/assets/iframes/jupyter-notebooks/2021-01-07-simple.html">이런식</a>으로 만든다.
+3. `[파일명].html`에서 `<body>` 태그의 하위 내용만 복사하여
+   `/assets/iframes/jupyter-notebook/[파일명].html`을 만든다.<br/>
+   예를 들면 <a href="{{ site.raw_github_url_prefix }}/assets/iframes/jupyter-notebooks/2021-01-07-simple.html">
+   이런식</a>으로 만든다.
 4. 포스트할 페이지를 하나 만들고 거기에
    `<iframe id="[iframe ID]" name="[iframe ID와 같은 값]" src="/assets/iframes/jupyter-notebooks/[파일명].html">`
    태그를 써서 3에서 만든 파일의 경로를 넣는다.
