@@ -2,7 +2,7 @@
 layout: single
 title: "Jupyter Notebook 화면을 블로그로 가져오기"
 date: "2021-01-07 09:18:00 +0900"
-last_modified_at: "2021-01-09 21:43:00 +0900"
+last_modified_at: "2021-01-09 21:59:00 +0900"
 ---
 Data Science 관련 작업을 하면 Jupyter Notebook을 사용하는 경우가 많다.<br/>
 이 포스트에서는 작성한 Notebook의 Python 코드 셀, Markdown 셀,
