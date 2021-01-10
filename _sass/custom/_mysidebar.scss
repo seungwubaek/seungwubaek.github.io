@@ -179,6 +179,8 @@
 .sidebar__right {
     &.sticky {
         top: calc(#{$mymasthead-height} + 0.5em);
+        height: calc(100vh - #{$initial-content-top});
+        overflow-y: auto;
         &::-webkit-scrollbar {
             width: 4px;
         }
