@@ -11,7 +11,7 @@ html {
     // Method 2: Prevent to hide content by Topbar
     //     It use javascript for 'auto scroll to id'. Doesn't have any problem. all clear.
     body {
-        padding-top: calc(#{$mymasthead-height} + 8px);
+        padding-top: $initial-content-top;
     }
 }
 

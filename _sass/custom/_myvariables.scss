@@ -20,6 +20,9 @@ $mymasthead-height: calc(3 * #{$mymasthead-font-size});
 $mymasthead-home-height: calc(2 * #{$mymasthead-font-size});
 $mymasthead-menu-height: calc(1.1 * #{$mymasthead-home-height});
 
+// initial-content
+$initial-content-top: calc(#{$mymasthead-height} + 8px);
+
 // sidebar
 $mysidebar-width: 216px;  // sidebar width + scroll bar space
 $mysidebar-scroll-width: 16px;

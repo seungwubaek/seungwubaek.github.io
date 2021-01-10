@@ -179,10 +179,26 @@
 .sidebar__right {
     &.sticky {
         top: calc(#{$mymasthead-height} + 0.5em);
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: black;
+            border-radius: 2px;
+            opacity: .4;
+        }
+        &::-webkit-scrollbar-track {
+            background: $navicon-link-color-hover;
+        }
     }
     .toc {
         .nav__title {
             margin-top: 0;
+        }
+        // Scrollspy marks toc items as .active when they are in focus
+        .active > a {
+            @include yiq-contrasted($active-color);
+            text-decoration: underline;
         }
     }
 }
