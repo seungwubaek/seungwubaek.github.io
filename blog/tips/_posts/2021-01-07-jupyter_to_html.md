@@ -2,7 +2,7 @@
 layout: single
 title: "Jupyter Notebook 화면을 블로그로 가져오기"
 date: "2021-01-07 09:18:00 +0900"
-last_modified_at: "2021-01-09 22:07:00 +0900"
+last_modified_at: "2021-01-10 16:13:00 +0900"
 ---
 Data Science 관련 작업을 하면 Jupyter Notebook을 사용하는 경우가 많다.<br/>
 이 포스트에서는 작성한 Notebook의 Python 코드 셀, Markdown 셀,
@@ -59,6 +59,8 @@ Markdown 셀, Python Code 셀, Pandas Dataframe, Matplotlib Plot이 있다. (코
 
 위 이미지의 Jupyter Notebook 파일은
 <a href="/downloads/jupyter-notebook/simple.ipynb" download>이곳</a>을 클릭하여 다운로드 할 수 있다.
+
+최종 결과는 이 포스트 맨아래 [결과](#결과) 섹션에서 볼 수 있다.
 
 ## 2. Notebook 파일 위치 확인
 
