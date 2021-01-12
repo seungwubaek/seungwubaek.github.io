@@ -63,6 +63,8 @@ main-sidebar:
       url: "/front-end/javascript/"
     - title: "Jekyll"
       url: "/front-end/jekyll/"
+    - title: "Liquid"
+      url: "/front-end/liquid/"
   - title: "Back-End"
     url: "/back-end/"
   - title: "Tools"
