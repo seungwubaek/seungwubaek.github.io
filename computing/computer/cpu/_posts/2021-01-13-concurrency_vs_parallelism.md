@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "동시성(Concurrency) vs 병렬성(Parallelism)"
-date: "2021-01-13 10:36:00 +0900"
-last_modified_at: "2021-01-13 10:36:00 +0900"
+date: "2021-01-13 14:49:00 +0900"
+last_modified_at: "2021-01-13 14:49:00 +0900"
 ---
 # 처리 방식의 공통점
 
