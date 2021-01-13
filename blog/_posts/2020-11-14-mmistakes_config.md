@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Git Page로 Blog 만들기] - [2] Jekyll과 mmistakes의 config"
+title: "[Git Page Jekyll Blog 만들기] - [2] Jekyll과 mmistakes의 config"
 post-order: 2
 date: "2020-11-14 00:00:00 +0900"
 last_modified_at: "2020-11-17 15:02:00"

@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Git Page로 Blog 만들기] - [7] Goole Search Console 연동"
+title: "[Git Page Jekyll Blog 만들기] - [7] Goole Search Console 연동"
 post-order: 7
 date: "2020-11-17 17:16:00 +0900"
 last_modified_at: "2020-11-17 17:16:00 +0900"

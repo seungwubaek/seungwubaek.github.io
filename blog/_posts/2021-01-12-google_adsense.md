@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Git Page로 Blog 만들기] - [12] Google AdSense 등록해서 수익 창출"
+title: "[Git Page Jekyll Blog 만들기] - [12] Google AdSense 등록해서 수익 창출"
 post-order: 12
 date: "2021-01-12 14:38:00 +0900"
 last_modified_at: "2021-01-12 14:38:00 +0900"

@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Git Page로 Blog 만들기] - [3] 대문 페이지 만들기"
+title: "[Git Page Jekyll Blog 만들기] - [3] 대문 페이지 만들기"
 post-order: 3
 ---
 블로그의 대문 페이지를 만들어보자. 이 포스트에서는 Jekyll의 url 부여 방식에 대해 익히고, 대문 페이지에 나의 최근 포스트들을 나열해주는 화면이 나오게 할 것이다.<br/>

@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Git Page로 Blog 만들기] - [13] 왼쪽 사이드바 만들기 (기본)"
+title: "[Git Page Jekyll Blog 만들기] - [13] 왼쪽 사이드바 만들기 (기본)"
 post-order: 13
 date: "2021-01-13 22:01:00 +0900"
 last_modified_at: "2021-01-13 22:01:00 +0900"
@@ -20,7 +20,7 @@ Jekyll, YAML
 ## 1. 기본 화면
 
 맨 처음 Minimal-Mistakes Jekyll 테마를 가지고 Jekyll 블로그 서버를 빌드하자.
-혹시 Jekyll로 블로그를 만드는 방법을 잘 모른다면 이 포스트의 시리즈인 `[Git Page로 Blog 만들기]`
+혹시 Jekyll로 블로그를 만드는 방법을 잘 모른다면 이 포스트의 시리즈인 `[Git Page Jekyll Blog 만들기]`
 [시리즈]({{ site.baseurl }}/blog/)를 처음부터 보자.
 
 ```bash
@@ -116,5 +116,5 @@ sidebar:
 하지만 앞으로 내 블로그에서 사이드바가 항상 나오도록 하려면 Jekyll 설정에서 default 값을 세팅해주는 작업이 필요하다.
 
 그 방법은 이전 포스트
-[[Git Page로 Blog 만들기] - [2] Jekyll과 mmistakes의 config]({{ site.baseurl }}/blog/mmistakes_config/#defaults)
+[[Git Page Jekyll Blog 만들기] - [2] Jekyll과 mmistakes의 config]({{ site.baseurl }}/blog/mmistakes_config/#defaults)
 의 내용을 참고하자.
