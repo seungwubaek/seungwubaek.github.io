@@ -3,9 +3,9 @@ layout: single
 title: "Liquid와 Jekyll로 함수 만들기 & Tutorial"
 post-order: 2
 date: "2021-01-12 17:07:00 +0900"
-last_modified_at: "2021-01-12 23:01:00 +0900"
+last_modified_at: "2021-01-13 10:01:00 +0900"
 ---
-Liquid의 기능을 이용하면 Jekyll에서 함수 처럼 작동하는 Liquid 문법을 사용할 수 있다.
+Liquid에는 함수 개념이 없지만, Liquid의 문법 트릭으로 함수 처럼 작동하는 Liquid 구문을 만들 수 있다.
 다만 진짜 함수는 아니며 HTML 안에 다른 파일의 내용을 삽입하는 방법으로 함수처럼 보이도록 한다.
 
 설명에 앞서 Liquid의 기본 개념과 문법에 대해서 어느정도 알고 있다고 가정한다.
@@ -18,7 +18,7 @@ Jekyll, Liquid
 ## 주의점
 
 Jekyll로 Liquid 구문을 해석하도록 하려면 Jekyll에게 해당 파일을 변환하라고 일러주어야 한다.<br/>
-따라서 Liquid를 사용하는 파일은 머리말이 필요함을 잊지 말자.<br/>
+따라서 Liquid를 사용하는 파일은 최소한 아래와 같은 빈 머리말이 필요함을 잊지 말자.
 
 ```liquid
 ---
@@ -32,13 +32,22 @@ Jekyll로 Liquid 구문을 해석하도록 하려면 Jekyll에게 해당 파일�
 ## Liquid tag: `include`
 
 Liquid `include` 태그를 써서 HTML 안에 다른 파일의 내용을 삽입할 수 있다.<br/>
-단, Jekyll을 사용할 때 Liquid `include` 태그로 불러올 수 있는 다른 파일은 `_includes/` 디렉토리 하위에 존재해야만 한다.
+단, Jekyll을 사용할 때 Liquid `include` 태그로 불러올 파일은 `_includes/` 디렉토리 하위에 존재해야만 한다.
 
-아래는 아주 간단한 사용 예이다.
-
-`include`의 원래 기능에 대한 보다 나은 설명은
+`include` 태그의 원래 기능에 대한 보다 나은 설명은
 [Jekyll 공식 문서 한국어 버전](https://jekyllrb-ko.github.io/docs/includes/)을 참조하자.<br/>
-<span class="md-monologue">공식문서의 설명만 보고도 감을 잡을지도 모른다.</span>
+공식 문서에서는 `include`를 `조각파일`로 번역하였다.
+
+<span class="md-monologue">올해의 가장 훌륭한 번역 !<br/>
+공식문서의 설명만 보고도 감을 잡을지도 모른다.</span>
+
+`include` 구문은 아래와 같은 형태로 작성한다.
+
+```liquid
+{% raw %}{% include [파일 경로] %}{% endraw %}
+```
+
+아래는 현재 파일에 `math_example.html` 이라는 파일 내용을 불러오는 아주 간단한 사용 예이다.
 
 ```liquid
 ---
@@ -49,11 +58,11 @@ layout: default
 </p>
 ```
 
-위 코드는 현재 파일에 `math_example.html` 이라는 파일 내용을 불러오는 코드이다.
-이때 파일의 경로에서 `_includes/` 디렉토리는 쓰지 않는다.
+불러오려는 파일은 `_includes/math_example.html` 경로의 파일을 의미하게 되는데
+`include`문을 쓸 때엔 전체 경로에서 `_includes/` 디렉토리 경로는 생략한다.
 
-위와 같이 작성하면 Jekyll의 페이지 빌드 단계에서 `<p>` 태그 안에 `math_example.html` 파일의 내용이 삽입되고
-순수 HTML로 변환된다.
+이제 Jekyll의 페이지 빌드 단계에서 `<p>` 태그 안에 `math_example.html` 파일의 내용이 삽입되고
+순수 HTML로 변환될 것이다.
 
 이런 작업은 마치 C 언어에서 `#include` 키워드에 대한 전처리기 작업을 연상시킨다.
 
@@ -78,6 +87,8 @@ layout: default
 
 ## Liquid로 인자 받기
 
+이제 `math_example.html` 파일의 입장에서,
+
 바로 위 [include tag에 인자 넘기기](#include-tag에-인자-넘기기) 섹션에서 넘겨받은 인자는
 아래처럼 `include.[인자명]` 키워드로 받아서 사용할 수 있다.
 
@@ -94,8 +105,8 @@ layout: default
 [Jekyll 공식 문서 한국어 버전](https://jekyllrb-ko.github.io/docs/includes/)에서 잘 번역했듯,
 `include` 태그에 의해 삽입되는 파일은 전체 파일의 일부인 <strong>조각 파일</strong> 이라고 할 수 있다.
 
-따라서 완전한 구조를 갖춘 HTML 파일일 필요도 없고 HTML 구조일 필요 조차 없다.
-그리고 이미 자신을 호출하는 부모 파일에 머리말이 있을 것이므로 머리말이 필요없다.
+이는 이미 자신을 호출하는 부모 파일에 머리말이 있을 것이므로 머리말이 필요없다는 것을 의미한다
+또 완전한 구조를 갖춘 HTML 파일일 필요도 없고 HTML 구조일 필요 조차 없다.
 
 # Tutorial
 
@@ -103,7 +114,7 @@ layout: default
 
 ## 1. 함수 생성
 
-숫자 인자 2개를 받아 두 인자를 더한 값을 반환하는 함수를 만든다.
+숫자 인자 2개를 받아 두 인자를 더한 값(`math_result`)을 반환하는 함수를 만든다.
 
 아래와 같은 내용으로 `_include/math_example.html` 파일을 생성한다.
 
@@ -132,18 +143,25 @@ layout: default
 {% raw %}{% capture res %}{% include math_example.html param_a=param_a param_b=param_b %}{% endcapture %}{% endraw %}
 <li>두 인자를 합한 값은 {% raw %}{{ res }}{% endraw %}</li>
 ```
+
+위 코드는 Liquid 변수 `param_a`, `param_b` 를 할당하고 `<li>` 태그로 한번씩 보여준 후<br/>
+`include` 구문을 함수처럼 사용해서 `param_a`, `param_b`의 값을 더한 다음<br/>
+그 결과를 `res` 변수로 가져와서(`capture` 구문 사용) `<li>` 태그로 보여준다.
+
 ## 3. 결과 확인
 
-이제 `https://[내 블로그 URL]/tutorial_page/` URL로 접속하여 결과를 확인해본다. (URL은 설정에 따라 다를 수 있음)
+이제 `https://[내 블로그 URL]/tutorial_page/` URL로 접속하여 결과를 확인해본다.
+(URL은 Jekyll 설정에 따라 다를 수 있음)
 
 # 참고
 
 ## Layout `empty`
 
-위 `tutorial_path.html` [파일](#2-함수-사용)의 머리말엔 아무것도 없다.<br/>
+위 `tutorial_page.html` [파일](#2-함수-사용)의 머리말엔 아무 내용이 없다.<br/>
 그러면 Jekyll 설정에 별다른 처리를 하지 않았다면 기본값으로 `layout: default`가 적용된다.
 
-그 상태로 Tutorial 결과를 보면 아마 `default` 레이아웃에 있던 태그들이 섞여서 튜토리얼의 결과 확인이 불편할 수 있다.<br/>
+이 상태로 위 Tutorial 결과를 보면 아마 `default` 레이아웃에 있던 기존의 HTML 태그들과
+튜토리얼의 결과가 섞여서 확인이 불편할 수 있다.<br/>
 이때 깔끔한 결과 화면을 보고 싶다면 아래처럼 자신을 Layout으로 사용하는 포스트나 페이지의 내용은 그대로 보여주고
 Layout 자체에는 추가적인 내용이 아무것도 없는 빈 layout `empty`를 하나 만들어서 사용하면 편리하다.
 
@@ -157,5 +175,6 @@ Layout 자체에는 추가적인 내용이 아무것도 없는 빈 layout `empty
 {% raw %}{{ content }}{% endraw %}
 ```
 
-또한 Jekyll에서 정의한 설정, 글로벌 변수들을 Liquid를 이용해서 Javascript에 넣고 싶을 때,
+테스트 때 편리함 뿐만 아니라
+Jekyll에서 정의한 설정, 글로벌 변수들을 Liquid를 이용해서 Javascript에 넣고 싶을 때,
 빈 Layout `empty`가 유용하게 사용된다.
