@@ -24,6 +24,11 @@ main-sidebar:
   - title: "Computing"
     url: "/computing/"
     children:
+    - title: "Computer"
+      url: "/computing/computer/"
+      children:
+      - title: "CPU"
+        url: "/computing/computer/cpu"
     - title: "Linux"
       url: "/computing/linux/"
     - title: "Python"
