@@ -71,7 +71,9 @@ Data Science, AI 기술 등 IT 기술 모두를 주제로 다룸.<br/>
 Elon Musk의 사상이 나와 통하는 점이 많은 것 같다.
 <span class="md-monologue">인성은 영 아님. ㅋ 내가 테슬라 투자를 하지 않은 이유가 Elon Musk 인성 때문이었음...</span>
 
-## About Me
+# 나
+
+## 가치관
 
 ### 배움의 인생
 
