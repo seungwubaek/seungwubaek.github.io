@@ -31,6 +31,9 @@ main-sidebar:
         url: "/computing/computer/cpu"
     - title: "Linux"
       url: "/computing/linux/"
+      children:
+      - title: "Command"
+        url: "/computing/linux/command/"
     - title: "Python"
       url: "/computing/python/"
   - title: "Deep Learning"
