@@ -3,7 +3,7 @@ layout: single
 title: "[Git Page Jekyll Blog 만들기] - [8] 첫번째 포스트 게시하기"
 post-order: 8
 date: "2020-11-17 23:52:07 +0900"
-last_modified_at: "2020-11-17 23:52:07 +0900"
+last_modified_at: "2021-01-17 15:25:00 +0900"
 ---
 Jekyll에서 포스트를 게시하는 법을 알아보자.
 Jekyll의 머리말과 레이아웃, Liquid, 그리고 Markdown을 사용해서 포스트에 들어갈 텍스트 작성과 링크와 이미지를 삽입 방법을 살펴본다.
@@ -166,18 +166,72 @@ mmistakes 테마를 사용한다면 `single` 레이아웃이 내장 돼있다.
 `single` 레이아웃에 대해서는 [다음 포스트]({{ site.baseurl }}/blog/mmistake_layout/)에서 조금 더 자세히 살펴볼 예정이다.
 혹시 Jekyll 레이아웃이 뭔지 궁금하다면 [이 포스트]({{ site.baseurl }}/front-end/jekyll/jekyll_layout/)를 참조하자.
 
-연습을 위해 위에서 `post-order`만 제외하고 비슷한 머리말을 갖도록 포스트를 하나 만들어 보자.
+위에서 `post-order`는 포스트들을 날짜순 정렬이 아닌 수동 정렬 하기 위해 추가한 변수이다.<br/>
+일정 범위에 속하는 포스트 사이에서 `post-order` 값의 크기가 작은것이 가장 앞으로 오도록 정렬할 것이다.<br/>
+이런 수동 정렬 작업은 나중에 전체 목차를 생성할때 적용될 것이다.
 
-Jekyll Tutorial을 보고 파일명 포맷 변경을 따로 하지 않았다면 파일명 앞에 년월일을 붙여 `YYYY-mm-DD-[파일명].md` 포맷으로 파일을 생성하자.
+## 포스트 생성
+
+Jekyll Tutorial을 보고 파일명 포맷 변경을 따로 하지 않았다면 포스트를 만들기 위해
+`_posts/` 디렉토리 하위에 `YYYY-MM-DD-[파일명].[확장자명]` 파일 형식으로 만들면 된다.
+포스트 파일을 `_posts` 디렉토리 하위에 놓지 않으면 Jekyll은 해당 파일을 포스트로 인식하지 않으므로 주의하자.<br/>
+파일 형식에서 `YYYY`는 4자리 연도, `MM`은 2자리 월, `DD`는 2자리 일을 의미하고 `[확장자명]`은 주로
+`html`이나 `md`를 사용한다.
+
+위 섹션에서 설명한 [Markdown](#markdown)을 사용해볼겸 연습을 위해 최상위 경로에서
+`/_posts/2021-01-17-first_post.md` 경로의 파일을 생성하고 아래와 같은 머리말을 추가하자
 
 ```yml
 ---
-layout: sigle
+layout: single
 title: "첫 포스트"
-date: "2020-01-01 00:00:00 +0900"
-last_modified_at: "2020-01-01 00:00:01 +0900"
+date: "2021-01-17 00:00:00 +0900"
+last_modified_at: "2021-01-17 00:00:00 +0900"
 ---
 ```
+
+파일 생성이 완료되면 Jekyll은 빌드를 통해 해당 파일의 `.md` 형식 문법, `liquid` 문법 등
+변환이 필요한 부분을 해석해서 순수한 `.html` 파일로 변환한다.
+
+Jekyll Server를 실행해 놓은 상태에서 파일을 생성하거나 수정 후 저장하면 Jekyll은 파일 변화를 자동으로 감지하고
+이를 Runtime에 반영해준다(자동 감지는 `jekyll run` 명령어의 옵션 기본값 중 하나).<br/>
+단, `/_config.yml` 파일의 경우 Jekyll 서버 실행과 관련된 설정값이 있기 때문에 수정 내역을 반영시키려면 서버 재시작이 필요하다.
+
+### 포스트 분류
+
+블로그 만들기 포스트 시리즈의 [첫 포스트]({{ site.baseurl }}/blog/post_1/#3-jekyll-tutorial)에서
+[Jekyll Tutorial](https://jekyllrb-ko.github.io/docs/step-by-step/01-setup/)을 진행했다면
+
+머리말을 이용해서 포스트에 카테고리, 태그를 아래와 같이 설정해 줄 수 있음을 알고 있을 것이다.
+
+```yml
+---
+categories: ["category1", "category2"]
+tags: ["tag1", "tag2"]
+---
+```
+
+바로 위에서 기본적인 [포스트 생성](#포스트-생성) 방법에 대한 얘기를 했는데 기본적인 방법으로는 우리는 포스트를 최상위의
+`_posts/` 디렉토리에 넣어야만 한다.
+
+그런데 포스트 양이 많아지고 포스트의 포스팅 목적이 다양해지면 그것을 효과적으로 관리하기 위해 포스트를 분류할 필요가 생긴다.
+그럴경우 앞서 말한 `categories` 변수를 희생(?)해서 포스트에 일종의 taxonomy를 자동 적용 할 수 있다.
+
+`/main-dir/sub-dir/_posts/` 와 같이 `_posts/` 디렉토리보다 앞서는 디렉토리를 생성하면 포스트를 원하는대로 분류할 수 있다.
+
+`/main-dir/sub-dir/_posts/` 디렉토리 하위에 있는 모든 포스트는 자동으로 `main-dir`, `sub-dir`을 카테고리 값으로
+갖게되기 때문에 카테고리를 희생했다고 표현했다.<br/>
+그리고 포스트의 URL 또한 `/main-dir/sub-dir/[포스트명]/` 이 된다.
+
+특히 앞으로 포스트의 디렉토리 구조에서 만들어지는 카테고리 값들과 값이 오는 순서, URL까지 이용해서
+아래 그림과 같은 목차 트리를 만들것이므로 `categories` 변수는 더욱 건드리지 않는 것으로 한다.
+
+![TOC Tree]({{ site.gdrive_url_prefix }}1yegaoA9nhgyLkewNZ1OhRyUGGkBdti_a){:style="max-height: 350px;"}
+
+위 그림은 `category1`에 속하는 포스트 `/category1/_posts/2021-01-17-post1_1.md`,
+`/category1/_posts/2021-01-17-post1_2.md`와 그 하위 카테고리 `category2`의 포스트
+`/category1/category2/_posts/2021-01-17-post2_1.md`, `/category1/category2/_posts/2021-01-17-post2_2.md` 파일을
+생성하면 생기는 목차 구조 예시이다.
 
 ## 일반 텍스트
 
