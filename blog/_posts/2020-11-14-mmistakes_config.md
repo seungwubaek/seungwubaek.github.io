@@ -39,7 +39,7 @@ Jekyll 서버는 작동할 때 yaml 형식의 `_config.yml` 파일을 읽어들�
   내 이름을 지정한다. 작성자 프로필과 화면 아래의 저작권 표시등에 출력된다.
 
 * description<br/>
-  HTML `<head>`에 실리는 내 블로그 소개 문구. [5번째 포스트]({{ page.baseurl }}/etc/blog/seo_robots)에서 다룰 SEO 기능에서 사용하는 중요한 값이다. 내 블로그의 정체성을 분명히 표현하면서 핵심이 되는 키워드가 들어가도록 작성하자.
+  HTML `<head>`에 실리는 내 블로그 소개 문구. [5번째 포스트]({{ page.baseurl }}/blog/seo_robots)에서 다룰 SEO 기능에서 사용하는 중요한 값이다. 내 블로그의 정체성을 분명히 표현하면서 핵심이 되는 키워드가 들어가도록 작성하자.
 
 * repository<br/>
   liquid 문법에 의해 사용되는 전역변수 중 하나로 생각하면 되는데, 테스트 해본 결과 full url을 다 써줘야 정상적으로 연결이 되었다. 블로그의 특정 포스트 등에서 `{% raw %}{{ site.repository }}{% endraw %}`라고 입력하여 url 값을 가져올 수 있다.
