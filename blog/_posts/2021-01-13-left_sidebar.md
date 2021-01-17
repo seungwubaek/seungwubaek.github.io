@@ -3,7 +3,7 @@ layout: single
 title: "[Git Page Jekyll Blog 만들기] - [13] 왼쪽 사이드바 만들기 (기본)"
 post-order: 13
 date: "2021-01-13 22:01:00 +0900"
-last_modified_at: "2021-01-13 22:01:00 +0900"
+last_modified_at: "2021-01-17 12:05:00 +0900"
 ---
 내 블로그의 데스크탑 웹에서 제일 왼쪽에 또는 모바일 웹에서 Topbar 다음으로 위쪽에 항상 표시되는 사이드바를 만들자.<br/>
 이 포스트는 `Minimal-Mistakes Jekyll Theme`을 사용하는 블로그를 기준으로 설명한다.
@@ -32,7 +32,7 @@ bundle exec jekyll serve
 화면의 가장 왼쪽을 보면 사이드바라고 하기엔 부족하지만 아래 3가지 정보가 보이게 되어있다.
 
 * Your Name: `_config.yml` 파일에 입력한 내 이름
-* Bio ("I am an __anmazing__ person"): `_config.yml` 파일에 입력한 나에 대한 설명
+* Bio ("I am an __amazing__ person"): `_config.yml` 파일에 입력한 나에 대한 설명
 * <i class="fas fa-fw fa-map-marker-alt"></i>Somewhere : `_config.yml` 파일에 입력한 내 위치
 
 ![Minimal-Mistakes Jekyll Theme Initial Web]({{ site.gdrive_url_prefix }}1IgGH27OceBtalYB6pT_hMDobOYf6L_Oh)
@@ -97,14 +97,14 @@ sidebar:
 ---
 ```
 
-그런다음 Jekyll이 블로그를 다시 빌드하고 브라우저를 새로고침하자 그러면 사이드바에 아래와 같은 내용이 생긴다.<br/>
+그런다음 Jekyll로 블로그를 다시 빌드하고 브라우저를 새로고침하자 그러면 사이드바에 아래와 같은 내용이 생긴다.<br/>
 (포스트나 페이지의 머리말이므로 아마 메인 화면에서는 안나올 것이다. 머리말을 작성한 포스트나 페이지에서 새로고침 하자.)
 
 ![Left Sidebar on Desktop Web]({{ site.gdrive_url_prefix }}1P2kli0rOKMkQ98LZN-D3qouEE3Cu9lAf)
 
 위 처럼 사이드바에 새롭게 나타난 메뉴를 클릭하면 `navigation.yml` 파일의 `main` 오브젝트의 `url` 정보로 연결된다.
 
-또 모바일 사이드의 웹에서도 아래 그림처럼 반응형으로 잘 작동한다.
+또 모바일 사이즈의 웹에서도 아래 그림처럼 반응형으로 잘 작동한다.
 
 ![Left Sidebar on Mobile Web]({{ site.gdrive_url_prefix }}1v342cKAMa-e39roIL716z_-aLk2GVZaf)
 
