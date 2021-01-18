@@ -3,7 +3,7 @@ layout: single
 title: "[Git Page Jekyll Blog 만들기] - [12] Google AdSense 등록해서 수익 창출"
 post-order: 12
 date: "2021-01-12 14:38:00 +0900"
-last_modified_at: "2021-01-18 21:01:00 +0900"
+last_modified_at: "2021-01-18 21:48:00 +0900"
 ---
 구글 애드센스 (Google AdSense)를 이용해서 내 사이트에 광고를 게시하자.
 구글 애드센스는 웹 서비스를 통해 손쉽게 광고 게시를 가능케 하고
@@ -255,7 +255,65 @@ sellers.json 파일에 대한 설명은
 
 이제 `ads.txt` 파일이 제대로 인식되기까지 며칠에서 최대 한달 걸린다고 하니, 기다렸다가 제대로 인식되는지 확인하자.
 
+# 광고 게시하기
+
+## 자동 광고 설정
+
+검토가 완료됐다는 메일의 시작하기를 누르면 경고 메시지들이 보였고 그 밑에는 아래와 같은 내용이 보인다.
+
+내 블로그 URL이 보이며 자동 광고가 `설정 해제` 상태가 돼있다.
+이 상태룰 `설정` 상태로 바꿀것이다. 오른쪽의 연필 아이콘을 클릭하자.
+
+![Advertise Status]({{ site.gdrive_url_prefix }}1c8zSrdKKGIYUxgof3ghgMNzs73_rwoqy)
+
+이동한 화면에서 모바일, 데스크톱 사이즈에 따라 내 블로그의 반응형 웹 변화를 보여주는데
+오른쪽 사이드바에서 크게 `자동 광고`라고 써있는 스위치를 클릭해서 On 상태로 바꾸자.
+
+![Turn On Auto Advertising]({{ site.gdrive_url_prefix }}1GlhnU_HhChorBEFcZL6AjbG9gstPnGqF)
+
+그러면 다시한번 약간의 로딩 후 내 블로그에 광고가 위치한 예시를 보여준다. 그외 여러 광고 옵션을 검토한 후,
+맘에 든다면 반드시 오른쪽 사이드바 하단의
+<span style="background-color: #4285F4;border-radius: 3px;padding: 4px 15px;color: white;font-size: 12px;">사이트에 적용</span>
+버튼을 클릭해서 내 블로그에 적용하도록 하자.
+
+광고가 제대로 나타날때까지 1시간 정도 걸릴 수 있다고 한다.
+
+이제 완료 버튼을 누르고 밖으로 나오면 아래처럼 `자동 광고` 상태가 `설정`이 된것을 볼 수 있다.
+
+![Advertise Status - Auto Advertising Enabled]({{ site.gdrive_url_prefix }}1GmVqwdq7pgey5G6EQwsZGRthZaa6L2pf)
+
+## 신규 광고 만들기
+
+자동 광고 말고 내가 수동으로 배치하는 광도를 하나 만들어보자.
+
+상단을 보면 `사이트 기준`, `광고 단위 기준`, `전체 설정` 이라는 탭이 있다. 그중에 `광고 단위 기준` 탭을 클릭하여 이동하자.
+
+![New Advertising Unit - In the Contents]({{ site.gdrive_url_prefix }}1N_lKRxVUxmMOntMJJTa3GRv7Cj4p5s18)
+
+거기서 나는 시험으로 세번째 `콘텐츠 내 자동 삽입 광고`를 실험해 보았다.
+
+해당 카드를 클릭하면 아래와 같은 코드가 나온다.
+
+![Copy js code & html to advertising location]({{ site.gdrive_url_prefix }}1YzHXErLf18U0fgkIz-osgCpV3nJVAF0-)
+
+위 코드를 원하는 곳에 복붙하면 된다. 다음엔 수동으로 복붙하지 않고 Javascript를 이용해서 자동화 시켜야겠다.
+
+여기서 구글은 아래와 같은 2종류의 메시지를 보여주므로 잘 읽고 권고에 따르도록 하자.
+
+> 텍스트가 있는 페이지 내부에 광고를 게재합니다. 게시글의 시작 부분에서 2문단 아래가 좋습니다. 성능을 저하시킬 수 있으므로 사이드바에는 광고를 게재하지 마시기 바랍니다.
+
+<div class="notice--danger" markdown="1">
+<strong>중요:</strong> 2개 이상의 광고를 게재하려는 경우 각 광고 사이에 충분한 콘텐츠가 포함되도록 하여 독자의 불편을 최소화해야 합니다.
+</div>
+
+여기까지 진행하고 테스트해보니 아래처럼 광고가 게시 되었다!
+
+![New Advertising Result]({{ site.gdrive_url_prefix }}1gfKpShzYh1OraS1o5sPhnHezHi7SedQV)
+{:style="border: 3px dashed black;"}
+
 ## 또 기다림...
+
+광고를 게시하는데엔 성공했으나 ads.txt가 없다는 경고 메시지는 사라지지 않고 있다.
 
 2021-01-17 21시 25분 쯤 AdSense 검토 완료 메시지를 받고 여기까지 포스트 작성한 시각은 2021-01-18 00시 18분이다.
 
