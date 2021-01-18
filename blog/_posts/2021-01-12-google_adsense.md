@@ -3,7 +3,7 @@ layout: single
 title: "[Git Page Jekyll Blog 만들기] - [12] Google AdSense 등록해서 수익 창출"
 post-order: 12
 date: "2021-01-12 14:38:00 +0900"
-last_modified_at: "2021-01-18 00:18:00 +0900"
+last_modified_at: "2021-01-18 21:01:00 +0900"
 ---
 구글 애드센스 (Google AdSense)를 이용해서 내 사이트에 광고를 게시하자.
 구글 애드센스는 웹 서비스를 통해 손쉽게 광고 게시를 가능케 하고
@@ -35,6 +35,17 @@ AdSense가 활성화 되기 전에 아래의 항목들에 대한 검토가 요�
   * 나는 전에 다른 구글 서비스에서 전화번호 인증을 한 까닭인지.. 인증 요구가 없었음
 
 더 자세한 정보는 AdSense 고객센터를 읽어보자: <https://support.google.com/adsense#topic=3373519>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-9480069633849139"
+     data-ad-slot="4156046869"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 
 AdSense를 처음 등록 신청하면 Google AdSense 전문가가 신청한 사이트가 위 항목들을 준수하고 있는지 검토하는 시간을 가진다.<br/>
 검토 완료까지 일반적으로 1일 이내의 시간이 소요되지만 며칠에서 몇주까지 걸릴 수도 있다고 한다.
