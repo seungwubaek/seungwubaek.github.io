@@ -2,7 +2,7 @@
 layout: single
 title: "Jupyter Notebook 화면을 블로그로 가져오기"
 date: "2021-01-07 09:18:00 +0900"
-last_modified_at: "2021-01-10 16:13:00 +0900"
+last_modified_at: "2021-01-18 20:28:00 +0900"
 ---
 Data Science 관련 작업을 하면 Jupyter Notebook을 사용하는 경우가 많다.<br/>
 이 포스트에서는 작성한 Notebook의 Python 코드 셀, Markdown 셀,
@@ -11,7 +11,7 @@ Pandas Dataframe Output, Matplotlib Plot Image Output을 있는 그대로 Jekyll
 nbconvert를 사용해서 html로 변환하며 iframe으로 가져올 것이다.
 
 __들어가며:__<br/>
-Jupyter Notebook을 Jekyll 블로그에 넣는 방법에 대해 문의주신 Liam427 님께 감사드립니다~<br/>
+Jupyter Notebook을 Jekyll 블로그에 넣는 방법에 대해 문의주신 [Liam427](https://liam427.github.io) 님께 감사드립니다~<br/>
 더 완벽한 답을 드리려고 하다보니 이것저것 내용이 많아졌네요..<br/>
 이 글을 통해 문제를 해결하셨으면 좋겠습니다! 새해복 많이 받으세요~
 
