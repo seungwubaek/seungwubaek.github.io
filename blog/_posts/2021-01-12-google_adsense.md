@@ -3,7 +3,7 @@ layout: single
 title: "[Git Page Jekyll Blog 만들기] - [12] Google AdSense 등록해서 수익 창출"
 post-order: 12
 date: "2021-01-12 14:38:00 +0900"
-last_modified_at: "2021-01-18 21:48:00 +0900"
+last_modified_at: "2021-01-18 22:06:00 +0900"
 ---
 구글 애드센스 (Google AdSense)를 이용해서 내 사이트에 광고를 게시하자.
 구글 애드센스는 웹 서비스를 통해 손쉽게 광고 게시를 가능케 하고
@@ -266,7 +266,11 @@ sellers.json 파일에 대한 설명은
 
 ![Advertise Status]({{ site.gdrive_url_prefix }}1c8zSrdKKGIYUxgof3ghgMNzs73_rwoqy)
 
-이동한 화면에서 모바일, 데스크톱 사이즈에 따라 내 블로그의 반응형 웹 변화를 보여주는데
+이동한 화면에서 아래와 같이 돋보기 모양으로 로딩 시간을 갖는다.
+
+![Loading Auto Advertising Example]({{ site.gdrive_url_prefix }}1wAqBuJQZOZECq5N30ypUt3Xgt1q8e9x0){:style="max-width:400px;"}
+
+그리고 곧 모바일, 데스크톱 사이즈에 따라 내 블로그의 반응형 웹 변화를 보여주는데
 오른쪽 사이드바에서 크게 `자동 광고`라고 써있는 스위치를 클릭해서 On 상태로 바꾸자.
 
 ![Turn On Auto Advertising]({{ site.gdrive_url_prefix }}1GlhnU_HhChorBEFcZL6AjbG9gstPnGqF)
@@ -276,11 +280,22 @@ sellers.json 파일에 대한 설명은
 <span style="background-color: #4285F4;border-radius: 3px;padding: 4px 15px;color: white;font-size: 12px;">사이트에 적용</span>
 버튼을 클릭해서 내 블로그에 적용하도록 하자.
 
-광고가 제대로 나타날때까지 1시간 정도 걸릴 수 있다고 한다.
+<strong>주의할 점</strong>은 오른쪽 사이드바 상단의 옆을 보면 `스마트폰 사이즈 보기`와 `데스트톱 사이즈 보기`가 있다.<br/>
+두 곳 모두에서 각각
+<span style="background-color: #4285F4;border-radius: 3px;padding: 4px 15px;color: white;font-size: 12px;">사이트에 적용</span>
+해줘야한다. 특정 사이즈에서 적용 하지 않는다면 해당 사이즈에서는 자동광고가 동작하지 않는 것 같다.
+
+![Select Web Size]({{ site.gdrive_url_prefix }}17cMeS5DlPbN3GeMFtJ_UdwV-Ox1DgRhZ)
+
+적용하고 나면 광고가 제대로 나타날때까지 1시간 정도 걸릴 수 있다고 한다.
 
 이제 완료 버튼을 누르고 밖으로 나오면 아래처럼 `자동 광고` 상태가 `설정`이 된것을 볼 수 있다.
 
 ![Advertise Status - Auto Advertising Enabled]({{ site.gdrive_url_prefix }}1GmVqwdq7pgey5G6EQwsZGRthZaa6L2pf)
+
+끝으로 AdSense 메인 화면의 왼쪽 사이드바가 처음의 회색으로 비활성화 됐던 것과 달리 활성화 된 것을 볼 수 있다.
+
+![AdSense Activated Main Menu]({{ site.gdrive_url_prefix }}1QYSzvxPD_cRFtW6iZxRFsFTA9ztn1qkp)
 
 ## 신규 광고 만들기
 
