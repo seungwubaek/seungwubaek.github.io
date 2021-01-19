@@ -3,7 +3,7 @@ layout: single
 title: "[Git Page Jekyll Blog 만들기] - [12] Google AdSense 등록해서 수익 창출"
 post-order: 12
 date: "2021-01-12 14:38:00 +0900"
-last_modified_at: "2021-01-18 22:06:00 +0900"
+last_modified_at: "2021-01-19 20:42:00 +0900"
 ---
 구글 애드센스 (Google AdSense)를 이용해서 내 사이트에 광고를 게시하자.
 구글 애드센스는 웹 서비스를 통해 손쉽게 광고 게시를 가능케 하고
@@ -331,6 +331,17 @@ sellers.json 파일에 대한 설명은
 광고를 게시하는데엔 성공했으나 ads.txt가 없다는 경고 메시지는 사라지지 않고 있다.
 
 2021-01-17 21시 25분 쯤 AdSense 검토 완료 메시지를 받고 여기까지 포스트 작성한 시각은 2021-01-18 00시 18분이다.
+
+## 완료
+
+2021-01-19 20시. AdSense 사이트에 들어가보니 어느샌가 ads.txt가 없다는 경고 메시지가 사라져있었다. <br/>
+그리고 다른 변화는 없다. 그냥 이게 끝인가보다. 😋
+
+대신 AdSense Dashboard 에는 다양한 통계정보가 출력되고 있었다.
+
+![My AdSense Statistics on Dashboard]({{ site.gdrive_url_prefix }}18srbLHfawtwx9gWmOTUOepsSuRwu2Dwx)
+
+예상 수입 US$0.47 ! 약 500원을 벌었다 ! 😋
 
 # 참고
 
