@@ -10,7 +10,7 @@
   </form>
   <div id="results" class="results"></div>
   {%- when "google" -%}
-  <form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
+  {% comment %} <form onsubmit="return googleCustomSearchExecute();" id="cse-search-box-form-id">
     <label class="sr-only" for="cse-search-input-box-id">
       {{ site.data.ui-text[site.locale].search_label_text | default: 'Enter your search term...' }}
     </label>
@@ -18,7 +18,9 @@
   </form>
   <div id="results" class="results">
     <gcse:searchresults-only></gcse:searchresults-only>
-  </div>
+  </div> {% endcomment %}
+  <script async src="https://cse.google.com/cse.js?cx={{ site.google.search_engine_id }}"></script>
+  <div class="gcse-search"></div>
   {%- when "algolia" -%}
   <div class="search-searchbar"></div>
   <div class="search-hits"></div>

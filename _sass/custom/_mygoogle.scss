@@ -1,0 +1,13 @@
+.gsc-input-box {
+    table {
+        margin-bottom: 0;
+    }
+}
+.gsc-input {
+    input {
+        box-shadow: none;
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
