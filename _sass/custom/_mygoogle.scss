@@ -12,3 +12,9 @@
         overflow-y: hidden;
     }
 }
+
+.adsbygoogle {
+    & + script {
+        display: none;
+    }
+}
