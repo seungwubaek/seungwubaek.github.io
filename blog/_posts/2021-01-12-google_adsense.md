@@ -3,7 +3,7 @@ layout: single
 title: "[Git Page Jekyll Blog 만들기] - [12] Google AdSense 등록해서 수익 창출"
 post-order: 12
 date: "2021-01-12 14:38:00 +0900"
-last_modified_at: "2021-01-19 22:19:00 +0900"
+last_modified_at: "2021-01-20 16:55:00 +0900"
 ---
 구글 애드센스 (Google AdSense)를 이용해서 내 사이트에 광고를 게시하자.
 구글 애드센스는 웹 서비스를 통해 손쉽게 광고 게시를 가능케 하고
@@ -268,7 +268,7 @@ sellers.json 파일에 대한 설명은
 
 이동한 화면에서 아래와 같이 돋보기 모양으로 로딩 시간을 갖는다.
 
-![Loading Auto Advertising Example]({{ site.gdrive_url_prefix }}1wAqBuJQZOZECq5N30ypUt3Xgt1q8e9x0){:style="max-width:400px;"}
+![Loading Auto Advertising Example]({{ site.gdrive_url_prefix }}1wAqBuJQZOZECq5N30ypUt3Xgt1q8e9x0){:style="width:100%;max-width:400px;"}
 
 그리고 곧 모바일, 데스크톱 사이즈에 따라 내 블로그의 반응형 웹 변화를 보여주는데
 오른쪽 사이드바에서 크게 `자동 광고`라고 써있는 스위치를 클릭해서 On 상태로 바꾸자.
