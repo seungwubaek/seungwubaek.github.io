@@ -1,9 +1,11 @@
 ---
 layout: single
-title: "동시성(Concurrency) vs 병렬성(Parallelism)"
+title: "동시성(Concurrency) vs 병렬성(Parallelism) 처리"
 date: "2021-01-13 14:49:00 +0900"
-last_modified_at: "2021-01-13 14:49:00 +0900"
+last_modified_at: "2021-01-20 16:31:00 +0900"
 ---
+동시성(Concurrency) 처리와 병렬성(Parallelism) 처리의 공통점, 특징, 차이점에 대해 알아보자.
+
 # 처리 방식의 공통점
 
 처리해야할 컴퓨팅 작업(`Task`)이 여러개일 때 그 작업들을 처리하는 방식 중<br/>
