@@ -68,7 +68,7 @@ ko: &DEFAULT_KO
   skip_content               : "Skip to content"
   skip_footer                : "Skip to footer"
   page                       : "Page"
-  pagination_previous        : "Previous"
+  pagination_previous        : "Prev"
   pagination_next            : "Next"
   breadcrumb_home_label      : "Home"
   breadcrumb_separator       : "/"
