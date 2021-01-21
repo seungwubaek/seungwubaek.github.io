@@ -15,9 +15,16 @@ classes: wide
 
 {% assign entries_layout = page.entries_layout | default: 'list' %}
 <div class="entries-{{ entries_layout }}">
-  {% for post in posts %}
+    {% for i in (1..posts.size)%}
+    {% assign p_idx = i | minus: 1 %}
+    {% assign post = posts[p_idx] %}
     {% include archive-single.html type=entries_layout %}
+    {% if i == 2 %}
+      {% include ads/google/in_the_recent_posts.html %}
+    {% endif %}
   {% endfor %}
 </div>
+
+{% include ads/google/on_the_paginator.html %}
 
 {% include paginator.html %}
