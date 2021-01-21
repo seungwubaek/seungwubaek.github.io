@@ -120,15 +120,3 @@
 .breadcrumbs ol {
     width: 100%;
 }
-
-/* hidden-links for responsive web */
-.greedy-nav {
-    .hidden-links {
-        margin-top: 0;
-        right: -1em;  // For pushing menu to the right of view. It came from masthead__inner-wrap padding-right.
-        width: 85%;
-        @include breakpoint($medium) {
-            display: none;
-        }
-    }
-}

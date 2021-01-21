@@ -149,7 +149,15 @@
         }
     }
 
+    /* hidden-links for responsive web */
     .hidden-links {
+        margin-top: 0;
+        right: -1em;  // For pushing menu to the right of view. It came from masthead__inner-wrap padding-right.
+        width: 85%;
+        @include breakpoint($medium) {
+            display: none;
+        }
+
         a {
             margin: 0;
             padding: 0;
@@ -157,11 +165,7 @@
         }
 
         .masthead__menu-item {
-            .masthead__submenu {
-                .masthead__submenu-item {
-                    overflow-x: hidden;
-                }
-            }
+            font-size: 1.2rem;
         }
 
         .masthead__submenu {
@@ -171,7 +175,11 @@
 
         .masthead__submenu-item {
             margin: 0 1rem;
-            font-size: 1em;
+            font-size: 1rem;
+            overflow-x: hidden;
+            .masthead__submenu-item-title {
+                padding: .3em 0;
+            }
         }
     }
 }
