@@ -34,8 +34,11 @@ main-sidebar:
       children:
       - title: "Command"
         url: "/computing/linux/command/"
-    - title: "Python"
-      url: "/computing/python/"
+    - title: "Programming"
+      url: "/computing/programming/"
+      children:
+      - title: "Python"
+        url: "/computing/programming/python/"
   - title: "Deep Learning"
     url: "/deep-learning/"
     children:
