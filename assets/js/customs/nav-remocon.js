@@ -1,23 +1,27 @@
 // Navigation Remocon Functions
 var navRemocon = $('#nav-remocon');
-var navBtnSetHeight = $('.nav-btn-set').css('height').split('px')[0];
-var foldNavBtnHeight = 2*navBtnSetHeight+'px';
 var navRemoconBtns = $('#nav-buttons');
+var navRemoconBtns_borderTop = 0;
+var navRemoconBtns_borderBot = 0;
+var navBtnSetHeight = 0;
+var foldNavBtnHeight = 0;
+var unfoldNavBtnHeight = 0;
+
 function navRemoconFoldItem(reverse) {
     adjustNavRemoconStyle(reverse);
     navRemoconBtns.css('height', foldNavBtnHeight);
     $('#nav-fold-arraw-upper').addClass('nav-arrow-up');
     $('#nav-fold-arraw-upper').removeClass('nav-arrow-down');
     navRemocon.addClass('fold');
-    localStorage.setItem('navremocon-fold', JSON.stringify(true));
+    sessionStorage.setItem('navremocon-fold', JSON.stringify(true));
 }
 function navRemoconUnfoldItem(reverse) {
-    navRemoconBtns.css('height', navRemoconBtns.children().length*navBtnSetHeight+'px');
+    navRemoconBtns.css('height', unfoldNavBtnHeight);
     adjustNavRemoconStyle(reverse);
     $('#nav-fold-arraw-upper').removeClass('nav-arrow-up');
     $('#nav-fold-arraw-upper').addClass('nav-arrow-down');
     navRemocon.removeClass('fold');
-    localStorage.setItem('navremocon-fold', JSON.stringify(false));
+    sessionStorage.setItem('navremocon-fold', JSON.stringify(false));
 }
 function navRemoconHide(reverse) {
     adjustNavRemoconStyle(reverse);
@@ -25,7 +29,7 @@ function navRemoconHide(reverse) {
     $('#nav-fold-arraw-upper').addClass('nav-arrow-up');
     $('#nav-fold-arraw-upper').removeClass('nav-arrow-down');
     navRemocon.addClass('hide');
-    localStorage.setItem('navremocon-hide', JSON.stringify(true));
+    sessionStorage.setItem('navremocon-hide', JSON.stringify(true));
 }
 function navRemoconShow(reverse) {
     adjustNavRemoconStyle(reverse);
@@ -35,7 +39,7 @@ function navRemoconShow(reverse) {
         $('#nav-fold-arraw-upper').addClass('nav-arrow-down');
     }
     $('#nav-remocon').removeClass('hide');
-    localStorage.setItem('navremocon-hide', JSON.stringify(false));
+    sessionStorage.setItem('navremocon-hide', JSON.stringify(false));
 }
 function navRemoconFold(call_obj) {
     // when upper button pressed,
@@ -67,8 +71,8 @@ function adjustNavRemoconStyle(reverse){
     }
 }
 function reloadNavRemocon() {
-    var navFold = JSON.parse(localStorage.getItem('navremocon-fold'));
-    var navHide = JSON.parse(localStorage.getItem('navremocon-hide'));
+    var navFold = JSON.parse(sessionStorage.getItem('navremocon-fold'));
+    var navHide = JSON.parse(sessionStorage.getItem('navremocon-hide'));
     $('#nav-remocon, #nav-buttons').each(function(){
         $(this).addClass('notransition');
     });
@@ -112,5 +116,10 @@ function navRemoconGoToUrl(targetUrl) {
 $(function(){
     // [0] Run some codes immediately after complete page load
     // It may need to style some html..
+    navRemoconBtns_borderTop = parseFloat(navRemoconBtns.css('border-top-width').split('px')[0]);
+    navRemoconBtns_borderBot = parseFloat(navRemoconBtns.css('border-bottom-width').split('px')[0]);
+    navBtnSetHeight = parseFloat($('.nav-btn-set').css('height').split('px')[0]);
+    foldNavBtnHeight = 2*navBtnSetHeight+navRemoconBtns_borderTop+navRemoconBtns_borderBot+'px';
+    unfoldNavBtnHeight = navRemoconBtns.children().length*navBtnSetHeight+navRemoconBtns_borderTop+navRemoconBtns_borderBot+'px'
     reloadNavRemocon();
 });

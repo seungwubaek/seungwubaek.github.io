@@ -54,8 +54,11 @@
         justify-content: center;
         border: 2px solid $nav-remocon-border-color;
         border-radius: 4px 4px 0 0;
+        border-bottom: 0;
         background-color: $nav-remocon-background-color;
-        height: 1em;
+        height: 30px;  // 1em;
+        width: 40px;
+        margin-left: auto;
         align-items: flex-end;
         cursor: pointer;
     }
@@ -64,8 +67,11 @@
         justify-content: center;
         border: 2px solid $nav-remocon-border-color;
         border-radius: 0 0 4px 4px;
+        border-top: 0;
         background-color: $nav-remocon-background-color;
-        height: 1em;
+        height: 30px;  // 1em;
+        width: 40px;
+        margin-left: auto;
         align-items: flex-start;
         cursor: pointer;
     }
@@ -73,9 +79,10 @@
         min-width: $nav-remocon-min-width;
         margin: 0;
         padding: 0 4px 0 4px;
-        border-width: 0 2px 0 2px;
+        border-width: 2px; // 0 2px 0 2px;
         border-style: solid;
         border-color: $nav-remocon-border-color;
+        border-radius: 4px 0 0 4px;
         background-color: $nav-remocon-background-color;
         overflow-y: hidden;
         -webkit-transition: all 200ms linear;
