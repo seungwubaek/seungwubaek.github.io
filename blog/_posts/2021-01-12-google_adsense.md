@@ -3,7 +3,7 @@ layout: single
 title: "[Git Page Jekyll Blog 만들기] - [12] Google AdSense 등록해서 수익 창출"
 post-order: 12
 date: "2021-01-12 14:38:00 +0900"
-last_modified_at: "2021-01-20 16:55:00 +0900"
+last_modified_at: "2021-01-22 13:33:00 +0900"
 ---
 구글 애드센스 (Google AdSense)를 이용해서 내 사이트에 광고를 게시하자.
 구글 애드센스는 웹 서비스를 통해 손쉽게 광고 게시를 가능케 하고
@@ -72,7 +72,7 @@ SEO 활성법, `sitemap.xml` 등록법을 알아보고 올바로 있는지 확�
 나는 그 밑의 선택지에서 `예, 맞춤 도움말 및 실적 개선 제안을 제공하는 이메일을 받겠습니다.`를 선택했다.
 말 그대로 실적 개선 제안을 받고 싶기 때문이다.
 
-![Google AdSense Registration - Sign Up]({{ site.gdrive_url_prefix }}13r8Wu6-DNbBLtrAlQkvM20FxHX4aqyPb)
+![Google AdSense Registration - Sign Up]({{ site.gdrive_url_prefix }}13r8Wu6-DNbBLtrAlQkvM20FxHX4aqyPb){:style="width: 100%; max-width: 500px;"}
 
 위 그림에서 <span style="background-color: #4285F4;border-radius: 3px;padding: 4px 15px;color: white;font-size: 12px;">저장하고 계속하기</span>
 버튼을 누르고 또 양식을 작성해야 한다. 내 집 주소를 입력하는 수준이므로 빠르게 입력하고 넘긴다.
@@ -81,11 +81,11 @@ SEO 활성법, `sitemap.xml` 등록법을 알아보고 올바로 있는지 확�
 
 Google Analytics나 Google Search Console에서도 그랬듯, 이번에도 내 블로그가 내 소유인지 확인하는 과정을 거친다.
 
-![Google AdSense Registration - Connect URL on Manager Web]({{ site.gdrive_url_prefix }}1BXltxKoekU89y5wMPuHIfTxPSUJxupSq)
+![Google AdSense Registration - Connect URL on Manager Web]({{ site.gdrive_url_prefix }}1BXltxKoekU89y5wMPuHIfTxPSUJxupSq){:style="width: 100%; max-width: 700px;"}
 
 위와 같이 애드센스 서비스와 내 사이트를 연결하기 위한 코드가 나온다.
 
-![Google AdSense Registration - Connect URL on My Page]({{ site.gdrive_url_prefix }}1gOIsetQHPWTtuZPP6nP8dpmwf9O89WIU)
+![Google AdSense Registration - Connect URL on My Page]({{ site.gdrive_url_prefix }}1gOIsetQHPWTtuZPP6nP8dpmwf9O89WIU){:style="width: 100%; max-width: 900px;"}
 
 나와있는 설명대로 쭉 진행하면 되는데, 텍스트 박스에 있는 `<script>` 태그를 복사해서
 내 블로그의 `<head>` 태그안에 포함되도록 한다.
@@ -133,7 +133,7 @@ Google Analytics나 Google Search Console에서도 그랬듯, 이번에도 내 �
 <br/>
 <br/>
 
-![AdSense - Confirmed Email]({{ site.gdrive_url_prefix }}1JljZkzSp51xQn_nOmDBR5gJ3SoHrXGGV)
+![AdSense - Confirmed Email]({{ site.gdrive_url_prefix }}1JljZkzSp51xQn_nOmDBR5gJ3SoHrXGGV){:style="max-height: 450px;"}
 
 검토 확인! 🎉🎉
 
@@ -150,7 +150,7 @@ AdSense 신청에 성공하기 어려운지는 사실 잘 모르겠다. 불법�
 설정을 마무리하기 위해 메일의 링크를 클릭하거나 <https://www.google.com/adsense> 링크를 클릭하면
 AdSense 웹 서비스 화면으로 이동할 수 있다.
 
-![AdSense Web - Start]({{ site.gdrive_url_prefix }}1HCmk42b7H8D-ru97VIg9iwVY3MWQgdYt)
+![AdSense Web - Start]({{ site.gdrive_url_prefix }}1HCmk42b7H8D-ru97VIg9iwVY3MWQgdYt){:style="max-height: 450px;"}
 
 위와 같은 화면이 나왔다면
 <span style="background-color: #4285F4;border-radius: 3px;padding: 4px 15px;color: white;font-size: 12px;">광고 설정</span>
@@ -197,7 +197,7 @@ ads.txt는 Authorized Digital Sellers의 약자이다... 게시자와 배포자�
 
 이제 빨간 메시지의 <span style="color: #4285F4;">지금 해결하기</span>를 클릭하면 아래 내용이 나온다.
 
-![AdSense - ads.txt]({{ site.gdrive_url_prefix }}1vbEtUOOqWOJSDsxcRYDcGTL_rf7xwp47)
+![AdSense - ads.txt]({{ site.gdrive_url_prefix }}1vbEtUOOqWOJSDsxcRYDcGTL_rf7xwp47){:style="width: 100%; max-width: 900px;"}
 
 거기서 <span style="color: #4285F4;">다운로드</span>를 눌러서 내 블로그의 최상위에 `/ads.txt` 파일로 위치시키자.
 
@@ -228,7 +228,7 @@ sellers.json 파일에 대한 설명은
 아래 그림처럼 AdSense 웹 서비스 화면 왼쪽에서
 <span style="text-decoration: underline;">계정 > 설정 > 계정 정보</span> 순서로 차례로 클릭하자.
 
-![AdSense - Setting Account Info]({{ site.gdrive_url_prefix}}15YzMz6GWKciRTmm7w9vwT3aafVpbqrpI)
+![AdSense - Setting Account Info]({{ site.gdrive_url_prefix}}15YzMz6GWKciRTmm7w9vwT3aafVpbqrpI){:style="max-height: 350px;"}
 
 그리고 그곳에 나온 양식을 확인한다.
 
@@ -294,7 +294,7 @@ sellers.json 파일에 대한 설명은
 
 끝으로 AdSense 메인 화면의 왼쪽 사이드바가 처음의 회색으로 비활성화 됐던 것과 달리 활성화 된 것을 볼 수 있다.
 
-![AdSense Activated Main Menu]({{ site.gdrive_url_prefix }}1QYSzvxPD_cRFtW6iZxRFsFTA9ztn1qkp)
+![AdSense Activated Main Menu]({{ site.gdrive_url_prefix }}1QYSzvxPD_cRFtW6iZxRFsFTA9ztn1qkp){:style="max-height: 600px;"}
 
 ## 신규 광고 만들기
 
@@ -302,13 +302,13 @@ sellers.json 파일에 대한 설명은
 
 상단을 보면 `사이트 기준`, `광고 단위 기준`, `전체 설정` 이라는 탭이 있다. 그중에 `광고 단위 기준` 탭을 클릭하여 이동하자.
 
-![New Advertising Unit - In the Contents]({{ site.gdrive_url_prefix }}1N_lKRxVUxmMOntMJJTa3GRv7Cj4p5s18)
+![New Advertising Unit - In the Contents]({{ site.gdrive_url_prefix }}1N_lKRxVUxmMOntMJJTa3GRv7Cj4p5s18){:style="width:100%;max-width:700px;"}
 
 거기서 나는 시험으로 세번째 `콘텐츠 내 자동 삽입 광고`를 실험해 보았다.
 
 해당 카드를 클릭하면 아래와 같은 코드가 나온다.
 
-![Copy js code & html to advertising location]({{ site.gdrive_url_prefix }}1YzHXErLf18U0fgkIz-osgCpV3nJVAF0-)
+![Copy js code & html to advertising location]({{ site.gdrive_url_prefix }}1YzHXErLf18U0fgkIz-osgCpV3nJVAF0-){:style="width:100%;max-width:700px;"}
 
 위 코드를 원하는 곳에 복붙하면 된다. 다음엔 수동으로 복붙하지 않고 Javascript를 이용해서 자동화 시켜야겠다.
 
@@ -322,8 +322,8 @@ sellers.json 파일에 대한 설명은
 
 여기까지 진행하고 테스트해보니 아래처럼 광고가 게시 되었다!
 
-![New Advertising Result]({{ site.gdrive_url_prefix }}1gfKpShzYh1OraS1o5sPhnHezHi7SedQV)
-{:style="border: 3px dashed black;"}
+![New Advertising Result]({{ site.gdrive_url_prefix }}1gfKpShzYh1OraS1o5sPhnHezHi7SedQV){:style="width: 100%; max-width: 700px;"}
+{:style="border: 3px dashed black; width: fit-content; padding: 15px;"}
 
 ## 또 기다림...
 
@@ -338,7 +338,7 @@ sellers.json 파일에 대한 설명은
 
 대신 AdSense Dashboard 에는 다양한 통계정보가 출력되고 있었다.
 
-![My AdSense Statistics on Dashboard]({{ site.gdrive_url_prefix }}18srbLHfawtwx9gWmOTUOepsSuRwu2Dwx)
+![My AdSense Statistics on Dashboard]({{ site.gdrive_url_prefix }}18srbLHfawtwx9gWmOTUOepsSuRwu2Dwx){:style="width:100%;max-width:700px;"}
 
 예상 수입 US$0.47 ! 약 500원을 벌었다 ! 😋
 

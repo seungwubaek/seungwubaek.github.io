@@ -3,7 +3,7 @@ layout: single
 title: "[Layout] Jekyll Layout 이란"
 post-order: 1
 date: "2020-11-24 11:22:00 +0900"
-last_modified_at: "2020-12-26 12:07:00 +0900"
+last_modified_at: "2021-01-22 11:01:00 +0900"
 ---
 Jekyll Layout이란 HTML 문서 덩어리(HTML 템플릿)이다. 특징은 특정 Layout을 사용하는 모든 HTML 문서에게 동일한 구조의 HTML 요소들을 제공한다는 점이다. 앞으로 블로그의 HTML 구조를 Custom 하고 싶다면, Jekyll Layout의 구조를 이해해야만 한다.
 
@@ -103,7 +103,7 @@ Layout을 여러겹으로 입히는것도 얼마든지 가능하다. 그 방식�
 
 3개의 Layout과 1개의 포스트로 예를 들어본다.
 
-![Jekyll Multi-Layered Layout and Content]({{ site.gdrive_url_prefix }}146--hHOK4od4vqv9yaHzPFpd8zEFn3nx)
+![Jekyll Multi-Layered Layout and Content]({{ site.gdrive_url_prefix }}146--hHOK4od4vqv9yaHzPFpd8zEFn3nx){:style="max-height: 350px;"}
 
 ### 1. 바깥 Layout 만들기
 

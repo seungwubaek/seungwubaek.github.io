@@ -3,7 +3,7 @@ layout: single
 title: "[Git Page Jekyll Blog 만들기] - [8] 첫번째 포스트 게시하기"
 post-order: 8
 date: "2020-11-17 23:52:07 +0900"
-last_modified_at: "2021-01-17 15:25:00 +0900"
+last_modified_at: "2021-01-22 11:49:00 +0900"
 ---
 Jekyll에서 포스트를 게시하는 법을 알아보자.
 Jekyll의 머리말과 레이아웃, Liquid, 그리고 Markdown을 사용해서 포스트에 들어갈 텍스트 작성과 링크와 이미지를 삽입 방법을 살펴본다.
@@ -76,7 +76,7 @@ _\_기울임꼴\__
 
 내가 쓴 글에서 특정 단어가 코드의 일부 임을 말하고 싶을때, `(backtick)으로 글을 감싼다.
 
-<div style="border: 1px solid gray; padding: 1em;">
+<div style="max-width: 400px; border: 1px solid gray; padding: 1em;">
 <div style="width: fit-content; margin-left: auto; margin-right: auto;" markdown="1">
 코드를 `` `print('코드입니다')` `` 이렇게 줄 사이에 넣는다.
 {: style="margin: 0;"}
@@ -295,15 +295,15 @@ Liquid의 문법은 [공식 사이트](https://shopify.github.io/liquid/)에 자
 
 구글 드라이브에서 아래처럼 이미지를 공유하기 위한 폴더를 하나 만들자.
 
-![Google Drive - Create new folder]({{ site.gdrive_url_prefix }}1BjkkH9XxtnimSE0r17UwmCLAl8ZydLNa){: style="max-width: 320px; max-height: 500px;"}
+![Google Drive - Create new folder]({{ site.gdrive_url_prefix }}1BjkkH9XxtnimSE0r17UwmCLAl8ZydLNa){: style="width: 100%; max-width: 320px;"}
 
 오른쪽 버튼을 눌러 나오는 공유 버튼을 클릭한다.
 
-![Google Drive - Share folder]({{ site.gdrive_url_prefix }}19MxzchtdVSXTAqpzAng18_yiF4OSkNXU){: style="max-width: 320px; max-height: 500px;"}
+![Google Drive - Share folder]({{ site.gdrive_url_prefix }}19MxzchtdVSXTAqpzAng18_yiF4OSkNXU){: style="max-height: 500px;"}
 
-이때 반드시 공유 모드가 '링크가 있는 ... 모든 사용자가 볼수있음' 수준이어야 한다 그보다 높은 '편집 할 수 있음' 과 같은 상태에 놓지말자!
+이때 반드시 공유 모드가 '링크가 있는 ... 모든 사용자가 볼수있음' 수준이어야 한다 그보다 높은 __'편집 할 수 있음' 과 같은 상태에 놓지말자!__
 
-![Google Drive - Share only viewing]({{ site.gdrive_url_prefix }}187ysGmi_vh3WGpUwY5lcQm1Aw45wkETI){: style="max-width: 320px; max-height: 500px;"}
+![Google Drive - Share only viewing]({{ site.gdrive_url_prefix }}187ysGmi_vh3WGpUwY5lcQm1Aw45wkETI){: style="width: 100%; max-width: 550px;"}
 
 그리고 몇개 이미지를 업로드 한다.
 
@@ -311,15 +311,17 @@ Liquid의 문법은 [공식 사이트](https://shopify.github.io/liquid/)에 자
 
 이미지의 링크를 얻기위해 업로드한 이미지를 오른쪽 클릭하고 '링크 생성' 버튼을 누른다.
 
-![Google Drive - Generate sharing link]({{ site.gdrive_url_prefix }}13NZ0kLUIw7ejb750I1Jnl0RxqScrZ-Tl){: style="max-width: 320px; max-height: 500px;"}
+![Google Drive - Generate sharing link]({{ site.gdrive_url_prefix }}13NZ0kLUIw7ejb750I1Jnl0RxqScrZ-Tl){: style="max-height: 500px;"}
 
 그리고 '링크 복사'를 눌러서 클립보드에 복사한다.
 
-![Google Drive - Copy Generated sharing link]({{ site.gdrive_url_prefix }}1YLpW6tVoQV1eSF9WZUOAZzDXVk_pzsFs){: style="max-width: 320px; max-height: 500px;"}
+![Google Drive - Copy Generated sharing link]({{ site.gdrive_url_prefix }}1YLpW6tVoQV1eSF9WZUOAZzDXVk_pzsFs){: style="width: 100%; max-width: 550px;"}
 
-이 링크를 가져오면 아래 빨간 박스처럼 URL 안에 `이미지ID`가 들어있다. 다른 URL은 필요없다. URL을 그대로 가져다 쓰면 문서 내에 인라인으로 이미지를 넣을 수 없다.
+이 링크를 가져오면 아래 빨간 박스처럼 URL 안에 `이미지ID`가 들어있다. 다른 URL은 필요없다.
 
-![Google Drive - Extract only Image ID]({{ site.gdrive_url_prefix }}1_1VsWhdR2SrQzmgsnm_tx660GUpAL8Nz){: style="max-width: 320px; max-height: 500px;"}
+__URL을 그대로 가져다 쓰면 문서 내에 인라인으로 이미지를 넣을 수 없다.__
+
+![Google Drive - Extract only Image ID]({{ site.gdrive_url_prefix }}1_1VsWhdR2SrQzmgsnm_tx660GUpAL8Nz){: style="width: 100%; max-width: 550px;"}
 
 마지막으로 구글 드라이브 이미지 URL을
 

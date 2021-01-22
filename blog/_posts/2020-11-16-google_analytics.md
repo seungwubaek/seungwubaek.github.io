@@ -3,7 +3,7 @@ layout: single
 title: "[Git Page Jekyll Blog 만들기] - [6] Google Analytics 연동"
 post-order: 6
 date: "2020-11-16 21:43:00 +0900"
-last_modified_at: "2020-11-17 14:48:00"
+last_modified_at: "2021-01-22 11:37:00 +0900"
 ---
 Google Analytics를 이용해서 내 블로그의 방문자 통계를 추적하고 감시해보자. <span class="md-monologue">무료이다.</span><br/>
 그리고 Google의 또 다른 Web Service들과 연동해서 효과적인 수익 창출을 노려볼 수 있다. <span class="md-monologue">무료로.</span>
@@ -36,7 +36,7 @@ Analytics 홈 화면 왼쪽 하단의 있는 관리 페이지 버튼(톱니바�
 
 읽어보고 쭉쭉 넘긴다.
 
-![Create new Google Analytics 4 Property]({{ site.gdrive_url_prefix }}1jq0ENoZrPSV7JVTV43hUtydBZ1i_4bxB)
+![Create new Google Analytics 4 Property]({{ site.gdrive_url_prefix }}1jq0ENoZrPSV7JVTV43hUtydBZ1i_4bxB){:style="max-height: 400px;"}
 
 그러면 금방 연결되었다. 이제 태그 ID를 연결시킬 차례이다.
 

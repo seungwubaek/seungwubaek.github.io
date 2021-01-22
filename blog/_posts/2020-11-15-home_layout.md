@@ -2,6 +2,7 @@
 layout: single
 title: "[Git Page Jekyll Blog 만들기] - [3] 대문 페이지 만들기"
 post-order: 3
+last_modified_at: "2021-01-22 11:30:00 +0900"
 ---
 블로그의 대문 페이지를 만들어보자. 이 포스트에서는 Jekyll의 url 부여 방식에 대해 익히고, 대문 페이지에 나의 최근 포스트들을 나열해주는 화면이 나오게 할 것이다.<br/>
 mmistakes 테마를 사용했다면 이미 그렇게 나오도록 세팅되어 있다. mmistakes 테마를 적용했다는 가정하에 진행하므로 이번 블로그는 개념 정리를 위해 그냥 읽기만 하면된다.
@@ -53,11 +54,11 @@ layout: home
 
 `/index.html`에는 아무 내용이 없지만 원래 layout은 아래 그림처럼 다양한 레이아웃을 미리 만들어놓고 내용을 끼워 넣는 방식으로 동일 HTML 구조를 재사용 해야할때 용이하다.
 
-![same contents different layouts]({{ site.gdrive_url_prefix }}1yhLz-54gzofEghboheErvMAt3zCFPoTR)
+![same contents different layouts]({{ site.gdrive_url_prefix }}1yhLz-54gzofEghboheErvMAt3zCFPoTR){:style="width:100%; max-width: 700px;"}
 
 같은 layout을 유지하면서 contents만 바꿔쓰는 방법도 가능하다. 내 블로그도 이를 이용해서 모든 포스트 내용(contents)이 같은 layout 하나에 들어간다.
 
-![different contents same layouts]({{ site.gdrive_url_prefix }}1LpHiAN6UqcETQdU4TRzvgVbYTd7NnZRG)
+![different contents same layouts]({{ site.gdrive_url_prefix }}1LpHiAN6UqcETQdU4TRzvgVbYTd7NnZRG){:style="width:100%; max-width: 700px;"}
 
 `home` 레이아웃에는 최근 포스트를 보여주는 liquid 코드로 작성한 html이 포함되어 있다. 더 자세한 화면 구성은 `/_layouts/home.html` 파일을 참고하자.
 

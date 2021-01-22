@@ -3,7 +3,7 @@ layout: single
 title: "[Git Page Jekyll Blog 만들기] - [13] 왼쪽 사이드바 만들기 (기본)"
 post-order: 13
 date: "2021-01-13 22:01:00 +0900"
-last_modified_at: "2021-01-17 12:05:00 +0900"
+last_modified_at: "2021-01-22 13:37:00 +0900"
 ---
 내 블로그의 데스크탑 웹에서 제일 왼쪽에 또는 모바일 웹에서 Topbar 다음으로 위쪽에 항상 표시되는 사이드바를 만들자.<br/>
 이 포스트는 `Minimal-Mistakes Jekyll Theme`을 사용하는 블로그를 기준으로 설명한다.
@@ -35,7 +35,7 @@ bundle exec jekyll serve
 * Bio ("I am an __amazing__ person"): `_config.yml` 파일에 입력한 나에 대한 설명
 * <i class="fas fa-fw fa-map-marker-alt"></i>Somewhere : `_config.yml` 파일에 입력한 내 위치
 
-![Minimal-Mistakes Jekyll Theme Initial Web]({{ site.gdrive_url_prefix }}1IgGH27OceBtalYB6pT_hMDobOYf6L_Oh)
+![Minimal-Mistakes Jekyll Theme Initial Web]({{ site.gdrive_url_prefix }}1IgGH27OceBtalYB6pT_hMDobOYf6L_Oh){:style="width:100%;max-width:800px;"}
 
 그리고 Topbar에 있는 메뉴들을 눈여겨 보자. Minimal-Mistakes Theme에서 제공하는 샘플 메뉴들인데
 다음 과정을 진행하면서 이 메뉴들이 사이드바에 나오도록 할 것이다.
@@ -107,6 +107,7 @@ sidebar:
 또 모바일 사이즈의 웹에서도 아래 그림처럼 반응형으로 잘 작동한다.
 
 ![Left Sidebar on Mobile Web]({{ site.gdrive_url_prefix }}1v342cKAMa-e39roIL716z_-aLk2GVZaf)
+{:style="width: fit-content; padding: 40px 10px; background-color: black; border-radius: 20px;"}
 
 `Toggle menu`라는 버튼으로 사이드바 메뉴를 접고 펼수 있다.
 

@@ -3,7 +3,7 @@ layout: single
 title: "[Git Page Jekyll Blog 만들기] - [9] Minimal-Mistakes Layout 소개"
 post-order: 9
 date: "2020-11-25 00:01:00 +0900"
-last_modified_at: "2020-11-26 00:02:01 +0900"
+last_modified_at: "2021-01-22 13:10:00 +0900"
 ---
 Jekyll Theme [Minimal-Mistakes](https://github.com/mmistakes/minimal-mistakes)에서 구현한 Layout은 무엇이 있는지 간략히 살펴보자.
 이 과정을 통해 테마에서 사용하는 주요한 Layout의 구조를 이해하고 Custom 할 때 도움이 되었으면 좋겠다.
@@ -38,7 +38,10 @@ Layout `default`는 전체 HTML 태그를 만드는 가장 바깥의 Layout이�
 나는 footer가 차지하는 공간의 넓이에 비해 그 역할이 크지 않다고 생각했다.<br/>
 <span class="md-monologue">footer에 들어가는 것은 MIT license의 CopyRight, Social Link, RSS 정도가 끝이다.</span>
 
-![Minimal-Mistakes Layout default]({{ site.gdrive_url_prefix }}13IswcBlDQ4MLJreRSLv14Jh307q4VW_K)
+몇개월 후 다시 footer를 부활시켰다. footer가 있으니 포스트의 끝을 분명히 알 수 있는것 같고 디자인적인 측면에서도 괜찮았다.
+다른 역할을 할 수도 있으니 계속 남겨두기로 결정했다.
+
+![Minimal-Mistakes Layout default]({{ site.gdrive_url_prefix }}13IswcBlDQ4MLJreRSLv14Jh307q4VW_K){:style="max-height: 400px;"}
 
 ## archive
 
@@ -46,7 +49,7 @@ Layout `archive`는 Layout `default`를 Layout으로 갖는 Layout이다.
 <span class="md-monologue">내가 그린 기린 그림 같아서 재밌군.</span><br/>
 그림으로 표현하면 아래와 같다.
 
-![Minimal-Mistakes Layout archive]({{ site.gdrive_url_prefix }}1lX4GrWWo4p_RqHbJVzZEdK4IfvWPg5YE){: class="align-center"}
+![Minimal-Mistakes Layout archive]({{ site.gdrive_url_prefix }}1lX4GrWWo4p_RqHbJVzZEdK4IfvWPg5YE){:style="max-height: 400px;"}
 
 * Header Image<br/>
   `archive`에는 상단에 사이트 전체화면을 관통하는 Image와 Header를 넣을 수도 있다.

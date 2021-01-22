@@ -3,7 +3,7 @@ layout: single
 title: "[Git Page Jekyll Blog 만들기] - [7] Goole Search Console 연동"
 post-order: 7
 date: "2020-11-17 17:16:00 +0900"
-last_modified_at: "2020-11-17 17:16:00 +0900"
+last_modified_at: "2021-01-22 11:41:00 +0900"
 ---
 Google Search Console은 구글 검색 엔진에 노출 시킬 수 있게하고 내 사이트에 대한 검색 통계를 제공해준다.
 또한 구글 Crawler에게 내 블로그의 존재를 알려서 보다 효과적으로 구글 검색 엔진이 내 블로그를 인식할 수 있도록 한다.
@@ -14,13 +14,13 @@ Google Search Console은 구글 검색 엔진에 노출 시킬 수 있게하고 
 
 URL 입력란에 `https://[내 블로그 URL].github.io` 를 넣자.
 
-![Google Search Console - Welcome to Google Search Console]({{ site.gdrive_url_prefix }}1EIJpEzBAfNETkYROzbpTw5HTSO29236k)
+![Google Search Console - Welcome to Google Search Console]({{ site.gdrive_url_prefix }}1EIJpEzBAfNETkYROzbpTw5HTSO29236k){:style="max-height: 500px;"}
 
 그러면 소유권 확인이라는 페이지가 나온다. 위에서 지정한 URL이 내 것이 맞는지 확인하는 곳이다.
 
 이 페이지의 설명 대로라면 HTML을 다운로드 받아서 내 블로그 최상위 경로에 놓으면 된다. 그렇게 해도 되겠지만 mmistakes 테마를 쓰므로 다른 방법으로 진행하자.
 
-![Google Search Console - Site Verification]({{ site.gdrive_url_prefix }}1KSeylvUJO6bChwDzjPwHULGPFDTlL7z-)
+![Google Search Console - Site Verification]({{ site.gdrive_url_prefix }}1KSeylvUJO6bChwDzjPwHULGPFDTlL7z-){:style="max-height: 700px;"}
 
 다른 확인 방법 중에 'HTML 태그' 방법이 있다. 이곳에는 `<head>` 태그 안에 `<meta>` 태그를 하나 넣으라고 되어있다. 이 `<meta>` 태그의 내용은 사실 바로 위에서 다운로드 받는 HTML 파일의 내용과 똑같다.
 

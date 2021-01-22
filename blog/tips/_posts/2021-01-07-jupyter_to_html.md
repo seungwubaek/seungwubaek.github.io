@@ -2,7 +2,7 @@
 layout: single
 title: "Jupyter Notebook 화면을 블로그로 가져오기"
 date: "2021-01-07 09:18:00 +0900"
-last_modified_at: "2021-01-18 20:28:00 +0900"
+last_modified_at: "2021-01-22 13:45:00 +0900"
 ---
 Data Science 관련 작업을 하면 Jupyter Notebook을 사용하는 경우가 많다.<br/>
 이 포스트에서는 작성한 Notebook의 Python 코드 셀, Markdown 셀,
@@ -55,7 +55,7 @@ Jekyll, Jupyter Notebook
 포스팅 할 Notebook은 이미 있다고 가정한다. 여기서는 설명을 위해 아래와 같은 단순한 내용의 Notebook 샘플을 사용할 것이다.<br/>
 Markdown 셀, Python Code 셀, Pandas Dataframe, Matplotlib Plot이 있다. (코드 내용 설명 생략)
 
-![Jupyter Notebook Sample]({{ site.gdrive_url_prefix }}1whqzf_6jM2CAbnlDd0jKOeDXfHiuqTbj)
+![Jupyter Notebook Sample]({{ site.gdrive_url_prefix }}1whqzf_6jM2CAbnlDd0jKOeDXfHiuqTbj){:style="width:100%;max-width:600px;"}
 
 위 이미지의 Jupyter Notebook 파일은
 <a href="/downloads/jupyter-notebook/simple.ipynb" download>이곳</a>을 클릭하여 다운로드 할 수 있다.
@@ -123,7 +123,7 @@ jupyter nbconvert --to html --template classic --no-prompt \
 
 심지어 그림 파일조차 데이터 그대로 들어가 있다. 바이너리 데이터가 `Base64`로 인코딩된 형태이다.
 
-![Matplot Image Encoded with Base64]({{ site.gdrive_url_prefix }}1jHy1JiZjplwR0IFQ6rsPFB4EC_j7OkW7)
+![Matplot Image Encoded with Base64]({{ site.gdrive_url_prefix }}1jHy1JiZjplwR0IFQ6rsPFB4EC_j7OkW7){:style="width:100%;max-width:450px;"}
 {: id="image-encoded-base64"}
 
 그리고 이 변환된 HTML 파일은 전체 줄수가 13277 라인이라고 한다.<br/>
@@ -155,7 +155,7 @@ Jupyter Notebook을 사용해본 사람은 짐작 할 수 있겠지만 위의 Ja
 이렇게 하면 내 포스트는 CSS 내용을 포함하지 않는데 클라이언트의 요청이 들어올때에 CSS를 따로 전송해준다.
 클라이언트는 포스트를 볼 때에 CSS가 없는 포스트를 받게 되고, CSS는 별도 요청으로 받아서 스스로 마저 처리하게끔 한다.
 
-![HandShake for Stylesheet]({{ site.gdrive_url_prefix }}1d3hBw-a3lG8kLSrI5dH2BM2F8i6UnfoN)
+![HandShake for Stylesheet]({{ site.gdrive_url_prefix }}1d3hBw-a3lG8kLSrI5dH2BM2F8i6UnfoN){:style="width:100%;max-width:650px;"}
 
 위 그림처럼 유저가 Jupyter Notebook 포스트를 요청하면 CSS 내용이 빠져있는 Post 페이지만 준다.
 대신 CSS가 서버의 어디에 있는지 주소를 함께 알려준다. (이것이 바로 `<link rel="stylesheet">` 태그의 역할)<br/>
@@ -213,7 +213,7 @@ template을 이용해서 HTML 변환 내용의 구조와 CSS를 변형 시킬수
 
 아래 그림은 우리가 선택한 `classic` template 파일의 내용이다.
 
-![nbconvert Template made from jinja]({{ site.gdrive_url_prefix }}1M0FlBC55vwHmgFD-U-sNIqwC0CYCBXai)
+![nbconvert Template made from jinja]({{ site.gdrive_url_prefix }}1M0FlBC55vwHmgFD-U-sNIqwC0CYCBXai){:style="width:100%;max-width:700px;"}
 
 `<html>`, `<script>` 등의 HTML 태그도 보이고 liquid 문법과 아주 비슷하게
 `{% raw %}{% %}{% endraw %}` 기호로 감싸진 부분도 보인다.
@@ -468,7 +468,7 @@ Jupyter Notebook 1개를 포스팅하려면 파일을 최소 2개 만들어야�
 Jupyter nbconvert 로 위 [샘플](#1-샘플)을 HTML로 변환 했을때 실제 Jupyter 셀 코드는
 아래 그림처럼 13094줄부터 `<body>` 태그로 시작한다.
 
-![Jupyter nbconvert result body]({{ site.gdrive_url_prefix }}13bI8AHcsMfOIteVYdrAQ3PNQdAnspbi4)
+![Jupyter nbconvert result body]({{ site.gdrive_url_prefix }}13bI8AHcsMfOIteVYdrAQ3PNQdAnspbi4){:style="width:100%;max-width:700px;"}
 
 우리가 필요한것은 바로 이 `<body>` 태그의 내용이다.
 
@@ -687,7 +687,7 @@ layout: jupyter-notebook-v4.6.3
 하지만 이미지는 기본적으로 용량이 크다. 이것은 Git Repository 용량에 부담이 되므로 '다른 이름으로 저장'한다음
 다른 곳에 넣어놓고 가져오자.
 
-![Jupyter Notebook Image Save as ...]({{ site.gdrive_url_prefix }}18WSTxnNy-9uvvcjbeT--t8f6CzXQ8rlg)
+![Jupyter Notebook Image Save as ...]({{ site.gdrive_url_prefix }}18WSTxnNy-9uvvcjbeT--t8f6CzXQ8rlg){:style="width:100%;max-width:600px;"}
 
 참고로 나는 구글 드라이브에 업로드 시켜놓고 가져온다.<br/>
 위 섹션 [8-1. Jupyter Notebook Iframe](#8-1-jupyter-notebook-iframe) 내용 중에

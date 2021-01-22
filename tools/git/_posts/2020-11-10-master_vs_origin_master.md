@@ -2,6 +2,7 @@
 layout: single
 title: "[개념] master vs origin/master"
 post-order: 1
+last_modified_at: "2021-01-22 11:05:00 +0900"
 ---
 
 master 와 origin/master 의 차이는 뭘까? 이 포스트를 통해 그 의미들을 이해해보자.
@@ -10,7 +11,15 @@ master 와 origin/master 의 차이는 뭘까? 이 포스트를 통해 그 의�
 
 아래 그림은 내 블로그 Repository의 commit log들을 보여준다. 위에 있을수록 최근이며 아래로 갈수록 과거이다.
 
+커밋 로그를 보려면 기본 명령어를 사용하면 된다.
+
+```bash
+git log -<출력커밋수> --pretty=online
+```
+
 로그 내용 중 <span style="color: yellow; background-color: black;">(HEAD -> master, origin/master...</span> 라고 쓰여진 것들을 통해 branch 등을 볼 수 있다.
+
+단 아래 그림은 출력 결과를 커스텀 해서 기본 `git log` 명령어로 출력되는 결과와는 모양이 다르다.
 
 ![commit log]({{ site.gdrive_url_prefix }}1BwE3ZHoUhTLLaHQcs26fLf77QC46RMII)
 
