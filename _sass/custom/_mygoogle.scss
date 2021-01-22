@@ -16,6 +16,9 @@
 .adsbygoogle {
     & + script {
         display: none;
+        & + p {
+            margin-top: 1em;
+        }
     }
 }
 

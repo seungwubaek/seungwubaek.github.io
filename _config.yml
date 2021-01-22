@@ -304,7 +304,6 @@ defaults:
       toc_sticky: true
       sidebar:
         nav: main-sidebar
-      classes: wide
   # poem in _posts
   - scope:
       path: "writing/poem"
