@@ -16,6 +16,7 @@ layout: default
 
 <div id="main" role="main">
   {% include sidebar.html %}
+  {% include right-widget.html %}
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
@@ -47,6 +48,7 @@ layout: default
         </nav>
         {% include ads/google/horizontal_ad.html %}
         {% endif %}
+        {% comment %}
         {% if page.toc %}
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
             <nav class="toc">
@@ -55,6 +57,7 @@ layout: default
             </nav>
           </aside>
         {% endif %}
+        {% endcomment %}
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
       </section>

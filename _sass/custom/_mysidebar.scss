@@ -6,7 +6,7 @@
     top: calc(#{$mymasthead-height} + 0.5em);  // masthead height + a little additional space
 
     .nav__list {
-        margin-top: 0;
+        margin-top: 20px;
         .nav__items {
             .nav__sub-title {
                 font-size: $mysidebar-font-size;
