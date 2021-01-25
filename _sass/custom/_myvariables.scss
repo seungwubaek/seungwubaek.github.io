@@ -21,14 +21,14 @@ $mymasthead-home-height: calc(2 * #{$mymasthead-font-size});
 $mymasthead-menu-height: calc(1.1 * #{$mymasthead-home-height});
 
 // right-widget
-$right-widget-background-color: rgba(255,255,255,.8);
+$right-widget-background-color: black;
 $right-widget__btn-border-color: $border-color;
 $right-widget__btn-arrow-height: 20px;  // 7px;
 $right-widget__btn-arrow-width: 20px;  // 50px;
-$right-widget__btn-arrow-color: $base02;
-$right-widget__body-width: 450px;
+$right-widget__btn-arrow-color: $primary-color;
+$right-widget__body-width: 400px;
 $right-widget__body-height: calc(100vh - calc(#{$mymasthead-height}));
-$right-widget__body-backgroundcolor: rgba(38, 38, 38, .97); // mix(black, #fff, 85%);
+$right-widget__body-backgroundcolor: rgba(0, 0, 0, .9); // mix(black, #fff, 85%);
 
 // initial-content
 $initial-content-top: calc(#{$mymasthead-height} + 8px);

@@ -60,9 +60,8 @@
         align-items: center;
         justify-content: center;
         background-color: $right-widget-background-color;
-        border: 2px solid $right-widget__btn-border-color;
-        border-right: 0;
-        border-radius: 4px 0 0 4px;
+        border: 0;
+        border-radius: 0 0 0 4px;
         -webkit-user-select: none;  /* Chrome all / Safari all */
         -moz-user-select: none;     /* Firefox all */
         -ms-user-select: none;      /* IE 10+ */
