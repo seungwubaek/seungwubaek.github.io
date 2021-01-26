@@ -8,6 +8,49 @@
         border-top: 4px inset $border-color;
         border-bottom: 4px outset $border-color;
     }
+    .wholetoc__opt-list {
+        margin-top: 4em;
+    }
+    .wholetoc__opt-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        &:not(:first-child) {
+            margin-top: 4px;
+        }
+    }
+    .wholetoc__opt-set {
+        display: flex;
+        align-items: center;
+        input, label {
+            display: inline-block;
+        }
+        button, select, span, label {
+            font-size: .85em;
+        }
+        button {
+            margin: 0 2px;
+            padding: 0 6px;
+        }
+        select {
+            border: 1px solid black;
+            padding: 0 4px;
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 4px;
+        }
+        span {
+            -webkit-user-select: none;  /* Chrome all / Safari all */
+            -moz-user-select: none;     /* Firefox all */
+            -ms-user-select: none;      /* IE 10+ */
+            user-select: none;          /* Likely future */
+            padding-left: 3px;
+        }
+        label {
+            padding-left: 3px;
+            margin: 0;
+        }
+    }
     a {
         color: $text-color;
         text-decoration-line: none;

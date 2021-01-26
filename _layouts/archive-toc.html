@@ -19,6 +19,19 @@ classes: wide
     <div id="wholetoc">
       <div class="memo" data-type="toc"></div>
       <h1 id="wholetoc__title">Table Of Contents</h1>
+      <div class="wholetoc__opt-list">
+        <div class="wholetoc__opt-row">
+          <div class="wholetoc__opt-set"><button type="button" id="opt_foldAll">모두 접기</button></div>
+          <div class="wholetoc__opt-set"><button type="button" id="opt_unfoldAll">모두 펼치기</button></div>
+          <div class="wholetoc__opt-set">
+          <select id="opt_fold-inDepth" onchange="tocFoldInDepth()">
+            <option value="-">깊이</option>
+          </select><span>이상 접기</span></div>
+        </div>
+        <div class="wholetoc__opt-row">
+          <div class="wholetoc__opt-set"><input type="checkbox" id="opt_hide-posts"> <label for="opt_hide-posts">카테고리만 보기</label></div>
+        </div>
+      </div>
       {{ content }}
     </div>
   </div>

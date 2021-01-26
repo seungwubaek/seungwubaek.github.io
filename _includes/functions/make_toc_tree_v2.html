@@ -22,7 +22,7 @@
 {% endif %}
 
 <li class="wholetoc__category-item" indentation-level="{{ indent }}">
-<div class="wholetoc__category-title" indentation-level="{{ indent }}"><i class="{{ class_fold_folder }} wholetoc__category-title-icon" onclick="tocFoldFolder(this)"></i><a href="{{ item_url }}" id="{{ category_id }}">{{ item.title }}</a></div>
+<div class="wholetoc__category-title" indentation-level="{{ indent }}"><i class="{{ class_fold_folder }} wholetoc__category-title-icon" indentation-level="{{ indent }}" onclick="tocToggleFolder(this);"></i><a href="{{ item_url }}" id="{{ category_id }}">{{ item.title }}</a></div>
 <div class="wholetoc__category-inner {{ class_fold_list }}" indentation-level="{{ indent }}">
 {% include functions/make_post_list_v2.html item=item start_url=item_url indent=indent parent_category_id=category_id %}
 {% assign parent_category_id = include.parent_category_id %}
