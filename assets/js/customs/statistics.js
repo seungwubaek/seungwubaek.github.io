@@ -39,8 +39,8 @@ function getStatFromGroupByCategories(postsGroupByCats, targetCategories, target
     return res
 }
 
+var postsGroupByCats = {};
 $(function(){
-    var postsGroupByCats = {};
     $.ajax({
         url: location.origin + '/' + 'posts-info.json',
         dataType: 'json',
