@@ -3,7 +3,7 @@ layout: single
 title: "[Git Page Jekyll Blog 만들기] - [12] Google AdSense 등록해서 수익 창출"
 post-order: 12
 date: "2021-01-12 14:38:00 +0900"
-last_modified_at: "2021-01-22 13:33:00 +0900"
+last_modified_at: "2021-01-27 16:36:00 +0900"
 ---
 구글 애드센스 (Google AdSense)를 이용해서 내 사이트에 광고를 게시하자.
 구글 애드센스는 웹 서비스를 통해 손쉽게 광고 게시를 가능케 하고
@@ -242,10 +242,14 @@ sellers.json 파일에 대한 설명은
 위 양식 정보중 2행의 고객ID 값은 공유되선 안된다!</span>
 
 그리고 판매자 정보 공개 상태의 비즈니스 도메인 입력란은 광고주에게 공개할 법인 도메인을 위한 입력란이다.<br/>
-음... 아무래도 내 블로그 `.github.io` 도메인은 나의 법인 도메인은 아닌것 같으므로 공란으로 두자.
+내 블로그 URL을 입력하되 `https://`와 `www`는 생략하고서 입력하자.
 
-그런 다음 검증을 위해 <http://realtimebidding.google.com/sellers.json> 이 사이트로 접속한 후
+그 이유는 구글 고객센터의 sellers.json에 대한 설명(<https://support.google.com/adsense/answer/9889911?ctx=tltp>)에
+나와있다. (공개 서픽스<https://publicsuffix.org/list/public_suffix_list.dat>를 사용하라는 얘기 )
 
+`github.io` 도메인은 적절한 공개 서픽스에 해당하는 것 같다. <span class="md-monologue">서픽스가 정확히 뭔진 모르겠지만..</span>
+
+그런 다음 검증을 위해 <http://realtimebidding.google.com/sellers.json> 이 사이트로 접속한 후<br/>
 <kbd>Ctrl</kbd> + <kbd>F</kbd>를 눌러 텍스트 검색으로 자신의 게시자 ID를 찾아보라고 한다.
 
 그런데... 위 사이트에 출력되는 게시자 ID 리스트는 pub-0으로 시작하는것을 보니 ID가 오름차순 정렬 되어있는 것 같고
