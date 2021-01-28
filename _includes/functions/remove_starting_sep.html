@@ -1,0 +1,7 @@
+{%- assign starting_char = include.target | slice: 0 -%}
+{%- if starting_char == include.sep -%}
+{%- assign sub_size = include.target | size -%}
+{{- include.target | slice: 1, sub_size -}}
+{%- else -%}
+{{- include.target -}}
+{%- endif -%}

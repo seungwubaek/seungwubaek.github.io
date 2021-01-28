@@ -1,0 +1,2 @@
+{%- capture removed_starting -%}{%- include functions/remove_starting_sep.html target=include.target sep=include.sep -%}{%- endcapture -%}
+{%- include functions/remove_trailing_sep.html target=removed_starting sep=include.sep -%}

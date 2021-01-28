@@ -1,0 +1,7 @@
+{%- assign target_last_idx = include.target | size | minus: 1 -%}
+{%- assign trailing_char = include.target | slice: target_last_idx -%}
+{%- if trailing_char == include.sep -%}
+{{- include.target | slice: 0, target_last_idx -}}
+{%- else -%}
+{{- include.target -}}
+{%- endif -%}
