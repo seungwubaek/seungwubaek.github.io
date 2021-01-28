@@ -1,6 +1,6 @@
-{% assign target = include.target %}
-{% assign sep = include.sep %}
-{% capture a %}{% include /functions/prepend_starting_sep.html target=target sep=sep %}{% endcapture %}
-{% capture a %}{% include /functions/append_trailing_sep.html target=a sep=sep %}{% endcapture %}
-{% assign a = a | strip %}
-{{ a }}
+{%- assign target = include.target -%}
+{%- assign sep = include.sep -%}
+{%- capture a -%}{%- include /functions/prepend_starting_sep.html target=target sep=sep -%}{%- endcapture -%}
+{%- capture a -%}{%- include /functions/append_trailing_sep.html target=a sep=sep -%}{%- endcapture -%}
+{%- assign a = a | strip -%}
+{{- a -}}

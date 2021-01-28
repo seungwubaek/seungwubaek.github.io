@@ -1,8 +1,8 @@
-{% assign target = include.target %}
-{% assign sep = include.sep %}
-{% assign target_start_char = target | slice: 0 %}
-{% unless target_start_char == sep %}
-{% assign target = target | prepend: sep %}
-{% endunless%}
-{% assign target = target | strip %}
-{{ target }}
+{%- assign target = include.target -%}
+{%- assign sep = include.sep -%}
+{%- assign target_start_char = target | slice: 0 -%}
+{%- unless target_start_char == sep -%}
+{%- assign target = target | prepend: sep -%}
+{%- endunless-%}
+{%- assign target = target | strip -%}
+{{- target -}}
