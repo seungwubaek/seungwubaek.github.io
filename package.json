@@ -30,7 +30,7 @@
     "uglify-customs": "uglifyjs assets/js/customs/nav-remocon.js assets/js/customs/whole-toc.js assets/js/customs/simple-notice.js assets/js/customs/sidebar.js assets/js/customs/auto-scroll.js assets/js/customs/responsive-topbar.js assets/js/customs/copy-to-clipboard.js assets/js/customs/fold-code-block.js assets/js/customs/statistics.js assets/js/customs/lang-pack.js assets/js/customs/right-widget.js -c -m -o assets/js/customs.min.js",
     "add-banner": "node banner.js",
     "watch:js": "onchange \"assets/js/**/*.js\" -e \"assets/js/main.min.js\" -- npm run build:js",
-    "build:js": "npm run uglify && npm run add-banner"
+    "build:js": "npm run uglify && npm run uglify-customs && npm run add-banner"
   },
   "dependencies": {
     "uglify-es": "^3.3.9"
