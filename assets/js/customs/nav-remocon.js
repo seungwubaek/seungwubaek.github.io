@@ -113,7 +113,7 @@ function navRemoconGoToUrl(targetUrl) {
     win.focus();
 };
 
-$(function(){
+$(window).on('load', function() {
     // [0] Run some codes immediately after complete page load
     // It may need to style some html..
     navRemoconBtns_borderTop = parseFloat(navRemoconBtns.css('border-top-width').split('px')[0]);
