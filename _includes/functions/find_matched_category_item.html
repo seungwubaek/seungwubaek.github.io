@@ -1,16 +1,15 @@
 {% comment %}재귀적 nested loop를 반복하여 find_array 에서(liquid array 변수) target_category(category url을 나타내는 string 변수)와 일치하는 nest array 찾기{% endcomment %}
 {% assign find_array = include.find_array %}
-{% assign target_category = include.target_category %}
 
 {% for start_item in find_array %}
 {% assign start_url = start_item.url | downcase | replace: '%20', '-' %}
 {% capture start_url %}{% include functions/append_trailing_sep.html target=start_url sep='/' %}{% endcapture %}
 {% assign start_url = start_url | strip %}
-{% if start_url == category_class %}
+{% if start_url == include.target_category %}
 {% assign matched_category = start_item %}
 {% break %}
 {% endif %}
 {% if start_item.children.size > 0 %}
-{% include functions/find_matched_category_item.html find_array=start_item.children target_category=target_category %}
+{% include functions/find_matched_category_item.html find_array=start_item.children target_category=include.target_category %}
 {% endif %}
 {% endfor %}
