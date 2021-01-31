@@ -1,4 +1,4 @@
-// We need data about posts, but doesn't have backend. So, use trick like below.
+// We need data about posts, but doesn't have backend. So, use trick like below ajax.
 
 function groupByCategories(post, group, nestedIdx=0) {
     var postKey = post.categories[nestedIdx];
@@ -74,10 +74,14 @@ $(function(){
             });
 
             // Whole TOC Page
+            var catSep = '/';
             if($('.memo').data('type') == 'toc') {
                 $('.wholetoc__category-title > a').each(function(idx, item) {
                     var $item = $(item);
-                    var itemCats = $item.attr('id').split('toc-')[1].split(catSep);
+                    var itemCats = $item.attr('href');
+                    if(itemCats.substr(0, 1) == '/') itemCats = itemCats.substring(1, itemCats.length);
+                    if(itemCats.substr(itemCats.length-1, 1) == '/') itemCats = itemCats.substring(0, itemCats.length-1);
+                    itemCats = itemCats.split('/');
                     var numTot = getStatFromGroupByCategories(postsGroupByCats, itemCats, 'numTot', 0);
                     $item.append('<span class="wholetoc__category-stat">(' + numTot + ')</span>');
                 });

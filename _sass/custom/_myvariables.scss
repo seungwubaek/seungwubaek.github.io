@@ -41,12 +41,21 @@ $mysidebar-item-font-size: 14px;
 $author-bio-font-size: 12px;
 
 // Whole TOC
+$wholetoc-opt-view-icon-width: 22px;
 $wholetoc-indent-size: 18px;
-$wholetoc-item-height: 16px;
-$wholetoc-item-padding-top: 12px;
-$wholetoc-inherit-vline-left: $wholetoc-indent-size / 2 - 4px;
-$wholetoc-inherit-vline-last-height: $wholetoc-item-padding-top + $wholetoc-item-height / 2;
-$wholetoc-inherit-hline-width: $wholetoc-indent-size / 2;
+$wholetoc-item-height: 12px;
+$wholetoc-category-padding-top: 16px;
+$wholetoc-category-icon-size: calc(.8 * #{$h-size-2-general});
+$wholetoc-category-branch-v-left: $wholetoc-indent-size / 2 - 4px;
+$wholetoc-category-branch-last-v-height: $wholetoc-category-padding-top + 9px;
+$wholetoc-category-branch-h-width: $wholetoc-indent-size / 2;
+$wholetoc-post-padding-top: 6px;
+$wholetoc-post-branch-last-v-height: $wholetoc-post-padding-top + 9px;
+// Whole TOC: view style - card
+$wholetoc-view-card-font-size-small: 13px;
+$wholetoc-view-card-font-size-large: 14px;
+$wholetoc-view-card-width-small: 80px;
+$wholetoc-view-card-width-large: 120px;
 
 // page
 $code-light-gray: mix(#fff, $gray, 70%);
