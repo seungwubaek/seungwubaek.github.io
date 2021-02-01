@@ -11,16 +11,23 @@ class SimpleNotice {
         }
 
         // Make notice.
-        var noticeBoard = $('<div></div>')
-        noticeBoard.attr('id', 'simple-notice')
-                    .text(message);
+        var noticeBoard = $(`
+        <div id="simple-notice">
+          <div class="simple-notice__msg">${message}</div>
+          <button class="simple-notice__btn-close"><i class="fas fa-fw fa-times"></i></button>
+        </div>
+        `)
         $('body').append(noticeBoard);
+        var self = this;
+        $('.simple-notice__btn-close').click(function() {
+            self.hide($('#simple-notice'));
+        });
         noticeBoard.css({'bottom': -noticeBoard.outerHeight(),
                         'opacity': 1})
                 .addClass('onShow');
         noticeBoard.outerHeight();  // force redraw for transition
         noticeBoard.css('bottom', 16);
-        setTimeout(this.hide.bind(null, noticeBoard), hideInterval);
+        setTimeout(self.hide.bind(null, noticeBoard), hideInterval);
     }
     hide(selector){
         // Destory notice.

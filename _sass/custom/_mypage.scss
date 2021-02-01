@@ -156,24 +156,3 @@ kbd {
         white-space: pre-wrap;
     }
 }
-
-/* Simple Notice */
-#simple-notice {
-    position: fixed;
-    color: white;
-    background: black;
-    z-index: 99;
-    max-width: 210px;
-    font-size: .8em;
-    padding: $font-size;
-    margin-left: $font-size;
-    border-radius: 8px;
-    -webkit-transition: all 200ms linear;
-    -moz-transition: all 200ms linear;
-    -o-transition: all 200ms linear;
-    transition: all 200ms linear;
-    -webkit-user-select: none;  /* Chrome all / Safari all */
-    -moz-user-select: none;     /* Firefox all */
-    -ms-user-select: none;      /* IE 10+ */
-    user-select: none;          /* Likely future */
-}
