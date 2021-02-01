@@ -82,6 +82,7 @@
         //      but, top coordinate was occupied by topbar.
         position: sticky;  // change 'sticky' to 'fixed'.
         opacity: 1;  // Remove row opacity animation After/Before hovering
+        padding-bottom: 1em;
 
         &::-webkit-scrollbar {
             width: 4px;
