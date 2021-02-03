@@ -65,7 +65,16 @@
             margin: 0;
         }
     }
+    .view-style-msg {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        font-size: .85em;
+        vertical-align: middle;
+    }
     .view-style {
+        display: inline-block;
         label {
             display: inline-block;
         }
