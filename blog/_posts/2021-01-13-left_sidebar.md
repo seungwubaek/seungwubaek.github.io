@@ -1,9 +1,9 @@
 ---
 layout: single
-title: "[Git Page Jekyll Blog 만들기] - [13] 왼쪽 사이드바 만들기 (기본)"
+title: "[Git Page Jekyll Blog 만들기] - [13] Minimal-Mistakes 왼쪽 사이드바 만들기"
 post-order: 13
 date: "2021-01-13 22:01:00 +0900"
-last_modified_at: "2021-01-22 13:37:00 +0900"
+last_modified_at: "2021-02-03 16:05:00 +0900"
 ---
 내 블로그의 데스크탑 웹에서 제일 왼쪽에 또는 모바일 웹에서 Topbar 다음으로 위쪽에 항상 표시되는 사이드바를 만들자.<br/>
 이 포스트는 `Minimal-Mistakes Jekyll Theme`을 사용하는 블로그를 기준으로 설명한다.
