@@ -1,11 +1,13 @@
 ---
 layout: single
-title: "[Git Page Jekyll Blog] - [5] SEO (검색 사이트에 노출 시키기)"
+title: "[Git Page Jekyll Blog] - [5] 검색 엔진에 노출 시키기 (SEO, robots 등)"
 post-order: 5
 date: "2020-11-16 00:00:00 +0900"
-last_modified_at: "2020-11-17 15:31:00 +0900"
+last_modified_at: "2021-02-04 15:27:00 +0900"
 ---
-SEO(검색 엔진 최적화)에 대해 알아보자. 검색 엔진의 Crawler가 내 블로그를 탐색 할 수 있도록 허락하고 내 블로그 사이트를 외부로 노출시켜서 인터넷 사용자들이 유입될 수 있도록 한다.
+내 블로그를 검색 엔진에 효과적으로 노출시키기 위한 SEO(검색 엔진 최적화), robots.txt, sitemap.xml에 대해 알아보자.
+이들은 검색 엔진의 Crawler가 내 블로그를 탐색 할 수 있도록 허락하고 내 블로그 사이트를 외부로 효과적으로 노출시켜서
+적절한 사용자들이 정보를 찾아 유입될 수 있도록 한다.
 
 # SEO
 
@@ -13,7 +15,9 @@ SEO란 Search Engine Optimization의 약자로, 한국어로는 검색 엔진 �
 
 인터넷 공간은 크기를 가늠할 수 없을 만큼 어마어마하다. 그런 공간 속에서 어떻게 다른 사람들이 내 사이트의 작은 외침을 듣게 할 수 있을까?
 
-그렇게 하기위해, 유명한 검색 엔진들에게 내 사이트의 존재를 올바로 알려야한다.<br/>검색 엔진이 내 사이트의 존재를 안다면, 다른 사람들이 내 사이트가 존재 하는지, URL은 뭔지 알지 못하더라도 그들이 검색 엔진에서 어떤 키워드를 검색했을때 검색 엔진은 내 사이트에서 해당 키워드와 관련된 페이지를 검색 결과로 제공할 것이다.
+그렇게 하기위해, 유명한 검색 엔진들에게 내 사이트의 존재를 올바로 알려야한다.<br/>
+검색 엔진이 내 사이트의 존재를 알고 어떤 내용을 담고 있는지 안다면 다른 사람들이 내 블로그의 존재와 URL이 뭔지 알지 못하더라도
+검색 엔진이 내 사이트에서 검색 키워드와 관련된 내용을 가진 페이지를 사용자들에게 제공할 것이다.
 
 <div class="notice--info" markdown="1">
 #### Crawler
@@ -29,6 +33,85 @@ Crawler란 한국어로는 '기어다니는 자'라는 뜻인데 실제로는 �
 예를들어, `<head>` 태그 안에는 `<meta>` 태그들이 있는데 그 태그에는 블로그의 `title`, `description` 뿐만 아니라 블로그를 대표하는 이미지까지, 사이트와 페이지에 대한 다양한 메타 데이터가 들어간다. 때문에 Crawler에게 이러한 메타 정보는 사이트와 페이지를 빠르게 파악하는데 아주 좋은 요소가 된다. 따라서 우리 사이트가 Crawler와 검색엔진의 눈에 잘 띄게 하기 위해서는 이런 메타 정보를 '잘' 입력해 놓아야만 한다.
 
 좀 더 직관적이고 자세히 어떤것들이 있는지는 [이 사이트](https://blog.usefulparadigm.com/%EA%B2%80%EC%83%89%EC%97%94%EC%A7%84%EC%B5%9C%EC%A0%81%ED%99%94-seo-%EC%89%AC%EC%9A%B4-%EA%B0%80%EC%9D%B4%EB%93%9C-f003911b0a79)에 이해하기 쉽게 나와있다. 참조하면 좋을것 같다.
+
+## 고급 SEO: 구조화된 데이터
+
+블로그 페이지의 구조를 일정 형식을 갖추어 만들면 구글 검색 등에서 검색 결과를 사용자에게 보여줄때
+더 이해하기 쉽고 체계적으로 보여줄 수 있다고 한다.
+
+따라서, 내 생각에는 사용자의 Query에 부응하기 위해 잘 구조화 돼 있는 페이지가 더 쉽게 노출될 수 있을 것 같다.
+
+페이지의 구조가 될 수 있는 타입은 다양한데, <https://schema.org>에 정의돼 있다.
+구글을 비롯한 대부분의 검색 엔진은 해당 사이트에 정의되어 있는 구조를 권장 하는 것 같다.
+
+구글 검색 센터의 내용 <https://developers.google.com/search/docs/data-types/article?hl=ko>을 보면
+페이지의 구조 종류에 따른 가이드가 나와있는데 그 중 우리는 `article` 구조를 활용한다.
+
+### 페이지 본문 구조: `Article`
+
+내 페이지의 소스를 보면 본문이 시작하는 태그가 다음과 같이 되어 있다.
+
+```html
+<article class="page" itemscope="" itemtype="https://schema.org/CreativeWork" style="height: auto !important;">
+  <meta itemprop="headline" content="[Git Page Jekyll Blog] - [5] 검색 엔진에 노출 시키기 (SEO, robots 등)">
+  <meta itemprop="description" content="내 블로그를 검색 엔진에 효과적으로 노출시키기 위한 SEO(검색 엔진 최적화), robots.txt, sitemap.xml에 대해 알아보자. 이들은 검색 엔진의 Crawler가 내 블로그를 탐색 할 수 있도록 허락하고 내 블로그 사이트를 외부로 효과적으로 노출시켜서 적절한 사용자들이 정보를 찾아 유입될 수 있도록 한다.">
+  <meta itemprop="datePublished" content="2020-11-16T00:00:00+09:00">
+  <meta itemprop="dateModified" content="2020-11-17T15:31:00+09:00">
+  ...
+```
+
+본문은 `<article>` 태그로 시작한다. 이 태그는 블로그, 매거진, 뉴스 기사 등의 내용을 담는다.
+(<https://developer.mozilla.org/ko/docs/Web/HTML/Element/article>)<br/>
+따라서 검색 엔진에게 해당 태그의 내용이 페이지의 주요 내용임을 알릴 수 있다.
+
+또 `<article>` 태그의 속성 `itemtype`의 값은 `https://schema.org/CreativeWork`으로 되어 있다.
+`CreativeWork`는 책, 영화, 사진, 소프트웨어 프로그램 등의 정보를 다루는 페이지 구조를 의미한다. (<https://schema.org/CreativeWork>)
+
+그다음 내부를 보면 `<meta>` 태그의 속성 `itemprop`이 있고 각각 `headline`, `description`, `datePublished`, `dateModified`를 값으로 가진다.
+각각 페이지의 제목, 설명, 출간 일자, 수정 일자를 의미한다.
+
+이때 날짜의 경우 [ISO8601 포맷](https://ko.wikipedia.org/wiki/ISO_8601)에 따라 작성되어야 한다.
+
+* 예: `2020-11-16T00:00:00+09:00`
+
+### 탐색경로
+
+내 블로그의 모든 페이지 본문의 상단에는 경로가 명시돼 있다. 이 경로를 이용해, 현재 페이지의 상위 카테고리로 쉽게 이동 할 수 있다.
+
+구조화된 데이터의 종류에는 이런 '페이지 경로 구조'도 포함된다. (<https://developers.google.com/search/docs/data-types/breadcrumb?hl=ko#microdata>)
+
+이것의 구현을 위해 내 블로그의 `Breadcrumb`은 다음과 같은 소스로 구현된다.
+
+```html
+<nav class="breadcrumbs">
+  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+  ...
+  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+    <a href="https://seungwubaek.github.io/" itemprop="item"><span itemprop="name">Home</span></a>
+    <meta itemprop="position" content="1">
+  </li>
+  <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+    <a href="/blog" itemprop="item"><span itemprop="name">Blog</span></a>
+    <meta itemprop="position" content="2">
+  </li>
+  ...
+```
+
+`<nav>` 태그를 이용해서 해당 내용이 Navigation에 대한 내용임을 알린다.
+
+탐색경로는 `itemtype` 속성의 값으로 `https://schema.org/BreadcrumbList`를 가지는 `<ol>` 태그로 시작한다.<br/>
+그 하위에는 `itemtype` 속성의 값으로 `https://schema.org/ListItem`을 가지는 `<li>` 태그가 오도록 하고
+페이지가 속한 최상위 카테고리부터 순서대로 `<meta>` 태그에 `itemprop="position" content="1"` 속성의 `content`를 1씩 늘려가며
+배치한다.
+
+위 [페이지 본문 구조 `Article`](#페이지-본문-구조-article)과 [탐색경로](#탐색경로)의 구현은 일일히 HTML을 작성한 것이 아니며
+Liquid 템플릿 언어를 활용해서 모든 페이지에서 동일하게 작동하게끔 자동화 되어있다.
+
+Minimal-Mistakes 테마에는 이 자동화를 비롯해 OpenGraph 등 다양한 SEO가 구현되어있다.
+내 블로그도 Minimal-Mistakes 테마를 사용하는 중이며 일부 커스텀된 소스를 아래에서 참조하자.
+
+* 페이지 본문 구조: <https://github.com/seungwubaek/seungwubaek.github.io/blob/master/_layouts/single.html>
+* 탐색경로: <https://github.com/seungwubaek/seungwubaek.github.io/blob/master/_includes/my-breadcrumbs.html>
 
 # robots.txt
 
