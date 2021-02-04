@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Git Page Jekyll Blog 만들기] - [5] SEO (검색 사이트에 노출 시키기)"
+title: "[Git Page Jekyll Blog] - [5] SEO (검색 사이트에 노출 시키기)"
 post-order: 5
 date: "2020-11-16 00:00:00 +0900"
 last_modified_at: "2020-11-17 15:31:00 +0900"

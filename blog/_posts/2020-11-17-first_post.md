@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Git Page Jekyll Blog 만들기] - [8] 첫번째 포스트 게시하기"
+title: "[Git Page Jekyll Blog] - [8] 첫번째 포스트 게시하기"
 post-order: 8
 date: "2020-11-17 23:52:07 +0900"
 last_modified_at: "2021-01-22 11:49:00 +0900"
@@ -153,7 +153,7 @@ gdrive_url_prefix: "https://drive.google.com/uc?export=view&id="
 ```yml
 ---
 layout: single                                 # 페이지에 single 레이아웃을 적용
-title: "[Git Page Jekyll Blog 만들기] - [8] 첫번째 포스트 게시하기"  # 페이지 타이틀
+title: "[Git Page Jekyll Blog] - [8] 첫번째 포스트 게시하기"  # 페이지 타이틀
 post-order: 8                                  # (내 커스텀 변수) 같은 카테고리 내 정렬 순서
 date: "2020-11-17 21:19:00 +0900"              # 최초 포스팅 날짜. 별도 정렬 순서가 없으면 이 값으로 정렬됨. 파일명에 기록되어있다면 생략 가능.
 last_modified_at: "2020-11-17 21:19:00 +0900"  # 마지막 수정 날짜.

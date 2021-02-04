@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Git Page Jekyll Blog 만들기] - [3] 대문 페이지 만들기"
+title: "[Git Page Jekyll Blog] - [3] 대문 페이지 만들기"
 post-order: 3
 last_modified_at: "2021-01-22 11:30:00 +0900"
 ---

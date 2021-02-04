@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Git Page Jekyll Blog 만들기] - [9] Minimal-Mistakes Layout 소개"
+title: "[Git Page Jekyll Blog] - [9] Minimal-Mistakes Layout 소개"
 post-order: 9
 date: "2020-11-25 00:01:00 +0900"
 last_modified_at: "2021-01-22 13:10:00 +0900"

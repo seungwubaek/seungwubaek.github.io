@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Git Page Jekyll Blog 만들기] - [6] Google Analytics 연동"
+title: "[Git Page Jekyll Blog] - [6] Google Analytics 연동"
 post-order: 6
 date: "2020-11-16 21:43:00 +0900"
 last_modified_at: "2021-01-22 11:37:00 +0900"

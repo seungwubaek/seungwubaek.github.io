@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "[Git Page Jekyll Blog 만들기] - [4] 반응형 웹 단순화 하기"
+title: "[Git Page Jekyll Blog] - [4] 반응형 웹 단순화 하기"
 post-order: 4
 ---
 애니메이션 적용, 요소 사이즈 결정 등의 작업을 더 직관적으로 파악하기 위해 반응형 웹의 폰트 사이즈 변화를 단순화하자. 폰트 사이즈에 대한 비율(`em` 등)에 의존적인 각 요소의 크기 변화를 단순화 할 수 있다.
