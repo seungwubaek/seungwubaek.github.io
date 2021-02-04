@@ -1,0 +1,16 @@
+---
+layout: empty
+---
+<html>
+<head>
+<style>
+ul {
+    padding-inline-start: 20px;
+}
+</style>
+</head>
+<body>
+{% assign grouped_posts = site.posts | group_by: 'categories' %}
+{% include functions/make_toc_tree_v3.html arr=site.data.navigation.main-sidebar grouped_posts=grouped_posts %}
+</body>
+</html>
