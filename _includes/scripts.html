@@ -19,6 +19,13 @@
 {% endif %}
 
 {% include analytics.html %}
+{% if page.use_kakao-sdk %}
+  <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+  <script type="text/javascript">
+    Kakao.init('9533ae57dc9d2770563c88c13d8d9903');
+  </script>
+  <script src="{{ "/assets/js/kakao-custom.min.js" | relative_url }}"></script>
+{% endif %}
 {% include /comments-providers/scripts.html %}
 
 {% if site.after_footer_scripts %}

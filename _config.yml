@@ -306,6 +306,7 @@ defaults:
         nav: main-sidebar
       right-widget:
           toc: true
+      use_kakao-sdk: true
   # poem in _posts
   - scope:
       path: "writing/poem"
