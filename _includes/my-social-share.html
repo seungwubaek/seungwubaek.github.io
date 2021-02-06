@@ -1,5 +1,5 @@
 <section class="{{ include.classes | default: "page__share" }}">
-  <h3 class="page__share-title"><i class="fas fa-fw fa-share-alt"></i> Share on</h4>
+  <h3 class="page__share-title"><i class="fas fa-share-alt"></i> {{ site.data.ui-text[site.locale].share_on_label | default: "Share on" }}</h4>
   <ul>
     <li class="share-clipboard">
       <a class="btn btn--clipboard" id="shareon-clipboard" title="Copy URL to Clipboard" data-clipboard-text="{{ site.url }}{{ page.url }}">

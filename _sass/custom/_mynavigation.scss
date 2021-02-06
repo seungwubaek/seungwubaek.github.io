@@ -134,6 +134,9 @@
         margin-top: 0;
         padding-left: 0;
         padding-bottom: 0.2rem;
+        i {
+            margin-right: 4px;
+        }
     }
     // Scrollspy marks toc items as .active when they are in focus
     .active > a {
