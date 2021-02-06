@@ -40,6 +40,8 @@ layout: default
       </div>
       {% endunless %}
 
+      {% if page.share %}{% include my-social-share.html classes="page__share page__share-top" %}{% endif %}
+
       <section class="page__content" itemprop="text">
         {% if page.toc-top %}
         <nav class="toc-top">
