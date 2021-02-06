@@ -5,8 +5,11 @@
     align-items: center;
     z-index: 99;
     background: black;
-    width: 100%;
+    width: fit-content;
     max-width: 260px;
+    @include breakpoint($small) {
+        max-width: 400px;
+    }
     padding: 15px;
     margin-left: 16px;
     border-radius: 8px;
@@ -22,8 +25,8 @@
         flex-grow: 1;
         color: white;
         font-size: .8em;
-        padding: 0 16px 0 0;
-        margin: 0;
+        padding: 0;
+        margin: 0 16px 0 0;
     }
     .simple-notice__btn-close {
         display: flex;
@@ -31,7 +34,7 @@
         justify-content: center;
         border: 0;
         border-radius: 20px;
-        padding: 0;
+        padding: 0 16px;
         margin: 0;
         width: 100%;
         max-width: 35px;
