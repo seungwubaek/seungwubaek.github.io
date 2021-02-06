@@ -16,9 +16,5 @@
     <strong>{{ site.data.ui-text[site.locale].modified_date_label | default: "Modified:" }}</strong> <time datetime="{{ document.last_modified_at | date_to_xmlschema }}">{{ document.last_modified_at | date: "%Y-%m-%d %H:%M:%S %z" }}</time>
   </span>
   {% endif %}
-{% if site.category_archive.type and page.categories[0] %}
-  <br/>
-  {% include page__header-category-list.html %}
-{% endif %}
 </div>
 {% endif %}

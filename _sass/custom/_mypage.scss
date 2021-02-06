@@ -11,6 +11,7 @@
     border-bottom: 6px groove $border-color;
     padding-bottom: 1em;
     margin-bottom: 2em;
+    line-height: 1;;
     .page__title {
         line-height: 1.3;
         margin-bottom: 0;
@@ -21,7 +22,11 @@
     }
     .page__header-meta {
         padding-top: $font-size * 2;
-        font-size: .75em;
+        font-size: .8em;
+        line-height: 1.5;
+    }
+    .page__header-taxonomy {
+        font-size: .8em;
     }
 }
 
