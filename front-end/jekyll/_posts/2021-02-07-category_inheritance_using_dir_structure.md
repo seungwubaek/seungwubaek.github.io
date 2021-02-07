@@ -99,3 +99,5 @@ categories: ["web", "back-end"]
 즉, `dir1/dir2/dir3/_posts/` 디렉토리에 있는 포스트는 항상 같은 순서의 원소로된 `categories: ["dir1", "dir2", "dir3"]` 변수를 갖는다.
 
 우리는 이처럼 디렉토리 순서와 카테고리 순서의 동기화가 보장된다는 특성을 이용해서 목차를 만드는 등 다른 작업을 할 수도 있다.
+
+목차를 만드는 과정은 [목차 만들기]({{ site.baseurl }}/blog/whole_toc/#page-title) 포스트를 참조하자.
