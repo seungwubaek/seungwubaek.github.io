@@ -1,14 +1,11 @@
 .page__share {
-    .btn--clipboard {
-        color: white;
-        background-color: $clipboard-color;
-    }
     .btn--kakao {
-        background-color: #FEE500;
         .kakao-symbol {
             width: 14px;
             margin-bottom: 1px;
         }
-        color: mix(#000000, #fff, 85%);
+        &:hover {
+            color: mix(#000000, #fff, 85%);
+        }
     }
 }
