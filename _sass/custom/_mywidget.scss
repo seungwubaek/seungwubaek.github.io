@@ -38,7 +38,7 @@
     position: fixed;
     display: flex;
     top: calc(#{$mymasthead-height});
-    right: 0;
+    right: -999px;
     z-index: 99;
     -webkit-transition: right 200ms linear;
     -moz-transition: right 200ms linear;

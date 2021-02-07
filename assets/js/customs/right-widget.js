@@ -32,7 +32,7 @@ if($('nav.right-widget__toc').length > 0) {
       }
   }
   function openRightWidget() {
-      $rWidget.css('right', '');
+      $rWidget.css('right', '0');
   }
   function closeRightWidget() {
     if(window.innerWidth <= 600) $rWidget.css('right', btnWidth-window.innerWidth-1);
