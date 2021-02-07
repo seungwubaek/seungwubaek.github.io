@@ -128,12 +128,12 @@ $(document).ready(function() {
     var id = $(this).attr('id');
     if (id) {
       var anchor = document.createElement("a");
+      var addr = location.origin + location.pathname + '#' + id;
       anchor.className = 'header-link';
       anchor.href = '#' + id;
-      anchor.innerHTML = '<span class=\"sr-only\">Permalink</span><i class=\"fas fa-link\"></i>';
       // sammy baek custom
+      anchor.innerHTML = `<span class=\"sr-only\">${addr}</span><i class=\"fas fa-link\"></i>`;
       anchor.title = 'Copy this URL'
-      var addr = location.origin + location.pathname + '#' + id;
       anchor.setAttribute('data-clipboard-text', addr);
       $(this).append(anchor);
     }
