@@ -17,3 +17,14 @@
         }
     }
 }
+
+.layout--home {
+    .archive {
+        #page-title {
+            margin-bottom: 0;
+        }
+        .archive__subtitle:first-of-type {
+            margin-top: 0;
+        }
+    }
+}
