@@ -22,12 +22,12 @@ $mymasthead-menu-height: calc(1.1 * #{$mymasthead-home-height});
 
 // right-widget
 $right-widget-background-color: black;
+$right-widget-width: 400px;
+$right-widget-height: calc(100vh - calc(#{$mymasthead-height}));
 $right-widget__btn-border-color: $border-color;
 $right-widget__btn-arrow-height: 20px;  // 7px;
 $right-widget__btn-arrow-width: 20px;  // 50px;
 $right-widget__btn-arrow-color: $primary-color;
-$right-widget__body-width: 400px;
-$right-widget__body-height: calc(100vh - calc(#{$mymasthead-height}));
 $right-widget__body-backgroundcolor: rgba(0, 0, 0, .9); // mix(black, #fff, 85%);
 
 // initial-content

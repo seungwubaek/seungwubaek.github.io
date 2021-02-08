@@ -17,53 +17,61 @@ if($('nav.right-widget__toc').length > 0) {
       // Event support
       events: true // if true, emit custom events
     });
-  }
+}
 
-  /* for responsive web */
-  var $rWidget = undefined;
-  var btnWidth = 0;
-  function reloadRightWidget() {
+/* for responsive web */
+var $rWidget = undefined;
+var rWidgetWidth = 400; // It should be equal with _variables.scss's widget width size.
+var btnWidth = 0;
+function reloadRightWidget() {
     var maxWidth = window.innerWidth;
-      if(maxWidth <= 600) {  // It should be equal with _variables.scss's small size.
-          if($rWidget.hasClass('hide')) {
-              $rWidget.css('right', btnWidth-maxWidth-1);
-          }
-          $rWidget.css('width', maxWidth);
-      }
-  }
-  function openRightWidget() {
-      $rWidget.css('right', '0');
-  }
-  function closeRightWidget() {
+    if(maxWidth <= 600) {  // It should be equal with _variables.scss's small size.
+        if($rWidget.hasClass('hide')) {
+            $rWidget.css('right', btnWidth-maxWidth-1);
+        }
+        $rWidget.css('max-width', maxWidth);
+    } else {
+        if($rWidget.hasClass('hide')) {
+            $rWidget.css('right', btnWidth-rWidgetWidth);
+        }
+        $rWidget.css('max-width', rWidgetWidth);
+    }
+}
+function openRightWidget() {
+    $rWidget.css('right', '0');
+}
+function closeRightWidget() {
     if(window.innerWidth <= 600) $rWidget.css('right', btnWidth-window.innerWidth-1);
     else $rWidget.css('right', btnWidth-$rWidget.width());
-  }
-  function switchArrow() {
-      var $arrow = $('.right-widget__btn > div');
-      if($arrow.hasClass('nav-arrow-left')) {
-          $arrow.removeClass('nav-arrow-left')
-                .addClass('nav-arrow-right');
-      } else if($arrow.hasClass('nav-arrow-right')) {
-          $arrow.removeClass('nav-arrow-right')
-                .addClass('nav-arrow-left');
-      }
-  }
-  function rightWidgetToggle() {
-      if($rWidget.hasClass('hide')) {
-          openRightWidget();
-          $rWidget.removeClass('hide');
-      } else {
-          closeRightWidget();
-          $rWidget.addClass('hide');
-      }
-      switchArrow();
-  }
+}
+function switchArrow() {
+    var $arrow = $('.right-widget__btn > div');
+    if($arrow.hasClass('nav-arrow-left')) {
+        $arrow.removeClass('nav-arrow-left')
+            .addClass('nav-arrow-right');
+    } else if($arrow.hasClass('nav-arrow-right')) {
+        $arrow.removeClass('nav-arrow-right')
+            .addClass('nav-arrow-left');
+    }
+}
+function rightWidgetToggle() {
+    if($rWidget.hasClass('hide')) {
+        openRightWidget();
+        $rWidget.removeClass('hide');
+    } else {
+        closeRightWidget();
+        $rWidget.addClass('hide');
+    }
+    switchArrow();
+}
 
-  $(window).on('load', function() {
-      $rWidget = $('.right-widget');
-      $rWidget.appendTo('body');
+$(window).on('load', function() {
+    $rWidget = $('.right-widget');
+    $rWidget.appendTo('body');
 
-      var $rWidgetBtn = $('.right-widget__btn');
-      btnWidth = $rWidgetBtn.outerWidth();
-      reloadRightWidget();
-  });
+    var $rWidgetBtn = $('.right-widget__btn');
+    btnWidth = $rWidgetBtn.outerWidth();
+    reloadRightWidget();
+});
+
+$(window).resize(reloadRightWidget);

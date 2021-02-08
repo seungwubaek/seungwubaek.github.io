@@ -38,14 +38,16 @@
     position: fixed;
     display: flex;
     top: calc(#{$mymasthead-height});
-    right: -999px;
+    right: -$right-widget-width;
+    width: 100%;
+    max-width: $right-widget-width;
+    height: $right-widget-height;
     z-index: 99;
     -webkit-transition: right 200ms linear;
     -moz-transition: right 200ms linear;
     -o-transition: right 200ms linear;
     transition: right 200ms linear;
     &.hide {
-        right: -$right-widget__body-width;
         -webkit-transition: right 200ms linear;
         -moz-transition: right 200ms linear;
         -o-transition: right 200ms linear;
@@ -67,16 +69,13 @@
         -ms-user-select: none;      /* IE 10+ */
         user-select: none;          /* Likely future */
         height: 30px;
-        width: 30px;
+        width: 100%;
+        max-width: 30px;
     }
     .right-widget__body {
         pointer-events: auto;
         display: inline-block;
         width: 100%;
-        @include breakpoint($small) {
-            width: $right-widget__body-width;
-        }
-        height: $right-widget__body-height;
         background-color: $right-widget__body-backgroundcolor;
         padding: 0 1em 1em 1em;
         .right-widget__component-title {
