@@ -26,5 +26,83 @@
         .archive__subtitle:first-of-type {
             margin-top: 0;
         }
+        #site-pagination-list {
+            ul, li {
+                padding: 0;
+                margin: 0;
+                list-style-type: none;
+            }
+            .archive__item-excerpt {
+                max-height: 54px;
+                overflow: hidden;
+            }
+            .archive__item-excerpt-folder {
+                display: none;
+                position: relative;
+                font-size: 10px;
+                width: fit-content;
+                margin-left: auto;
+                margin-right: auto;
+                color: #0066ff;
+                &:after {
+                    content: "«";
+                    position: absolute;
+                    transform: rotateZ(270deg);
+                    left: 12px;
+                    bottom: -10px;
+                }
+            }
+            .archive__item-excerpt.truncated {
+                position: relative;
+                &:after {
+                    content: "...";
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    background-color: white;
+                    padding: 0 6px 0 3px;
+                }
+                & + .archive__item-excerpt-folder {
+                    display: block;
+                }
+            }
+        }
+        .paginator-area {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        #site-paginator {
+            li {
+                &.current > a ,
+                &.current.disabled > a {
+                    color: #fff;
+                    background: $primary-color;
+                }
+                &.disabled > a {
+                    color: rgba($muted-text-color, 0.5);
+                    pointer-events: none;
+                    cursor: not-allowed;
+                }
+            }
+            .paginationjs-pages {
+                margin-top: 4px;
+                margin-right: 8px;
+            }
+        }
+        .paginator-support {
+            display: flex;
+            .paginationjs-go-input {
+                margin-top: 4px;
+                margin-right: 2px;
+                width: 40px;
+                input {
+                    text-align: center;
+                }
+            }
+            .paginationjs-go-button {
+                margin-top: 4px;
+            }
+        }
     }
 }

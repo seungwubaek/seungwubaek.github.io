@@ -1,0 +1,13 @@
+---
+layout: empty
+---
+{% assign lang_set = "en,ko" | split: "," %}
+{
+{% for lang in lang_set %}
+    "{{ lang }}": {
+    {% for ui_key in site.data.ui-text[lang] %}
+        "{{ ui_key[0] }}": "{{ ui_key[1] }}"{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+    }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+}

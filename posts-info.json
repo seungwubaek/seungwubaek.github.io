@@ -9,8 +9,12 @@ layout: empty
         {%- assign postCats = postCats | push: quotedCat -%}
     {%- endfor -%}
 {
+"title": "{{ post.title | replace: "<","&lt;" | replace: ">","&gt;" }}",
 "categories": [{{ postCats | join: ", "}}],
-"url": "{{ post.url }}"
+"url": "{{ post.url }}",
+"date": "{{ post.date }}",
+"last_modified_at": "{{ post.last_modified_at }}",
+"excerpt": "{{ post.excerpt | newline_to_br | replace: "<br />", " " | strip_newlines | strip_html | strip }}"
 }{%- unless forloop.last -%},{% endunless %}
 {% endfor %}
 ]
