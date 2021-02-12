@@ -1,3 +1,15 @@
+var ad_script =
+`<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+    style="display:block"
+    data-ad-format="fluid"
+    data-ad-layout-key="-gs+5+15-58+68"
+    data-ad-client="ca-pub-9480069633849139"
+    data-ad-slot="9523124851"></ins>
+<script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+</script>`;
+
 function paginationTemplate(data) {
     var uiText = '';
     $.ajax({
@@ -15,51 +27,55 @@ function paginationTemplate(data) {
     var modifiedDateLabel = uiText['en']['modified_date_label'] || 'Modified:';
     var html = '<ul>';
     for(post of data) {
-        var dateLabelValISO, modifiedDateLabelValISO = '';
-        if(post.date.length > 0) {
-            dateLabelValISO = (new Date(post.date)).toISOString();
-        }
-        if(post.last_modified_at.length > 0) {
-            modifiedDateLabelValISO = (new Date(post.last_modified_at)).toISOString();
-        }
+        if(post.ad) {
+            var item = post.script;
+        } else {
+            var dateLabelValISO, modifiedDateLabelValISO = '';
+            if(post.date.length > 0) {
+                dateLabelValISO = (new Date(post.date)).toISOString();
+            }
+            if(post.last_modified_at.length > 0) {
+                modifiedDateLabelValISO = (new Date(post.last_modified_at)).toISOString();
+            }
 
-        var categoryHtml = [];
-        for(categoryIdx of Array(post.categories.length).keys()) {
-            var innerCategories = post.categories.slice(0, categoryIdx+1);
-            categoryHtml.push(`<a href="${'/' + innerCategories.join('/') + '#wholetoc__title'}" class="page__header-taxonomy-item" rel="tag">${post.categories[categoryIdx]}</a>`);
-        }
-        categoryHtml = categoryHtml.join('<span class="sep">, </span>');
-        var postExcerpt = post.excerpt.trim();
-        var post =`
-        <li>
-            <div class="list__item">
-                <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-                    <h3 class="archive__item-title no_toc" itemprop="headline">
-                        <a href="${post.url}#page-title" rel="permalink">${post.title}</a>
-                    </h3>
-                    <div class="page-meta">
-                        <span class="page__header-taxonomy">
-                            <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> ${categoryLabel} </strong>
-                            <span itemprop="keywords">${categoryHtml}</span>
-                        </span>
-                        <div class="page__header-meta">
-                            <span class="page__header-meta-date">
-                                <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-                                <strong>${dateLabel}</strong> <time datetime="${dateLabelValISO}">${post.date}</time>
+            var categoryHtml = [];
+            for(categoryIdx of Array(post.categories.length).keys()) {
+                var innerCategories = post.categories.slice(0, categoryIdx+1);
+                categoryHtml.push(`<a href="${'/' + innerCategories.join('/') + '#wholetoc__title'}" class="page__header-taxonomy-item" rel="tag">${post.categories[categoryIdx]}</a>`);
+            }
+            categoryHtml = categoryHtml.join('<span class="sep">, </span>');
+            var postExcerpt = post.excerpt.trim();
+            var item =`
+            <li>
+                <div class="list__item">
+                    <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+                        <h3 class="archive__item-title no_toc" itemprop="headline">
+                            <a href="${post.url}#page-title" rel="permalink">${post.title}</a>
+                        </h3>
+                        <div class="page-meta">
+                            <span class="page__header-taxonomy">
+                                <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> ${categoryLabel} </strong>
+                                <span itemprop="keywords">${categoryHtml}</span>
                             </span>
-                            <br/>
-                            <span class="page__header-meta-date">
-                                <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
-                                <strong>${modifiedDateLabel}</strong> <time datetime="${modifiedDateLabelValISO}">${post.last_modified_at}</time>
-                            </span>
+                            <div class="page__header-meta">
+                                <span class="page__header-meta-date">
+                                    <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                                    <strong>${dateLabel}</strong> <time datetime="${dateLabelValISO}">${post.date}</time>
+                                </span>
+                                <br/>
+                                <span class="page__header-meta-date">
+                                    <i class="far fa-fw fa-calendar-alt" aria-hidden="true"></i>
+                                    <strong>${modifiedDateLabel}</strong> <time datetime="${modifiedDateLabelValISO}">${post.last_modified_at}</time>
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="archive__item-excerpt" itemprop="description" data-full-excerpt="${postExcerpt}">${postExcerpt}</div>
-                    <div class="archive__item-excerpt-folder fold" onclick="toggleNavExcerpt(this);">펼치기</div>
-                </article>
-            </div>
-        </li>`;
-        html += post;
+                        <div class="archive__item-excerpt" itemprop="description" data-full-excerpt="${postExcerpt}">${postExcerpt}</div>
+                        <div class="archive__item-excerpt-folder fold" onclick="toggleNavExcerpt(this);">펼치기</div>
+                    </article>
+                </div>
+            </li>`;
+        }
+        html += item;
     }
     html += '</ul>';
     return html;
@@ -85,6 +101,8 @@ $('#site-paginator').pagination({
     showFirstOnEllipsisShow: false,
     activeClassName: 'current',
     callback: function(data, pagination) {
+        data.splice(2, 0, { 'ad': true, 'script': ad_script });
+        data.splice(5, 0, { 'ad': true, 'script': ad_script });
         var html = paginationTemplate(data);
         var $paginationList = $('#site-pagination-list');
         $paginationList.html(html);
@@ -93,7 +111,6 @@ $('#site-paginator').pagination({
             let viewHeight = elem.offsetHeight;
             if(fullHeight > viewHeight) {
                 elem.className += ' truncated';
-                console.log(elem.textContent.substr(0, elem.textContent.length-4));  // 아니지 보이는 height 부터 잘려야지
             }
         });
     }
