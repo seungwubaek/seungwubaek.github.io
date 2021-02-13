@@ -1,3 +1,6 @@
+var $sitePaginator = $('#site-paginator');
+
+if($sitePaginator.length > 0) {
 var ad_script =
 `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"
@@ -81,7 +84,7 @@ function paginationTemplate(data) {
     return html;
 }
 
-$('#site-paginator').pagination({
+$sitePaginator.pagination({
     dataSource: function(done) {
         $.ajax({
             type: 'GET',
@@ -135,4 +138,5 @@ function toggleNavExcerpt(self){
     $excerpt.text(fullExcerpt);
     $excerpt.css('max-height', '100%');
     $excerpt.removeClass('truncated');
+}
 }
