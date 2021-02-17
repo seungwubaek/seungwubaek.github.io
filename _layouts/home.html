@@ -7,6 +7,20 @@ classes: wide
 
 <h2 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h2>
 
+<ul class="recent-posts__opt-list">
+  <li class="recent-posts__opt-row">
+    <div class="recent-posts__opt sort">
+      <button><i class="fas fa-sort-amount-down"></i> 정렬</button>
+      <ul class="recent-posts__opt sort-dropdown" data-current-sort-key="sortLastPulished">
+        <li class="dropdown-row"><input type="radio" name="sort-type" id="sortLastPulished" value="lastPublished" checked> <label class="sort-opt-radio" for="sortLastPulished">최근 출간일</label></input></li>
+        <li class="dropdown-row"><input type="radio" name="sort-type" id="sortInitialPublished" value="initialPublished"> <label class="sort-opt-radio" for="sortInitialPublished">최초 출간일</label></li>
+        <li class="dropdown-row"><input type="radio" name="sort-type" id="sortLastModified" value="lastModified"> <label class="sort-opt-radio" for="sortLastModified" >최근 수정일</label></li>
+        <li class="dropdown-row"><input type="radio" name="sort-type" id="sortInitialModified" value="initialModified"> <label class="sort-opt-radio" for="sortInitialModified">최초 수정일</label></li>
+      </ul>
+    </div>
+  </li>
+</ul>
+
 <div id="site-pagination-list" class=".entries-list"></div>
 
 {% include ads/google/on_the_paginator.html %}

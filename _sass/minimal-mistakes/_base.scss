@@ -126,9 +126,9 @@ blockquote {
 /* links */
 
 a {
-  &:focus {
-    @extend %tab-focus;
-  }
+  // &:focus {
+  //   @extend %tab-focus;
+  // }
 
   // &:visited {
   //   color: $link-color-visited;
@@ -142,9 +142,9 @@ a {
 
 /* buttons */
 
-button:focus {
-  @extend %tab-focus;
-}
+// button:focus {
+//   @extend %tab-focus;
+// }
 
 /* code */
 
