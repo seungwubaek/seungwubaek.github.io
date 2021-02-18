@@ -1,56 +1,56 @@
 .archive {
-    margin-top: 0;
-    .page__title {
-        display: none;
+  margin-top: 0;
+  .page__title {
+    display: none;
+  }
+  .home-image-overflow-x {
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+  }
+  .home-image-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(225, 232, 238);
+    padding: 0 0 2%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 110px;
+    width: 100%;
+    max-width: 830px;
+    @include breakpoint($medium) {
+      height: 315px;
     }
-    .home-image-overflow-x {
-        overflow: hidden;
-        margin-left: auto;
-        margin-right: auto;
-        width: fit-content;
+    .home-image {
+      width: 80%;
     }
-    .home-image-wrapper {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        background-color: rgb(225, 232, 238);
-        padding: 0 0 2%;
-        margin-left: auto;
-        margin-right: auto;
-        height: 110px;
-        width: 100%;
-        max-width: 830px;
-        @include breakpoint($medium) {
-            height: 315px;
-        }
-        .home-image {
-            width: 80%;
-        }
-        .home-image-footer {
-            position: absolute;
-            bottom: -12px;
-            right: 0;
-            font-size: 10px;
-        }
+    .home-image-footer {
+      position: absolute;
+      bottom: -12px;
+      right: 0;
+      font-size: 10px;
     }
+  }
 }
 
 .sidebar {
-    @include breakpoint($medium) {
-        .author__avatar {
-            img {
-                max-width: 165px;
-            }
-        }
-    }
+  @include breakpoint($medium) {
     .author__avatar {
-        display: block;
-        margin-left: 15px;
-        width: 120px;
-        height: 120px;
-        img {
-            border-radius: 25%;
-        }
+      img {
+        max-width: 165px;
+      }
     }
+  }
+  .author__avatar {
+    display: block;
+    margin-left: 15px;
+    width: 120px;
+    height: 120px;
+    img {
+      border-radius: 25%;
+    }
+  }
 }
 

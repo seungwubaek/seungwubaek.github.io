@@ -3,11 +3,11 @@ layout: empty
 ---
 [
 {% for post in site.posts %}
-    {%- assign postCats = '' | split: '' -%}
-    {%- for cat in post.categories -%}
-        {%- capture quotedCat -%}"{{ cat }}"{%- endcapture -%}
-        {%- assign postCats = postCats | push: quotedCat -%}
-    {%- endfor -%}
+  {%- assign postCats = '' | split: '' -%}
+  {%- for cat in post.categories -%}
+    {%- capture quotedCat -%}"{{ cat }}"{%- endcapture -%}
+    {%- assign postCats = postCats | push: quotedCat -%}
+  {%- endfor -%}
 {
 "title": "{{ post.title | replace: "<","&lt;" | replace: ">","&gt;" }}",
 "categories": [{{ postCats | join: ", "}}],

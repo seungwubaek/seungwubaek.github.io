@@ -1,113 +1,113 @@
 /* right widget */
 .nav-arrow-left {
-    height: 0;
-    width: 0;
-    padding: 0;
-    margin-top: 1px;
-    margin-bottom: 2px;
-    border-top-width: calc( #{$right-widget__btn-arrow-width} / 2 );
-    border-left-width: 0;
-    border-right-width: $right-widget__btn-arrow-height;
-    border-bottom-width: calc( #{$right-widget__btn-arrow-width} / 2 );
-    border-style: solid;
-    border-top-color: transparent;
-    border-right-color: $right-widget__btn-arrow-color;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  border-top-width: calc( #{$right-widget__btn-arrow-width} / 2 );
+  border-left-width: 0;
+  border-right-width: $right-widget__btn-arrow-height;
+  border-bottom-width: calc( #{$right-widget__btn-arrow-width} / 2 );
+  border-style: solid;
+  border-top-color: transparent;
+  border-right-color: $right-widget__btn-arrow-color;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
 }
 .nav-arrow-right {
-    height: 0;
-    width: 0;
-    padding: 0;
-    margin-top: 1px;
-    margin-bottom: 2px;
-    border-top-width: calc( #{$right-widget__btn-arrow-width} / 2 );
-    border-left-width: $right-widget__btn-arrow-height;
-    border-right-width: 0;
-    border-bottom-width: calc( #{$right-widget__btn-arrow-width} / 2 );
-    border-style: solid;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: $right-widget__btn-arrow-color;
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  border-top-width: calc( #{$right-widget__btn-arrow-width} / 2 );
+  border-left-width: $right-widget__btn-arrow-height;
+  border-right-width: 0;
+  border-bottom-width: calc( #{$right-widget__btn-arrow-width} / 2 );
+  border-style: solid;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: $right-widget__btn-arrow-color;
 }
 
 .right-widget {
-    pointer-events: none;
-    font-size: .9em;
-    position: fixed;
-    display: flex;
-    top: calc(#{$mymasthead-height});
-    right: -$right-widget-width;
-    width: 100%;
-    max-width: $right-widget-width;
-    height: $right-widget-height;
-    z-index: 99;
+  pointer-events: none;
+  font-size: .9em;
+  position: fixed;
+  display: flex;
+  top: calc(#{$mymasthead-height});
+  right: -$right-widget-width;
+  width: 100%;
+  max-width: $right-widget-width;
+  height: $right-widget-height;
+  z-index: 99;
+  -webkit-transition: right 200ms linear;
+  -moz-transition: right 200ms linear;
+  -o-transition: right 200ms linear;
+  transition: right 200ms linear;
+  &.hide {
     -webkit-transition: right 200ms linear;
     -moz-transition: right 200ms linear;
     -o-transition: right 200ms linear;
     transition: right 200ms linear;
-    &.hide {
-        -webkit-transition: right 200ms linear;
-        -moz-transition: right 200ms linear;
-        -o-transition: right 200ms linear;
-        transition: right 200ms linear;
+  }
+  .right-widget__btn {
+    pointer-events: auto;
+    z-index: 99;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $right-widget-background-color;
+    border: 0;
+    border-radius: 0 0 0 4px;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;          /* Likely future */
+    height: 30px;
+    width: 100%;
+    max-width: 30px;
+  }
+  .right-widget__body {
+    pointer-events: auto;
+    display: inline-block;
+    width: 100%;
+    background-color: $right-widget__body-backgroundcolor;
+    padding: 0 1em 1em 1em;
+    .right-widget__component-title {
+      font-weight: bold;
+      font-size: 1.4em;
+      color: white;
+      margin: 8px 0 4px 0;
     }
-    .right-widget__btn {
-        pointer-events: auto;
-        z-index: 99;
-        line-height: 1;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        background-color: $right-widget-background-color;
-        border: 0;
-        border-radius: 0 0 0 4px;
-        -webkit-user-select: none;  /* Chrome all / Safari all */
-        -moz-user-select: none;     /* Firefox all */
-        -ms-user-select: none;      /* IE 10+ */
-        user-select: none;          /* Likely future */
-        height: 30px;
-        width: 100%;
-        max-width: 30px;
+    .right-widget__component-type1 {
+      border-left: 1px solid $primary-color;
+      padding-left: 10px;
     }
-    .right-widget__body {
-        pointer-events: auto;
-        display: inline-block;
-        width: 100%;
-        background-color: $right-widget__body-backgroundcolor;
-        padding: 0 1em 1em 1em;
-        .right-widget__component-title {
-            font-weight: bold;
-            font-size: 1.4em;
-            color: white;
-            margin: 8px 0 4px 0;
+    .right-widget__toc {
+      font-weight: lighter;
+      a {
+        color: white;
+        &:visited {
+          color: white;
         }
-        .right-widget__component-type1 {
-            border-left: 1px solid $primary-color;
-            padding-left: 10px;
+        &:hover {
+          text-decoration: underline;
         }
-        .right-widget__toc {
-            font-weight: lighter;
-            a {
-                color: white;
-                &:visited {
-                    color: white;
-                }
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-            ul {
-                padding-left: 10px;
-                &:first-child {
-                    padding-left: 0;
-                }
-            }
-            li.active {
-                background-color: dimgray;
-            }
+      }
+      ul {
+        padding-left: 10px;
+        &:first-child {
+          padding-left: 0;
         }
+      }
+      li.active {
+        background-color: dimgray;
+      }
     }
+  }
 }

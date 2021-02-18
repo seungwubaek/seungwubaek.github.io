@@ -1,206 +1,206 @@
 .sidebar {
+  // [Warning] fixed topbar covers content. If we use inner page link(move to #anchor),
+  //    the browser scroll view's top coordinate to #anchor's top coordinate.
+  //    but, top coordinate was occupied by topbar.
+  // masthead position is fixed. So, padding from masthead__inner-wrap + height masthead__menu
+  top: calc(#{$mymasthead-height} + 0.5em);  // masthead height + a little additional space
+
+  .nav__list {
+    margin-top: 20px;
+    .nav__items {
+      .nav__sub-title {
+        font-size: $mysidebar-font-size;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        cursor: pointer;
+        .nav__sub-title-set {
+          display: flex;
+          width: 100%;
+          .nav__sub-title-name {
+            display: flex;
+            width: 100%;
+            a {
+              display: flex;
+              width: 100%;
+              justify-content: space-between;
+            }
+          }
+          .nav__sub-title-dropdownicon {
+            text-align: right;
+            margin-top: auto;
+            margin-bottom: auto;
+            .fas.fa-plus.empty-icon {
+              opacity: 0;
+            }
+          }
+        }
+      }
+      ul.nav__item-children {
+        text-align: right;
+        margin-bottom: 0;
+        overflow-y: hidden;
+        max-height: 0;
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+        & > li {
+          font-size: $mysidebar-item-font-size;
+        }
+      }
+      .nav__sub-title-stat, .nav__item-children-stat {
+        align-self: center;
+        margin-right: 4px;
+        background-color: mix(orangered, #fff, 85%);
+        color: white;
+        font-size: 11px;
+        padding-left: 6px;
+        padding-right: 6px;
+        border-radius: 8px;
+        font-weight: normal;
+      }
+      .nav__item-children-stat {
+        margin-left: 8px;
+        margin-right: 0;
+      }
+    }
+    #ac-toc, label[for=ac-toc] {
+      display: none;
+    }
+  }
+
+  .author__content {
+    .author__bio {
+      font-size: $author-bio-font-size;
+    }
+  }
+  .author__urls-wrapper {
+    font-size: $author-bio-font-size;
+  }
+
+  &.sticky { // Only when sidebar sticky, specifically
     // [Warning] fixed topbar covers content. If we use inner page link(move to #anchor),
-    //      the browser scroll view's top coordinate to #anchor's top coordinate.
-    //      but, top coordinate was occupied by topbar.
-    // masthead position is fixed. So, padding from masthead__inner-wrap + height masthead__menu
-    top: calc(#{$mymasthead-height} + 0.5em);  // masthead height + a little additional space
+    //    the browser scroll view's top coordinate to #anchor's top coordinate.
+    //    but, top coordinate was occupied by topbar.
+    position: sticky;  // change 'sticky' to 'fixed'.
+    opacity: 1;  // Remove row opacity animation After/Before hovering
+    padding-bottom: 1em;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: black;
+      border-radius: 2px;
+      opacity: .4;
+    }
+    &::-webkit-scrollbar-track {
+      background: $navicon-link-color-hover;
+    }
+
+    width: $mysidebar-width;  // important! it decide scrollbar position!
 
     .nav__list {
-        margin-top: 20px;
-        .nav__items {
-            .nav__sub-title {
-                font-size: $mysidebar-font-size;
-                padding-bottom: 0;
-                margin-bottom: 0;
-                cursor: pointer;
-                .nav__sub-title-set {
-                    display: flex;
-                    width: 100%;
-                    .nav__sub-title-name {
-                        display: flex;
-                        width: 100%;
-                        a {
-                            display: flex;
-                            width: 100%;
-                            justify-content: space-between;
-                        }
-                    }
-                    .nav__sub-title-dropdownicon {
-                        text-align: right;
-                        margin-top: auto;
-                        margin-bottom: auto;
-                        .fas.fa-plus.empty-icon {
-                            opacity: 0;
-                        }
-                    }
-                }
-            }
-            ul.nav__item-children {
-                text-align: right;
-                margin-bottom: 0;
-                overflow-y: hidden;
-                max-height: 0;
-                -webkit-transition: all 200ms linear;
-                transition: all 200ms linear;
-                & > li {
-                    font-size: $mysidebar-item-font-size;
-                }
-            }
-            .nav__sub-title-stat, .nav__item-children-stat {
-                align-self: center;
-                margin-right: 4px;
-                background-color: mix(orangered, #fff, 85%);
-                color: white;
-                font-size: 11px;
-                padding-left: 6px;
-                padding-right: 6px;
-                border-radius: 8px;
-                font-weight: normal;
-            }
-            .nav__item-children-stat {
-                margin-left: 8px;
-                margin-right: 0;
-            }
-        }
-        #ac-toc, label[for=ac-toc] {
-            display: none;
-        }
+      width: $mysidebar-width - $mysidebar-scroll-width;
     }
 
-    .author__content {
-        .author__bio {
-            font-size: $author-bio-font-size;
-        }
-    }
-    .author__urls-wrapper {
-        font-size: $author-bio-font-size;
-    }
+    .author__profile-set {
+      width: $mysidebar-width - $mysidebar-scroll-width;
+      margin-bottom: 0;
 
-    &.sticky { // Only when sidebar sticky, specifically
-        // [Warning] fixed topbar covers content. If we use inner page link(move to #anchor),
-        //      the browser scroll view's top coordinate to #anchor's top coordinate.
-        //      but, top coordinate was occupied by topbar.
-        position: sticky;  // change 'sticky' to 'fixed'.
-        opacity: 1;  // Remove row opacity animation After/Before hovering
-        padding-bottom: 1em;
+      .author__avatar {
+        width: auto;
+        height: auto;
+      }
 
-        &::-webkit-scrollbar {
-            width: 4px;
-        }
-        &::-webkit-scrollbar-thumb {
-            background: black;
-            border-radius: 2px;
-            opacity: .4;
-        }
-        &::-webkit-scrollbar-track {
-            background: $navicon-link-color-hover;
-        }
+      .author__content {
+        padding-right: 0;
+      }
 
-        width: $mysidebar-width;  // important! it decide scrollbar position!
-
-        .nav__list {
-            width: $mysidebar-width - $mysidebar-scroll-width;
-        }
-
-        .author__profile-set {
-            width: $mysidebar-width - $mysidebar-scroll-width;
-            margin-bottom: 0;
-
-            .author__avatar {
-                width: auto;
-                height: auto;
+      .author__urls {
+        &.social-icons {
+          a, span {
+            padding: 0;
+          }
+          li {
+             a {
+               font-size: 1.5em;
+             }
+          }
+          li[itemprop="homeLocation"] {
+            i {
+              font-size: 1.2em;
             }
-
-            .author__content {
-                padding-right: 0;
-            }
-
-            .author__urls {
-                &.social-icons {
-                    a, span {
-                        padding: 0;
-                    }
-                    li {
-                       a {
-                           font-size: 1.5em;
-                       }
-                    }
-                    li[itemprop="homeLocation"] {
-                        i {
-                            font-size: 1.2em;
-                        }
-                    }
-                }
-            }
+          }
         }
+      }
     }
+  }
 
-    // When sidebar is not sticky
-    .author__avatar {
-        width: 70px;
-        height: 70px;
-    }
+  // When sidebar is not sticky
+  .author__avatar {
+    width: 70px;
+    height: 70px;
+  }
 
-    .author__content {
-        padding-right: 15px;
-    }
+  .author__content {
+    padding-right: 15px;
+  }
 
-    & .author__urls-wrapper {
-        cursor: none;
-        ul.social-icons {
-            margin-top: 10px;
-        }
-        .social-icons {
-            li {
-                display: inline-block;
-                margin: 4px 0 0 0;
-                a {
-                    padding: 0;
-                    margin-bottom: 0;
-                    font-size: 1.5em;
-                }
-                span {
-                    padding: 0 5px 0 0;
-                }
-            }
-            li[itemprop="homeLocation"] {
-                display: list-item;
-                padding-top: 0;
-                i {
-                    font-size: 1.2em;
-                }
-            }
-        }
-        .btn {
-            font-size: 1em;
-        }
+  & .author__urls-wrapper {
+    cursor: none;
+    ul.social-icons {
+      margin-top: 10px;
     }
+    .social-icons {
+      li {
+        display: inline-block;
+        margin: 4px 0 0 0;
+        a {
+          padding: 0;
+          margin-bottom: 0;
+          font-size: 1.5em;
+        }
+        span {
+          padding: 0 5px 0 0;
+        }
+      }
+      li[itemprop="homeLocation"] {
+        display: list-item;
+        padding-top: 0;
+        i {
+          font-size: 1.2em;
+        }
+      }
+    }
+    .btn {
+      font-size: 1em;
+    }
+  }
 }
 
 .sidebar__right {
-    &.sticky {
-        top: calc(#{$mymasthead-height} + 0.5em);
-        max-height: calc(100vh - #{$initial-content-top});
-        &::-webkit-scrollbar {
-            width: 4px;
-        }
-        &::-webkit-scrollbar-thumb {
-            background: black;
-            border-radius: 2px;
-            opacity: .4;
-        }
-        &::-webkit-scrollbar-track {
-            background: $navicon-link-color-hover;
-        }
+  &.sticky {
+    top: calc(#{$mymasthead-height} + 0.5em);
+    max-height: calc(100vh - #{$initial-content-top});
+    &::-webkit-scrollbar {
+      width: 4px;
     }
-    .toc {
-        .nav__title {
-            margin-top: 0;
-        }
-        // Scrollspy marks toc items as .active when they are in focus
-        .active > a {
-            @include yiq-contrasted($active-color);
-            text-decoration: underline;
-        }
+    &::-webkit-scrollbar-thumb {
+      background: black;
+      border-radius: 2px;
+      opacity: .4;
     }
+    &::-webkit-scrollbar-track {
+      background: $navicon-link-color-hover;
+    }
+  }
+  .toc {
+    .nav__title {
+      margin-top: 0;
+    }
+    // Scrollspy marks toc items as .active when they are in focus
+    .active > a {
+      @include yiq-contrasted($active-color);
+      text-decoration: underline;
+    }
+  }
 }

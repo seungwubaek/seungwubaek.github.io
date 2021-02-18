@@ -11,10 +11,10 @@ post-order: 4
 
 * 부록: Fork의 목적
 
-    다른 사람의 Source를 가져다 쓰기 위해 Fork 하는 것은 Fork의 목적에 잘 부합하지 않는것 같다.
-    Fork의 목적은 어떤 Repository의 내용을 수정하고 수정 내역을 타인과 서로 비교하며 조율한 후 Repository에 수정을 반영하는 협업을 수행하는 것에 있는 것 같다.
+  다른 사람의 Source를 가져다 쓰기 위해 Fork 하는 것은 Fork의 목적에 잘 부합하지 않는것 같다.
+  Fork의 목적은 어떤 Repository의 내용을 수정하고 수정 내역을 타인과 서로 비교하며 조율한 후 Repository에 수정을 반영하는 협업을 수행하는 것에 있는 것 같다.
 
-    그래서 내 블로그를 Fork한 Repository가 아닌 새로운 Repository로 만들되 원래 의도대로 Fork 했었던 commit들은 다 가져오고 대신, 내가 한 commit이 아닌 Fork된 commit들은 전부 rebase 시키자
+  그래서 내 블로그를 Fork한 Repository가 아닌 새로운 Repository로 만들되 원래 의도대로 Fork 했었던 commit들은 다 가져오고 대신, 내가 한 commit이 아닌 Fork된 commit들은 전부 rebase 시키자
 
 ## 과정
 

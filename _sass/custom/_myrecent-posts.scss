@@ -1,13 +1,13 @@
 // for recent posts in main home layout
 .archive__item {
-    .page-meta {
-        margin: 0 0 4px;
-        line-height: 1.2;
-        .page__header-taxonomy {
-            font-size: .75em;
-        }
-        .page__header-meta {
-            font-size: .75em;
-        }
+  .page-meta {
+    margin: 0 0 4px;
+    line-height: 1.2;
+    .page__header-taxonomy {
+      font-size: .75em;
     }
+    .page__header-meta {
+      font-size: .75em;
+    }
+  }
 }

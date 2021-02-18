@@ -1,69 +1,69 @@
 // For 2020 Christmas Theme
 .greedy-nav {
-    .site-logo {
-        display: none;
+  .site-logo {
+    display: none;
+  }
+  .site-title {
+    padding-top: 2px;
+    margin: 0;
+    @include breakpoint($medium) {
+      padding-top: 0;
     }
-    .site-title {
-        padding-top: 2px;
-        margin: 0;
-        @include breakpoint($medium) {
-            padding-top: 0;
-        }
-        color: red;
-        text-shadow: 0 -2px white;
+    color: red;
+    text-shadow: 0 -2px white;
+  }
+  .site-title-icon {
+    max-height: 1.5em;
+    @include breakpoint($medium) {
+      margin-bottom: 4px;
     }
-    .site-title-icon {
-        max-height: 1.5em;
-        @include breakpoint($medium) {
-            margin-bottom: 4px;
-        }
-    }
+  }
 }
 
 .sidebar {
-    .nav__items {
-        .nav__sub-title-set {
-            .nav__sub-title-set-icon {
-                height: 20px;
-                width: 20px;
-                margin-top: auto;
-                margin-bottom: auto;
-            }
-        }
+  .nav__items {
+    .nav__sub-title-set {
+      .nav__sub-title-set-icon {
+        height: 20px;
+        width: 20px;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
     }
-    .author__avatar {
-        img {
-            @include breakpoint($medium){
-                    width: auto;
-                    max-width: unset;
-                    max-height: 127px;
-            }
-        }
+  }
+  .author__avatar {
+    img {
+      @include breakpoint($medium){
+          width: auto;
+          max-width: unset;
+          max-height: 127px;
+      }
     }
+  }
 }
 
 .archive {
-    margin-top: 0;
-    .page__title {
-        display: none;
+  margin-top: 0;
+  .page__title {
+    display: none;
+  }
+  .home-image-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    background-color: rgb(169, 209, 142);
+    .home-image {
+      max-height: 200px;
     }
-    .home-image-wrapper {
-        display: flex;
-        justify-content: center;
-        height: 200px;
-        background-color: rgb(169, 209, 142);
-        .home-image {
-            max-height: 200px;
-        }
-    }
-    .recent-posts-icon {
-        width: 1em;
-        height: 1em;
-    }
+  }
+  .recent-posts-icon {
+    width: 1em;
+    height: 1em;
+  }
 }
 
 .page__footer {
-    .footer-copyright-icon {
-        height: 2em;
-    }
+  .footer-copyright-icon {
+    height: 2em;
+  }
 }

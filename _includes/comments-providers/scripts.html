@@ -1,7 +1,7 @@
 {% if site.comments.provider and page.comments %}
 {% case site.comments.provider %}
   {% when "disqus" %}
-    {% include /comments-providers/disqus.html %}
+  {% include /comments-providers/disqus.html %}
   {% when "discourse" %}
     {% include /comments-providers/discourse.html %}
   {% when "facebook" %}

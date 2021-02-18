@@ -7,18 +7,18 @@
 {% for item in toc_array %}
 {% assign item_url = item.url | downcase %}
 {% if indent <= default_fold_indent %}
-    {% assign class_fold_folder = "fas fa-folder-open fa-fw" %}
-    {% assign class_fold_list = "" %}
+  {% assign class_fold_folder = "fas fa-folder-open fa-fw" %}
+  {% assign class_fold_list = "" %}
 {% else %}
-    {% assign class_fold_folder = "fas fa-folder fa-fw" %}
-    {% assign class_fold_list = "fold" %}
+  {% assign class_fold_folder = "fas fa-folder fa-fw" %}
+  {% assign class_fold_list = "fold" %}
 {% endif %}
 
 {% assign category_id = item.title | downcase | replace: " ", "-" %}
 {% if include.prefix_category_id %}
-    {% assign category_id = "toc-" | append: category_id %}
+  {% assign category_id = "toc-" | append: category_id %}
 {% else %}
-    {% assign category_id = parent_category_id | append: "|" | append: category_id %}
+  {% assign category_id = parent_category_id | append: "|" | append: category_id %}
 {% endif %}
 
 <li class="wholetoc__category-item" indentation-level="{{ indent }}">

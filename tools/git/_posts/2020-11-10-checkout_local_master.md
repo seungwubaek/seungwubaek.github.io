@@ -24,7 +24,7 @@ git checkout -B master <이동 목적지 commit hash>
 
 * 옵션 `-B <branch name>`
 
-    `<branch name>`이라는 이름으로 새로운 브랜치를 만든다. 만약 `<branch name>`이름의 브랜치가 이미 존재한다면, 해당 브랜치를 checkout 하려는 목적지 commit의 상태로 되돌린다.
+  `<branch name>`이라는 이름으로 새로운 브랜치를 만든다. 만약 `<branch name>`이름의 브랜치가 이미 존재한다면, 해당 브랜치를 checkout 하려는 목적지 commit의 상태로 되돌린다.
 
 ## Example
 

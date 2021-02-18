@@ -9,23 +9,23 @@
 {% assign initial_search_array = search_array %}
 
 {% for s_url_item in s_url_orig_list %}
-    {% for search_item in search_array %}
-        {% assign search_item_title = search_item.title | downcase | replace: '%20', '-' | replace: ' ', '-'%}
-        {% if search_item_title == s_url_item %}
-            {% assign search_array = search_item.children %}
-            {% assign children_depth =  children_depth | plus: 1 %}
-        {% endif %}
-    {% endfor %}
+  {% for search_item in search_array %}
+    {% assign search_item_title = search_item.title | downcase | replace: '%20', '-' | replace: ' ', '-'%}
+    {% if search_item_title == s_url_item %}
+      {% assign search_array = search_item.children %}
+      {% assign children_depth =  children_depth | plus: 1 %}
+    {% endif %}
+  {% endfor %}
 {% endfor %}
 
 {% assign search_array_size = search_array | size %}
 {% if search_array_size > 0 %}
-    {% unless initial_search_array == search_array %}
-    <ul>
-        {% for item in search_array %}
-        <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
-        {% include functions/make_post_list.html start_url=item.url %}
-        {% endfor %}
-    </ul>
-    {% endunless %}
+  {% unless initial_search_array == search_array %}
+  <ul>
+    {% for item in search_array %}
+    <h2><a href="{{ item.url }}">{{ item.title }}</a></h2>
+    {% include functions/make_post_list.html start_url=item.url %}
+    {% endfor %}
+  </ul>
+  {% endunless %}
 {% endif %}

@@ -1,27 +1,27 @@
 .gsc-input-box {
-    table {
-        margin-bottom: 0;
-    }
+  table {
+    margin-bottom: 0;
+  }
 }
 .gsc-input {
-    input {
-        box-shadow: none;
-        &:focus {
-            box-shadow: none;
-        }
-        overflow-y: hidden;
+  input {
+    box-shadow: none;
+    &:focus {
+      box-shadow: none;
     }
+    overflow-y: hidden;
+  }
 }
 
 .adsbygoogle {
-    & + script {
-        display: none;
-        & + p {
-            margin-top: 1em;
-        }
+  & + script {
+    display: none;
+    & + p {
+      margin-top: 1em;
     }
+  }
 }
 
 .sidebar__right.sticky {
-    max-height: none;
+  max-height: none;
 }

@@ -1,35 +1,35 @@
 .highlighter-rouge {
-    .highlight {
-        border-radius: 4px;
-        pre.highlight {
-            padding: 8px;
-        }
-        .rouge-code {
-            vertical-align: top;
-        }
+  .highlight {
+    border-radius: 4px;
+    pre.highlight {
+      padding: 8px;
     }
+    .rouge-code {
+      vertical-align: top;
+    }
+  }
 }
 
 table.rouge-table{
-    overflow: auto;
-    &::-webkit-scrollbar {
-        background-color: transparent;
-    }
-    &::-webkit-scrollbar:horizontal {
-        height: 8px;
-    }
-    &::-webkit-scrollbar:vertical {
-        width: 8px;
-    }
-    &::-webkit-scrollbar-thumb {
-        -webkit-border-radius: 8px;
-        border-radius: 8px;
-        background-color: #6272a4;
-    }
-    &::-webkit-scrollbar-corner {
-        background-color: transparent;
-    }
-    &::-webkit-scrollbar-button {
-        display: none;
-    }
+  overflow: auto;
+  &::-webkit-scrollbar {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar:horizontal {
+    height: 8px;
+  }
+  &::-webkit-scrollbar:vertical {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background-color: #6272a4;
+  }
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
 }

@@ -1,11 +1,11 @@
 .page__share {
-    .btn--kakao {
-        .kakao-symbol {
-            width: 14px;
-            margin-bottom: 1px;
-        }
-        &:hover {
-            color: mix(#000000, #fff, 85%);
-        }
+  .btn--kakao {
+    .kakao-symbol {
+      width: 14px;
+      margin-bottom: 1px;
     }
+    &:hover {
+      color: mix(#000000, #fff, 85%);
+    }
+  }
 }
