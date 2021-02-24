@@ -148,6 +148,16 @@ kbd {
   }
 }
 
+.md-reference {
+  &:before {
+    content: "Reference:";
+    font-weight: bold;
+  }
+  ul {
+    margin-top: .5em;
+  }
+}
+
 /* Posting - Special Style: Poem */
 .poem-author-note-top, .poem-author-note-bottom {
   font-size: .8em;
