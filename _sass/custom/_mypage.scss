@@ -1,5 +1,4 @@
 .page {
-  font-weight: 300;
   @include breakpoint($large) {
     padding-left: 1em;
     width: calc(100% - #{$mysidebar-width} - 1em); // -1em from _mixins for padding of <div id='main'>.
@@ -57,7 +56,6 @@
 }
 
 .page__related {
-  font-weight: 300;
   @include breakpoint($large) {
     width: calc(100% - #{$mysidebar-width} - 1em); // -1em from _mixins for padding of <div id='main'>.
   }
