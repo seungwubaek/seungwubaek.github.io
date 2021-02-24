@@ -69,7 +69,8 @@ Data Science, AI 기술 등 IT 기술 모두를 주제로 다룸.<br/>
 그리고 그 시절 생소했던 자율 자동차는 Elon Musk의 테슬라 등, 지금의 우리에겐 매우 익숙하다. 바로 과거의 나 처럼.
 
 Elon Musk의 사상이 나와 통하는 점이 많은 것 같다.
-<span class="md-monologue">인성은 영 아님. ㅋ 내가 테슬라 투자를 하지 않은 이유가 Elon Musk 인성 때문이었음...</span>
+<span class="md-monologue">다만 인성에 미심적은 부분이 있다고 생각했음..
+내가 테슬라 투자를 하지 않은 이유가 그 때문이었는데, 크게 잘못 생각했지 ㅋ</span>
 
 # 나
 
