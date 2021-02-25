@@ -17,6 +17,12 @@
       figcaption {
         .mfp-bottom-bar {
           margin-top: 4px;
+          .mfp-title {
+            a {
+              color: white;
+              font-family: $sans-serif;
+            }
+          }
         }
       }
     }
