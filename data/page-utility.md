@@ -21,7 +21,7 @@ toc-top: true
 
 (클릭해보기)<br/>
 ![CNN Structure]({{ site.gdrive_url_prefix }}1N5DRVwVs4MtD2RLz2N6BwaINFyFcbbFb)
-{:style="margin-bottom: 0;" class="img-popup" data-title="특별 출연한 귀여운 고양이의 이름은 <strong>까무</strong>입니다 😆"}
+{:class="img-popup" data-title="특별 출연한 귀여운 고양이의 이름은 <strong>까무</strong>입니다 😆"}
 
 ## 포스트 맨 밑에 Reference
 
