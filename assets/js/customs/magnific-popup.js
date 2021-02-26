@@ -11,10 +11,12 @@ $(function() {
     },
     image: {
       tError: '<a href="%url%">Image #%curr%</a> could not be loaded.',
+      verticalFit: true,
 			titleSrc: function(item) {
 				return item.el.parent().data('title');
 			}
 		},
+    closeBtnInside: false,
     mainClass: 'mfp-zoom-in',
     callbacks: {
       elementParse: function(item) {

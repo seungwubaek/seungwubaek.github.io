@@ -2,26 +2,27 @@
 .mfp-iframe-holder {
   .mfp-content .mfp-figure {
     position: relative;
+    padding: 0;
     .mfp-close {
-      cursor: pointer;
-      position: absolute;
-      top: -44px;
-      width: 44px;
-      text-align: center;
+      display: none;
     }
     figure {
+      margin: 0 60px;
       img {
         cursor: initial;
-        padding: 0;
+        padding: 0 0 40px 0;
       }
       figcaption {
         .mfp-bottom-bar {
-          margin-top: 4px;
           .mfp-title {
+            padding-left: 60px;
             a {
               color: white;
               font-family: $sans-serif;
             }
+          }
+          .mfp-counter {
+            padding-right: 60px;
           }
         }
       }

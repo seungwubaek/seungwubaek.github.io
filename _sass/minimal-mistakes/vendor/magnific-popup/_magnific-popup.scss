@@ -477,20 +477,20 @@ button {
   /* The shadow behind the image */
   .mfp-figure {
     line-height: 0;
-    &:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: $mfp-image-padding-top;
-      bottom: $mfp-image-padding-bottom;
-      display: block;
-      right: 0;
-      width: auto;
-      height: auto;
-      z-index: -1;
-      box-shadow: $mfp-shadow;
-      background: $mfp-image-background;
-    }
+    // &:after {
+    //   content: '';
+    //   position: absolute;
+    //   left: 0;
+    //   top: $mfp-image-padding-top;
+    //   bottom: $mfp-image-padding-bottom;
+    //   display: block;
+    //   right: 0;
+    //   width: auto;
+    //   height: auto;
+    //   z-index: -1;
+    //   box-shadow: $mfp-shadow;
+    //   background: $mfp-image-background;
+    // }
     small {
       color: $mfp-caption-subtitle-color;
       display: block;
