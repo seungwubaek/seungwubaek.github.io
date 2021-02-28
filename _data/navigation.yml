@@ -42,13 +42,8 @@ main-sidebar:
   - title: "Deep Learning"
     url: "/deep-learning/"
     children:
-    - title: "CNN"
-      url: "/deep-learning/cnn/"
-      children:
-      - title: "CAM"
-        url: "/deep-learning/cnn/cam/"
-    - title: "VGG"
-      url: "/deep-learning/vgg/"
+    - title: "Computer Vision"
+      url: "/deep-learning/computer-vision/"
   - title: "Mathematics"
     url: "/mathematics/"
     children:
