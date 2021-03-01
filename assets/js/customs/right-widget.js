@@ -22,7 +22,7 @@ if($('nav.right-widget__toc').length > 0) {
 /* for responsive web */
 var $rWidget = undefined;
 var $rWidgetResizer = undefined;
-var rWidgetMaxWidth = JSON.parse(sessionStorage.getItem('rWidgetWidth')) || 400; // It should be equal with _variables.scss's widget initial width size.
+var rWidgetMaxWidth = JSON.parse(sessionStorage.getItem('rWidgetMaxWidth')) || 400; // It should be equal with _variables.scss's widget initial width size.
 var rWidgetWidthMin = 245;
 var btnWidth = 0;
 function reloadRightWidget(skipBtnReloadAni) {
@@ -89,10 +89,11 @@ function resizableWidget() {
 }
 
 function resizeWidgetWidth(e) {
-  rWidgetMaxWidth = Math.max(window.innerWidth - e.pageX + btnWidth, rWidgetWidthMin);
-  rWidgetMaxWidth = Math.min(window.innerWidth, rWidgetMaxWidth);
+  var windowWidth = $(window).width();
+  rWidgetMaxWidth = Math.max(windowWidth - e.pageX + btnWidth, rWidgetWidthMin);
+  rWidgetMaxWidth = Math.min(windowWidth, rWidgetMaxWidth);
   $rWidget.css('max-width', rWidgetMaxWidth);
-  sessionStorage.setItem('rWidgetWidth', JSON.stringify(rWidgetMaxWidth));
+  sessionStorage.setItem('rWidgetMaxWidth', JSON.stringify(rWidgetMaxWidth));
 }
 
 function stopResizeWidgetWidth(e) {
