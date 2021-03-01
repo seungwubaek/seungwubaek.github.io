@@ -1,13 +1,14 @@
 <div class="right-widget hide">
   <div class="right-widget__btn" onclick="rightWidgetToggle()"><div class="nav-arrow-left"></div></div>
   <div class="right-widget__body">
-  {% if page.right-widget.toc %}
-  <div class="right-widget__component-title">Table Of Contents</div>
-  <div class="right-widget__component-type1">
-    <nav class="right-widget__toc">
-    {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="right-widget__toc__menu" %}
-    </nav>
-  </div>
-  {% endif %}
+    <div class="right-widget__resizer"></div>
+    {% if page.right-widget.toc %}
+    <div class="right-widget__component-title">Table Of Contents</div>
+    <div class="right-widget__component-type1">
+      <nav class="right-widget__toc">
+      {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="right-widget__toc__menu" %}
+      </nav>
+    </div>
+    {% endif %}
   </div>
 </div>

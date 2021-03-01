@@ -78,6 +78,16 @@
     width: 100%;
     background-color: $right-widget__body-backgroundcolor;
     padding: 0 1em 1em 1em;
+    position: relative;
+    .right-widget__resizer {
+      position: absolute;
+      width: 6px;
+      height: 100%;
+      left: 0;
+      &:hover {
+        cursor: ew-resize;
+      }
+    }
     .right-widget__component-title {
       font-weight: bold;
       font-size: 1.4em;
