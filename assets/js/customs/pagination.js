@@ -121,6 +121,18 @@ if($sitePaginator.length > 0) {
     return html;
   }
 
+  function drawAjaxError(jqXHR, textStatus, errorMsg) {
+    console.log(jqXHR);
+    console.log(textStatus);
+    console.log(errorMsg);
+    var $paginationList = $('#site-pagination-list');
+    var err_msg = `
+    <h1 style="margin-bottom: 4px;">Error Occured</h1>
+    <span style="font-size: .75em;">Detailed Below</span>
+    <p>${jqXHR.responseText}</p>`;
+    $paginationList.html(err_msg);
+  }
+
   function loadPaginator() {
     $sitePaginator.pagination({
       dataSource: function(done) {
@@ -132,11 +144,7 @@ if($sitePaginator.length > 0) {
               totalData = {'data': response};
               done(response);
             },
-            error: function(req, stat, err) {
-              console.log(req);
-              console.log(stat);
-              console.log(err);
-            }
+            error: drawAjaxError
           });
         } else {
           done(totalData['data'])
@@ -168,16 +176,7 @@ if($sitePaginator.length > 0) {
             }
           });
         })
-        .fail(function( jqXHR, textStatus, errorThrown) {
-          console.log(jqXHR);
-          console.log(textStatus);
-          console.log(errorThrown);
-          var $paginationList = $('#site-pagination-list');
-          var msg = `
-          <p>${textStatus}</p>
-          <p>${errorThrown}</p>`;
-          $paginationList.html(msg);
-        });
+        .fail(drawAjaxError);
       }
     });
 
