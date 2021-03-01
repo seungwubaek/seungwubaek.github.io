@@ -42,7 +42,7 @@ function getStatFromGroupByCategories(postsGroupByCats, targetCategories, target
 var postsGroupByCats = {};
 $(function(){
     $.ajax({
-        url: location.origin + '/' + 'posts-info.json',
+        url: location.origin + '/data/' + 'posts-info.json',
         dataType: 'json',
         success: function(data) {
             // Aggregate Statistics
