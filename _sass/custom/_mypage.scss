@@ -98,10 +98,11 @@
 
 footer.page__meta {
   margin-top: 2em;
-  padding-top: 1em;
+  padding-top: 2em;
   border-top: 1px solid $border-color;
   line-height: 1.5;
   .page__meta-title {
+    margin-top: 0;
     text-transform: none;
     margin-bottom: 10px;
     font-size: 1.3em;
@@ -114,11 +115,16 @@ footer.page__meta {
   }
 }
 
-.page__share-title {
-  text-transform: none;
-  font-size: 1.3em;
-  i {
-    margin-right: 4px;
+section.page__share {
+  margin-top: 2em;
+  padding-top: 2em;
+  .page__share-title {
+    margin-top: 0;
+    text-transform: none;
+    font-size: 1.3em;
+    i {
+      margin-right: 4px;
+    }
   }
 }
 
