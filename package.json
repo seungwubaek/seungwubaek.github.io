@@ -26,7 +26,7 @@
   },
   "scripts": {
     "uglify": "uglifyjs assets/js/vendor/jquery/jquery-3.4.1.js assets/js/plugins/jquery.fitvids.js assets/js/plugins/jquery.magnific-popup.js assets/js/plugins/jquery.ba-throttle-debounce.js assets/js/plugins/pagination-2.1.5.js assets/js/plugins/smooth-scroll.js assets/js/plugins/gumshoe.js assets/js/plugins/clipboard.js assets/js/_main.js -c -m -o assets/js/main.min.js",
-    "uglify-customs": "uglifyjs assets/js/customs/common.js assets/js/customs/nav-remocon.js assets/js/customs/whole-toc.js assets/js/customs/simple-notice.js assets/js/customs/sidebar.js assets/js/customs/auto-scroll.js assets/js/customs/responsive-topbar.js assets/js/customs/copy-to-clipboard.js assets/js/customs/fold-code-block.js assets/js/customs/statistics.js assets/js/customs/lang-pack.js assets/js/customs/right-widget.js assets/js/customs/pagination.js assets/js/customs/magnific-popup.js -c -m -o assets/js/customs.min.js",
+    "uglify-customs": "uglifyjs assets/js/customs/common.js assets/js/customs/nav-remocon.js assets/js/customs/whole-toc.js assets/js/customs/simple-notice.js assets/js/customs/sidebar.js assets/js/customs/auto-scroll.js assets/js/customs/responsive-topbar.js assets/js/customs/copy-to-clipboard.js assets/js/customs/fold-code-block.js assets/js/customs/statistics.js assets/js/customs/lang-pack.js assets/js/customs/right-widget.js assets/js/customs/site-pagination.js assets/js/customs/magnific-popup.js -c -m -o assets/js/customs.min.js",
     "uglify-kakao-custom": "uglifyjs assets/js/customs/kakao.js -c -m -o assets/js/kakao-custom.min.js",
     "add-banner": "node banner.js",
     "custom-all:js": "npm run uglify-customs && npm run uglify-kakao-custom && npm run add-banner",
