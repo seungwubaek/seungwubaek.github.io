@@ -46,9 +46,13 @@
     list-style-type: none;
     padding: 0;
     margin: 0;
+    a {
+      white-space: nowrap;
+    }
   }
   ul {
     display: flex;
+    flex-wrap: wrap;
   }
   li:not(:last-child) {
     margin-right: 4px;
