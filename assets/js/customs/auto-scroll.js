@@ -4,11 +4,6 @@
 // So, scrollTo Y position is needed tiny pulling to downward ( -1 px )
 //   for getting class "activate" by gumshoe more clearly.
 $(function(){
-    top_offset = window.innerHeight * 0.27 - 1;
-    function scrollToHash(h) {
-        var yPos = $(h).offset().top - top_offset;
-        scrollTo({top: yPos, behavior: 'smooth'});
-    }
     // [2-1] If came from external page.
     //       You'd clicked link, has 'id' attr, from other page and moved to this page.
     if(location.hash.length > 0) {
