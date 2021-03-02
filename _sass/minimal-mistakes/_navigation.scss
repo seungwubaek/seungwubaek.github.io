@@ -84,7 +84,8 @@
       border-radius: 0;
 
       &:hover {
-        color: $link-color-hover;
+        // color: $link-color-hover;
+        background-color: $border-color;
       }
 
       &.current,

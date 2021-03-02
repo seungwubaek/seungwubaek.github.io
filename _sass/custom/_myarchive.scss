@@ -160,6 +160,9 @@
       }
       .paginationjs-go-button {
         margin-top: 4px;
+        input:hover {
+          background-color: $border-color;
+        }
       }
     }
   }
