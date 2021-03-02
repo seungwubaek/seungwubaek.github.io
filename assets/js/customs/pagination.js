@@ -1,4 +1,5 @@
 var $sitePaginator = $('#site-paginator');
+var isPaginatorInitialized = false;
 
 if($sitePaginator.length > 0) {
   var totalData = undefined;
@@ -177,6 +178,14 @@ if($sitePaginator.length > 0) {
           });
         })
         .fail(drawAjaxError);
+      },
+      afterPaging: function() {
+        if(isPaginatorInitialized) {
+          scrollToHash('#recent-posts');
+        }
+      },
+      afterInit: function() {
+        isPaginatorInitialized = true;
       }
     });
 
