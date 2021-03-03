@@ -179,3 +179,27 @@
     }
   }
 }
+
+.post-pagination {
+  margin-top: 2em;
+  padding-top: 2em;
+  &.hidden {
+    display: none;
+  }
+  .pagination__pager {
+    display: inline-block;
+    font-weight: bold;
+    color: black;
+    &.pager-prev {
+      float: left;
+      margin-right: .5em;
+    }
+    &.pager-next {
+      float: right;
+      margin-left: .5em;
+    }
+    &.pager-prev, &.pager-next {
+      margin-top: .5em;
+    }
+  }
+}

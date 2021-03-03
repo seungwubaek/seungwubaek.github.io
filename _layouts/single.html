@@ -41,6 +41,8 @@ layout: default
       </div>
       {% endunless %}
 
+      {% include my-post_pagination.html %}
+
       {% if page.share %}{% include my-social-share.html classes="page__share page__share-top" %}{% endif %}
 
       <section class="page__content" itemprop="text">
@@ -78,7 +80,7 @@ layout: default
 
       {% if page.share %}{% include social-share.html %}{% endif %}
 
-      {% include post_pagination.html %}
+      {% include my-post_pagination.html %}
     </div>
 
     {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}

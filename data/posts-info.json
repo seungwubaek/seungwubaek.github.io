@@ -14,6 +14,7 @@ layout: empty
 "url": "{{ post.url }}",
 "date": "{{ post.date | date: "%Y-%m-%d %H:%M:%S %z" }}",
 "last_modified_at": "{{ post.last_modified_at | date: "%Y-%m-%d %H:%M:%S %z" }}",
+{% if post.post-order %}"post-order": {{ post.post-order }},{% endif %}
 "excerpt": "{{ post.excerpt | newline_to_br | replace: "<br />", " " | strip_newlines | strip_html | strip }}"
 }{%- unless forloop.last -%},{% endunless %}
 {% endfor %}
