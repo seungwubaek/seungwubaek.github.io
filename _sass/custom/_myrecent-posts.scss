@@ -5,6 +5,11 @@
     line-height: 1.2;
     .page__header-taxonomy {
       font-size: .75em;
+      a {
+        &:hover {
+          background-color: mix(#000, #fff, 25%);
+        }
+      }
     }
     .page__header-meta {
       font-size: .75em;
