@@ -104,12 +104,12 @@ $(function(){
             let prevPost = postsInCurCats[curPathIdx-1];
             if(prevPost) {
               $('.pagination__pager.pager-prev').attr('href', prevPost.url+'#page-title');
-              $('.pagination__pager.pager-prev .pager-title').text(prevPost.title);
+              $('.pagination__pager.pager-prev .pager-title').text($('<textarea />').html(prevPost.title).text());
             } else $('.pagination__pager.pager-prev').css('display', 'none');
             let nextPost = postsInCurCats[curPathIdx+1];
             if(nextPost) {
               $('.pagination__pager.pager-next').attr('href', nextPost.url+'#page-title');
-              $('.pagination__pager.pager-next .pager-title').text(nextPost.title);
+              $('.pagination__pager.pager-next .pager-title').text($('<textarea />').html(nextPost.title).text());
             } else $('.pagination__pager.pager-next').css('display', 'none');
           }
         }
