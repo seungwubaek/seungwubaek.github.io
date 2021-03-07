@@ -187,12 +187,15 @@
     display: none;
   }
   .pagination__pager {
-    display: inline-block;
+    display: flex;
     font-weight: bold;
     color: black;
     &.pager-prev {
       float: left;
       margin-right: .5em;
+      .pager-arrow {
+        margin-right: 4px;
+      }
     }
     &.pager-next {
       float: right;
