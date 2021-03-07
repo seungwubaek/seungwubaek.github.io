@@ -193,6 +193,7 @@
     &.pager-prev {
       float: left;
       margin-right: .5em;
+      text-align: left;
       .pager-arrow {
         margin-right: 4px;
       }
@@ -200,6 +201,10 @@
     &.pager-next {
       float: right;
       margin-left: .5em;
+      text-align: right;
+      .pager-arrow {
+        margin-left: 4px;
+      }
     }
     &.pager-prev, &.pager-next {
       margin-top: .5em;
