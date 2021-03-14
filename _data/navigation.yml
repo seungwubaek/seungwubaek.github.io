@@ -84,6 +84,8 @@ main-sidebar:
       url: "/tools/aif360/"
     - title: "Git"
       url: "/tools/git/"
+    - title: "Numpy"
+      url: "/tools/numpy/"
   - title: "Blog"
     url: "/blog/"
     children:
