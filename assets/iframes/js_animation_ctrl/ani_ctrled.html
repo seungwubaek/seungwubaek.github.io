@@ -1,0 +1,58 @@
+<html>
+<head>
+<style>
+.test-parent {
+  width: 200px;
+  height: 50px;
+  position: relative;
+  border: 1px solid black;
+}
+.test-obj {
+  background-color: red;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  -webkit-transition: left 500ms linear;
+  transition: left 500ms linear;
+}
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+}
+body {
+  padding: 10px;
+  margin: 0;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+<button>Refresh</button>
+<div class="test-parent">
+  <div class="test-obj"></div>
+</div>
+<script>
+$('.test-obj').on('click', function() {
+  $selector = $(this);
+
+  selectorWidth = $selector.prop('clientWidth');
+  parentWidth = $('.test-parent').prop('clientWidth');
+  selectorRightLimit = parentWidth - selectorWidth;
+
+  $selector.addClass('notransition');
+  $selector.css('left', selectorRightLimit);
+  $selector.prop('offsetHeight');  // 이 코드를 넣으면 이 시점에서 강제 Reflow 발생
+  $selector.removeClass('notransition');
+  $selector.css('left', 50);
+});
+$('button').on('click', function() {
+  $selector = $('.test-obj');
+  $selector.addClass('notransition');
+  $selector.css('left', '');
+});
+</script>
+</body>
+</html>
