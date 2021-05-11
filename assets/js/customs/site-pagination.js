@@ -110,7 +110,7 @@ if($sitePaginator.length > 0) {
                   </span>
                 </div>
               </div>
-              <div class="archive__item-excerpt" itemprop="description" data-full-excerpt="${postExcerpt}">${postExcerpt}</div>
+              <div class="archive__item-excerpt" onclick=\"location.href='${post.url}#page-title'\" itemprop="description" data-full-excerpt="${postExcerpt}">${postExcerpt}</div>
               <div class="archive__item-excerpt-folder fold" onclick="toggleNavExcerpt(this);">펼치기</div>
             </article>
           </div>
