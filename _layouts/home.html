@@ -23,7 +23,7 @@ classes: wide
 
 <div id="site-pagination-list" class=".entries-list"></div>
 
-{% include ads/google/on_the_paginator.html %}
+{% comment %} {% include ads/google/on_the_paginator.html %} {% endcomment %}
 
 <div class="pagination paginator-area">
   <nav id="site-paginator"></nav>
@@ -32,3 +32,6 @@ classes: wide
     <div class="paginationjs-go-button"><input type="button" value="Go"></input></div>
   </div>
 </div>
+
+{% include ads/google/under_the_paginator.html %}
+{% include ads/google/under_the_paginator.html %}

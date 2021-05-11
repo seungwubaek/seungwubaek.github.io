@@ -4,21 +4,21 @@ var isPaginatorInitialized = false;
 if($sitePaginator.length > 0) {
   var totalData = undefined;
   var isEventAttached = false;
-  var ad_script =
-  `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <ins class="adsbygoogle"
-    style="display:block"
-    data-ad-format="fluid"
-    data-ad-layout-key="-gs+5+15-58+68"
-    data-ad-client="ca-pub-9480069633849139"
-    data-ad-slot="9523124851"></ins>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>`;
+  // var ad_script =
+  // `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  // <ins class="adsbygoogle"
+  //   style="display:block"
+  //   data-ad-format="fluid"
+  //   data-ad-layout-key="-gs+5+15-58+68"
+  //   data-ad-client="ca-pub-9480069633849139"
+  //   data-ad-slot="9523124851"></ins>
+  // <script>
+  //   (adsbygoogle = window.adsbygoogle || []).push({});
+  // </script>`;
 
-  $('.recent-posts__opt.sort button').on('click', function() {
-    $('.recent-posts__opt.sort-dropdown').toggleClass('visible');
-  });
+  // $('.recent-posts__opt.sort button').on('click', function() {
+  //   $('.recent-posts__opt.sort-dropdown').toggleClass('visible');
+  // });
 
   function toggleNavExcerpt(self) {
     var $excerpt = $(self).prev();
@@ -156,10 +156,10 @@ if($sitePaginator.length > 0) {
       showFirstOnEllipsisShow: false,
       activeClassName: 'current',
       callback: function(data, pagination) {
-        if(window.origin == 'https://seungwubaek.github.io') {
-          data.splice(2, 0, { 'ad': true, 'script': ad_script });
-          data.splice(5, 0, { 'ad': true, 'script': ad_script });
-        }
+        // if(window.origin == 'https://seungwubaek.github.io') {
+        //   data.splice(2, 0, { 'ad': true, 'script': ad_script });
+        //   data.splice(5, 0, { 'ad': true, 'script': ad_script });
+        // }
         $.ajax({
           url: '/data/ui-text.json',
           type: 'GET',
