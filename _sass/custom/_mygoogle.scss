@@ -25,3 +25,15 @@
 .sidebar__right.sticky {
   max-height: none;
 }
+
+#site-paginator__ad-boxes {
+  margin-top: 2em;
+  display: table;
+  td.ad-box {
+    border: 0;
+    text-align: center;
+    @include breakpoint($small) {
+      height: 150px;
+    }
+  }
+}
