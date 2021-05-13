@@ -44,11 +44,11 @@ Host <Alias Name>
 
 ### 사용 가능한 SSH 옵션명
 
-* HostName
+* HostName :<br/>
   ssh 접속하려는 서버의 주소. `/etc/hosts` 등의 alias 호스트명도 입력 가능하다.
-* User
+* User :<br/>
   ssh 접속하려는 서버의 계정명.
-* Port
+* Port :<br/>
   ssh 접속하려는 서버의 접속 포트.
 
 ### 사용법
