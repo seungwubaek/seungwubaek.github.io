@@ -16,9 +16,9 @@ if($sitePaginator.length > 0) {
   //   (adsbygoogle = window.adsbygoogle || []).push({});
   // </script>`;
 
-  // $('.recent-posts__opt.sort button').on('click', function() {
-  //   $('.recent-posts__opt.sort-dropdown').toggleClass('visible');
-  // });
+  $('.recent-posts__opt.sort button').on('click', function() {
+    $('.recent-posts__opt.sort-dropdown').toggleClass('visible');
+  });
 
   function toggleNavExcerpt(self) {
     var $excerpt = $(self).prev();
@@ -221,3 +221,12 @@ if($sitePaginator.length > 0) {
 
   loadPaginator();
 }
+
+$(document).on("click", function(event){
+  // reference from https://www.tutorialrepublic.com/faq/hide-dropdown-menu-on-click-outside-of-the-element-in-jquery.php#:~:text=Answer%3A%20Use%20the%20jQuery%20on,outside%20of%20the%20trigger%20element.
+  var closingBtn = $(".recent-posts__opt.sort button")[0];
+  var $sortDropdown = $('.recent-posts__opt.sort-dropdown');
+  if($sortDropdown.hasClass('visible') && closingBtn !== event.target){
+    $sortDropdown.removeClass('visible');
+  }
+});
