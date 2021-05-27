@@ -86,6 +86,8 @@ main-sidebar:
       url: "/tools/flask/"
     - title: "Git"
       url: "/tools/git/"
+    - title: "Jupyter Notebook"
+      url: "/tools/jupyter-notebook/"
     - title: "Numpy"
       url: "/tools/numpy/"
   - title: "Blog"
