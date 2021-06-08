@@ -29,6 +29,8 @@ main-sidebar:
       children:
       - title: "CPU"
         url: "/computing/computer/cpu/"
+    - title: "Hardware"
+      url: "/computing/hardware/"
     - title: "Linux"
       url: "/computing/linux/"
       children:
