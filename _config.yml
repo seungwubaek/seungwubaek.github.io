@@ -316,6 +316,10 @@ defaults:
       classes: wide
       toc: false
 
+head_scripts:
+  - /assets/js/heads.min.js
+  - /assets/js/head-customs.min.js
+
 footer_scripts:
   - /assets/js/main.min.js
   - /assets/js/customs.min.js
