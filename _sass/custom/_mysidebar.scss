@@ -5,8 +5,26 @@
   // masthead position is fixed. So, padding from masthead__inner-wrap + height masthead__menu
   top: calc(#{$mymasthead-height} + 0.5em);  // masthead height + a little additional space
 
+  .sidebar__meta {
+    margin: 0;
+    width: 100%;
+    ul {
+      margin: 0;
+      padding: 0;
+      text-align: right;
+      li {
+        list-style-type: none;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+        #totPostsCntOnSidebar {
+          font-size: $mysidebar-meta-font-size;
+        }
+      }
+    }
+  }
+
   .nav__list {
-    margin-top: 20px;
     .nav__items {
       .nav__sub-title {
         font-size: $mysidebar-font-size;
@@ -33,6 +51,12 @@
               opacity: 0;
             }
           }
+        }
+      }
+      li:first-of-type {
+        .nav__sub-title {
+          margin-top: 0;
+          padding-top: 0;
         }
       }
       ul.nav__item-children {
@@ -97,6 +121,11 @@
     }
 
     width: $mysidebar-width;  // important! it decide scrollbar position!
+
+    .sidebar__meta {
+      margin: 20px 0 3px 0;
+      width: $mysidebar-width - $mysidebar-scroll-width;
+    }
 
     .nav__list {
       width: $mysidebar-width - $mysidebar-scroll-width;
