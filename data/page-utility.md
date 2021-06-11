@@ -9,6 +9,20 @@ toc-top: true
 독백 내용을 쓸 수 있음
 </div>
 
+## 사이즈가 큰 이미지 사이즈 조절
+
+Kramdown 인라인 속성문 `{:style=""}`을 인라인 이미지 옆에 붙여서 작성<br/>
+그래야 `<img>` 태그에 `style`이 반영되며, 만약 인라인 속성문을 다음 라인에 작성하면
+`<p><img></img></p>` 구성되어 `<img>` 태그의 부모 태그인 `<p>`에 `style`이 반영됨
+
+![Computer Tape](http://www.columbia.edu/cu/computinghistory/701-tape.gif){:style="max-height: 400px;"}
+
+## 이미지 Magnific-Popup과 타이틀
+
+(클릭해보기)<br/>
+![CNN Structure]({{ site.gdrive_url_prefix }}1N5DRVwVs4MtD2RLz2N6BwaINFyFcbbFb)
+{:class="img-popup" data-title="특별 출연한 귀여운 고양이의 이름은 <strong>까무</strong>입니다 😆"}
+
 ## 이미지 밑에 보충 설명이나 출처
 
 ![CNN Structure]({{ site.gdrive_url_prefix }}1N5DRVwVs4MtD2RLz2N6BwaINFyFcbbFb)
@@ -17,13 +31,7 @@ toc-top: true
 특별 출연한 귀여운 고양이의 이름은 <strong>까무</strong>입니다 😆
 </div>
 
-## 이미지 Magnific-Popup과 타이틀
-
-(클릭해보기)<br/>
-![CNN Structure]({{ site.gdrive_url_prefix }}1N5DRVwVs4MtD2RLz2N6BwaINFyFcbbFb)
-{:class="img-popup" data-title="특별 출연한 귀여운 고양이의 이름은 <strong>까무</strong>입니다 😆"}
-
-## 포스트 맨 밑에 Reference
+## 포스트 맨 밑에 Reference 달고 싶을때 아래 포맷 사용
 
 어쩌구 저쩌구 포스트 내용 끝
 
