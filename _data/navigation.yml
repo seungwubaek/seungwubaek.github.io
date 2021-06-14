@@ -36,8 +36,8 @@ main-sidebar:
       children:
       - title: "Commands"
         url: "/computing/linux/commands/"
-    - title: "Network"
-      url: "/computing/network/"
+      - title: "Config"
+        url: "/computing/linux/config/"
     - title: "Programming"
       url: "/computing/programming/"
       children:
