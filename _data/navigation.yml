@@ -31,6 +31,8 @@ main-sidebar:
         url: "/computing/computer/cpu/"
       - title: "Hardware"
         url: "/computing/computer/hardware/"
+      - title: "Data Storage"
+        url: "/computing/computer/data-storage/"
     - title: "Linux"
       url: "/computing/linux/"
       children:
