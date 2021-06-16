@@ -72,6 +72,8 @@ $(function(){
         var numTot = getStatFromGroupByCategories(postsGroupByCats, itemCats, 'numTot', 0);
         $item.append('<span class="nav__item-children-stat">' + numTot + '</span>');
       });
+      // Sidebar Afterprocess - Resize sidebar font
+      resizeSidebarFont();
 
       // From memo type
       var memoType = $('.memo').data('type');  // this selector.data return first class's data in page.

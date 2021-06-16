@@ -41,6 +41,7 @@
               display: flex;
               width: 100%;
               justify-content: space-between;
+              white-space: nowrap;
             }
           }
           .nav__sub-title-dropdownicon {
@@ -60,14 +61,18 @@
         }
       }
       ul.nav__item-children {
-        text-align: right;
         margin-bottom: 0;
-        overflow-y: hidden;
+        overflow: hidden;
         max-height: 0;
         -webkit-transition: all 200ms linear;
         transition: all 200ms linear;
         & > li {
           font-size: $mysidebar-item-font-size;
+          display: flex;
+          a {
+            white-space: nowrap;
+            margin-left: auto;
+          }
         }
       }
       .nav__sub-title-stat, .nav__item-children-stat {

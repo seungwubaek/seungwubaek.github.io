@@ -9,7 +9,7 @@
     {% for nav in navigation %}
       <li>
         <div class="nav__sub-title">
-          <div class="nav__sub-title-set"><div class="nav__sub-title-name"><a href="{{ site.baseurl }}{{ nav.url }}#wholetoc__title" id="sidebar-{{ nav.title | downcase | replace: ' ', '-' }}">{{ nav.title }}</a></div>
+          <div class="nav__sub-title-set"><div class="nav__sub-title-name"><a href="{{ site.baseurl }}{{ nav.url }}#wholetoc__title" id="sidebar-{{ nav.title | downcase | replace: ' ', '-' }}" titledepth="0"><span class="title__name">{{ nav.title }}</span></a></div>
           <div class="nav__sub-title-dropdownicon">{% if nav.children != null %}<i class="fas fa-plus"></i>{% else %}<i class="fas fa-plus empty-icon"></i>{% endif %}</div>
           </div>
         </div>
@@ -18,7 +18,7 @@
         {% assign i = i | plus: 1 %}
         <ul class="nav__item-children children-{{ nav.children | size }}" id="sidebarMenuId_{{ i }}">
           {% for child in nav.children %}
-            <li><a href="{{ child.url | relative_url }}#wholetoc__title"{% if child.url == page.url %} class="active"{% endif %} id="sidebar-{{ nav.title | downcase | replace: ' ', '-' }}|{{ child.title | downcase | replace: ' ', '-' }}">{{ child.title }}</a></li>
+            <li><a href="{{ child.url | relative_url }}#wholetoc__title"{% if child.url == page.url %} class="active"{% endif %} id="sidebar-{{ nav.title | downcase | replace: ' ', '-' }}|{{ child.title | downcase | replace: ' ', '-' }}" titledepth="1"><span class="title__name">{{ child.title }}</span></a></li>
           {% endfor %}
         </ul>
         {% endif %}
