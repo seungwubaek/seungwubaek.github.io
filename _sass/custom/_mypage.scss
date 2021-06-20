@@ -135,6 +135,23 @@ section.page__share {
   font-size: 0.8em;
 }
 
+.md-paper-origin {
+  margin-bottom: .5em;
+  background-color: #e4e4e4;
+}
+
+.md-paper-translated {
+  margin: 0 0 $indent-var;
+}
+
+.md-paper-interpreted {
+  background-color: #e7e5ff;
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
+}
+
 kbd {
   font-size: .8em;
   padding: .1em .4em;
