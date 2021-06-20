@@ -48,6 +48,8 @@ main-sidebar:
     children:
     - title: "Computer Vision"
       url: "/deep-learning/computer-vision/"
+    - title: "Natural Language Processing"
+      url: "/deep-learning/natural-language-processing/"
   - title: "Mathematics"
     url: "/mathematics/"
     children:
