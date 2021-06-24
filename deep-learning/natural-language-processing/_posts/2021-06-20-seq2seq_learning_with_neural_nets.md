@@ -145,9 +145,16 @@ DNN의 input들과 output들은 사전에 알려진 고정된 차원수여야만
 </div>
 
 <div class="md-paper-origin" markdown="1">
-There have been a number of related attempts to address the general sequence to sequence learning problem with neural networks. Our approach is closely related to Kalchbrenner and Blunsom [18] who were the first to map the entire input sentence to vector, and is related to Cho et al. [5] although the latter was used only for rescoring hypotheses produced by a phrase-based system. Graves [10] introduced a novel differentiable attention mechanism that allows neural networks to focus on different parts of their input, and an elegant variant of this idea was successfully applied to machine translation by Bahdanau et al. [2]. The Connectionist Sequence Classification is another popular technique for mapping sequences to sequences with neural networks, but it assumes a monotonic alignment between the inputs and the outputs [11].
+There have been a number of related attempts to address the general sequence to sequence learning problem with neural networks.<br/>
+Our approach is closely related to Kalchbrenner and Blunsom [18] who were the first to map the entire input sentence to vector, and is related to Cho et al. [5] although the latter was used only for rescoring hypotheses produced by a phrase-based system.<br/>
+Graves [10] introduced a novel differentiable attention mechanism that allows neural networks to focus on different parts of their input, and an elegant variant of this idea was successfully applied to machine translation by Bahdanau et al. [2].<br/>
+The Connectionist Sequence Classification is another popular technique for mapping sequences to sequences with neural networks, but it assumes a monotonic alignment between the inputs and the outputs [11].
 </div>
 <div class="md-paper-translated" markdown="1">
+그동안 일반적인 sequence to sequence 문제를 neural networks를 이용해서 다루려는 수많은 관련 시도들이 있어왔다.<br/>
+우리의 접근 방법은 처음으로 전체 input 문장을 vector로 매핑한 Kalchbrenner and Blunsom [18]의 방법과 매우 관련됐으며 비록 오직 구절 기반 시스템에 의해 생성된 가설을 rescoring(<span class="md-paper-interpreted" markdown="1">re-scoring 이므로 그전에 scoring이 먼저 이루어졌었다는 의미 같은데, 자세한 사항은 Cho et al. [5]를 봐야 알듯하다.</span>) 하는 데에만 사용되었지만 Cho et al. [5]의 방법과도 관련이 있다.<br/>
+Graves [10] 논문은 neural networks가 input의 특정 부분에 집중할 수 있게 하는 참신한 differentiable attention mechanism을 소개했고<span class="md-paper-interpreted" markdown="1">(differentiable이 `미분가능한`인지 `구분가능한`인지 모르겠음</span>) 그 아이디어는 우아하게 변형되어 Bahdanau et al. [2]에서 기계 번역 분야에 성공적으로 적용되었다.<br/>
+연결주의 sequence classification은 neural networks를 이용해서 sequence와 sequence를 연결하는 또하나의 유명한 기술이다. 그러나 이 기술은 input과 output 간에 단조로운 정렬을 가정한다 [11].
 </div>
 
 ![Figure 1. Our model]({{ site.gdrive_url_prefix }}1cuoZQXYLpsKSUzBgzYCuBtbMlEemk12p)
