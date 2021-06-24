@@ -7,7 +7,7 @@ last_modified_at: "2021-06-20 11:34:00 +0900"
 본 포스트는 논문 Sequence to Sequence Learning with Neural Networks를 한국어로 번역하고
 필요한 경우 이해를 돕기 위해 보충 설명하는 포스트이다.
 
-<div class="notice--warning" markdown=1>
+<div class="notice--warning" markdown="1">
 본 포스트는 개인적인 이해를 위해 작성되었습니다.<br/>
 잘못된 해석이 있을 수 있습니다.
 </div>
@@ -51,7 +51,7 @@ When we used the LSTM to rerank the 1000 hypotheses produced by the aforemention
 우리의 주요 결과는 WMT-14 dataset을 이용한 LSTM 기반 English -> French 번역이 어휘목록 외 단어에서는 페널티가 있는데,
 전체 테스트 셋에서 BLEU score 34.8를 달성했다는 것이다.<br/>
 추가로, LSTM은 긴 문장도 어렵지 않게 해냈다.<br/>
-비교해 보면, 구문 기반 SMT 시스템은 같은 dataset에서 BLEU score 33.3을 기록했다.<br/>
+비교해 보면, 구문 기반 SMT[^SMT] 시스템은 같은 dataset에서 BLEU score 33.3을 기록했다.<br/>
 이 SMT 시스템에 의해 생성된 1000개의 가설을 LSTM으로 재순위매김 했을 때, BLEU score는 36.5로 증가하는데
 이것은 종래에 다른 곳에서 달성한 최고 점수에 근접하다.
 </div>
@@ -158,6 +158,65 @@ Graves [10] 논문은 neural networks가 input의 특정 부분에 집중할 수
 </div>
 
 ![Figure 1. Our model]({{ site.gdrive_url_prefix }}1cuoZQXYLpsKSUzBgzYCuBtbMlEemk12p)
+{:style="margin-bottom: 0;" class="img-popup" data-title="Figure 1: Our model reads an input sentence “ABC” and produces “WXYZ” as the output sentence. The model stops making predictions after outputting the end-of-sentence token. Note that the LSTM reads the input sentence in reverse, because doing so introduces many short term dependencies in the data that make the optimization problem much easier."}
+<div style="font-size: .75em;" markdown="1">
+<div class="md-paper-origin" markdown="1">
+Figure 1: Our model reads an input sentence “ABC” and produces “WXYZ” as the output sentence. The model stops making predictions after outputting the end-of-sentence token. Note that the LSTM reads the input sentence in reverse, because doing so introduces many short term dependencies in the data that make the optimization problem much easier.
+</div>
+<div class="md-paper-translated" markdown="1">
+우리의 model은 input sequence "ABC"를 읽고 output으로 "WXYZ"를 생성한다. model이 end-of-sentence 토큰을 출력하면 예측을 종료한다.<br/>
+LSTM은 input sentence를 거꾸로 읽는다. 그렇게 함으로써 데이터에 많은 단기 의존성을 도입하여 최적화 문제를 훨씬 더 쉽게 만들어준다.
+</div>
+</div>
+
+<div class="md-paper-origin" markdown="1">
+The main result of this work is the following. On the WMT’14 English to French translation task, we obtained a BLEU score of 34.81 by directly extracting translations from an ensemble of 5 deep LSTMs (with 384M parameters and 8,000 dimensional state each) using a simple left-to-right beamsearch decoder.<br/>
+This is by far the best result achieved by direct translation with large neural networks. For comparison, the BLEU score of an SMT baseline on this dataset is 33.30 [29].<br/>
+The 34.81 BLEU score was achieved by an LSTM with a vocabulary of 80k words, so the score was penalized whenever the reference translation contained a word not covered by these 80k.<br/>
+This result shows that a relatively unoptimized small-vocabulary neural network architecture which has much room for improvement outperforms a phrase-based SMT system.
+</div>
+<div class="md-paper-translated" markdown="1">
+이 문서의 work의 주요 결과는 아래와 같다. 2014 WMT의 English to French 번역 작업에서 우리는 왼쪽에서 오른쪽으로
+빔탐색을 수행하는 decoder를 이용한 5개의 LSTM들의 앙상블(3억8천4백만개의 parameter들과 8000 차원의 state)로부터
+번역문을 직역해서 BLEU score 34.81점을 얻었다.<br/>
+이 점수는 큰 규모의 neural networks를 이용한 직역에서 달성한 최고의 결과이다.
+비교를 들자면, 이 데이터셋의 SMT 기반 모델의 BLEU 점수는 33.30 이다 [29].<br/>
+BLEU score 34.81은 8만개 단어의 어휘록을 사용한 LSTM 모델로 달성했다. 따라서 참조 번역(<span class="md-paper-interpreted">앞뒤 문맥을 고려하는 번역인가..</span>)에 이 8만개 단어 외의 단어가 포함될 때마다 점수는 패널티를 받는다. <span class="md-monologue">점수가 하락한다는 말인가..</span><br/>
+이러한 결과는 구(phrase)-기반의 SMT 시스템 보다 성능 향상의 여지가 비교적 더 많은 최적화 되지않은 작은 규모의 어휘에 대한 neural network 구조가 더 뛰어난 성능을 발휘한다는 점을 보여준다.
+</div>
+
+<div class="md-paper-origin" markdown="1">
+Finally, we used the LSTM to rescore the publicly available 1000-best lists of the SMT baseline on the same task [29].<br/>
+By doing so, we obtained a BLEU score of 36.5, which improves the baseline by 3.2 BLEU points and is close to the previous best published result on this task (which is 37.0 [9]).
+</div>
+<div class="md-paper-translated" markdown="1">
+마지막으로, 우리는 같은 2014 WMT English to French 번역 작업에 대해 오픈 돼있는
+SMT 기반의 1000개 best 모델을 재채점 하기 위해 LSTM을 사용했다.<br/>
+그렇게 함으로써 우리는 BLEU 점수 36.5점을 얻었는데 이것은 BLEU 점수를 3.2점까지 향상 시킨 것이고 이 번역 작업의 이전에 발표된 최상의 결과에 가까운 것이다 (최고점 37.0 [9]).
+</div>
+
+<div class="md-paper-origin" markdown="1">
+Surprisingly, the LSTM did not suffer on very long sentences, despite the recent experience of other researchers with related architectures [26].<br/>
+We were able to do well on long sentences because we reversed the order of words in the source sentence but not the target sentences in the training and test set.<br/>
+By doing so, we introduced many short term dependencies that made the optimization problem much simpler (see sec. 2 and 3.3). As a result, SGD could learn LSTMs that had no trouble with long sentences.<br/>
+The simple trick of reversing the words in the source sentence is one of the key technical contributions of this work.
+</div>
+<div class="md-paper-translated" markdown="1">
+놀랍게도, LSTM은 최근의 다른 연구자들의 LSTM과 관련된 구조에 대한 연구에서 경험한 한계에도 불구하고 아주 긴 문장에도 어려움을 겪지 않았다.<span class="md-monologue">의역!</span><br/>
+training set, test set에서 source 문장에 있는 단어는 역순으로, target 문장에서는 순차로 배치했기 때문에 긴 문장에서도 잘 작동할 수 있었던 것이다.<br/>
+그렇게 하는 것으로, 우리는 최적화 문제를 더욱 더 쉽게 만드는 많은 단기 의존성들을 도입시켰다 (섹션 2와 3.3을 참조). 그 결과로, 긴 문장에서도 문제가 없는 LSTM들을 SGD 방법으로 학습시킬 수 있었다.<br/>
+source sentence에서 단어를 역순으로 바꾸는 간단한 트릭은 이 논문의 주요한 기술적 기여 중의 하나이다.
+</div>
+
+<div class="md-paper-origin" markdown="1">
+A useful property of the LSTM is that it learns to map an input sentence of variable length into a fixed-dimensional vector representation.<br/>
+Given that translations tend to be paraphrases of the source sentences, the translation objective encourages the LSTM to find sentence representations that capture their meaning, as sentences with similar meanings are close to each other while different 2 sentences meanings will be far.<br/>
+A qualitative evaluation supports this claim, showing that our model is aware of word order and is fairly invariant to the active and passive voice.
+</div>
+<div class="md-paper-translated" markdown="1">
+LSTM의 유용한 특징은 다양한 길이를 가진 input sentence를 항상 고정된 차원수의 vector 표현으로 매핑하는 법을 학습한다는 것이다.<br/>
+번역은 source sentence들을 의역하는 경향이 있다는 점을 고려하면(<span class="md-paper-interpreted" markdown="1">=번역은 문장을 그대로 직역하기 보다 원문이 말하고자 하는 바를 번역문에 오해 없이 담으려고 하는 경향이 있다는 점을 고려하면</span>), LSTM 또한 번역을 하면서 다른 의미의 두 문장은 서로 멀고 의미가 유사한 문장들은 서로 가까울수 있게끔 문장의 의미를 담아낼 수 있는 어떤 표현(<span class="md-paper-interpreted" markdown="1">주로 vector를 뜻함</span>)을 찾는다.<span class="md-monologue" markdown="1">의역이 맞는지 모르겠다.</span>
+</div>
 
 <!--
 <div class="md-paper-origin" markdown="1">
@@ -203,3 +262,5 @@ Graves [10] 논문은 neural networks가 input의 특정 부분에 집중할 수
 <div class="md-reference" markdown="1">
 * <https://arxiv.org/abs/1409.3215>
 </div>
+
+[^SMT]: SMT: Statistical Machine Translation
