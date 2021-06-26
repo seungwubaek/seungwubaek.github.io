@@ -16,20 +16,55 @@ table {
   }
 }
 
-thead {
-  background-color: $border-color;
-  border-bottom: 2px solid mix(#000, $border-color, 25%);
+th {
+  text-align: center;
+  font-weight: bold;
 }
 
 th {
   padding: 0.5em;
   font-weight: bold;
-  text-align: left;
+  text-align: center;
 }
 
 td {
   padding: 0.5em;
-  border-bottom: 1px solid mix(#000, $border-color, 25%);
+}
+
+thead {
+  background-color: $tbl-basic-head-background-color;
+  tr {
+    &:first-child {
+      th {
+        border-top: 1px solid $tbl-border-color;
+        border-bottom: 2px solid $tbl-border-color;
+      }
+    }
+  }
+  th {
+    border-right: 1px solid $tbl-border-color;
+    &:first-child {
+      border-left: 1px solid $tbl-border-color;
+    }
+  }
+}
+
+tbody {
+  tr {
+    &:first-child {
+      td {
+        border-top: 1px solid $tbl-border-color;
+      }
+    }
+  }
+
+  td {
+    border-right: 1px solid $tbl-border-color;
+    border-bottom: 1px solid $tbl-border-color;
+    &:first-child {
+      border-left: 1px solid $tbl-border-color;
+    }
+  }
 }
 
 tr,

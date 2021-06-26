@@ -179,3 +179,7 @@ $navicon-height: 0.25rem !default;
 // $global-transition: all 0.2s ease-in-out !default;
 $global-transition: none !default;
 $intro-transition: intro 0.3s both !default;
+
+/* Customs - Table */
+$tbl-basic-head-background-color: mix(#fff, $border-color, 70%);
+$tbl-border-color: mix(#000, $border-color, 25%);
