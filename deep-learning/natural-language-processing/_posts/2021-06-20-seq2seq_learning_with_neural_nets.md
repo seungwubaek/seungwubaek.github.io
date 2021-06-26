@@ -159,6 +159,8 @@ Graves [10] 논문은 neural networks가 input의 특정 부분에 집중할 수
 
 ![Figure 1. Our model]({{ site.gdrive_url_prefix }}1cuoZQXYLpsKSUzBgzYCuBtbMlEemk12p)
 {:style="margin-bottom: 0;" class="img-popup" data-title="Figure 1: Our model reads an input sentence “ABC” and produces “WXYZ” as the output sentence. The model stops making predictions after outputting the end-of-sentence token. Note that the LSTM reads the input sentence in reverse, because doing so introduces many short term dependencies in the data that make the optimization problem much easier."}
+{:id="figure-1"}
+
 <div style="font-size: .75em;" markdown="1">
 <div class="md-paper-origin" markdown="1">
 Figure 1: Our model reads an input sentence “ABC” and produces “WXYZ” as the output sentence. The model stops making predictions after outputting the end-of-sentence token. Note that the LSTM reads the input sentence in reverse, because doing so introduces many short term dependencies in the data that make the optimization problem much easier.
@@ -215,7 +217,73 @@ A qualitative evaluation supports this claim, showing that our model is aware of
 </div>
 <div class="md-paper-translated" markdown="1">
 LSTM의 유용한 특징은 다양한 길이를 가진 input sentence를 항상 고정된 차원수의 vector 표현으로 매핑하는 법을 학습한다는 것이다.<br/>
-번역은 source sentence들을 의역하는 경향이 있다는 점을 고려하면(<span class="md-paper-interpreted" markdown="1">=번역은 문장을 그대로 직역하기 보다 원문이 말하고자 하는 바를 번역문에 오해 없이 담으려고 하는 경향이 있다는 점을 고려하면</span>), LSTM 또한 번역을 하면서 다른 의미의 두 문장은 서로 멀고 의미가 유사한 문장들은 서로 가까울수 있게끔 문장의 의미를 담아낼 수 있는 어떤 표현(<span class="md-paper-interpreted" markdown="1">주로 vector를 뜻함</span>)을 찾는다.<span class="md-monologue" markdown="1">의역이 맞는지 모르겠다.</span>
+번역은 source sentence들을 의역하는 경향이 있다는 점을 고려하면(<span class="md-paper-interpreted" markdown="1">=번역은 문장을 그대로 직역하기 보다 원문이 말하고자 하는 바를 번역문에 오해 없이 담으려고 하는 경향이 있다는 점을 고려하면</span>), LSTM 또한 번역을 하면서 다른 의미의 두 문장은 서로 멀고 의미가 유사한 문장들은 서로 가까울수 있게끔 문장의 의미를 담아낼 수 있는 어떤 표현(<span class="md-paper-interpreted" markdown="1">주로 vector를 뜻함</span>)을 찾는다.<span class="md-monologue" markdown="1">의역이 맞는지 모르겠다.</span><br/>
+질적 평가에서는 우리의 model이 단어 어순을 이해하고 있고 능동, 수동태에 대해서도 상당히 불변의 결과를 내놓는다는 것을 보여준다.
+</div>
+
+# 2 The model
+
+<div class="md-paper-origin" markdown="1">
+The Recurrent Neural Network (RNN) [31, 28] is a natural generalization of feedforward neural networks to sequences.<br/>
+Given a sequence of inputs ($$x_1, ..., x_T$$), a standard RNN computes a sequence of outputs ($$y_1, ..., y_T$$) by iterating the following equation:<br/>
+</div>
+<div class="md-paper-translated" markdown="1">
+Recurrent Neural Network (RNN) [31, 28] 은 sequence들에 대한 feedforward neural networks의 자연스런 일반화이다.<br/>
+inputs sequence ($$x_1, ..., x_T$$)가 주어질때, 표준 RNN은 다음의 방정식을 반복하면서 output sequence ($$y_1, ..., y_T$$)을 계산해낸다:
+
+$$h_t = sigm(\mathit{W}^{hx}x_t+\mathit{W}^{hh}h_{t-1})$$<br/>
+$$y_t = \mathit{W}^{yh}h_t$$
+
+<div class="md-paper-interpreted" markdown="1">
+$$t$$ 시점의 Hidden State (은닉 상태) $$h_t$$는 $$t$$ 시점의 input $$x_t$$와 이전 hidden state $$h_{t-1}$$ 결합으로 생성한다는 뜻.<br/>
+$$sigm$$은 activation function 중 하나인 $$sigmoid$$를 말하는 것 같음.<br/>
+또한 $$t$$ 시점의 output $$y_t$$는 $$h_t$$로부터 생성된다는 뜻.<br/>
+그리고 이에 대응하는 가중치 벡터 $$\mathit{W}^{hx}$$, $$\mathit{W}^{hh}$$, $$\mathit{W}^{yh}$$ 3개가 있음.<br/>
+이런 과정은 과거의 결과를 다시 현재의 input에 추가시킨다는 의미로, 우리가 많이 봐온 일반적인 Recurrent Neural Network 형태를 생각하면 된다.<br/>
+그리고 squence의 시간 의존성을 처리하기 위한 방법이 담겨있다. 논문의 도입 부분에서부터 RNN은 short-term dependencies를 이해할 수 있으며 LSTM은 장기(Long-term), 단기(short-term) dependecies 모두를 이해 할 수 있다고 했다.
+</div>
+
+<div class="md-paper-origin" markdown="1">
+The RNN can easily map sequences to sequences whenever the alignment between the inputs the outputs is known ahead of time.<br/>
+However, it is not clear how to apply an RNN to problems whose input and the output sequences have different lengths with complicated and non-monotonic relationships.
+</div>
+<div class="md-paper-translated" markdown="1">
+RNN은 input과 output 사이 정렬이 미리 알려질 때마다 sequence들을 sequence들로 쉽게 매핑 할 수 있다.<br/>
+그러나, RNN을 input과 output sequence들이 복잡하고 비단조적[^non-monotonic]인 관계 하에 서로 다른 길이를 가진 경우의 문제들에 어떻게 적용하지는 불분명하다.
+</div>
+
+<div class="md-paper-origin" markdown="1">
+The simplest strategy for general sequence learning is to map the input sequence to a fixed-sized vector using one RNN, and then to map the vector to the target sequence with another RNN (this approach has also been taken by Cho et al. [5]).<br/>
+While it could work in principle since the RNN is provided with all the relevant information, it would be difficult to train the RNNs due to the resulting long term dependencies ([figure 1](#figure-1)) [14, 4, 16, 15].<br/>
+However, the Long Short-Term Memory (LSTM) [16] is known to learn problems with long range temporal dependencies, so an LSTM may succeed in this setting.
+</div>
+<div class="md-paper-translated" markdown="1">
+일반적인 sequence 학습을 위한 가장 단순한 전략은 1개 RNN을 사용하여 input sequence를 고정 사이즈의 vector로 매핑한 다음, 그 vector를 또다른 RNN을 이용해서 target sequence로 매핑하는 것이다(이런 접근법은 Cho et al. [5]에서도 사용됨).<br/>
+이런 전략은 모든 관련 정보가 RNN에 제공되기 때문에 이론적으로는 올바로 작동하지만, 장기 의존성 때문에 ([figure 1](#figure-1)) [14, 4, 16, 15] RNN을 학습하는 것이 어려울 수 있다.<br/>
+그러나 the Long Short-Term Memory (LSTM 장단기메모리) [16]는 장기적 의존성 문제 또한 학습할 수 있다고 알려져있다. 따라서 LSTM은 이러한 전략을 성공적으로 수행할 수 있을 것이다.
+</div>
+
+<div class="md-paper-origin" markdown="1">
+The goal of the LSTM is to estimate the conditional probability $$p(y_1, ..., y_{T^{\prime}}|x_1, ..., x_T)$$ where $$(x_1, ..., x_T)$$ is an input sequence and $$y_1, ..., y_{T^{\prime}}$$ is its corresponding output sequence whose length $$T^{\prime}$$ may differ from $$T$$.<br/>
+The LSTM computes this conditional probability by first obtaining the fixed-dimensional representation $$v$$ of the input sequence $$(x_1, ..., x_T)$$ given by the last hidden state of the LSTM, and then computing the probability of $$y_1, ..., y_{T^{\prime}}$$ with a standard LSTM-LM formulation whose initial hidden state is set to the representation $$v$$ of $$x_1, ..., x_T$$:
+</div>
+<div class="md-paper-translated" markdown="1">
+LSTM의 최종 목표는 input sequence $$(x_1, ..., x_T)$$와 그에 대응하는 길이가 $$T^{\prime}$$인 output sequence $$y_1, ..., y_{T^{\prime}}$$에 대해 조건부 확률 $$p(y_1, ..., y_{T^{\prime}}|x_1, ..., x_T)$$를 측정하는 것이다.<br/>
+LSTM은 먼저 LSTM의 마지막 hidden state로부터 주어진 input sequece $$(x_1, ..., x_T)$$의 고정 차원수의 표현 $$v$$(<span class="md-paper-interpreted" markdown="1">원문에선 representation $$v$$인데 어떻게 번역하는게 가장 적절할지 모르겠다. 대략 의미적으로 dense vector라고 생각하면 될듯.</span>)를 얻고나서 초기 hidden state가 input sequence $$x_1, ..., x_T$$의 표현 $$v$$로 주어진 표준 LSTM-LM 공식으로 $$y_1, ..., y_{T^{\prime}}$$의 확률을 계산하여 이 조건부 확률을 계산한다:
+</div>
+
+$$p(y_1, ..., y_{T^{\prime}}\vert x_1, ..., x_T)=\prod_{t=1}^{T^{\prime}} p(y_t\vert v, y_1, ..., y_{t-1})$$
+<span style="display: inline-block; max-width: 40px; width: 100%;"></span>(1)
+
+<div class="md-paper-origin" markdown="1">
+In this equation, each $$p(y_t\vert v, y_1, ..., y_{t−1})$$ distribution is represented with a softmax over all the words in the vocabulary. We use the LSTM formulation from Graves [10].<br/>
+Note that we require that each sentence ends with a special end-of-sentence symbol “&lt;EOS>”, which enables the model to define a distribution over sequences of all possible lengths.<br/>
+The overall scheme is outlined in [figure 1](#figure-1), where the shown LSTM computes the representation of “A”, “B”, “C”, “&lt;EOS>” and then uses this representation to compute the probability of “W”, “X”, “Y”, “Z”, “&lt;EOS>”.
+</div>
+<div class="md-paper-translated" markdown="1">
+이 방정식에서, 각각의 확률분포 $$p(y_t\vert v, y_1, ..., y_{t−1})$$는 어휘록에 있는 모든 단어들에 대한 softmax로 표현된다. 우리는 Graves [10]의 LSTM 공식을 사용한다.<br/>
+각 문장의 끝은 모델이 다양한 길이의 sequence들에 대한 분포를 정의하는 것을 가능하게 해주는 하는 특별한 문장 끝 부호 "&lt;EOS>"로 끝나야 한다. <span class="md-paper-interpreted">모델에게 문장의 끝을 알려주지 않으면 모델이 문장을 어디서부터 어디까지 끊어서 하나의 문장으로 인식하고 계산할지 모른다는 것은 당연한 말이기도 하다.</span><br/>
+이 모든 계획은 [figure 1](#figure-1)에 요약돼 있다. [figure 1](#figure-1)은 LSTM이 "A", "B", "C", "&lt;EOS>"의 표현을 계산하고 그 표현을 "W", "X", "Y", "Z", "&lt;EOS>"의 확률을 계산하기 위해 사용하는 과정을 보여준다.
 </div>
 
 <!--
@@ -264,3 +332,4 @@ LSTM의 유용한 특징은 다양한 길이를 가진 input sentence를 항상 
 </div>
 
 [^SMT]: SMT: Statistical Machine Translation
+[^non-monotonic]: 추론의 특성을 나타내는 말. 일반적으로 삼단논법(A이면 B이다. B이면 C이다. 따라서 A이면 C이다.) 처럼 사실이 주어지면 그에 따라 새로운 정리가 도출되고 또 이 도출된 정리로 인해 다른 정리 또는 사실이 나타내는 것을 '단조(Monotonic)하다'라고 한다. 이처럼 단조적인 경우 어 '참'인 공리가 줄어들지 않는데 반해, 비단조(Non-Monotonic)는 연역적이지 않음을 의미하며 이미 밝혀진 사실이나 새로운 정리가 더이상 효력이 없을 수 있음을 뜻한다. '새는 날 수 있다'라는 정리에서 죽은 새는 날 수 없으므로 '만약(What if) 죽은 새가 아니라면 새는 날 수 있다' 와 같은 추론이 비단조적 추론이 된다. Ref. <http://www.aistudy.co.kr/expert/inference_lee.htm#_bookmark_1d3dab8>, <http://www.aistudy.co.kr/reasoning/nonmonotonic_reasoning.htm>
