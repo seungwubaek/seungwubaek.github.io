@@ -215,7 +215,41 @@ A qualitative evaluation supports this claim, showing that our model is aware of
 </div>
 <div class="md-paper-translated" markdown="1">
 LSTM의 유용한 특징은 다양한 길이를 가진 input sentence를 항상 고정된 차원수의 vector 표현으로 매핑하는 법을 학습한다는 것이다.<br/>
-번역은 source sentence들을 의역하는 경향이 있다는 점을 고려하면(<span class="md-paper-interpreted" markdown="1">=번역은 문장을 그대로 직역하기 보다 원문이 말하고자 하는 바를 번역문에 오해 없이 담으려고 하는 경향이 있다는 점을 고려하면</span>), LSTM 또한 번역을 하면서 다른 의미의 두 문장은 서로 멀고 의미가 유사한 문장들은 서로 가까울수 있게끔 문장의 의미를 담아낼 수 있는 어떤 표현(<span class="md-paper-interpreted" markdown="1">주로 vector를 뜻함</span>)을 찾는다.<span class="md-monologue" markdown="1">의역이 맞는지 모르겠다.</span>
+번역은 source sentence들을 의역하는 경향이 있다는 점을 고려하면(<span class="md-paper-interpreted" markdown="1">=번역은 문장을 그대로 직역하기 보다 원문이 말하고자 하는 바를 번역문에 오해 없이 담으려고 하는 경향이 있다는 점을 고려하면</span>), LSTM 또한 번역을 하면서 다른 의미의 두 문장은 서로 멀고 의미가 유사한 문장들은 서로 가까울수 있게끔 문장의 의미를 담아낼 수 있는 어떤 표현(<span class="md-paper-interpreted" markdown="1">주로 vector를 뜻함</span>)을 찾는다.<span class="md-monologue" markdown="1">의역이 맞는지 모르겠다.</span><br/>
+질적 평가에서는 우리의 model이 단어 어순을 이해하고 있고 능동, 수동태에 대해서도 상당히 불변의 결과를 내놓는다는 것을 보여준다.
+</div>
+
+# 2 The model
+
+<div class="md-paper-origin" markdown="1">
+The Recurrent Neural Network (RNN) [31, 28] is a natural generalization of feedforward neural networks to sequences.<br/>
+Given a sequence of inputs ($$x_1$$, ..., $$x_T$$), a standard RNN computes a sequence of outputs ($$y_1$$, ..., $$y_T$$) by iterating the following equation:<br/>
+</div>
+<div class="md-paper-translated" markdown="1">
+Recurrent Neural Network (RNN) [31, 28] 은 sequence들에 대한 feedforward neural networks의 자연스런 일반화이다.<br/>
+inputs sequence ($$x_1$$, ..., $$x_T$$)가 주어질때, 표준 RNN은 다음의 방정식을 반복하면서 output sequence ($$y_1$$, ..., $$y_T$$)을 계산해낸다:
+
+$$h_t = sigm(\mathit{W}^{hx}x_t+\mathit{W}^{hh}h_{t-1})$$<br/>
+$$y_t = \mathit{W}^{yh}h_t$$
+
+<div class="md-paper-origin" markdown="1">
+The RNN can easily map sequences to sequences whenever the alignment between the inputs the outputs is known ahead of time.<br/>
+However, it is not clear how to apply an RNN to problems whose input and the output sequences have different lengths with complicated and non-monotonic relationships.
+</div>
+<div class="md-paper-translated" markdown="1">
+RNN은 input과 output 사이 정렬이 미리 알려질 때마다 sequence들을 sequence들로 쉽게 매핑 할 수 있다.<br/>
+그러나, RNN을 input과 output sequence들이 복잡하고 비단조적[^non-monotonic]인 관계 하에 서로 다른 길이를 가진 경우의 문제들에 어떻게 적용하지는 불분명하다.
+</div>
+
+<div class="md-paper-origin" markdown="1">
+The simplest strategy for general sequence learning is to map the input sequence to a fixed-sized vector using one RNN, and then to map the vector to the target sequence with another RNN (this approach has also been taken by Cho et al. [5]).<br/>
+While it could work in principle since the RNN is provided with all the relevant information, it would be difficult to train the RNNs due to the resulting long term dependencies (figure 1) [14, 4, 16, 15].<br/>
+However, the Long Short-Term Memory (LSTM) [16] is known to learn problems with long range temporal dependencies, so an LSTM may succeed in this setting.
+</div>
+<div class="md-paper-translated" markdown="1">
+일반적인 sequence 학습을 위한 가장 단순한 전략은 1개 RNN을 사용하여 input sequence를 고정 사이즈의 vector로 매핑한 다음, 그 vector를 또다른 RNN을 이용해서 target sequence로 매핑하는 것이다(이런 접근법은 Cho et al. [5]에서도 사용됨).<br/>
+이런 전략은 모든 관련 정보가 RNN에 제공되기 때문에 이론적으로는 올바로 작동하지만, 장기 의존성 때문에 (figure 1) [14, 4, 16, 15] RNN을 학습하는 것이 어려울 수 있다.<br/>
+그러나 the Long Short-Term Memory (LSTM 장단기메모리) [16]는 장기적 의존성 문제 또한 학습할 수 있다고 알려져있다. 따라서 LSTM은 이러한 전략을 성공적으로 수행할 수 있을 것이다.
 </div>
 
 <!--
@@ -264,3 +298,4 @@ LSTM의 유용한 특징은 다양한 길이를 가진 input sentence를 항상 
 </div>
 
 [^SMT]: SMT: Statistical Machine Translation
+[^non-monotonic]: 추론의 특성을 나타내는 말. 일반적으로 삼단논법(A이면 B이다. B이면 C이다. 따라서 A이면 C이다.) 처럼 사실이 주어지면 그에 따라 새로운 정리가 도출되고 또 이 도출된 정리로 인해 다른 정리 또는 사실이 나타내는 것을 '단조(Monotonic)하다'라고 한다. 이처럼 단조적인 경우 어 '참'인 공리가 줄어들지 않는데 반해, 비단조(Non-Monotonic)는 연역적이지 않음을 의미하며 이미 밝혀진 사실이나 새로운 정리가 더이상 효력이 없을 수 있음을 뜻한다. '새는 날 수 있다'라는 정리에서 죽은 새는 날 수 없으므로 '만약(What if) 죽은 새가 아니라면 새는 날 수 있다' 와 같은 추론이 비단조적 추론이 된다. Ref. <http://www.aistudy.co.kr/expert/inference_lee.htm#_bookmark_1d3dab8>, <http://www.aistudy.co.kr/reasoning/nonmonotonic_reasoning.htm>
