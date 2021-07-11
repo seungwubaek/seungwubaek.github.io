@@ -1,11 +1,11 @@
 ---
 layout: single
 title: "논문 번역 및 해석 - Sequence to Sequence Learning with Neural Networks"
-date: "2021-06-20 11:34:00 +0900"
-last_modified_at: "2021-06-20 11:34:00 +0900"
+date: "2021-07-11 15:17:00 +0900"
+last_modified_at: "2021-07-11 15:17:00 +0900"
 ---
 본 포스트는 논문 Sequence to Sequence Learning with Neural Networks를 한국어로 번역하고
-필요한 경우 이해를 돕기 위해 보충 설명하는 포스트이다.
+필요한 경우 이해를 돕기 위한 보충 설명을 붙이는 포스트이다.
 
 <div class="notice--warning" markdown="1">
 본 포스트는 개인적인 이해를 위해 작성되었습니다.<br/>
@@ -423,7 +423,7 @@ $$1/\vert\mathcal{S}\vert\sum_{(\mathit{T},\mathit{S})\in\mathcal{S}}\log{p(\mat
 Once training is complete, we produce translations by finding the most likely translation according to the LSTM:
 </div>
 <div class="md-paper-translated" markdown="1">
-학습이 완료되고 나면, LSTM으로 가장 가능성 높은 번역을 찾아 번역을 합니다:
+학습이 완료되고 나면, LSTM으로 가장 가능성 높은 번역을 찾아 번역한다:
 </div>
 
 $$\hat{T}=\underset{T}{\operatorname{arg max}}p(T\vert S)$$
@@ -710,17 +710,108 @@ Figure 3: 왼쪽의 plot은 문장 길이의 기능으로써 우리 시스템의
 # 4 Related work
 
 <div class="md-paper-origin" markdown="1">
-There is a large body of work on applications of neural networks to machine translation. So far, the simplest and most effective way of applying an RNN-Language Model (RNNLM) [23] or a Feedforward Neural Network Language Model (NNLM) [3] to an MT task is by rescoring the nbest lists of a strong MT baseline [22], which reliably improves translation quality.
+There is a large body of work on applications of neural networks to machine translation. So far, the simplest and most effective way of applying an RNN-Language Model (RNNLM) [23] or a Feedforward Neural Network Language Model (NNLM) [3] to an MT task is by rescoring the n-best lists of a strong MT baseline [22], which reliably improves translation quality.
 </div>
 <div class="md-paper-translated" markdown="1">
+Neural Network를 기계 번역에 적용하는 많은 작업들이 있다. 지금까지, RNN-언어모델(RNNLM) [23] 또는 순방향 신경망 언어모델 (NNLM) [3]을 기계 번역 작업에 적용하는 가장 단순하고 효과적인 방법은 strong<span class="md-monologue">(?)</span> 기계번역 기준 [22]의 n개 베스트 항목을 재채점하는 방법이이었고 그런 방법은 확실하게 번역의 질을 향상시켰다.
 </div>
 
-<!--
 <div class="md-paper-origin" markdown="1">
+More recently, researchers have begun to look into ways of including information about the source language into the NNLM.<br/>
+Examples of this work include Auli et al. [1], who combine an NNLM with a topic model of the input sentence, which improves rescoring performance.<br/>
+Devlin et al. [8] followed a similar approach, but they incorporated their NNLM into the decoder of an MT system and used the decoder’s alignment information to provide the NNLM with the most useful words in the input sentence. Their approach was highly successful and it achieved large improvements over their baseline.
 </div>
 <div class="md-paper-translated" markdown="1">
+좀 더 최근엔, 학자들은 source language의 정보를 NNLM(신경망 모델)로 포함시키는 방법을 찾기 시작했다.<br/>
+그 예로 Auli et al. [1] 이 있는데 여기서는 NNLM을 input sentence의 topic model과 결합시켰고, 재채점 성능을 향상시킬 수 있었다.<span class="md-paper-interpreted">input sentence의 주제에 대한 representation을 뽑는 모델(topic model)을 NNLM과 결합시켰다는 것
+같은데 정말 그런지는 paper [1]을 봐야 알 것 같다.</span><br/>
+Devlin et al. [8]은 비슷하게 접근하면서 NNLM을 기계 번역 시스템의 decoder에 통합했고 input sentence에서 가장 유용한 단어를
+NNLM에 제공하기 위해 decoder의 정렬 정보를 사용했다. 이 방법은 매우 성공적이었고 그들의 비교 기준으로 부터 아주 큰 향상을 이루었다.
 </div>
--->
+
+<div class="md-paper-origin" markdown="1">
+Our work is closely related to Kalchbrenner and Blunsom [18], who were the first to map the input sentence into a vector and then back to a sentence, although they map sentences to vectors using convolutional neural networks, which lose the ordering of the words.<br/>
+Similarly to this work, Cho et al. [5] used an LSTM-like RNN architecture to map sentences into vectors and back, although their primary focus was on integrating their neural network into an SMT system.<br/>
+Bahdanau et al. [2] also attempted direct translations with a neural network that used an attention mechanism to overcome the poor performance on long sentences experienced by Cho et al. [5] and achieved encouraging results.<br/>
+Likewise, Pouget-Abadie et al. [26] attempted to address the memory problem of Cho et al. [5] by translating pieces of the source sentence in way that produces smooth translations, which is similar to a phrase-based approach.<br/>
+We suspect that they could achieve similar improvements by simply training their networks on reversed source sentences.
+</div>
+<div class="md-paper-translated" markdown="1">
+우리의 방법은 Kalchbrenner and Blunsom [18]과 밀접한 관련이있다. 그들의 방법은 처음으로 input sentence를 vector로 매핑하고
+다시 sentence에 매핑했다. 하지만 그들 방법에서는 convolution neural networks를 사용해서 문장을 vector로 매핑 했고 단어 간의
+순서 정보를 상실했다.<br/>
+이것과 유사하게, Cho et al [5]은 비록 주요 관심은 그들의 neural network를 SMT 시스템에 통합시키는 것이었지만,
+sentences를 vectors로 매핑하고 다시 거꾸로 매핑하는데에 LSTM-like RNN 구조를 사용했었다.<br/>
+Bahdanau et al. [2]는 또한 Cho et al. [5]에서 경험한 긴 문장들에대한 저성능을 극복하기 위해 attention mechanism을 사용한
+neural network로 직접 번역을 시도했고 고무할 만한 결과를 달성했다.<br/>
+비슷하게, Pouget-Abadie et al. [26]은, 구(phrase) 기반 접근법과 유사하게, 부드러운 번역을 생성하는 방식으로 source sentence의
+조각들을 번역해서 Cho et al. [5]의 메모리 문제의 해결하려고 시도했다.<br/>
+그러나 우리는 그들의 이러한 방법 대신 단순히 network에 역순의 source sentences를 학습시키는 것으로 비슷한 수준의 향상을
+달성할 수 있을 것이라 생각한다.
+</div>
+
+<div class="md-paper-origin" markdown="1">
+End-to-end training is also the focus of Hermann et al. [12], whose model represents the inputs and outputs by feedforward networks, and map them to similar points in space. However, their approach cannot generate translations directly: to get a translation, they need to do a look up for closest vector in the pre-computed database of sentences, or to rescore a sentence.
+</div>
+<div class="md-paper-translated" markdown="1">
+종단 간 훈련은 또한 Hermann et al. [12]의 관심사였는데 그들의 모델은 feedforward nerworks에 의해 input과 output을 표현하고
+그것들을 공간 안의 비슷한 점에 매핑한다. 그러나, 그들의 접근법은 번역을 직접 생성 할 수 없다: 번역 결과를 얻거나 벡터를 문장으로
+복원하기 위해서는, 미리 계산된 문장 벡터 database에서 가장 가까운 벡터를 검색하는 작업이 필요하다.
+</div>
+
+# 5 Conclusion
+
+<div class="md-paper-origin" markdown="1">
+In this work, we showed that a large deep LSTM, that has a limited vocabulary and that makes almost no assumption about problem structure can outperform a standard SMT-based system whose vocabulary is unlimited on a large-scale MT task.<br/>
+The success of our simple LSTM-based approach on MT suggests that it should do well on many other sequence learning problems, provided they have enough training data.
+</div>
+<div class="md-paper-translated" markdown="1">
+이번 작업에서 우리는 제한된 어휘록을 가지며 문제 구조에 대해 거의 가정하지 않는 대규모 deep LSTM이 대규모 기계 번역 작업에 있어
+무제한의 어휘록을 가진 standard SMT(Statistical Machine Translation) 기반 시스템 보다 더 높은 성능을 발휘할 수 있음을 보였다.<br/>
+기계 번역에 대한 단순 LSTM 기반의 접근법에 있어 우리의 성공은 충분한 양의 데이터가 제공되는 많은 다른 sequence 학습 문제에서도
+좋은 결과를 낼 것이란 점을 보여준다.
+</div>
+
+<div class="md-paper-origin" markdown="1">
+We were surprised by the extent of the improvement obtained by reversing the words in the source sentences. We conclude that it is important to find a problem encoding that has the greatest number of short term dependencies, as they make the learning problem much simpler.<br/>
+In particular, while we were unable to train a standard RNN on the non-reversed translation problem (shown in fig. 1), we believe that a standard RNN should be easily trainable when the source sentences are reversed (although we did not verify it experimentally).
+</div>
+<div class="md-paper-translated" markdown="1">
+우리는 source sentences의 단어를 역순으로 배치하는 것으로 얻은 향상의 정도에 놀랐다. 우리는 단기 종속성이 학습 문제를 더 쉽게
+만들어주기 때문에 가장 많은 단기 종속성을 갖는 encoding 문제를 찾는 것이 중요하다고 결론을 내린다.<br/>
+특히, 역순이 아닌 번역 문제에서 standard RNN을 학습할 수 없었지만([fig. 1](#figure-1)에서 보임), standard RNN도
+source sentence가 역순으로 된 경우 쉽게 학습 할 수 있을 것이라 믿는다. (실험적으로 증명해보진 못했다)
+</div>
+
+<div class="md-paper-origin" markdown="1">
+We were also surprised by the ability of the LSTM to correctly translate very long sentences. We were initially convinced that the LSTM would fail on long sentences due to its limited memory, and other researchers reported poor performance on long sentences with a model similar to ours [5, 2, 26]. And yet, LSTMs trained on the reversed dataset had little difficulty translating long sentences.
+</div>
+<div class="md-paper-translated" markdown="1">
+우린 또한 LSTM이 매우 긴 문장도 올바르게 번역하는 능력에 놀랐다.<br/>
+우리는 초기에는 LSTM의 제한된 메모리와 우리의 것[5, 2, 26]과 유사한 긴 문장에 대한 다른 연구자들의 모델의 저성능 결과들 때문에
+LSTM이 긴 문장 번역에 실패할 것이라 확신했었다.<br/>
+그리고 아직, 역순의 dataset을 학습하는 LSTM은 긴 문장을 번역하는 것에 약간의 어려움을 가지고 있다.
+</div>
+
+<div class="md-paper-origin" markdown="1">
+Most importantly, we demonstrated that a simple, straightforward and a relatively unoptimized approach can outperform an SMT system, so further work will likely lead to even greater translation accuracies. These results suggest that our approach will likely do well on other challenging sequence to sequence problems.
+</div>
+<div class="md-paper-translated" markdown="1">
+가장 중요한 점으로, 우리는 단순하고 간단하고 상대적으로 덜 최적화된 접근법이 SMT 시스템의 성능을 뛰어넘는 다는 것을 증명했다.
+그리고 앞으로는 번역 정확도가 더 높아질 것이다. 이 결과들은 우리의 접근법이 다른 도전적인 sequence to sequence 문제에서도
+좋은 결과를 낼 것임을 시사한다.
+</div>
+
+# 6 Acknowledgements
+
+<div class="md-paper-origin" markdown="1">
+We thank Samy Bengio, Jeff Dean, Matthieu Devin, Geoffrey Hinton, Nal Kalchbrenner, Thang Luong, Wolfgang Macherey, Rajat Monga, Vincent Vanhoucke, Peng Xu, Wojciech Zaremba, and the Google Brain team for useful comments and discussions.
+</div>
+<div class="md-paper-translated" markdown="1">
+유용한 코멘트와 토의를 해준 Samy Bengio, Jeff Dean, Matthieu Devin, Geoffrey Hinton, Nal Kalchbrenner, Thang Luong,
+Wolfgang Machery, Rajat Monga, Vincent Vanhoucke, Peng Xu, Wojciech Zaremba, and the Google Brain team에 감사를 표한다.
+<span class="md-monologue">이야.. 멋진 이름들이다..</span>
+</div>
 
 # References
 [1] M. Auli, M. Galley, C. Quirk, and G. Zweig. Joint language and translation modeling with recurrent neural networks. In EMNLP, 2013.<br/>
