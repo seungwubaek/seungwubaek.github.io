@@ -3,6 +3,7 @@ layout: single
 title: "논문 번역 및 해석 - Sequence to Sequence Learning with Neural Networks"
 date: "2021-07-11 15:17:00 +0900"
 last_modified_at: "2021-07-11 15:17:00 +0900"
+post_mode: "paper-analysis"
 ---
 본 포스트는 논문 Sequence to Sequence Learning with Neural Networks를 한국어로 번역하고
 필요한 경우 이해를 돕기 위한 보충 설명을 붙이는 포스트이다.
@@ -11,8 +12,6 @@ last_modified_at: "2021-07-11 15:17:00 +0900"
 본 포스트는 개인적인 이해를 위해 작성되었습니다.<br/>
 잘못된 해석이 있을 수 있습니다.
 </div>
-
-{% include pages/paper_revision_description.html %}
 
 # Authors
 
