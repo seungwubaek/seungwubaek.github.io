@@ -185,6 +185,32 @@ kbd {
   }
 }
 
+/* Posting - Special Style: Paper Analysis */
+#paper-revision-desc {
+  .md-paper-origin, .md-paper-translated, .md-paper-interpreted {
+    display: inline-block;
+    width: 20px;
+    margin: 0;
+  }
+}
+#post-ctrl-panel-for-paper-analysis {
+  width: 100%;
+  border-bottom: 1px solid $border-color;
+  font-size: .8em;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  input[type="checkbox"] {
+    margin: 0 5px 0 0;
+  }
+  label {
+    margin: 0 15px 0 0;
+  }
+  .ctrl-option {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
 /* Posting - Special Style: Poem */
 .poem-author-note-top, .poem-author-note-bottom {
   font-size: .8em;

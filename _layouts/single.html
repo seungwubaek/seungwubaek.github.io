@@ -55,7 +55,22 @@ layout: default
         <p></p>
         {% endif %}
         {% if page.post_mode == "paper-analysis" %}
+        <div class="memo" hidden data-type="post-for-paper-analysis"></div>
           {% include pages/paper_revision_description.html %}
+          <div id="post-ctrl-panel-for-paper-analysis">
+            <div class="ctrl-option">
+              <input type="checkbox" id="show-origin" name="show-origin" checked>
+              <label for="show-origin">원문 보이기</label>
+            </div>
+            <div class="ctrl-option">
+              <input type="checkbox" id="show-translated" name="show-translated" checked>
+              <label for="show-translated">번역문 보이기</label>
+            </div>
+            <div class="ctrl-option">
+              <input type="checkbox" id="show-interpreted" name="show-interpreted" checked>
+              <label for="show-interpreted">해석문 보이기</label>
+            </div>
+          </div>
         {% endif %}
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
