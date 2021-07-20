@@ -1,3 +1,5 @@
-User-agent: *
-Allow: /
+user-agent: *
+allow: /
+disallow: /assets/iframes/
+
 Sitemap: https://seungwubaek.github.io/sitemap.xml
