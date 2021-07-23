@@ -1,8 +1,4 @@
-/* Variables */
-@import "custom/myvariables";
-
 /* Core CSS */
-@import "custom/myreset";
 @import "custom/mybase";
 
 /* Components */
@@ -19,7 +15,6 @@
 
 /* Layout Specific */
 @import "custom/mypage";
-@import "custom/myarchive";
 @import "custom/mysidebar";
 @import "custom/mywidget";
 

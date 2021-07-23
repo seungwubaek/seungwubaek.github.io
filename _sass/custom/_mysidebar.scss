@@ -18,7 +18,7 @@
           margin-bottom: 0;
         }
         #totPostsCntOnSidebar {
-          font-size: $mysidebar-meta-font-size;
+          font-size: $left-sidebar-meta-font-size;
         }
       }
     }
@@ -27,7 +27,7 @@
   .nav__list {
     .nav__items {
       .nav__sub-title {
-        font-size: $mysidebar-font-size;
+        font-size: $left-sidebar-font-size;
         padding-bottom: 0;
         margin-bottom: 0;
         cursor: pointer;
@@ -67,7 +67,7 @@
         -webkit-transition: all 200ms linear;
         transition: all 200ms linear;
         & > li {
-          font-size: $mysidebar-item-font-size;
+          font-size: $left-sidebar-item-font-size;
           display: flex;
           a {
             white-space: nowrap;
@@ -125,19 +125,19 @@
       background: $navicon-link-color-hover;
     }
 
-    width: $mysidebar-width;  // important! it decide scrollbar position!
+    width: $left-sidebar-width;  // important! it decide scrollbar position!
 
     .sidebar__meta {
       margin: 20px 0 3px 0;
-      width: $mysidebar-width - $mysidebar-scroll-width;
+      width: $left-sidebar-width - $left-sidebar-scroll-width;
     }
 
     .nav__list {
-      width: $mysidebar-width - $mysidebar-scroll-width;
+      width: $left-sidebar-width - $left-sidebar-scroll-width;
     }
 
     .author__profile-set {
-      width: $mysidebar-width - $mysidebar-scroll-width;
+      width: $left-sidebar-width - $left-sidebar-scroll-width;
       margin-bottom: 0;
 
       .author__avatar {

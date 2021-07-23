@@ -162,9 +162,17 @@ $max-width: $x-large !default;
    Grid
    ========================================================================== */
 
+   // sidebar
+$left-sidebar-scroll-width: 16px;
+$left-sidebar-meta-font-size: 13px;
+$left-sidebar-width: 216px;  // left sidebar width + scroll bar space
+$left-sidebar-font-size: 14px;
+$left-sidebar-item-font-size: 14px;
+$right-sidebar-width: 200px;
 $right-sidebar-width-narrow: 200px !default;
-$right-sidebar-width: 300px !default;
-$right-sidebar-width-wide: 400px !default;
+$author-bio-font-size: 12px;
+//
+// $right-sidebar-width-wide: 400px !default;
 
 /*
    Other
@@ -183,3 +191,61 @@ $intro-transition: intro 0.3s both !default;
 /* Customs - Table */
 $tbl-basic-head-background-color: mix(#fff, $border-color, 70%);
 $tbl-border-color: mix(#000, $border-color, 25%);
+
+// default
+$font-size: 16px;  // it is equal with _reset.
+
+// nav-remocon
+$nav-remocon-min-width: 70px;
+$nav-remocon-background-color: rgba(255,255,255,.8);
+$nav-remocon-border-color: $border-color;
+$nav-remocon-arrow-height: 20px;  // 7px;
+$nav-remocon-arrow-width: 20px;  // 50px;
+$nav-remocon-arrow-color: $base02;
+$nav-remocon-btn-set-font-size: 1em;
+$nav-remocon-btn-set-padding-top: .4em;
+$nav-remocon-btn-set-padding-bottom: .4em;
+$nav-remocon-btn-set-height: calc(#{$nav-remocon-btn-set-font-size} + #{$nav-remocon-btn-set-padding-top} + #{$nav-remocon-btn-set-padding-bottom});
+
+// masthead
+$mymasthead-font-size: $font-size;
+$mymasthead-text-color: white;  // text color is white, basically.
+$mymasthead-height: calc(3 * #{$mymasthead-font-size});
+$mymasthead-home-height: calc(2 * #{$mymasthead-font-size});
+$mymasthead-menu-height: calc(1.1 * #{$mymasthead-home-height});
+
+// right-widget
+$right-widget-background-color: black;
+$right-widget-width: 400px;
+$right-widget-height: calc(100vh - calc(#{$mymasthead-height}));
+$right-widget__btn-border-color: $border-color;
+$right-widget__btn-arrow-height: 20px;  // 7px;
+$right-widget__btn-arrow-width: 20px;  // 50px;
+$right-widget__btn-arrow-color: $primary-color;
+$right-widget__body-backgroundcolor: rgba(0, 0, 0, .9); // mix(black, #fff, 85%);
+
+// initial-content
+$initial-content-top: calc(#{$mymasthead-height} + 8px);
+
+// Whole TOC
+$wholetoc-opt-view-icon-width: 22px;
+$wholetoc-indent-size: 18px;
+$wholetoc-item-height: 12px;
+$wholetoc-category-padding-top: 16px;
+$wholetoc-category-icon-size: calc(.8 * #{$h-size-2-general});
+$wholetoc-category-branch-v-left: $wholetoc-indent-size / 2 - 4px;
+$wholetoc-category-branch-last-v-height: $wholetoc-category-padding-top + 9px;
+$wholetoc-category-branch-h-width: $wholetoc-indent-size / 2;
+$wholetoc-post-padding-top: 6px;
+$wholetoc-post-branch-last-v-height: $wholetoc-post-padding-top + 9px;
+// Whole TOC: view style - card
+$wholetoc-view-card-font-size-small: 13px;
+$wholetoc-view-card-font-size-large: 14px;
+$wholetoc-view-card-width-small: 80px;
+$wholetoc-view-card-width-large: 120px;
+
+// page
+$code-light-gray: mix(#fff, $gray, 70%);
+
+/* brands */
+// merged with mmistakes _variables.scss
