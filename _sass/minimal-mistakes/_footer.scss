@@ -18,6 +18,7 @@
 
   footer {
     @include clearfix;
+    display: flex;
     margin-left: auto;
     margin-right: auto;
     margin-top: 2em;
@@ -47,6 +48,8 @@
 }
 
 .page__footer-copyright {
+  display: inline-block;
+  width: fit-content;
   font-family: $global-font-family;
   font-size: $type-size-7;
 }
