@@ -67,6 +67,11 @@
 
 /* Posting */
 .page__content {
+  code {
+    -ms-word-break: break-word;
+    word-break: break-word;
+  }
+
   h1 {
   margin-top: 2em;
   padding: 0.5em 0;
@@ -85,6 +90,9 @@
   }
 
   a {
+    // Without word-break, in mobile web, width size is broken because of line unbreakable of href text.
+    -ms-word-break: break-all;
+    word-break: break-all;
     text-decoration: none;
     &:hover {
       text-decoration: underline;

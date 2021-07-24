@@ -10,7 +10,7 @@ html {
 
 body {
   margin: 0;
-  padding: 0;
+  padding: $initial-content-top 0 0 0;
   color: $text-color;
   font-family: $global-font-family;
   line-height: 1.5;
@@ -95,6 +95,10 @@ fieldset {
   widows: 3;
 }
 
+blockquote {
+  border-left: 0.25em solid $success-color;
+}
+
 /* abbreviations */
 
 abbr[title],
@@ -165,16 +169,14 @@ a > code,
 li > code,
 figcaption > code,
 td > code {
-  padding-top: 0.1rem;
-  padding-bottom: 0.1rem;
-  font-size: 0.8em;
-  background: $code-background-color;
-  border-radius: $border-radius;
-
-  &:before,
-  &:after {
-    letter-spacing: -0.2em;
-    content: "\00a0"; /* non-breaking space*/
+  padding-top: 1.6px;   // font-size(16px) * 0.1
+  padding-bottom: 1.6px;  // font-size(16px) * 0.1
+  font-size: 12.8px;    // font-size(16px) * 0.8
+  background: $code-light-gray;
+  border-radius: 4px;
+  &:before, &:after {
+    letter-spacing: -3.2px; // font-size(16px) * 0.2
+    content: "\00a0";     // No break whitesapce
   }
 }
 
@@ -354,4 +356,12 @@ input[type="submit"],
 .archive__item-teaser {
   -webkit-transition: $global-transition;
   transition: $global-transition;
+}
+
+/* transition */
+.notransition {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
 }
