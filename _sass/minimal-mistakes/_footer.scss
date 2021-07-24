@@ -9,7 +9,7 @@
   margin-right: 0;
   width: 100%;
   margin-top: 3em;
-  color: $muted-text-color;
+  color: #fff !important; // override
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
   -webkit-animation-delay: 0.45s;
@@ -80,6 +80,9 @@
   .social-icons {
     a {
       white-space: nowrap;
+    }
+    .svg-inline--fa {
+      color: inherit;
     }
   }
 }

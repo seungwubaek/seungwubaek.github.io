@@ -72,13 +72,13 @@ $lighter-gray: mix(#fff, $gray, 90%) !default;
 $background-color: #fff !default;
 $code-background-color: #fafafa !default;
 $code-background-color-dark: $light-gray !default;
-$text-color: $dark-gray !default;
-$muted-text-color: mix(#fff, $text-color, 20%) !default;
-$border-color: $lighter-gray !default;
+$text-color: #000 !default;
+$muted-text-color: $text-color !default;
+$border-color: mix(#fff, $text-color, 75%) !default;
 $form-background-color: $lighter-gray !default;
-$footer-background-color: $lighter-gray !default;
+$footer-background-color: #000 !default;
 
-$primary-color: #6f777d !default;
+$primary-color: #ff0000 !default;
 $success-color: #3fa63f !default;
 $warning-color: #d67f05 !default;
 $danger-color: #ee5f5b !default;
@@ -121,30 +121,30 @@ $youtube-color: #bb0000 !default;
 $xing-color: #006567 !default;
 
 /* links */
-$link-color: mix(#000, $info-color, 20%) !default;
+$link-color: #0000ff !default;
 $link-color-hover: mix(#000, $link-color, 25%) !default;
 $link-color-visited: mix(#fff, $link-color, 15%) !default;
-$masthead-link-color: $primary-color !default;
-$masthead-link-color-hover: mix(#000, $primary-color, 25%) !default;
-$navicon-link-color-hover: mix(#fff, $primary-color, 75%) !default;
+$masthead-link-color: $text-color !default;
+$masthead-link-color-hover: $text-color !default;
+$navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
 
 /* syntax highlighting (base16) */
-$base00: #263238 !default;
-$base01: #2e3c43 !default;
-$base02: #314549 !default;
-$base03: #546e7a !default;
-$base04: #b2ccd6 !default;
-$base05: #eeffff !default;
-$base06: #eeffff !default;
-$base07: #ffffff !default;
-$base08: #f07178 !default;
-$base09: #f78c6c !default;
-$base0a: #ffcb6b !default;
-$base0b: #c3e88d !default;
-$base0c: #89ddff !default;
-$base0d: #82aaff !default;
-$base0e: #c792ea !default;
-$base0f: #ff5370 !default;
+$base00: #000000 !default;
+$base01: #242422 !default;
+$base02: #484844 !default;
+$base03: #6c6c66 !default;
+$base04: #918f88 !default;
+$base05: #b5b3aa !default;
+$base06: #d9d7cc !default;
+$base07: #fdfbee !default;
+$base08: #ff6c60 !default;
+$base09: #e9c062 !default;
+$base0a: #ffffb6 !default;
+$base0b: #a8ff60 !default;
+$base0c: #c6c5fe !default;
+$base0d: #96cbfe !default;
+$base0e: #ff73fd !default;
+$base0f: #b18a3d !default;
 
 /*
    Breakpoints
