@@ -2,9 +2,131 @@
    NAVIGATION
    ========================================================================== */
 
-/*
-   Breadcrumb navigation links
-   ========================================================================== */
+/* navremocon
+========================================================================== */
+
+.nav-arrow-up {
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  border-top-width: 0;
+  border-bottom-width: $nav-remocon-arrow-height;
+  border-left-width: calc( #{$nav-remocon-arrow-width} / 2 );
+  border-right-width: calc( #{$nav-remocon-arrow-width} / 2 );
+  border-style: solid;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: $nav-remocon-arrow-color;
+  border-left-color: transparent;
+}
+.nav-arrow-down {
+  height: 0;
+  width: 0;
+  padding: 0;
+  margin-top: 2px;
+  margin-bottom: 1px;
+  border-top-width: $nav-remocon-arrow-height;
+  border-bottom-width: 0;
+  border-left-width: calc( #{$nav-remocon-arrow-width} / 2 );
+  border-right-width: calc( #{$nav-remocon-arrow-width} / 2 );
+  border-style: solid;
+  border-top-color: $nav-remocon-arrow-color;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+#nav-remocon {
+  position: fixed;
+  margin: 0 .5em .5em 0;
+  right: 0;
+  bottom: -9999px;
+  z-index: 99;
+  line-height: 1;
+  -webkit-transition: all 200ms linear;
+  transition: all 200ms linear;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;   /* Firefox all */
+  -ms-user-select: none;    /* IE 10+ */
+  user-select: none;      /* Likely future */
+  &.hide {
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+  }
+  #nav-fold-upper-button {
+    display: flex;
+    justify-content: center;
+    border: 2px solid $nav-remocon-border-color;
+    border-radius: 4px 4px 0 0;
+    border-bottom: 0;
+    background-color: $nav-remocon-background-color;
+    height: 30px;  // 1em;
+    width: 30px;
+    margin-left: auto;
+    align-items: flex-end;
+    cursor: pointer;
+  }
+  #nav-fold-lower-button {
+    display: flex;
+    justify-content: center;
+    border: 2px solid $nav-remocon-border-color;
+    border-radius: 0 0 4px 4px;
+    border-top: 0;
+    background-color: $nav-remocon-background-color;
+    height: 30px;  // 1em;
+    width: 30px;
+    margin-left: auto;
+    align-items: flex-start;
+    cursor: pointer;
+  }
+  #nav-buttons {
+    min-width: $nav-remocon-min-width;
+    margin: 0;
+    padding: 0 4px 0 4px;
+    border-width: 2px; // 0 2px 0 2px;
+    border-style: solid;
+    border-color: $nav-remocon-border-color;
+    border-radius: 4px 0 0 4px;
+    background-color: $nav-remocon-background-color;
+    overflow-y: hidden;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+    .nav-btn-set {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      height: $nav-remocon-btn-set-height;
+      border-bottom: 1px solid $nav-remocon-border-color;
+      &:last-child {
+        border-bottom: 0;
+      }
+      i {
+        text-align: center;
+        padding-right: 2px;
+      }
+      .nav-btn-title-wrapper {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        height: 100%;
+        align-items: center;
+        cursor: pointer;
+        & span {
+          text-align: left;
+        }
+      }
+      .nav-btn-vl {
+        border-left: 1px dashed $nav-remocon-border-color;
+        margin: 4px 0;
+      }
+    }
+  }
+}
+
+/* Breadcrumb navigation links
+========================================================================== */
 
 .breadcrumbs {
   @include clearfix;
@@ -24,6 +146,7 @@
 
   ol {
     padding: 0;
+    width: 100%;
     list-style: none;
     font-size: $type-size-6;
 
@@ -46,9 +169,8 @@
   }
 }
 
-/*
-     Post pagination navigation links
-     ========================================================================== */
+/* Post pagination navigation links
+========================================================================== */
 
 .pagination {
   @include clearfix();
@@ -128,9 +250,8 @@
   border-top: 1px solid $border-color;
 }
 
-/*
-     Navigation list
-     ========================================================================== */
+/* Navigation list
+========================================================================== */
 
 .nav__list {
   margin-bottom: 1.5em;
@@ -246,36 +367,9 @@
     font-weight: bold;
   }
 
-  // @include breakpoint(max-width $large - 1px) {
-  //   position: relative;
-  //   max-height: 0;
-  //   opacity: 0%;
-  //   overflow: hidden;
-  //   z-index: 10;
-  //   -webkit-transition: 0.3s ease-in-out;
-  //   transition: 0.3s ease-in-out;
-  //   -webkit-transform: translate(0, 10%);
-  //   -ms-transform: translate(0, 10%);
-  //   transform: translate(0, 10%);
-  // }
-  // Always showing
   max-height: 9999px;
   overflow: visible;
 }
-
-// @include breakpoint(max-width $large - 1px) {
-//   .nav__list input:checked ~ .nav__items {
-//     -webkit-transition: 0.5s ease-in-out;
-//     transition: 0.5s ease-in-out;
-//     max-height: 9999px; /* exaggerate max-height to accommodate tall lists*/
-//     overflow: visible;
-//     opacity: 1;
-//     margin-top: 1em;
-//     -webkit-transform: translate(0, 0);
-//     -ms-transform: translate(0, 0);
-//     transform: translate(0, 0);
-//   }
-// }
 
 .nav__title {
   margin: 0;
@@ -292,13 +386,12 @@
   font-family: $sans-serif-narrow;
   font-size: $type-size-6;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: none;
   border-bottom: 1px solid $border-color;
 }
 
-/*
-     Table of contents navigation
-     ========================================================================== */
+/* Table of contents navigation
+========================================================================== */
 
 .toc {
   font-family: $sans-serif-narrow;
@@ -316,11 +409,6 @@
     border-top-left-radius: $border-radius;
     border-top-right-radius: $border-radius;
   }
-
-  // Scrollspy marks toc items as .active when they are in focus
-  // .active a {
-  //   @include yiq-contrasted($active-color);
-  // }
 }
 
 .toc__menu {
@@ -366,5 +454,96 @@
 
   li ul li ul li ul li ul li ul > li a {
     padding-left: 3.25rem
+  }
+}
+
+/* Table of contents navigation on the Top of Post
+========================================================================== */
+
+.toc-top {
+  margin-bottom: 2em;
+  .nav__title {
+    font-size: 1.35rem;
+    margin-top: 0;
+    padding-left: 0;
+    padding-bottom: 0.2rem;
+    i {
+      margin-right: 4px;
+    }
+  }
+  // Scrollspy marks toc items as .active when they are in focus
+  .active > a {
+    @include yiq-contrasted($active-color);
+    text-decoration: underline;
+  }
+  .toc__menu {
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    font-size: .85rem;
+    a {
+      font-size: 1.1rem;
+      padding: 0 0 0 .75rem;
+    }
+    // & > li:first-child > a {
+    //   display: none;
+    // }
+    li a {
+      font-weight: 600;
+    }
+    li ul > li a {
+      padding-left: 1.5rem;
+      font-size: 1rem;
+      font-weight: normal;
+    }
+    li ul li ul > li a {
+      padding-left: 2.5rem;
+    }
+
+    li ul li ul li ul > li a {
+      padding-left: 3.5rem;
+    }
+
+    li ul li ul li ul li ul > li a {
+      padding-left: 4.5rem;
+    }
+
+    li ul li ul li ul li ul li ul > li a {
+      padding-left: 5.5rem
+    }
+  }
+}
+
+/* Pagination of the Post
+========================================================================== */
+
+.post-pagination {
+  margin-top: 2em;
+  padding-top: 2em;
+  &.hidden {
+    display: none;
+  }
+  .pagination__pager {
+    display: flex;
+    font-weight: bold;
+    color: black;
+    &.pager-prev {
+      float: left;
+      margin-right: .5em;
+      text-align: left;
+      .pager-arrow {
+        margin-right: 4px;
+      }
+    }
+    &.pager-next {
+      float: right;
+      margin-left: .5em;
+      text-align: right;
+      .pager-arrow {
+        margin-left: 4px;
+      }
+    }
+    &.pager-prev, &.pager-next {
+      margin-top: .5em;
+    }
   }
 }
