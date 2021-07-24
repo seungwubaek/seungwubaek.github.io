@@ -3,7 +3,7 @@
   //    the browser scroll view's top coordinate to #anchor's top coordinate.
   //    but, top coordinate was occupied by topbar.
   // masthead position is fixed. So, padding from masthead__inner-wrap + height masthead__menu
-  top: calc(#{$mymasthead-height} + 0.5em);  // masthead height + a little additional space
+  top: calc(#{$masthead-height} + 0.5em);  // masthead height + a little additional space
 
   .sidebar__meta {
     margin: 0;
@@ -213,7 +213,7 @@
 
 .sidebar__right {
   &.sticky {
-    top: calc(#{$mymasthead-height} + 0.5em);
+    top: calc(#{$masthead-height} + 0.5em);
     max-height: calc(100vh - #{$initial-content-top});
     &::-webkit-scrollbar {
       width: 4px;

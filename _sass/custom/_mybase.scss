@@ -6,7 +6,7 @@
 html {
   // Method 1: Prevent to hide content by Topbar
   //   It cannot prevent specific 'auto scroll to id' if moved from clicking link in other page.
-  // margin-top: calc(#{$mymasthead-height} + 8px);  // masthead height + a little additional space
+  // margin-top: calc(#{$masthead-height} + 8px);  // masthead height + a little additional space
 
   // Method 2: Prevent to hide content by Topbar
   //   It use javascript for 'auto scroll to id'. Doesn't have any problem. all clear.

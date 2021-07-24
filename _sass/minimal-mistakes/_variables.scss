@@ -208,16 +208,16 @@ $nav-remocon-btn-set-padding-bottom: .4em;
 $nav-remocon-btn-set-height: calc(#{$nav-remocon-btn-set-font-size} + #{$nav-remocon-btn-set-padding-top} + #{$nav-remocon-btn-set-padding-bottom});
 
 // masthead
-$mymasthead-font-size: $font-size;
-$mymasthead-text-color: white;  // text color is white, basically.
-$mymasthead-height: calc(3 * #{$mymasthead-font-size});
-$mymasthead-home-height: calc(2 * #{$mymasthead-font-size});
-$mymasthead-menu-height: calc(1.1 * #{$mymasthead-home-height});
+$masthead-font-size: $font-size;
+$masthead-text-color: white;  // text color is white, basically.
+$masthead-height: calc(3 * #{$masthead-font-size});
+$masthead-home-height: calc(2 * #{$masthead-font-size});
+$masthead-menu-height: calc(1.1 * #{$masthead-home-height});
 
 // right-widget
 $right-widget-background-color: black;
 $right-widget-width: 400px;
-$right-widget-height: calc(100vh - calc(#{$mymasthead-height}));
+$right-widget-height: calc(100vh - calc(#{$masthead-height}));
 $right-widget__btn-border-color: $border-color;
 $right-widget__btn-arrow-height: 20px;  // 7px;
 $right-widget__btn-arrow-width: 20px;  // 50px;
@@ -225,7 +225,7 @@ $right-widget__btn-arrow-color: $primary-color;
 $right-widget__body-backgroundcolor: rgba(0, 0, 0, .9); // mix(black, #fff, 85%);
 
 // initial-content
-$initial-content-top: calc(#{$mymasthead-height} + 8px);
+$initial-content-top: calc(#{$masthead-height} + 8px);
 
 // Whole TOC
 $wholetoc-opt-view-icon-width: 22px;
