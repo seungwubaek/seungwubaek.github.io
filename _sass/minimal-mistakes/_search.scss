@@ -9,8 +9,8 @@
 }
 
 .search__toggle {
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
   height: $nav-toggle-height;
   border: 0;
   outline: none;
@@ -112,6 +112,12 @@
   .archive__item-excerpt {
     margin-bottom: 0;
   }
+}
+
+/* lunr */
+
+.archive__item-title {
+  font-size: $h-size-2-general;
 }
 
 /* Algolia search */
