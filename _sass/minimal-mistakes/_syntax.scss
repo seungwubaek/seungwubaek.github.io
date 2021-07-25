@@ -5,10 +5,7 @@
 div.highlighter-rouge,
 figure.highlight {
   position: relative;
-  // margin-bottom: 1em;
   margin-bottom: 1.3rem;
-  // background: $base00;
-  // color: $base05;
   font-family: $monospace;
   font-size: $type-size-6;
   line-height: 1.8;
@@ -17,7 +14,7 @@ figure.highlight {
   > pre,
   pre.highlight {
     margin: 0;
-    padding: 1em;
+    padding: 8px;
   }
 }
 
@@ -45,6 +42,7 @@ figure.highlight {
     &.code,
     &.rouge-code {
       padding-left: 1em;
+      vertical-align: top;
     }
   }
 
@@ -61,6 +59,8 @@ figure.highlight {
   background-color: $base06;
 }
 .highlight {
+  border-radius: 4px;
+
   .c {
     /* Comment */
     color: $base04;
@@ -321,5 +321,29 @@ figure.highlight {
 .gist {
   th, td {
     border-bottom: 0;
+  }
+}
+
+table.rouge-table{
+  overflow: auto;
+  &::-webkit-scrollbar {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar:horizontal {
+    height: 8px;
+  }
+  &::-webkit-scrollbar:vertical {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    background-color: #6272a4;
+  }
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
   }
 }
