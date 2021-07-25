@@ -516,12 +516,14 @@ body:hover .visually-hidden button {
    ========================================================================== */
 
 .footnote {
-  color: mix(#fff, $gray, 25%);
+  color: $link-color;
   text-decoration: none;
 }
 
 .footnotes {
-  color: mix(#fff, $gray, 25%);
+  color: $text-color;
+  margin-top: 16px;
+  border-top: 1px solid #bfbfbf;
 
   ol,
   li,
@@ -532,7 +534,7 @@ body:hover .visually-hidden button {
 }
 
 a.reversefootnote {
-  color: $gray;
+  color: $link-color;
   text-decoration: none;
 
   &:hover {
@@ -590,4 +592,26 @@ a.reversefootnote {
   .page__footer {
     position: static;
   }
+}
+
+/*
+   Responsive Size Format: [size attr]-[Medium]-[Large]
+   ========================================================================== */
+.width-100-100 {
+  width: 100%;
+}
+
+.width-80-100 {
+  width: 100%;
+  @include breakpoint($medium) {
+    width: 80%;
+  }
+}
+
+/*
+   Memo (Hidden)
+   ========================================================================== */
+
+.memo {
+  display: none;
 }
