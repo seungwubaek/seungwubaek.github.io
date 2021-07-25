@@ -1,0 +1,129 @@
+/* Posting - Special Style */
+.md-monologue {
+  color: $base03;
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+.md-paper-origin {
+  margin-bottom: .5em;
+  background-color: #e4e4e4;
+}
+
+.md-paper-translated {
+  margin: 0 0 $indent-var;
+}
+
+.md-paper-interpreted {
+  background-color: #e3e1ff;
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  height: fit-content;
+}
+
+kbd {
+  font-size: .8em;
+  padding: .1em .4em;
+  margin: 0 .1em;
+  border: 1px solid mix(#fff, black, 50%);
+  border-radius: 4px;
+  background-color: $code-light-gray;
+  box-shadow: 0 1px 1px rgba(12,13,14,0.15), inset 0 1px 0 0 #fff;
+}
+
+.code-reducible {
+  position: relative;
+  .code-reducible-icon {
+    position: absolute;
+    top: -16px;
+    display: flex;
+    cursor: pointer;
+  }
+  &.code-reduce table.rouge-table {
+    max-height: 350px;
+  }
+}
+
+.md-reference {
+  &:before {
+    content: "Reference:";
+    font-weight: bold;
+  }
+  ul {
+    margin-top: .5em;
+  }
+}
+
+/* Posting - Special Style: Paper Analysis */
+#paper-revision-desc {
+  .md-paper-origin, .md-paper-translated, .md-paper-interpreted {
+    display: inline-block;
+    width: 20px;
+    margin: 0;
+  }
+}
+#post-ctrl-panel-for-paper-analysis {
+  width: 100%;
+  border-bottom: 1px solid $border-color;
+  font-size: .8em;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  input[type="checkbox"] {
+    margin: 0 5px 0 0;
+  }
+  label {
+    margin: 0 15px 0 0;
+  }
+  .ctrl-option {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Posting - Special Style: Poem */
+.poem-author-note-top, .poem-author-note-bottom {
+  font-size: .8em;
+  span {
+    font-weight: bold;
+  }
+}
+.poem-author-note-top {
+  margin-bottom: 50px;
+}
+.poem-author-note-bottom {
+  margin-top: 50px;
+}
+.poem-wrapper {
+  width: 100%;
+  padding-top: calc(50px + 1em);
+  padding-bottom: 100px;
+}
+.poem {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  .poem-title {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+  }
+  .poem-author {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+    .poem-date {
+      font-size: 12px;
+    }
+  }
+  .poem-body {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    white-space: pre-wrap;
+  }
+}
