@@ -86,7 +86,8 @@ $(document).ready(function() {
   // add lightbox class to all image links
   $(
     "a[href$='.jpg'],a[href$='.jpeg'],a[href$='.JPG'],a[href$='.png'],a[href$='.gif']"
-  ).addClass("image-popup");
+  ).addClass("img-popup");
+  // ).addClass("image-popup");
 
   // Magnific-Popup options
   // $(".image-popup").magnificPopup({
