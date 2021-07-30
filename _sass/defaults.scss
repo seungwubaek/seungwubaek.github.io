@@ -1,0 +1,60 @@
+/*!
+ * Minimal Mistakes Jekyll Theme 4.20.2 by Michael Rose
+ * Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+ * Licensed under MIT (https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE)
+
+
+ * Minimal Mistakes Jekyll are Merged by Sammy Baek
+ * Copyright 2020-2021 Sammy Baek
+*/
+
+/* Variables */
+@import "defaults/variables";
+
+/* Mixins and functions */
+@import "defaults/vendor/breakpoint/breakpoint";
+@include breakpoint-set("to ems", true);
+@import "defaults/vendor/magnific-popup/magnific-popup"; // Magnific Popup
+@import "defaults/vendor/susy/susy";
+@import "defaults/mixins";
+
+/* Core CSS */
+@import "defaults/reset";
+@import "defaults/base";
+@import "defaults/forms";
+@import "defaults/tables";
+@import "defaults/animations";
+
+/* Components */
+@import "defaults/buttons";
+@import "defaults/notices";
+@import "defaults/masthead";
+@import "defaults/navigation";
+@import "defaults/footer";
+@import "defaults/search";
+@import "defaults/syntax";
+@import "defaults/dracula";  /* override syntax */
+
+/* Utility classes */
+@import "defaults/utilities";
+
+/* Layout specific */
+@import "defaults/page";
+@import "defaults/page-special";
+@import "defaults/archive";
+@import "defaults/sidebar";
+@import "defaults/print";
+
+@import "defaults/right-widget";
+
+/* Additional */
+@import "defaults/popup-notices";
+@import "defaults/share";
+@import "defaults/wholetoc";
+@import "defaults/google";
+@import "defaults/mathjax";
+@import "defaults/magnific-popup"
+
+/* Event Theme */
+// @import "defaults/christmas-2020";
+// @import "defaults/happynewyear-2021";
