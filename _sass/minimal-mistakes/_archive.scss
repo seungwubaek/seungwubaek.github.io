@@ -16,6 +16,7 @@
 
 .archive__item {
   position: relative;
+  margin-bottom: 10px;
 
   a {
     position: relative;
@@ -37,6 +38,22 @@
   &:hover {
     .archive__item-title > a, .archive__item-excerpt {
       text-decoration: underline;
+    }
+  }
+
+  .page-meta {
+    margin: 0 0 4px;
+    line-height: 1.2;
+    .page__header-taxonomy {
+      font-size: .75em;
+      a {
+        &:hover {
+          background-color: mix(#000, #fff, 25%);
+        }
+      }
+    }
+    .page__header-meta {
+      font-size: .75em;
     }
   }
 }
