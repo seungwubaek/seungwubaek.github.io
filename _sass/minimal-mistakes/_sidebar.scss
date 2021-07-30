@@ -8,13 +8,12 @@
 
 .sidebar {
   @include clearfix();
-  // @include breakpoint(max-width $large) {
-  //   /* fix z-index order of follow links */
-  //   position: relative;
-  //   z-index: 10;
-  //   -webkit-transform: translate3d(0, 0, 0);
-  //   transform: translate3d(0, 0, 0);
-  // }
+
+  // [Warning] fixed topbar covers content. If we use inner page link(move to #anchor),
+  //    the browser scroll view's top coordinate to #anchor's top coordinate.
+  //    but, top coordinate was occupied by topbar.
+  // masthead position is fixed. So, padding from masthead__inner-wrap + height masthead__menu
+  top: calc(#{$masthead-height} + 0.5em);  // masthead height + a little additional space
 
   @include breakpoint($large) {
     float: left;
@@ -41,7 +40,6 @@
   }
 
   > * {
-    // margin-top: 1em;
     margin-bottom: 1em;
   }
 
@@ -57,7 +55,6 @@
   p,
   li {
     font-family: $sans-serif;
-    // font-size: $type-size-6;
     line-height: 1.5;
   }
 
@@ -69,10 +66,413 @@
       height: 20px;
     }
   }
+
+  .sidebar__meta {
+    margin: 0;
+    width: 100%;
+    ul {
+      margin: 0;
+      padding: 0;
+      text-align: right;
+      li {
+        list-style-type: none;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+        #totPostsCntOnSidebar {
+          font-size: $left-sidebar-meta-font-size;
+        }
+      }
+    }
+  }
+
+  .nav__list {
+    .nav__items {
+      .nav__sub-title {
+        font-size: $left-sidebar-font-size;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        cursor: pointer;
+        .nav__sub-title-set {
+          display: flex;
+          width: 100%;
+          .nav__sub-title-name {
+            display: flex;
+            width: 100%;
+            a {
+              display: flex;
+              width: 100%;
+              justify-content: space-between;
+              white-space: nowrap;
+            }
+          }
+          .nav__sub-title-dropdownicon {
+            text-align: right;
+            margin-top: auto;
+            margin-bottom: auto;
+            .fas.fa-plus.empty-icon {
+              opacity: 0;
+            }
+          }
+        }
+      }
+      li:first-of-type {
+        .nav__sub-title {
+          margin-top: 0;
+          padding-top: 0;
+        }
+      }
+      ul.nav__item-children {
+        margin-bottom: 0;
+        overflow: hidden;
+        max-height: 0;
+        -webkit-transition: all 200ms linear;
+        transition: all 200ms linear;
+        & > li {
+          font-size: $left-sidebar-item-font-size;
+          display: flex;
+          a {
+            white-space: nowrap;
+            margin-left: auto;
+          }
+        }
+      }
+      .nav__sub-title-stat, .nav__item-children-stat {
+        align-self: center;
+        margin-right: 4px;
+        background-color: mix(orangered, #fff, 85%);
+        color: white;
+        font-size: 11px;
+        padding-left: 6px;
+        padding-right: 6px;
+        border-radius: 8px;
+        font-weight: normal;
+      }
+      .nav__item-children-stat {
+        margin-left: 8px;
+        margin-right: 0;
+      }
+    }
+    #ac-toc, label[for=ac-toc] {
+      display: none;
+    }
+  }
+
+  /* Author profile and links */
+  // When sidebar is not sticky
+  .author__avatar {
+    display: table-cell;
+    vertical-align: top;
+    width: 70px;
+    height: 70px;
+
+    @include breakpoint($large) {
+      display: block;
+      width: auto;
+      height: auto;
+    }
+
+    img {
+      max-width: 110px;
+      border-radius: 50%;
+
+      @include breakpoint($large) {
+        padding: 5px;
+        border: 1px solid $border-color;
+      }
+    }
+  }
+
+  .author__content {
+    display: table-cell;
+    vertical-align: top;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 1;
+
+    @include breakpoint($large) {
+      display: block;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .author__name {
+      margin: 0;
+      font-family: $sans-serif;
+      font-size: $type-size-5;
+
+      @include breakpoint($large) {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .author__bio {
+      margin: 0;
+      font-size: $author-bio-font-size;
+
+      @include breakpoint($large) {
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .author__urls-wrapper {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: $author-bio-font-size;
+    font-family: $sans-serif;
+    z-index: 20;
+    cursor: none;
+
+    li:last-child {
+      a {
+        margin-bottom: 0;
+      }
+    }
+
+    @include breakpoint($large) {
+      display: block;
+    }
+
+    button {
+      position: relative;
+      margin-bottom: 0;
+
+      &:before {
+        @supports (pointer-events: none) {
+          content: '';
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+        }
+      }
+
+      &.open {
+        &:before {
+          pointer-events: auto;
+        }
+      }
+
+      @include breakpoint($large) {
+        display: none;
+      }
+    }
+
+    .author__urls {
+      display: none;
+      position: absolute;
+      right: 0;
+      margin-top: 15px;
+      padding: 10px;
+      list-style-type: none;
+      border: 1px solid $border-color;
+      border-radius: $border-radius;
+      background: $background-color;
+      box-shadow: 0 2px 4px 0 rgba(#000, 0.16), 0 2px 10px 0 rgba(#000, 0.12);
+      cursor: default;
+
+      &.is--visible {
+        display: block;
+      }
+
+      @include breakpoint($large) {
+        display: block;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      &:before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: -11px;
+        // left: calc(50% - 10px);
+        left: calc(80% - 10px);
+        width: 0;
+        border-style: solid;
+        border-width: 0 10px 10px;
+        border-color: $border-color transparent;
+        z-index: 0;
+
+        @include breakpoint($large) {
+          display: none;
+        }
+      }
+
+      &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: -10px;
+        // left: calc(50% - 10px);
+        left: calc(80% - 10px);
+        width: 0;
+        border-style: solid;
+        border-width: 0 10px 10px;
+        border-color: $background-color transparent;
+        z-index: 1;
+
+        @include breakpoint($large) {
+          display: none;
+        }
+      }
+
+      span.label {
+        padding-left: 5px;
+      }
+
+      ul {
+        padding: 10px;
+        list-style-type: none;
+      }
+
+      li {
+        white-space: nowrap;
+      }
+
+      a {
+        display: block;
+        margin-bottom: 5px;
+        padding-right: 5px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        color: inherit;
+        font-size: $type-size-5;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      &.social-icons {
+        margin-top: 10px;
+        li {
+          display: inline-block;
+          margin: 4px 0 0 0;
+          a {
+            padding: 0;
+            margin-bottom: 0;
+            font-size: 1.5em;
+          }
+          span {
+            padding: 0 5px 0 0;
+          }
+        }
+        li[itemprop="homeLocation"] {
+          display: list-item;
+          padding-top: 0;
+          i {
+            font-size: 1.2em;
+          }
+        }
+      }
+    }
+
+    .btn {
+      font-size: 1em;
+    }
+  }
+
+  &.sticky { // Only when sidebar sticky, specifically
+    // [Warning] fixed topbar covers content. If we use inner page link(move to #anchor),
+    //    the browser scroll view's top coordinate to #anchor's top coordinate.
+    //    but, top coordinate was occupied by topbar.
+    position: sticky;  // change 'sticky' to 'fixed'.
+    opacity: 1;  // Remove row opacity animation After/Before hovering
+    padding-bottom: 1em;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: black;
+      border-radius: 2px;
+      opacity: .4;
+    }
+    &::-webkit-scrollbar-track {
+      background: $navicon-link-color-hover;
+    }
+
+    width: $left-sidebar-width;  // important! it decide scrollbar position!
+
+    .sidebar__meta {
+      margin: 20px 0 3px 0;
+      width: $left-sidebar-width - $left-sidebar-scroll-width;
+    }
+
+    .nav__list {
+      width: $left-sidebar-width - $left-sidebar-scroll-width;
+    }
+
+    .author__profile-set {
+      width: $left-sidebar-width - $left-sidebar-scroll-width;
+      margin-bottom: 0;
+
+      .author__avatar {
+        width: auto;
+        height: auto;
+      }
+
+      .author__content {
+        padding-right: 0;
+      }
+
+      .author__urls {
+        &.social-icons {
+          a, span {
+            padding: 0;
+          }
+          li {
+             a {
+               font-size: 1.5em;
+             }
+          }
+          li[itemprop="homeLocation"] {
+            i {
+              font-size: 1.2em;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .sidebar__right {
   margin-bottom: 1em;
+
+  &.sticky {
+    top: calc(#{$masthead-height} + 0.5em);
+    max-height: calc(100vh - #{$initial-content-top});
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: black;
+      border-radius: 2px;
+      opacity: .4;
+    }
+    &::-webkit-scrollbar-track {
+      background: $navicon-link-color-hover;
+    }
+  }
 
   @include breakpoint($large) {
     position: absolute;
@@ -92,10 +492,16 @@
     }
   }
 
-  // @include breakpoint($x-large) {
-  //   width: $right-sidebar-width;
-  //   margin-right: -1 * $right-sidebar-width;
-  // }
+  .toc {
+    .nav__title {
+      margin-top: 0;
+    }
+    // Scrollspy marks toc items as .active when they are in focus
+    .active > a {
+      @include yiq-contrasted($active-color);
+      text-decoration: underline;
+    }
+  }
 }
 
 .splash .sidebar__right {
@@ -107,215 +513,6 @@
 
   @include breakpoint($x-large) {
     margin-right: 0;
-  }
-}
-
-/*
-   Author profile and links
-   ========================================================================== */
-
-.author__avatar {
-  display: table-cell;
-  vertical-align: top;
-  width: 36px;
-  height: 36px;
-
-  @include breakpoint($large) {
-    display: block;
-    width: auto;
-    height: auto;
-  }
-
-  img {
-    max-width: 110px;
-    border-radius: 50%;
-
-    @include breakpoint($large) {
-      padding: 5px;
-      border: 1px solid $border-color;
-    }
-  }
-}
-
-.author__content {
-  display: table-cell;
-  vertical-align: top;
-  padding-left: 15px;
-  padding-right: 25px;
-  line-height: 1;
-
-  @include breakpoint($large) {
-    display: block;
-    width: 100%;
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-}
-
-.author__name {
-  margin: 0;
-
-  @include breakpoint($large) {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-}
-.sidebar .author__name {
-  font-family: $sans-serif;
-  font-size: $type-size-5;
-}
-
-.author__bio {
-  margin: 0;
-
-  @include breakpoint($large) {
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-}
-
-.author__urls-wrapper {
-  position: relative;
-  display: table-cell;
-  vertical-align: middle;
-  font-family: $sans-serif;
-  z-index: 20;
-  cursor: pointer;
-
-  li:last-child {
-    a {
-      margin-bottom: 0;
-    }
-  }
-
-  .author__urls {
-    span.label {
-      padding-left: 5px;
-    }
-  }
-
-  @include breakpoint($large) {
-    display: block;
-  }
-
-  button {
-    position: relative;
-    margin-bottom: 0;
-
-    &:before {
-      @supports (pointer-events: none) {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-      }
-    }
-
-    &.open {
-      &:before {
-        pointer-events: auto;
-      }
-    }
-
-    @include breakpoint($large) {
-      display: none;
-    }
-  }
-}
-
-.author__urls {
-  display: none;
-  position: absolute;
-  right: 0;
-  margin-top: 15px;
-  padding: 10px;
-  list-style-type: none;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
-  background: $background-color;
-  box-shadow: 0 2px 4px 0 rgba(#000, 0.16), 0 2px 10px 0 rgba(#000, 0.12);
-  cursor: default;
-
-  &.is--visible {
-    display: block;
-  }
-
-  @include breakpoint($large) {
-    display: block;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    box-shadow: none;
-  }
-
-  &:before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -11px;
-    // left: calc(50% - 10px);
-    left: calc(80% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    border-color: $border-color transparent;
-    z-index: 0;
-
-    @include breakpoint($large) {
-      display: none;
-    }
-  }
-
-  &:after {
-    display: block;
-    content: "";
-    position: absolute;
-    top: -10px;
-    // left: calc(50% - 10px);
-    left: calc(80% - 10px);
-    width: 0;
-    border-style: solid;
-    border-width: 0 10px 10px;
-    border-color: $background-color transparent;
-    z-index: 1;
-
-    @include breakpoint($large) {
-      display: none;
-    }
-  }
-
-  ul {
-    padding: 10px;
-    list-style-type: none;
-  }
-
-  li {
-    white-space: nowrap;
-  }
-
-  a {
-    display: block;
-    margin-bottom: 5px;
-    padding-right: 5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    color: inherit;
-    font-size: $type-size-5;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
 
@@ -345,4 +542,3 @@
     margin-right: initial;
   }
 }
-
