@@ -128,11 +128,11 @@
 /* Breadcrumb navigation links
 ========================================================================== */
 
-.breadcrumbs {
+nav.breadcrumbs {
   @include clearfix;
   margin: 0 auto;
   max-width: 100%;
-  padding-left: 1em;
+  padding-left: 0;
   padding-right: 1em;
   font-family: $sans-serif;
   -webkit-animation: $intro-transition;
@@ -146,12 +146,12 @@
 
   ol {
     padding: 0;
+    margin-top: 0;
     width: 100%;
     list-style: none;
     font-size: $type-size-6;
 
     @include breakpoint($large) {
-      float: right;
       width: calc(100% - #{$right-sidebar-width-narrow});
     }
 
