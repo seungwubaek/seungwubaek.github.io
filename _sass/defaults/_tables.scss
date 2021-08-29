@@ -50,14 +50,6 @@ thead {
 }
 
 tbody {
-  tr {
-    &:first-child {
-      td {
-        border-top: 1px solid $tbl-border-color;
-      }
-    }
-  }
-
   td {
     border-right: 1px solid $tbl-border-color;
     border-bottom: 1px solid $tbl-border-color;
