@@ -15,7 +15,7 @@ post_mode: "paper-analysis"
 
 # Authors
 
-<table>
+<table class="md-paper-authors">
 <tr style="text-align: center;">
 <td><strong>Ilya Sutskever</strong><br/>Google<br/>ilyasu@google.com</td>
 <td><strong>Oriol Vinyals</strong><br/>Google<br/>vinyals@google.com</td>
