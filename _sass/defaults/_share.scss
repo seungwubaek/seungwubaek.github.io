@@ -3,17 +3,15 @@
   Most of styles are in _buttons.scss
 */
 
-.page__share {
-  .share-kakao {
-    min-width: fit-content;
+.share-kakao {
+  min-width: fit-content;
+}
+.btn--kakao {
+  .kakao-symbol {
+    width: 14px;
+    margin-bottom: 1px;
   }
-  .btn--kakao {
-    .kakao-symbol {
-      width: 14px;
-      margin-bottom: 1px;
-    }
-    &:hover {
-      color: mix(#000000, #fff, 85%);
-    }
+  &:hover {
+    color: mix(#000000, #fff, 85%);
   }
 }
