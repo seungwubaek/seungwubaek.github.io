@@ -3,7 +3,7 @@ layout: single
 title: "[Git Page Jekyll Blog] - [17] 포스트 공유하기: Kakao"
 post-order: 17
 date: "2021-09-02 16:37:00 +0900"
-last_modified_at: "2021-09-02 16:37:00 +0900"
+last_modified_at: "2021-09-02 16:47:00 +0900"
 ---
 이 포스트에서는 Kakao에 포스트의 링크를 공유하는 방법에 대해 알아본다.
 Kakao 공유 방법은 Kakao가 제공하는 API를 사용하며 이를위해 Kakao 개발자 사이트에 등록한 후
@@ -30,7 +30,7 @@ URL을 복사하거나 각 플랫폼에 공유할 수 있다.
 
 이를 위해 카카오 서버 측에 우리 블로그를 등록해주어야 하며, 우리 블로그 측에서는 카카오 SDK를 다운로드 받고 관련 API 기능을 구현해주면 된다.
 
-## Kakao Developers
+## 1. Kakao Developers
 
 카카오 공유하기를 포함하여, 카카오에서 제공하는 모든 API를 사용하기 위해서는 카카오 서버에 우리 블로그를 등록해야 한다.<br/>
 이런 등록 작업은 서버가 제공하는 API를 악의적이거나 무분별하게 사용하는 것을 막고 사용자의 신원을 확실히 하기 위해서이다.<br/>
@@ -48,7 +48,7 @@ URL을 복사하거나 각 플랫폼에 공유할 수 있다.
 
 ![Kakao Developers Site]({{ site.gdrive_url_prefix }}1jJ4eZyE-AFDK7vZ1lLwwVlqA-_-P0_9k){:style="max-height: 500px;"}
 
-## 애플리케이션 추가하기
+## 2. 애플리케이션 추가하기
 
 `내 애플리케이션` 메뉴를 선택하여 들어오면 아래 처럼 내가 등록한 애플리케이션 목록이 보인다.
 처음에는 목록에 아무것도 없다. 아래 그림은 내 블로그가 등록된 이후이므로 내 블로그에 대한 것이 보인다.
@@ -80,7 +80,7 @@ URL을 복사하거나 각 플랫폼에 공유할 수 있다.
 
 ![My Application List after adding]({{ site.gdrive_url_prefix }}1SEISkdN-Jj-MUHFMiNX3AbvYwAIy7OMr){:style="max-height: 250px;"}
 
-## 애플리케이션 요약정보
+## 3. 애플리케이션 요약정보
 
 애플리케이션 목록에서 등록한 애플리케이션을 클릭하면 아래와 같은 `요약정보` 화면이 나온다.<br/>
 여기서 `앱 키`란 API를 사용하려고 할 때
@@ -101,7 +101,7 @@ URL을 복사하거나 각 플랫폼에 공유할 수 있다.
 
 ![Application Summary]({{ site.gdrive_url_prefix }}1ldosIHlX_umkqfhCfCgPoNfFjk9OhnnI){:style="max-height: 600px;"}
 
-## Kakao API 종류
+## 4. Kakao API 종류
 
 이때 Kakao API로 어떤 기능들을 호출 할 수 있는지 보려면 화면의 왼쪽 메뉴를 보면 알 수 있다.
 `카카오 로그인`, `카카오링크`, `카카오채널`, `음성`, `푸시알림` 들이 그것들이다.
@@ -123,7 +123,7 @@ Ref. <https://developers.kakao.com/docs/latest/ko/message/common#intro>
 > 카카오링크 API는 웹 페이지 소스코드에 공유할 내용을 정의하는 등 상대적으로 간단하게 기능을 구현할 수 있습니다.
 > &ndash; <https://developers.kakao.com/docs/latest/ko/message/common#intro>
 
-## 플랫폼
+## 5. 플랫폼
 
 다음으로 `요약정보` 화면에서 `플랫폼 설정하기` 버튼을 클릭한다.<br/>
 여기서 플랫폼이란, API를 호출하는 API 사용자 측의 플랫폼의 종류를 의미한다.
@@ -146,7 +146,7 @@ Ref. <https://developers.kakao.com/docs/latest/ko/message/common#intro>
 
 ![Registered Web Platform Info]({{ site.gdrive_url_prefix }}1qAg9rtFePSSO44GaFxDhd532Gq9QQhjp){:style="max-height: 500px;"}
 
-## 카카오링크
+## 6. 카카오링크
 
 다음으로 우리 블로그에서 사용할 '카카오링크' API를 사용 등록 및 설정하는 과정을 진행한다.
 
@@ -171,7 +171,7 @@ Ref. <https://developers.kakao.com/docs/latest/ko/message/common#intro>
 * 카카오 메시지 API 이해하기: <https://developers.kakao.com/docs/latest/ko/message/common>
 * 카카오링크 API: <https://developers.kakao.com/docs/latest/ko/message/js-link>
 
-### 메시지 빌더
+## 7. 메시지 템플릿 빌더
 
 이제 '카카오링크' API를 사용하기 위해 API를 등록하고 메시지 내용이 상대에게 전달됐을 때 상대에 보이는 카톡 말풍선의 형태를 정의 할 것이다.
 
@@ -180,8 +180,6 @@ Ref. <https://developers.kakao.com/docs/latest/ko/message/common#intro>
 메시지 템플릿을 만들기 위해 `메시지 템플릿 빌더 바로가기` 버튼을 클릭하자.
 
 ![Kakao Link - Message Builder]({{ site.gdrive_url_prefix }}15ih5vXv3tbBBnUKqdqN2SSyc3uzY0kSp){:style="max-height: 500px;"}
-
-## 메시지 템플릿 빌더
 
 여기서 메시지 템플릿을 제작할 수 있다. 템플릿을 제작하는 것은 카카오링크 API를 사용 등록하는 것이며,
 하나의 카톡 말풍선의 레이아웃을 제작하는 것이다.
@@ -284,7 +282,7 @@ sendScrap({
 
 ![Message Template - User Argument]({{ site.gdrive_url_prefix }}1vB9RrzbTp0eCvk4xWD1zTgHExX15YGZa){:style="max-height: 300px;"}
 
-### 소셜
+### 소셜 탭
 
 `소셜` 탭에서는 좋아요 수, 구독자 수 같은 값들을 포함시킬 수 있다.
 이러한 좋아요 수, 구독자 수는 유저가 행위를 할 때 마다 동적으로 변화한다.
@@ -294,14 +292,14 @@ sendScrap({
 
 ![Message Template - Social]({{ site.gdrive_url_prefix }}1Cn-AwHjTzApVFuMdnFS4OUygvr1z4-hH){:style="max-height: 200px;"}
 
-### 버튼
+### 버튼 탭
 
 `버튼` 탭에서는 말풍선에 버튼을 추가할 수 있다. 우리는 '자세히 보기' 버튼 하나만 넣고 공유할 블로그 페이지의 링크와 연결시키면 된다.
 따라서 아래 그림과 같이 작성한다.
 
 ![Message Template - Button]({{ site.gdrive_url_prefix }}100I8dobfkDoYj9VVBeiMGnheqLmq2Jiz){:style="max-height: 500px;"}
 
-### 공통링크
+### 공통링크 탭
 
 `공통링크` 탭에서는 위 섹션 `버튼` 탭에서 버튼을 클릭했을때 연결시켜줄 링크를 정의하는 곳이다.
 
@@ -315,7 +313,7 @@ sendScrap({
 
 ![Message Template - Common Link]({{ site.gdrive_url_prefix }}1MoStHCm7wvcDN-e3UaI71UVwGwglSMvb){:style="max-height: 500px;"}
 
-### 기타
+### 기타 탭
 
 `기타` 탭에서는 출처 링크를 정할 수 있다. 각자 블로그 주소로 지정하자.
 
@@ -327,7 +325,7 @@ sendScrap({
 
 여기까지 만들면 메시지 템플릿 작성이 완료된다. 앞으로는 내 블로그 쪽에서 수행할 작업만 남았다.
 
-## Kakao 버튼 만들기
+## 8. Kakao 버튼 만들기
 
 이번 섹션에서는 Kakao 공유 버튼을 만든다.<br/>
 이 과정을 거치면서 디자인 측면에서는 각자의 블로그에 따라 버튼의 크기와 카카오 아이콘 색깔들을 정확히 정하고
@@ -422,7 +420,7 @@ Custom Javascript에 정의한 내용이 작동하도록 하였다. Custom Javas
 
 `<span> Kakao</span>`은 카카오 레이블에 해당하는 텍스트이다.
 
-## Kakao API 호출하는 Javascript 함수 만들기
+## 9. Kakao API 호출하는 Javascript 함수 만들기
 
 버튼 디자인까지 완료되었으므로 이제는 버튼 클릭 이벤트가 발생하면 카카오링크 API가 호출되도록 Custom Javascript를 구현할 차례이다.
 
@@ -700,8 +698,9 @@ defaults:
       use_kakao-sdk: true
 ```
 
-지금까지의 내용들을 이해했다면 필요없는 부분은 삭제하고 더 좋은 기능은 추가해서 지금 설명한 것 보다 더 나은 형태의
-카카오링크를 생성할 수도 있을 것이다.
+여기까지 카카오 공유 버튼 만들기 설명을 완료했다. 개인적으로 이해가 부족해서 구현상 허점이 몇군데 있는 것 같다.<br/>
+하지만 지금까지의 내용들을 이해한 독자라면 필요없는 부분은 삭제하고 더 좋은 기능은 추가해서 지금까지 설명한 것 보다 더 나은 형태의
+카카오링크를 생성할 수 있을 것이다.
 
 <div class="md-reference" markdown=1>
 * <https://developers.kakao.com/>
