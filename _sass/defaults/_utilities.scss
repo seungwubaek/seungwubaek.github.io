@@ -140,6 +140,13 @@ body:hover .visually-hidden button {
   width: 100%;
 }
 
+/* flexible align */
+.inline-flex-align-center {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /*
    Images
    ========================================================================== */
