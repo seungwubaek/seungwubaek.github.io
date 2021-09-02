@@ -2,11 +2,11 @@
 layout: single
 title: "자기 테이프(Magnetic Tape)"
 date: "2021-06-08 22:52:00 +0900"
-last_modified_at: "2021-06-08 22:52:00 +0900"
+last_modified_at: "2021-09-02 14:55:00 +0900"
 ---
 자기 테이프(Magnetic Tape)는 긴 끈 모양의 자성체를 돌돌 말아 놓은 데이터 저장 매체이다. 이러한 자기 테이프의 특징은 여러가지 다른 형태의 저장 매체들 보다 싸고 안정적이라는 점이다.
 
-![Computer Tape](http://www.columbia.edu/cu/computinghistory/701-tape.gif){:style="max-height: 400px;"}
+![IBM 701 Tape Drive]({{ site.gdrive_url_prefix }}1bR7cV_gS-fDzor8QdS0VVas9dDwnCI0i){:style="max-height: 400px;"}
 {:style="margin-bottom: 0;" class="img-popup"
 data-title="<a href="http://www.columbia.edu/cu/computinghistory/701-tape.html">IBM 701 Tape Drive - <i>The First Magnetic Tape Drive for Computer Data Storage</i></a> from <a href="http://www.columbia.edu">Columbia University</a>"}
 <div style="font-size: .75em;" markdown=1>
