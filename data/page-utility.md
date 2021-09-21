@@ -115,7 +115,8 @@ Kramdown 인라인 속성문 `{:style=""}`을 인라인 이미지 옆에 붙여�
 
 ## Markdown Footnote 주석
 
-* 이렇게 쓰고 `masthead`[^masthead] 포스트 맨아래에 주석 내용 입력
+이렇게 쓰고 `masthead`[^masthead] 포스트 맨아래에 주석 내용 입력
+주석 키워드 ([]) 안에 띄어쓰기 없어야함
 
 [^masthead]: masthead: 돛대의 꼭대기, 신문 1면의 발행사 이름을 의미한다. 즉, Topbar와 크게 다르지 않은 의미이다.
 
