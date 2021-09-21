@@ -5,7 +5,7 @@ post-order: 17
 date: "2021-09-21 22:55:00 +0900"
 last_modified_at: "2021-09-21 22:55:00 +0900"
 ---
-Hadoop이란 다양한 형태의 대규모 데이터를 분산 환경에 처리하기 위한 빅데이터 솔루션이며 오픈소스 프레임워크이다.
+Hadoop이란 다양한 형태의 대규모 데이터를 분산 컴퓨팅 기술로 처리하는 빅데이터 솔루션이며 오픈소스 프레임워크이다.
 이 포스트에서는 Hadoop에 대해 직관적으로 이해하기 위해 Hadoop 고유의 특징에 대해 간략히 알아보고
 RDB와 같은 기존의 데이터 보관 및 처리 솔루션과 어떤 차이를 가지는지 생각해 본다.
 
@@ -32,11 +32,11 @@ Ref. <https://www.edureka.co/blog/hadoop-ecosystem>
 ### Distributed Architecture
 
 Hadoop 시스템은 여러개의 물리적 노드들이 하나의 Cluster로 묶인 구조를 취하고 있다.<br/>
-비교적 적은 비용이 드는 여러대의 Low Performance Machine들이 Hadoop 분산 구조를 이용해
+Hadoop 분산 구조를 이용하면 비교적 적은 비용이 드는 여러대의 Low Performance Machine들로
 단일 High Performance Machine 이상의 성능을 발휘 할 수 있다.<br/>
 이 세상에는 단일 High Performance Machine으로 감당할 수 없는 빅데이터가 수없이 많으므로 이러한 분산 구조가 더욱 빛을 발한다.<br/>
 극단적인 예를 들어 바닷가의 모래알 개수 세기를 한다고 하면, 수학 박사 한명 보다 일반인 100명이 나은 이치이다.<br/>
-<span class="md-monologue">ㅋㅋ...너무 말이 안되는 예를 든 것 같다.. 헤비한 File I/O나 단순 반복 처리가 여러번 발생하고
+<span class="md-monologue">ㅋㅋ...헤비한 File I/O나 단순 반복 처리가 여러번 발생하고
 Data Aggregation으로 이어지는 작업을 표현해보고 싶었다ㅋㅋ</span>
 
 그리고 Hadoop 시스템을 구성하는 노드들은 노드 별로 또는 노드의 프로세스 별로 각자 다른 혹은 같은 역할을 수행한다.<br/>
@@ -56,19 +56,20 @@ SQL Query를 이용해서 데이터를 조회하고 가공 할 수 있다.
 
 그러나 Hadoop을 이용하면 RDB 처럼 데이터가 정형화(스키마를 가진 2D 테이블 형태의 데이터 등)되어 있을 필요가 없다.
 아래에서 설명할 HDFS를 써본 사람은 알겠지만 임의로 작성한 txt 파일이든, excel 파일이든 zip 파일이든 HDFS에 넣으면 다 들어간다.<br/>
-그리고 Hadoop Ecosystem을 이용하여 비정형 데이터 가공과 RDB 처럼 정형 데이터 역시 저장하고 처리 할 수 있다.
+그리고 Hadoop Ecosystem을 이용하여 비정형 데이터를 가공할 수 있고 RDB 처럼 정형 데이터 역시 저장하고 처리 할 수 있다.
 
 ## HDFS
 
 ### Distributed File System
 
-Hadoop은 하나의 데이터를 여러개의 블록(Block)으로 쪼개서 저장한다. 이를 위해 Hadoop은 코어 기능인 HDFS(Hadoop Distributed FileSystem)를 제공한다.
+Hadoop은 코어 기능인 HDFS(Hadoop Distributed FileSystem)는 하나의 데이터를 여러개의 블록(Block)으로 쪼개서
+여러대의 노드에 분산 저장한다.<br/>
+블록은 기본적으로 128MB 크기를 가진다. 물론 변경 가능하다.
 
 HDFS는 자바 언어를 기반으로 개발되었다. 따라서 자바 언어를 지원하는 머신이라면
 (Java 프로그램이 Java Virtual Machine 위에서 돌아가기 때문에) HDFS를 활용할 수 있다.
 
 위 그림에서 노란색 사각형은 물리적인 노드를 의미한다. 그리고 그 안에는 블록(초록색 사각형)들이 들어있다.<br/>
-블록은 기본적으로 128MB 크기를 가진다. 변경 가능하다.
 
 ![HDFS Architecture]({{ site.gdrive_url_prefix }}1_9-vZsCFjknEUGBR8bBN8K03eXWre2x7){:style="max-height: 450px;"}
 {:style="margin-bottom: 0;" class="img-popup" data-title="Ref. <a href='https://hadoop.apache.org/docs/r2.7.2/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html'>https://hadoop.apache.org/docs/r2.7.2/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html</a>"}
@@ -76,7 +77,8 @@ HDFS는 자바 언어를 기반으로 개발되었다. 따라서 자바 언어�
 "HDFS Architecture" Ref. <https://hadoop.apache.org/docs/r2.7.2/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html>
 </div>
 
-HDFS를 사용하려는 Client들은 NameNode에 자신이 원하는 파일의 위치를 요청하고 NameNode가 Client에게 해당 파일이 어떤 DataNode에 있는지 알려준다.
+HDFS를 사용하려는 Client(주황색 타원)들은 NameNode(초록색 둥근 모서리 사각형)에 자신이 원하는 파일의 위치를 요청하고
+NameNode가 Client에게 해당 파일이 어떤 DataNode에 있는지 알려준다.
 그러면 Client는 다시 해당 DataNode에게 그 파일을 요청한다.
 
 ### Replication
@@ -86,10 +88,9 @@ HDFS는 데이터 손상, 유실들을 방지하기 위해 Block 마다 복사�
 
 ### High Availability
 
-HDFS의 무중단 운영을 일컫는 말이다.<br/>
 HDFS에서 모든 데이터의 위치를 알고있는 NameNode가 어떤 이유로 인해 중단되었을 경우 HDFS는 그 기능이 완전 정지된다.<br/>
-이러한 서비스 중단 사태를 막기위해 HDFS는 대기하고 있던 예비 NameNode를 중단된 NameNode에 대체하여 운영한다.<br/>
-이렇듯 HDFS 서비스가 예상치 못한 사태가 발생했음에도 중단되지 않고 정상 운영 되도록 하는 기능을 의미한다.
+이러한 서비스 중단 사태를 막기위해 HDFS는 대기하고 있던 예비 NameNode로 중단된 NameNode를 대체하여 운영한다.<br/>
+이렇듯 HDFS 서비스는 예상치 못한 사태로 NameNode가 정지해도 무중단 운영된다.
 
 ## MapReduce & YARN
 
