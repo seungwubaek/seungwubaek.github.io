@@ -1,7 +1,6 @@
 ---
 layout: single
 title: "Hadoop의 구성 요소와 특징"
-post-order: 17
 date: "2021-09-21 22:55:00 +0900"
 last_modified_at: "2021-09-24 18:42:00 +0900"
 ---
