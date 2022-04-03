@@ -54,7 +54,7 @@ Miniconda 설치를 위해 아래 공식 홈페이지로 들어가서 설치 파
 
 <kbd>win</kbd> + <kbd>r</kbd>을 눌러서 실행화면을 키고 `cmd`를 입력하자.
 
-![Window Execution]({{ site.gdrive_url_prefix }}1L_bQ0ZmmMGK8Z7RnKVMsUPIe6KB5qeak}
+<img src="{{ site.gdrive_url_prefix }}1L_bQ0ZmmMGK8Z7RnKVMsUPIe6KB5qeak" alt="Window Execution"/>
 </div>
 
 명령 프롬프트 화면에서 다음과 같이 입력하면 간단히 가상환경 구축이 완료된다.
