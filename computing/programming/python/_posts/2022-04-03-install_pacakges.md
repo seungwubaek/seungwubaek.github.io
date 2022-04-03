@@ -1,12 +1,12 @@
 ---
 layout: single
-title: "파이썬 Miniconda를 이용한 Package 설치 방법"
+title: "윈도우 운영체제에서 파이썬 Miniconda를 이용한 Package 설치 방법"
 date: "2022-04-03 21:19:00 +0900"
-last_modified_at: "2022-04-03 21:19:00 +0900"
+last_modified_at: "2022-04-03 22:21:00 +0900"
 post-order: 4
 ---
-파이썬 가상환경 및 패키지 관리 도구인 Miniconda를 이용해서 파이썬 가상환경을 구축하고
-파이썬 패키지 `Selenium`을 설치하는 과정을 통해 파이썬 패키지 설치 방법에 관해 간단히 알아보자.
+윈도우 운영체제에서 패키지 관리 도구인 Miniconda를 이용해서 파이썬과 파이썬 패키지 `Selenium`을 설치하는 과정을
+통해 파이썬 가상환경 구축 방법과 파이썬 패키지 설치 방법에 관해 간단히 알아본다.
 
 ## Miniconda
 
@@ -46,18 +46,13 @@ Miniconda 설치를 위해 아래 공식 홈페이지로 들어가서 설치 파
 
 설치가 완료되었다면 이제 패키지를 설치해볼 차례다 그 전단계로 가상환경을 만들어야한다.
 
-명령어 입력을 위해 명령 프롬프트(또는 Git Bash 등의 CLI 도구) 화면을 띄우자.
+명령어 입력을 위해 아나콘다 명령 프롬프트(또는 Git Bash 등의 CLI 도구) 화면을 띄우자.
 
-<div class="notice--info" markdown="1">
-#### 명령프롬프트 띄우는법
-{: class="no_toc"}
+아나콘다 명령 프롬프트는 Miniconda 인스톨러로 Miniconda를 정상적으로 설치하였다면, 시작 표시줄의 '시작'에 들어가면 있을 것이다.
 
-<kbd>win</kbd> + <kbd>r</kbd>을 눌러서 실행화면을 키고 `cmd`를 입력하자.
+![Anaconda Prompt]({{ site.gdrive_url_prefix }}1S1dR-9vZnp8FidVoe_C0p2W9D8Dqr78U)
 
-<img src="{{ site.gdrive_url_prefix }}1L_bQ0ZmmMGK8Z7RnKVMsUPIe6KB5qeak" alt="Window Execution"/>
-</div>
-
-명령 프롬프트 화면에서 다음과 같이 입력하면 간단히 가상환경 구축이 완료된다.
+아나콘다 명령 프롬프트 화면에서 다음과 같이 입력하면 간단히 가상환경 구축이 완료된다.
 
 가상환경의 이름은 임의로 `virt-env` 라고 하겠다. 원하는대로 바꿔도 좋다.
 
@@ -102,7 +97,11 @@ conda activate virt-env
 conda install python=3
 ```
 
-이것저것 깔리는 메시지들이 출력되는데.. 설치가 완료되니까 저절로 화면이 지워져서 캡쳐를 못했다.. 이어서 다른 패키지들을 설치해보자.
+이것저것 깔리는 메시지들이 출력된다.
+
+![Conda Install Python 3]({{ site.gdrive_url_prefix }}1QmnM7GIKzShYVu1Fp1mbxQqh_OjYWpFy)
+
+설치가 완료되면 저절로 화면이 지워지고 `done`이라는 메시지만 남는다. 이어서 다른 패키지들을 설치해보자.
 
 ### 파이썬 패키지 설치
 
@@ -116,8 +115,7 @@ conda install -c conda-forge selenium
 
 위 명령어에서 `-c conda-forge` 는 selenium 패키지를 다운로드하는 채널을 `conda-forge`로 지정해주는 역할을 하는 옵션이다.
 
-아래와 같이 설치 화면이 나오고 설치가 완료되면 `done` 이라는 메시지가 나타날 것이다.
-참고로 위 섹션에서 파이썬 설치 단계에서도 아래와 유사한 화면이 나타났었을 것이다.
+아래와 같이 설치 화면이 나오고 설치가 완료되면 역시 `done` 이라는 메시지가 나타난다.
 
 ![Conda Install Package]({{ site.gdrive_url_prefix }}1e6YTUCczgwlAq1qV0ofaMSGnDQpgaghg)
 
@@ -134,3 +132,46 @@ conda install -c conda-forge selenium
 ```bash
 conda activate virt-env
 ```
+
+## Miniconda 가상환경 제거
+
+### 명령어를 이용하여 제거
+
+가상환경 사용중에 문제가 생기거나 다시 만들거나 등의 이유로 기존의 가상 환경을 삭제하려면 아래 명령어를 입력하면 된다.
+
+`virt-env`라는 이름의 가상환경을 삭제해보자.
+
+먼저 `virt-env` 가상환경에 진입한 상태라면 밖으로 빠져나와야한다.
+
+```bash
+conda deactivate virt-env
+```
+
+이제 `virt-env` 가상환경을 삭제할 수 있다. 아래 명령어를 입력하자.
+
+```bash
+conda env remove -n virt-env
+```
+
+가상환경의 삭제가 완료되었다.
+
+![Conda Remove Environment]({{ site.gdrive_url_prefix }}1wZ1jWZIwNafTlAvCRsNLDykNd1R88u7c)
+
+나중에 같은 이름의 가상환경을 다시 만드려고 시도할 경우 `같은 이름의 디렉토리가 존재한다`라는 경고 메시지가 뜰 수 있는데
+신경쓰지 않아도 된다. 이미 가상환경은 지워진 상태이고 빈껍데기 디렉토리만 남은 것이기 때문이다.
+
+만약 그것이 신경쓰인다면(<span class="md-monologue">나처럼</span>) 가상환경이 깔려있던 경로로 가서 디렉토리를 그냥 삭제하면 된다.
+
+가상환경 디렉토리 삭제 방법은 아래 [직접 제거](#직접-제거) 섹션에서 설명하도록 하겠다.
+
+### 직접 제거
+
+Miniconda를 설치하면 `C:\사용자\<사용자 이름>\miniconda` 경로에 설치가 된다.
+
+그리고 모든 생성한 가상환경은 해당 경로 하위의 디렉토리 `envs`에 만들어진다. 즉,
+
+`C:\사용자\<사용자 이름>\miniconda\envs` 경로에 만들어진다.
+
+그 위치를 보면 `virt-env`라는 이름의 디렉토리가 있는 것을 볼 수 있다.
+
+그 디렉토리를 삭제하면 간단히 가상환경을 지울수있다.
