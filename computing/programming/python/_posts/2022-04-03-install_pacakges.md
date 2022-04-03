@@ -83,7 +83,7 @@ conda create -n virt-env
 conda activate virt-env
 ```
 
-정상적으로 명령러가 실행되면 나면 아래 그림처럼 명령어 입력줄의 맨 앞에 `(virt-env)`라는 prefix가 붙어있는 걸 볼 수 있다.
+정상적으로 명령어가 실행되면 나면 아래 그림처럼 명령어 입력줄의 맨 앞에 `(virt-env)`라는 prefix가 붙어있는 걸 볼 수 있다.
 
 ![Conda Activate Environment]({{ site.gdrive_url_prefix }}1ewz6T96ZvawLeav_JIZrZww75UibvN9R)
 
