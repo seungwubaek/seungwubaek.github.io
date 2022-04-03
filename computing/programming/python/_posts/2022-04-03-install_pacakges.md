@@ -42,15 +42,34 @@ Miniconda 설치를 위해 아래 공식 홈페이지로 들어가서 설치 파
 
 <https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe>
 
-### 파이썬 가상환경 구축
+다운로드한 인스톨러를 실행시키고 아래 그림과 같이 디폴트로 설정돼있는 경로 그대로 설치하자.
 
-설치가 완료되었다면 이제 패키지를 설치해볼 차례다 그 전단계로 가상환경을 만들어야한다.
+![Miniconda Installer]({{ site.gdrive_url_prefix }}134sdhghrKmqVOG6NbD_kQW-cqjptx6IM)
 
-명령어 입력을 위해 아나콘다 명령 프롬프트(또는 Git Bash 등의 CLI 도구) 화면을 띄우자.
+설치가 완료된 후 해당 설정 경로로 들어가보면 `miniconda3` 라는 디렉토리가 있는 것을 볼 수 있다.
+
+### Miniconda 최신화
+
+설치가 완료되었다면 설치한 miniconda는 최신상태가 아닐 수 있기 때문에 miniconda 업데이트를 진행할 필요가 있다.
+
+업데이트 명령어 입력을 위해 아나콘다 명령 프롬프트(또는 Git Bash 등의 CLI 도구. 다른 CLI 도구에서 설정 방법은 따로 다루지 않는다.) 화면을 띄우자.
 
 아나콘다 명령 프롬프트는 Miniconda 인스톨러로 Miniconda를 정상적으로 설치하였다면, 시작 표시줄의 '시작'에 들어가면 있을 것이다.
 
 ![Anaconda Prompt]({{ site.gdrive_url_prefix }}1S1dR-9vZnp8FidVoe_C0p2W9D8Dqr78U)
+
+아래의 명령어를 입력해서 miniconda를 업데이트 하자.
+
+명령어를 입력한 후 엔터를 치면 중간에 `Proceed ([y]/n)?` (진행하시겠습니까?) 메시지가 나타난다.
+거기서 `y`를 입력하고 엔터를 친다.
+
+```bash
+conda update -n base conda
+```
+
+### 파이썬 가상환경 구축
+
+설치가 완료되었다면 이제 패키지를 설치해볼 차례다 그 전단계로 가상환경을 만들어야한다.
 
 아나콘다 명령 프롬프트 화면에서 다음과 같이 입력하면 간단히 가상환경 구축이 완료된다.
 
