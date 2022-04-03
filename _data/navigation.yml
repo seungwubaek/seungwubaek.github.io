@@ -12,6 +12,8 @@ main:
       url: "https://www.mosekorea.net/"
     - title: "투자 (Next Unicorn)"
       url: "https://www.nextunicorn.kr/company/62a363e1bc7425ea?utm_source=share&utm_medium=copy&utm_campaign=companyProfile"
+    - title: "🙋‍♂️ 채용"
+      url: "https://career.mosepeople.com/"
 
 # main sidebar links
 # 1개 원소는 title, url, children으로 구성
