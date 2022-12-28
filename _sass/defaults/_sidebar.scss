@@ -140,7 +140,6 @@
       .nav__sub-title-stat, .nav__item-children-stat {
         align-self: center;
         margin-right: 4px;
-        background-color: mix(orangered, #fff, 85%);
         color: white;
         font-size: 11px;
         padding-left: 6px;
@@ -148,9 +147,14 @@
         border-radius: 8px;
         font-weight: normal;
       }
+      .nav__sub-title-stat {
+        font-weight: bolder;
+        background-color: red;
+      }
       .nav__item-children-stat {
         margin-left: 8px;
         margin-right: 0;
+        background-color: mix(orangered, #fff, 85%);
       }
     }
     #ac-toc, label[for=ac-toc] {

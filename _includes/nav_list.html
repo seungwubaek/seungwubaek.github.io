@@ -14,14 +14,15 @@
           </div>
         </div>
 
-        {% if nav.children != null %}
-        {% assign i = i | plus: 1 %}
+        <!-- {% if nav.children != null %} -->
+        <!-- {% assign i = i | plus: 1 %} -->
         <ul class="nav__item-children children-{{ nav.children | size }}" id="sidebarMenuId_{{ i }}">
+          <li><a href="{{ nav.url | relative_url }}#wholetoc__title"{% if nav.url == page.url %} class="active"{% endif %} id="sidebar-{{ nav.title | downcase | replace: ' ', '-' }}" titledepth="1"><span class="title__name">[ All ]&nbsp;&nbsp;</span></a></li>
           {% for child in nav.children %}
             <li><a href="{{ child.url | relative_url }}#wholetoc__title"{% if child.url == page.url %} class="active"{% endif %} id="sidebar-{{ nav.title | downcase | replace: ' ', '-' }}|{{ child.title | downcase | replace: ' ', '-' }}" titledepth="1"><span class="title__name">{{ child.title }}</span></a></li>
           {% endfor %}
         </ul>
-        {% endif %}
+        <!-- {% endif %} -->
       </li>
     {% endfor %}
   </ul>
