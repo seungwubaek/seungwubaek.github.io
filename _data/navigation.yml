@@ -101,8 +101,8 @@ main-sidebar:
     children:
     - title: "Tips"
       url: "/blog/tips/"
-  - title: "Writing"
-    url: "/writing/"
-    children:
-    - title: "Poem"
-      url: "/writing/poem/"
+  # - title: "Writing"
+  #   url: "/writing/"
+  #   children:
+  #   - title: "Poem"
+  #     url: "/writing/poem/"
