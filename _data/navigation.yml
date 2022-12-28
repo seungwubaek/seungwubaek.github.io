@@ -23,6 +23,11 @@ main:
 # [권장]
 # 1. CSS 적용 문제로 children 깊이는 2까지만 하는것을 권장. 즉, children의 children까지만.
 main-sidebar:
+  - title: "Blog"
+    url: "/blog/"
+    children:
+    - title: "Tips"
+      url: "/blog/tips/"
   - title: "Computing"
     url: "/computing/"
     children:
@@ -96,11 +101,6 @@ main-sidebar:
       url: "/tools/jupyter-notebook/"
     - title: "Numpy"
       url: "/tools/numpy/"
-  - title: "Blog"
-    url: "/blog/"
-    children:
-    - title: "Tips"
-      url: "/blog/tips/"
   # - title: "Writing"
   #   url: "/writing/"
   #   children:
