@@ -6,11 +6,11 @@ main:
     url: /about/#page-title
   - title: "목차"
     url: /toc/#wholetoc__title
-  - title: "<img style='height: 80%' src='https://drive.google.com/uc?export=view&id=1s-QeyaFGpzJ8N-A2oc03yNXWcTORiYuS'></img> Mose People"
+  - title: "<img style='height: 80%' src='/assets/images/icon/mosepeople_logo.png'></img> MosePeople"
     dropdown:
-    - title: "Home Page"
-      url: "https://www.mosekorea.net/"
-    - title: "투자 (Next Unicorn)"
+    - title: "🌏 HomePage"
+      url: "https://www.mosepeople.com/"
+    - title: "🫱🏻‍🫲🏻 투자 (NextUnicorn)"
       url: "https://www.nextunicorn.kr/company/62a363e1bc7425ea?utm_source=share&utm_medium=copy&utm_campaign=companyProfile"
     - title: "🙋‍♂️ 채용"
       url: "https://career.mosepeople.com/"
