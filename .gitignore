@@ -33,3 +33,6 @@ _site
 
 # Editors
 .vscode/
+
+*.backup
+*.bak
