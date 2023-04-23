@@ -60,13 +60,13 @@ algolia:
   search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
   powered_by             : # true (default), false
 google:
-  search_engine_id       : 3a7731ad2b0c322ed # YOUR_SEARCH_ENGINE_ID
+  search_engine_id       : # 3a7731ad2b0c322ed # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
 # SEO Related
-google_site_verification : 25a3ZvMZGsmZzPWbowZjF0PcmXwRAjvYOeWxtx6mMp8
+google_site_verification : # 25a3ZvMZGsmZzPWbowZjF0PcmXwRAjvYOeWxtx6mMp8
 bing_site_verification   :
-yandex_site_verification : 18bd19b04da3054f
-naver_site_verification  : naverefe0f9b104681f4f58138809dc14876e
+yandex_site_verification : # 18bd19b04da3054f
+naver_site_verification  : # naverefe0f9b104681f4f58138809dc14876e
 
 # Social Sharing
 twitter:
@@ -85,10 +85,10 @@ social:
 
 # Analytics
 analytics:
-  provider               : "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider               : false #"google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          : "UA-179784517-1"
-    measurement_id       : "G-R3NFWBRGX6"
+    tracking_id          : #"UA-179784517-1"
+    measurement_id       : #"G-R3NFWBRGX6"
     anonymize_ip         : # true, false (default)
 
 
