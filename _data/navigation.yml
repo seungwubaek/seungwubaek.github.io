@@ -35,9 +35,9 @@ main-sidebar:
       - title: "Python"
         url: "/programming/language/python/"
       - title: "Java"
-        url: "/programming/language/Java/"
+        url: "/programming/language/java/"
       - title: "Kotlin"
-        url: "/programming/language/Kotlin/"
+        url: "/programming/language/kotlin/"
     - title: "Linux"
       url: "/programming/linux/"
       children:
