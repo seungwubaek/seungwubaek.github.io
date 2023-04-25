@@ -42,9 +42,9 @@ main-sidebar:
       url: "/programming/linux/"
       children:
       - title: "Commands"
-        url: "/computing/linux/commands/"
+        url: "/programming/linux/commands/"
       - title: "Config"
-        url: "/computing/linux/config/"
+        url: "/programming/linux/config/"
     - title: "Tips"
       url: "/programming/tips/"
   - title: "Embedded"
