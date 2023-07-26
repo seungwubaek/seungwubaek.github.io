@@ -43,7 +43,9 @@ layout: default
 
       {% include my-post_pagination.html %}
 
+      <!--
       {% if page.share %}{% include my-social-share.html classes="page__share page__share-top" %}{% endif %}
+      -->
 
       <section class="page__content" itemprop="text">
         {% if page.toc-top %}
@@ -78,15 +80,19 @@ layout: default
 
       <p></p>
       {% include ads/google/horizontal_ad.html %}
-
+      <!--
       <footer class="page__meta">
+
         {% if site.data.ui-text[site.locale].meta_label %}
+
           <h4 class="page__meta-title"><i class="far fa-file-alt"></i> {{ site.data.ui-text[site.locale].meta_label }}</h4>
+
         {% endif %}
         {% include page__taxonomy.html %}
         {% include page__date.html %}
-      </footer>
 
+      </footer>
+      -->
       {% if page.share %}{% include social-share.html %}{% endif %}
 
       {% include my-post_pagination.html %}
