@@ -6,12 +6,51 @@ author_profile: true
 toc-top: true
 related: false
 date: "2020-10-04 18:47:00 +0900"
-last_modified_at: "2021-01-13 10:19:00 +0900"
+last_modified_at: "2023-08-14 19:41:00 +0900"
 ---
 
-책임과 의무가 아닌 호기심을 동기로 Front-End, Back-End 등 모든 프로그래밍 기술부터,
-Data Science, AI 기술 등 IT 기술 모두를 주제로 다룸.<br/>
-또 가끔은 재미로 글쓰기 같은 인문 요소도 다룸.
+Front-End, Back-End 프로그래밍 기술부터, Data Science, AI 등 IT들을 주제로 다루는 블로그.<br/>
+또 가끔 재미로 인문 요소도 다룰 수도 있음.
+
+## Why Blog?
+
+### 기록하지 않으면 잊혀진 것이다
+
+나는 일하면서 새로 배운 지식들을 잊지 않으려고 자주 기록한다.
+그리고 그러한 소중한 지식들을 효과적으로 기억하기 위해 블로그를 시작했다.
+
+모든 기억은 후에 재구현 가능하도록, 이해하기 쉽고 상세히 적어두는 것이 중요하다.
+
+우리가 스스로 고통 받으며 얻은 살아있는 지식은 그 지식을 얻은 시점에는 매우 또렷해서,
+그 지식이 평생 머릿속에 같은 상태로 남아 있을 것이라 착각한다.
+그러나 우리 뇌 속의 왠만한 기억은 몇주, 몇개월만 지나도 금방 흐릿해진다.
+
+"A라는 기억이 3개월이 지나니 더이상 기억이 나지 않는다" 라고 자각하기도 어렵다.<br/>
+심지어 암기한 것이 아닌 이해한 것도 잊혀진다. 그것은 어찌할 수 없는 뇌의 본질이다.
+
+### 기록의 체계화
+
+수많은 기억들 중 꼭 기억하고 싶은 것이 있다면 그것이 언제까지나 내 뇌에 남아 있을 것이라 믿지 말고,
+오히려 뇌에서 필연적으로 잊혀질 것이라 믿고 나중에 필요한 때에 복구할 수 있도록 충분히 안배해 놓는 것이 옳다.<br/>
+
+그래서 나는 기억하고 싶은 지식을 어떻게 문서화 해야 가장 재구현에 유리하고, 접근성이 높으며,
+내 이해를 정확히 담아낼 수 있을까 고민했다.<br/>
+그 결론은 이왕이면 문서를 타인에게 전달하고 타인도 이해할 수 있을만큼 보편적인 언어로 정리하는 것이다.
+
+그렇게 하면 내 지식을 거리를 두고 바라볼 수 있게 되기 때문에 지식의 빈틈과 오류를 발견하기도 쉽다.
+그래서 지식의 내용이 깊어지고 내 머릿속에도 훨씬 체계적이고 풍부하게 남게 된다.
+
+### 가르친 기억
+
+우리가 무엇인가 기억할 때, 상대적으로 뚜렷이 기억하는 기억의 종류 중 하나는 "타인에게 가르쳐준 지식"이다.
+
+가르침을 받은 학생과 가르침을 준 선생은 이런 대화를 하는 경우가 잦다.
+
+선생: "🤦🏻‍♂️이거 분명히 내가 2번이나 설명해줬잖아요. 기억 안나요?"<br/>
+학생: "??? 🥹 ???? 감사합니다?"
+
+ㅋㅋ 따라서 나는 블로그를 통해 나 자신의 "선생"이 되고자 한다.<br/>
+추가로, 다른 분들이 우연히 내 블로그에서 각자 원하는 지식을 얻어 가신다면 그 또한 기쁘다.
 
 ## Blog History
 
@@ -19,89 +58,137 @@ Data Science, AI 기술 등 IT 기술 모두를 주제로 다룸.<br/>
 
 ## About Logo
 
-나는 일하면서 새로 배운 내용들을 잊지 않으려고 간이 노트를 많이 작성하는 편이다.<br/>
-그래서인지 어느날부터 노트 자체가 내 뇌의 일부분과 다름없다고 생각되었다. 단지 몸 밖에 있고 유기체가 아닐뿐.
+반도체 위에 뇌. 기계를 기반으로 진보한 지적 생명체.
 
-그런 모습은 점점 기계 의존적으로 변해가는 현대인과 다를것이 없었다. 물론 싫지 않았다.<br/>
-우리는 미래에 결국 우리 손으로 만들어낸 '우리'와 융합될 것이 분명하다. 그것이 기계공학의 정수이든 생명공학의 정수이든 둘 다 이든 지금으로써는 그것을 반도체 칩으로 형상화하고 싶다.
+![My Blog Logo]({{ site.gdrive_url_prefix }}1atJ4jVQD4XZszLpU-MDRWgdofPN-nJsU){:class="align-left" style="width: 200px; margin-bottom: 10px;"}
 
-![My Blog Logo]({{ site.gdrive_url_prefix }}1atJ4jVQD4XZszLpU-MDRWgdofPN-nJsU){:class="align-left" style="width: 200px;"}
+<table>
+  <thead>
+    <tr>
+      <th>구성요소</th>
+      <th>의미</th>
+      <th>색상</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>전체를 감싸는 회색 팔각형</td>
+      <td style="text-align: center;">반도체</td>
+      <td><div style="display: inline-block; height: 20px; width: 50px; text-align: center; background-color: #d6dce5;"></div></td>
+    </tr>
+    <tr>
+      <td>3개의 노란색 둥근 기둥</td>
+      <td style="text-align: center;">대뇌피질</td>
+      <td><div style="display: inline-block; height: 20px; width: 50px; text-align: center; background-color: #ffc000;"></div></td>
+    </tr>
+    <tr>
+      <td>3개의 빨간색 원</td>
+      <td style="text-align: center;">혈액</td>
+      <td><div style="display: inline-block; height: 20px; width: 50px; text-align: center; background-color: #ff0000;"></div></td>
+    </tr>
+  </tbody>
+</table>
 
-|요소|의미|
-|:---:|:---:|
-|전체를 감싸는 회색 팔각형|반도체|
-|3개의 노란색 둥근 기둥|대뇌 피질|
-|3개의 빨간색 원|핏줄|
-{:style="width: fit-content"}
+노트에 지식을 기록하고, 기록한 내용을 찾아보기를 반복하다보니 사실 좀 귀찮긴 하다.
+신체 외부에 기록된 내용을 뇌에서 기억을 인출하듯 빠르고 간편히 수행할 수 있다면 얼마나 좋을까라는 미래의 염원을 담았다.
 
-반도체 위에 뇌.<br/>
-기계를 기반으로 진보한 지적 생명체.
+### Artificial Self
 
-뇌를 표현한 부분을 언뜻 보면 노란색, 빨간색의 바이오드가 빛을 내는것 같기도 하다. 보통 기계라 일컬어지는 인간 외적인 부분과 인간 사이의 모호함을 표현하고 싶었다.
+우리는 계속 과학 기술을 발전 시키고 있으며, 발전된 과학 기술은 또다시 우리의 적응과 발전을 필요로 할 것이다.
 
-요즘 알게된 사실이 하나 있는데 Elon Musk가 Neurallink 라는 스타트업 회사를 운영한다고 한다.<br/>
-이 회사가 이식 가능한 뇌-컴퓨터 인터페이스 개발을 목표로 하더라. 바로 지금 내 로고 처럼.
+그리고 이러한 달성-필요의 반복의 끝에 신체적 한계가 찾아올 것이다.<br/>
+그러므로 (기술적으로 충분히 진보했다면) 마침내 우리는 '자연적 나'와 '공학적 나'를 융합할 것이다.
+Artificial Self 라고 해야하나.
 
-어린 시절에는 과학 잡지를 많이보며 AI 자율 주행 자동차를 꿈꿨었다.<br/>
-그리고 그 시절 생소했던 자율 자동차는 Elon Musk의 테슬라 등, 지금의 우리에겐 매우 익숙하다. 바로 과거의 나 처럼.
+기계공학의 정수이든 생명공학의 정수이든 둘 다 이든 어떤 분야가 그 미래를 선도하게 될지 모르겠지만<br/>
+지금은 그 미래의 자아를 반도체 칩으로 형상화하고 싶다.
 
-Elon Musk의 사상이 나와 통하는 점이 많은 것 같다.
-<span class="md-monologue">다만 인성에 미심적은 부분이 있다고 생각했음..
-내가 테슬라 투자를 하지 않은 이유가 그 때문이었는데, 크게 잘못 생각했지 ㅋ</span>
-
-## Motivation
-
-나는 기억력이 좋지 못하다. 그래서 기억력을 향상 시키기 위해 훈련해야겠지만 그전에 먼저 장단기적으로 기억 해야할 것들을 잊지 않기위해 어딘가에 잘 보관해 두는 것이 중요했다.
-
-그렇게 몇년동안 실제로 일하면서, 공부하면서 겪은 것들을 습관적으로
-노트([원노트](https://www.microsoft.com/ko-kr/microsoft-365/onenote/digital-note-taking-app?ms.url=onenotecom&rtc=1))에
-기록해서 저장해 왔다.<br/>
-단순 정보 뿐만 아니라 정보나 경험에서 비롯한 나만의 노하우와 이해의 핵심을 텍스트, 표, 이미지 등으로 가공하여 저장했다.
-이 핵심이야 말로 구하기 쉽지 않은 정말로 가치를 가지는 것들이다.
-
-<span class="md-monologue">어릴때는 '암기하지 말고 이해하라. 그러면 잊지 않는다' 였었는데,
-나이 먹으니 이해한것도 까먹어서 다시 이해 해야하더라... 이해를 까먹으면 답이 없다.
-처음부터 다시 해야되고 이해에는 오랜 시간이 걸린다..</span> <span style="font-size: 0.8em;">😢</span>
-
-이런 정보들이 노트에 어느정도 쌓이니까 그것들을 가지고 블로그를 만들어보는 것도 좋겠단 생각이 들었다.
-
-첫째로, 노트에 기록된 정보를 좀더 가공해서 블로그에 시각적으로 표현하는 것으로 내가 내 자신이 가진 역량을 살펴볼 기회가 될것이고
-
-둘째로, 타인과 공유함으로써 누군가가 내 정보를 보고 궁금증을 해소하거나 일을 해결하는 데에 도움을 받고 만족감을 얻어갈 수 있다면 영광일 것이다.
-
-셋째로, 정보를 타인과 공유 가능한 수준으로 정리하면서 스스로도 그 정보와 관련된 분산된 기억과 정보, 공백들을 취합 할 수 있을 것이다.
-
-또 블로그 페이지를 만드는 기술과 행위 자체에도 관심이 있다. 계속해서 더 편리한 UI를 가진 블로그로 거듭나면서 그 안에 다양한 이야기들을 담아 나가겠다.
+로고에서 노란색, 빨간색으로 표현한 뇌는 노란색, 빨간색 바이오드가 빛을 내는것 같기도 하다.<br/>
+그런 기계와 인간 사이의 모호함을 표현하고 싶었다.
 
 # 나
+
+## 가치관
+
+### 배움의 인생
+
+> 子曰, 三人行 必有我師焉 擇其善者而從之 其不善者而改之<br/>
+> 자왈, 삼인행 필유아사언 택기선자이종지 택불선자이개지
+
+공자 왈, 세명이 길을 가면 그 중 반드시 내 스승이 있다. 선한 사람의 따를점을 배우고, 선하지 못한 사람의 고칠점을 배워라.
+
+<b>배움의 인생</b>이란 인생을 사는 방향을 의미한다.<br/>
+
+사람들은 각자 인생을 사는 방향을 어느정도 정해놓고 살아간다고 생각한다.
+사람 숫자 만큼이나 다양한 방향이 있겠지만 내 좁은 식견으로 대략 3가지를 분류한다.
+
+첫째, 비즈니스의 인생
+둘째, 행복의 인생
+셋째, 배움의 인생이다.
+
+세가지 인생의 방향 모두 장단점이 있고 서로 더 나은 측면과 그렇지 못한 측면이 있다.
+
+예를들어, 1주일 동안 무언가를 열심히 조사 했는데 결과 발표 때 보니 조사 대상이 잘못됐다고 하자.<br/>
+그럴때 어떤 인생의 방향을 가졌는지에 따라 태도가 다르다.
+
+비즈니스 인생을 사는 사람은 "에이, 헛수고 했네" 라고 말할 가능성이 높다.
+주어진 목표를 얼마나 빠르고 효과적으로 달성하는지가 중요하기 때문이다.
+
+행복의 인생을 사는 사람은 "그래도 재밌었으니까 괜찮아" 라고 할지도 모른다.
+그 과정 속에서 스스로 얼마나 만족했는지가 중요하기 때문이다.
+
+배움의 인생을 사는 사람은 "당장 필요치 않아도 좋은걸 배웠네" 라고 말한다.
+자신의 발전이라는 가치에 많은 비중을 두기 때문이다.
+
+당연히 각자가 서로 완전 배반 되는 삶을 살진 않는다. 때로는 비즈니스적으로, 때로는 만족하며, 때로는 배우며 살아간다.
+
+다만 나에게 가장 중요한 것은 배우는 것이며, 그런 삶을 살고 싶다.
+
+### 중꺾과 (중요한 것은 꺾이지 않는 과정)
+
+나는 어떤 일을 처리하는데 있어서 그 처리 과정을 매우 중요시한다.
+
+결과가 나쁘더라도 과정 중의 고통, 몰두, 성취가 짙게 남으면 일처리가 잘 된 것일 수 있다.<br/>
+반대로 결과가 성공적이더라도 과정이 허술하거나 정당하지 못했다면 그건 완전한 성공이 아니라 여긴다.
+
+**좋은 과정을 경험하려고 노력하는 것은 그 과정을 경험하기 전의 내가 만들어낼 결과 보다 더 좋은 결과를 만들기 위함이다.**
+
+우리는 과거에서 미래로 흐르는 시간을 살고 있다. 결국엔 결과만이 남으며 우리가 인지하는 것은 결과이다.<br/>
+과정은 과거일 뿐이다. 과정이라는 과거에 매몰돼서 현재 또는 미래에 있는 결실을 간과해서는 안된다.
 
 ## Career Timeline
 
 <table>
 <thead>
 <tr>
-  <th colspan="3">Date</th>
+  <th>Date</th>
   <th>Careers</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td style="text-align: right; border-right: 0;">1990.04.07</td>
-  <td style="text-align: center; border-right: 0; padding-left: 0; padding-right: 0;">~</td>
-  <td></td>
+  <td>
+    <div style="display: flex; justify-content: center; align-items: center;">1990.04.07</div>
+    <div style="display: flex; justify-content: center; align-items: center;">~</div>
+    <div style="display: flex; justify-content: center; align-items: center;"></div>
+  </td>
   <td>Birth !</td>
 </tr>
 <tr>
-  <td style="text-align: right; border-right: 0;">2009.03.01</td>
-  <td style="text-align: center; border-right: 0; padding-left: 0; padding-right: 0;">~</td>
-  <td>2016.02.29</td>
+  <td>
+    <div style="display: flex; justify-content: center; align-items: center;">2009.03.01</div>
+    <div style="display: flex; justify-content: center; align-items: center;">~</div>
+    <div style="display: flex; justify-content: center; align-items: center;">2016.02.29</div>
+  </td>
   <td>Graduated <a href="https://www.yonsei.ac.kr/wj/">Yonsei Univ.</a> Bachelor of Science in <strong>Information Statistics</strong><br/>
   성적우수상 2회 수령 ㅋ (코딱지만한 장학금도 함께 받아서 좋았음)</td>
 </tr>
 <tr>
-  <td style="text-align: right; border-right: 0;">2015.11.16</td>
-  <td style="text-align: center; border-right: 0; padding-left: 0; padding-right: 0;">~</td>
-  <td>2016.04.11</td>
+  <td>
+    <div style="display: flex; justify-content: center; align-items: center;">2015.11.16</div>
+    <div style="display: flex; justify-content: center; align-items: center;">~</div>
+    <div style="display: flex; justify-content: center; align-items: center;">2016.04.11</div>
+  </td>
   <td><strong>Computer Engineering</strong>으로 진로 변경을 결심하다 (직업 측면에서)<br/>
   이땐 몰랐지. 통계학과 컴퓨터 공학을 접목 할 수 있을 것이라곤..!<br/>
   국가기간전략 IT 기술자 육성사업: <a href="http://www.bitcamp.co.kr/">비트컴퓨터 비트교육센터</a> - 사물지능통신기반 IT콘텐츠 고급개발자양성과정<br/>
@@ -117,9 +204,11 @@ Elon Musk의 사상이 나와 통하는 점이 많은 것 같다.
   </td>
 </tr>
 <tr>
-  <td style="text-align: right; border-right: 0;">2016.10.04</td>
-  <td style="text-align: center; border-right: 0; padding-left: 0; padding-right: 0;">~</td>
-  <td>2021.08.06</td>
+  <td>
+    <div style="display: flex; justify-content: center; align-items: center;">2016.10.04</div>
+    <div style="display: flex; justify-content: center; align-items: center;">~</div>
+    <div style="display: flex; justify-content: center; align-items: center;">2021.08.06</div>
+  </td>
   <td>
   신입사원으로 첫 입사!<br/>
   <strong>Senior Engineer, AI Platform Research Team of <a href="http://mobigen.com/">Mobigen Co.</a></strong><br/>
@@ -173,77 +262,73 @@ Elon Musk의 사상이 나와 통하는 점이 많은 것 같다.
   </td>
 </tr>
 <tr>
-  <td style="text-align: right; border-right: 0;">2021.08.07</td>
-  <td style="text-align: center; border-right: 0; padding-left: 0; padding-right: 0;">~</td>
-  <td>2021.08.31</td>
+  <td>
+    <div style="display: flex; justify-content: center; align-items: center;">2021.08.07</div>
+    <div style="display: flex; justify-content: center; align-items: center;">~</div>
+    <div style="display: flex; justify-content: center; align-items: center;">2021.08.31</div>
+  </td>
   <td>
   한달의 안식일<br/><i>"더 멀리 더 오래 달리기 위해서는, 잠시 늦춰서 숨을 고를 필요가 있다." - <a href="{{ site.url }}">Sammy Baek</a></i><br/>
   취미로 블로그 만들고 RaspberryPi 만지고 Deep Learing 논문 보면서 놀았음 ㅋ</td>
 </tr>
 <tr>
-  <td style="text-align: right; border-right: 0;">2021.09.01</td>
-  <td style="text-align: center; border-right: 0; padding-left: 0; padding-right: 0;">~</td>
-  <td style="text-align: center; color: green;"><strong>Now</strong></td>
   <td>
-  뜻이 맞는 사람들이자 좋은 친구들과 함께 스타트업 도전<br/>
+    <div style="display: flex; justify-content: center; align-items: center;">2021.09.01</div>
+    <div style="display: flex; justify-content: center; align-items: center;">~</div>
+    <div style="display: flex; justify-content: center; align-items: center;">2022.04.10</div>
+  </td>
+  <td>
   <img style="display: block; max-height: 170px; margin-top: 1em;" src="{{ site.gdrive_url_prefix }}1gBTtxIoEctfCLHnmn70Odq04HMi-eNxx"/>
-  Excutive Director & CTO of <strong>Mose People</strong><br/>
-  직위가 무려 전무이사ㅋ 호랑이가 없는 곳에선 여우가 왕이야 임마 ! <span class="md-monologue">부끄럽군</span><br/>
-  임원으로써 IT 기술, 앱 개발 뿐만 아니라 경영과 프로젝트 관리까지 모두 처리.<br/>
-  하나부터 열까지 스스로 다 <span style="text-decoration: underline;">만들어야</span> 하지만
-  스스로 다 <span style="text-decoration: underline;">만들어 볼 수 있다</span>고도 말 할 수 있다.<br/>
-  <br/>
-  프로젝트 <span style="margin-top: 1em; font-size: 1.5em;">"<strong>바닷길</strong>"</span>
+  뜻이 맞는 사람들이자 좋은 친구들과 함께 스타트업 도전<br/>
+  Executive Director & CTO of <strong>Mose People</strong><br/>
+  웹 사이트, E-Commerce 시스템, 앱 개발 등의 개발 참여 및 IT 총괄, 경영, 팀·프로젝트 관리 수행.<br/>
+  하나부터 열까지 스스로 다 만들어야 하지만 스스로 다 만들어 볼 수 있다고도 할 수 있다.
+  <br/><br/>
   <ul style="margin: 0;">
-  <li  style="margin: 0;">수산물 B2B 중개 및 유통 플랫폼</li>
-    <ul style="margin: 0;">
-    <li style="margin: 0;"><strong>바닷길</strong> 프로젝트를 통해서 우리나라 수산업에 새로운 경제 생태계를 구축해낼 것이다.</li>
-    <li style="margin: 0;">기술보증기금 확보</li>
-    <li style="margin: 0;">2021 해양수산부 컨설팅 업체로 지정</li>
-    <li style="margin: 0;">프로젝트 관련 기술 특허 출원중</li>
-    <li style="margin: 0;">만세 만세 만만세!<br/></li>
-    </ul>
+    <li style="margin: 0;">
+      프로젝트 <span style="margin-top: 1em; font-size: 1.5em;">"<strong>바닷길</strong>"</span>
+      <ul style="margin: 0;">
+        <li>수산물 B2B 중개 및 유통 이커머스 플랫폼</li>
+        <li style="margin: 0;">기술보증기금 확보</li>
+        <li style="margin: 0;">2021 해양수산부 컨설팅 업체로 지정</li>
+        <li style="margin: 0;">프로젝트 관련 기술 특허 출원</li>
+      </ul>
+    </li>
+    <li style="margin: 0;">
+      프로젝트 <span style="margin-top: 1em; font-size: 1.5em;">"<strong>도매공식</strong>"</span>
+      <ul style="margin: 0;">
+        <li>식자재 도매 B2B 유통 중개 및 배송 플랫폼</li>
+      </ul>
+    </li>
+  </ul>
+  </td>
+</tr>
+<tr>
+  <td>
+    <div style="display: flex; justify-content: center; align-items: center;">2022.04.11</div>
+    <div style="display: flex; justify-content: center; align-items: center;">~</div>
+    <div style="display: flex; justify-content: center; align-items: center; color: green;"><strong>Now</strong></div>
+  </td>
+  <td>
+  (주)모세피플 법인 설립<br/>
+  Mose People Korea LLC. 우즈베키스탄 법인 설립
+  <br/><br/>
+  <ul style="margin: 0;">
+    <li style="margin: 0;">
+      프로젝트 <span style="margin-top: 1em; font-size: 1.5em;">"<strong>OBAIL</strong>"</span>
+      <ul style="margin: 0;">
+        <li>글로벌 한국 제품 도매 발주 플랫폼</li>
+        <li>국가·지역·카테고리 별 수요 예측 Deep-AI 연구개발</li>
+      </ul>
+    </li>
+    <li style="margin: 0;">
+      프로젝트 <span style="margin-top: 1em; font-size: 1.5em;">"<strong>KOMART</strong>"</span>
+      <ul style="margin: 0;">
+        <li>우즈베키스탄에서 서비스하는 한국 제품 B2B 도소매 플랫폼</li>
+      </ul>
+    </li>
   </ul>
   </td>
 </tr>
 </tbody>
 </table>
-
-## 가치관
-
-### 배움의 인생
-
-> 子曰, 三人行 必有我師焉 擇其善者而從之 其不善者而改之<br/>
-> 자왈, 삼인행 필유아사언 택기선자이종지 택불선자이개지
-
-공자 왈, 세명이 길을 가면 그 중 반드시 내 스승이 있다. 선한 사람의 따를점을 배우고, 선하지 못한 사람의 고칠점을 배워라.
-
-배움의 인생이란 인생을 사는 방향 중 하나이며 일종의 가치관이다.<br/>
-나는 사람들은 각자 인생을 사는 방향을 어느정도 정해놓고 살아간다고 생각한다.
-사람 숫자 만큼이나 다양한 방향이 있겠지만 내 좁은 식견으론 그중 크게 2가지를 분류한다.
-
-첫째는 비즈니스의 인생이고 둘째는 배움의 인생이다.
-두가지 인생의 방향 모두 장단점이 있고 서로 더 나은 측면과 그렇지 못한 측면이 있다.
-
-예를들어 학창 시절 공부를 할때 선생님이나 교수님이 시험 범위를 정해주셨는데 2~3시간 동안 시험 범위가 아닌곳을 봤다고 하자.
-그럴때 어떤 인생의 방향을 가졌는지에 따라 방향이 다르다.<br/>
-비즈니스 인생을 사는 사람은 "에이, 헛수고 했네." 라고 말한다.
-그들에겐 주어진 목표를 얼마나 빠르고 효과적으로 달성하는지가 중요한 가치이기 때문이다.<br/>
-배움의 인생을 사는 사람은 "당장 필요친 않지만 좋은걸 배웠네" 라고 말한다.
-그들에겐 목표 달성도 중요하지만 자신의 발전이 더 중요한 가치이기 때문이다.
-
-당연하게, 두 인생이 꼭 서로 완전 배반 되는 삶을 살진 않는다. 때로는 비즈니스적으로, 때로는 배우며 살기도 한다.<br/>
-그저 나는 어려서부터 내가 배움의 인생에 가까운 삶을 산다는 것을 느끼며 살아왔다.
-
-### 결과 보다는 과정
-
-개인적인 블로그니까 하는 말인데, 나는 결과 보다 과정을 중요시한다.
-
-자세히 말하자면 결과가 나쁘더라도 고통스러웠던 만큼, 열심했던 만큼, 성취, 홀가분, 미련 등 다양한 감정이 담긴 만큼 잘한 것이란 뜻이다.<br/>
-하지만 요즘 같은 치열한 경쟁 사회 속에서 이런 내 가치관은 받아들여지지 않는다. 나는 그러한 사실을 잘 알고있고 아쉽게도 순응하며 살고있다.
-<span class="md-monologue">블로그는 세상이 허락한 유일한 마약...</span><br/>
-또 반대로 말하자면 결과가 좋더라도 과정이 허술하거나 정당하지 못했다면 그건 잘 못한 것이다.
-
-이런 가치관은 어릴때 정한 '좋아하는 것을 하자'라는 인생의 방향에서 비롯한 것 같다.<br/>
-지금도 하고싶지 않은 일을 억지로 하면 정신과 신체에 병이 들기도 한다... <span class="md-monologue">지금의 나 ㅋ</span><br/>
-대신에 하고싶은 일을 하면 중독되어 매달린다. 이 블로그가 그 예이다.
