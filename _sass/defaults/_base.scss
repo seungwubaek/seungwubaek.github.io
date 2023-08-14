@@ -64,6 +64,7 @@ small,
 }
 
 p {
+  margin-top: 0.5em;
   margin-bottom: 1.3em;
 }
 
@@ -121,7 +122,7 @@ blockquote {
     font-style: italic;
 
     &:before {
-      content: "\2014";
+      content: '\2014';
       padding-right: 5px;
     }
   }
@@ -169,14 +170,15 @@ a > code,
 li > code,
 figcaption > code,
 td > code {
-  padding-top: 1.6px;   // font-size(16px) * 0.1
-  padding-bottom: 1.6px;  // font-size(16px) * 0.1
-  font-size: 12.8px;    // font-size(16px) * 0.8
+  padding-top: 1.6px; // font-size(16px) * 0.1
+  padding-bottom: 1.6px; // font-size(16px) * 0.1
+  font-size: 12.8px; // font-size(16px) * 0.8
   background: $code-light-gray;
   border-radius: 4px;
-  &:before, &:after {
+  &:before,
+  &:after {
     letter-spacing: -3.2px; // font-size(16px) * 0.2
-    content: "\00a0";     // No break whitesapce
+    content: '\00a0'; // No break whitesapce
   }
 }
 
@@ -350,7 +352,7 @@ a,
 tr,
 td,
 form button,
-input[type="submit"],
+input[type='submit'],
 .btn,
 .highlight,
 .archive__item-teaser {

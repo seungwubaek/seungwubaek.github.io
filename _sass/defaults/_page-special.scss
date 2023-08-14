@@ -16,12 +16,12 @@ table.md-paper-authors {
 }
 
 .md-paper-origin {
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   background-color: #e4e4e4;
 }
 
 .md-paper-translated {
-  margin: 0 0 $indent-var;
+  margin: $indent-top-var 0 $indent-bottom-var;
 }
 
 .md-paper-interpreted {
@@ -33,13 +33,13 @@ table.md-paper-authors {
 }
 
 kbd {
-  font-size: .8em;
-  padding: .1em .4em;
-  margin: 0 .1em;
+  font-size: 0.8em;
+  padding: 0.1em 0.4em;
+  margin: 0 0.1em;
   border: 1px solid mix(#fff, black, 50%);
   border-radius: 4px;
   background-color: $code-light-gray;
-  box-shadow: 0 1px 1px rgba(12,13,14,0.15), inset 0 1px 0 0 #fff;
+  box-shadow: 0 1px 1px rgba(12, 13, 14, 0.15), inset 0 1px 0 0 #fff;
 }
 
 .code-reducible {
@@ -57,17 +57,19 @@ kbd {
 
 .md-reference {
   &:before {
-    content: "Reference:";
+    content: 'Reference:';
     font-weight: bold;
   }
   ul {
-    margin-top: .5em;
+    margin-top: 0.5em;
   }
 }
 
 /* Posting - Special Style: Paper Analysis */
 #paper-revision-desc {
-  .md-paper-origin, .md-paper-translated, .md-paper-interpreted {
+  .md-paper-origin,
+  .md-paper-translated,
+  .md-paper-interpreted {
     display: inline-block;
     width: 20px;
     margin: 0;
@@ -76,10 +78,10 @@ kbd {
 #post-ctrl-panel-for-paper-analysis {
   width: 100%;
   border-bottom: 1px solid $border-color;
-  font-size: .8em;
+  font-size: 0.8em;
   padding-bottom: 16px;
   margin-bottom: 16px;
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     margin: 0 5px 0 0;
   }
   label {
@@ -92,8 +94,9 @@ kbd {
 }
 
 /* Posting - Special Style: Poem */
-.poem-author-note-top, .poem-author-note-bottom {
-  font-size: .8em;
+.poem-author-note-top,
+.poem-author-note-bottom {
+  font-size: 0.8em;
   span {
     font-weight: bold;
   }

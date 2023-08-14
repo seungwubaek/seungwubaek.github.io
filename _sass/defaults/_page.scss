@@ -27,7 +27,7 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .initial-content,
@@ -38,7 +38,9 @@ body {
 .page {
   @include breakpoint($large) {
     float: right;
-    width: calc(100% - #{$left-sidebar-width} - 1em); // -1em from _mixins for padding of <div id='main'>.
+    width: calc(
+      100% - #{$left-sidebar-width} - 1em
+    ); // -1em from _mixins for padding of <div id='main'>.
     padding-left: 1em;
     padding-right: $right-sidebar-width-narrow;
   }
@@ -70,7 +72,7 @@ body {
   border-bottom: 6px groove $border-color;
   padding-bottom: 1em;
   margin-bottom: 2em;
-  line-height: 1;;
+  line-height: 1;
   .page__title {
     line-height: 1.3;
     margin-top: 0;
@@ -85,11 +87,11 @@ body {
   }
   .page__header-meta {
     padding-top: $font-size * 2;
-    font-size: .8em;
+    font-size: 0.8em;
     line-height: 1.5;
   }
   .page__header-taxonomy {
-    font-size: .8em;
+    font-size: 0.8em;
   }
 }
 
@@ -104,30 +106,39 @@ body {
     border-bottom: 1px solid $border-color;
   }
 
-	h1, h2, h3, h4, h5, h6 {
-		.header-link {
-			position: relative;
-			left: 0.5em;
-			opacity: 1;
-			font-size: 0.8em;
-			-webkit-transition: opacity 0.2s ease-in-out 0.1s;
-			-moz-transition: opacity 0.2s ease-in-out 0.1s;
-			-o-transition: opacity 0.2s ease-in-out 0.1s;
-			transition: opacity 0.2s ease-in-out 0.1s;
-		}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    .header-link {
+      position: relative;
+      left: 0.5em;
+      opacity: 1;
+      font-size: 0.8em;
+      -webkit-transition: opacity 0.2s ease-in-out 0.1s;
+      -moz-transition: opacity 0.2s ease-in-out 0.1s;
+      -o-transition: opacity 0.2s ease-in-out 0.1s;
+      transition: opacity 0.2s ease-in-out 0.1s;
+    }
     code.language-plaintext {
       border: 1px solid black;
       border-radius: 4px;
       padding: 2px 4px;
     }
-	}
+  }
   h1 {
     margin-top: 2em;
     padding: 0.5em 0;
     border-top: 4px solid $border-color;
     border-bottom: 4px solid $border-color;
   }
-  h2, h3, h4, h5, h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-top: 1.3em;
   }
 
@@ -139,7 +150,7 @@ body {
 
   /* paragraph indents */
   p {
-    margin: 0 0 $indent-var;
+    margin: $indent-top-var 0 $indent-bottom-var;
 
     /* sibling indentation*/
     @if $paragraph-indent == true {
@@ -333,7 +344,8 @@ body {
     }
   }
 
-  ul, li {
+  ul,
+  li {
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -386,7 +398,7 @@ footer {
   }
 
   .page__meta-sep::before {
-    content: "\2022";
+    content: '\2022';
     padding-left: 0.5em;
     padding-right: 0.5em;
   }
@@ -395,7 +407,8 @@ footer {
     Page taxonomy
     ========================================================================== */
 
-  .page__taxonomy, .page__date {
+  .page__taxonomy,
+  .page__date {
     font-size: 14px;
   }
 
@@ -641,7 +654,9 @@ footer {
   .page__related {
     @include breakpoint($large) {
       padding-right: 0;
-      width: calc(100% - #{$left-sidebar-width} - 1em); // -1em from _mixins for padding of <div id='main'>.
+      width: calc(
+        100% - #{$left-sidebar-width} - 1em
+      ); // -1em from _mixins for padding of <div id='main'>.
     }
 
     @include breakpoint($x-large) {

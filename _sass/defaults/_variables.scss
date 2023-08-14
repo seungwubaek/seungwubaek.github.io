@@ -11,22 +11,24 @@ $doc-font-size: 16 !default;
 /* paragraph indention */
 $paragraph-indent: false !default; // true, false (default)
 $indent-var: 1.3em !default;
+$indent-top-var: 0.5em !default;
+$indent-bottom-var: 1.3em !default;
 
 /* system typefaces */
 $serif: Georgia, Times, serif !default;
-$sans-serif: -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI",
-  "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
-$monospace: Monaco, Consolas, "Lucida Console", monospace !default;
+$sans-serif: -apple-system, BlinkMacSystemFont, 'Roboto', 'Segoe UI',
+  'Helvetica Neue', 'Lucida Grande', Arial, sans-serif !default;
+$monospace: Monaco, Consolas, 'Lucida Console', monospace !default;
 
 /* sans serif typefaces */
 $sans-serif-narrow: $sans-serif !default;
-$helvetica: Helvetica, "Helvetica Neue", Arial, sans-serif !default;
+$helvetica: Helvetica, 'Helvetica Neue', Arial, sans-serif !default;
 
 /* serif typefaces */
 $georgia: Georgia, serif !default;
 $times: Times, serif !default;
-$bodoni: "Bodoni MT", serif !default;
-$calisto: "Calisto MT", serif !default;
+$bodoni: 'Bodoni MT', serif !default;
+$calisto: 'Calisto MT', serif !default;
 $garamond: Garamond, serif !default;
 
 $global-font-family: $sans-serif !default;
@@ -103,7 +105,7 @@ $foursquare-color: #0072b1 !default;
 $github-color: #171516 !default;
 $gitlab-color: #e24329 !default;
 $instagram-color: #517fa4 !default;
-$kakao-color: #FEE500 !default;
+$kakao-color: #fee500 !default;
 $keybase-color: #ef7639 !default;
 $lastfm-color: #d51007 !default;
 $linkedin-color: #007bb6 !default;
@@ -162,10 +164,10 @@ $max-width: $x-large !default;
    Grid
    ========================================================================== */
 
-   // sidebar
+// sidebar
 $left-sidebar-scroll-width: 16px;
 $left-sidebar-meta-font-size: 13px;
-$left-sidebar-width: 216px;  // left sidebar width + scroll bar space
+$left-sidebar-width: 216px; // left sidebar width + scroll bar space
 $left-sidebar-font-size: 14px;
 $left-sidebar-item-font-size: 14px;
 $right-sidebar-width: 200px;
@@ -193,23 +195,25 @@ $tbl-basic-head-background-color: mix(#fff, $border-color, 70%);
 $tbl-border-color: mix(#000, $border-color, 25%);
 
 // default
-$font-size: 16px;  // it is equal with _reset.
+$font-size: 16px; // it is equal with _reset.
 
 // nav-remocon
 $nav-remocon-min-width: 70px;
-$nav-remocon-background-color: rgba(255,255,255,.8);
+$nav-remocon-background-color: rgba(255, 255, 255, 0.8);
 $nav-remocon-border-color: $border-color;
-$nav-remocon-arrow-height: 20px;  // 7px;
-$nav-remocon-arrow-width: 20px;  // 50px;
+$nav-remocon-arrow-height: 20px; // 7px;
+$nav-remocon-arrow-width: 20px; // 50px;
 $nav-remocon-arrow-color: $base02;
 $nav-remocon-btn-set-font-size: 1em;
-$nav-remocon-btn-set-padding-top: .4em;
-$nav-remocon-btn-set-padding-bottom: .4em;
-$nav-remocon-btn-set-height: calc(#{$nav-remocon-btn-set-font-size} + #{$nav-remocon-btn-set-padding-top} + #{$nav-remocon-btn-set-padding-bottom});
+$nav-remocon-btn-set-padding-top: 0.4em;
+$nav-remocon-btn-set-padding-bottom: 0.4em;
+$nav-remocon-btn-set-height: calc(
+  #{$nav-remocon-btn-set-font-size} + #{$nav-remocon-btn-set-padding-top} + #{$nav-remocon-btn-set-padding-bottom}
+);
 
 // masthead
 $masthead-font-size: $font-size;
-$masthead-text-color: white;  // text color is white, basically.
+$masthead-text-color: white; // text color is white, basically.
 $masthead-height: calc(3 * #{$masthead-font-size});
 $masthead-home-height: calc(2 * #{$masthead-font-size});
 $masthead-menu-height: calc(1.1 * #{$masthead-home-height});
@@ -219,10 +223,15 @@ $right-widget-background-color: black;
 $right-widget-width: 400px;
 $right-widget-height: calc(100vh - calc(#{$masthead-height}));
 $right-widget__btn-border-color: $border-color;
-$right-widget__btn-arrow-height: 20px;  // 7px;
-$right-widget__btn-arrow-width: 20px;  // 50px;
+$right-widget__btn-arrow-height: 20px; // 7px;
+$right-widget__btn-arrow-width: 20px; // 50px;
 $right-widget__btn-arrow-color: $primary-color;
-$right-widget__body-backgroundcolor: rgba(0, 0, 0, .9); // mix(black, #fff, 85%);
+$right-widget__body-backgroundcolor: rgba(
+  0,
+  0,
+  0,
+  0.9
+); // mix(black, #fff, 85%);
 
 // initial-content
 $initial-content-top: calc(#{$masthead-height} + 8px);
@@ -232,7 +241,7 @@ $wholetoc-opt-view-icon-width: 22px;
 $wholetoc-indent-size: 18px;
 $wholetoc-item-height: 12px;
 $wholetoc-category-padding-top: 16px;
-$wholetoc-category-icon-size: calc(.8 * #{$h-size-2-general});
+$wholetoc-category-icon-size: calc(0.8 * #{$h-size-2-general});
 $wholetoc-category-branch-v-left: $wholetoc-indent-size / 2 - 4px;
 $wholetoc-category-branch-last-v-height: $wholetoc-category-padding-top + 9px;
 $wholetoc-category-branch-h-width: $wholetoc-indent-size / 2;
