@@ -36,7 +36,7 @@ Miniconda 설치를 위해 아래 공식 홈페이지로 들어가서 설치 파
 
 <https://docs.conda.io/en/latest/miniconda.html>
 
-![Miniconda Download Links]({{ site.gdrive_url_prefix }}1CE7bN2OjGwwwdDrz8PPPkyMY3JfDBWHL)
+![Miniconda Download Links]({{ site.gdrive_url_prefix }}1CE7bN2OjGwwwdDrz8PPPkyMY3JfDBWHL){:class="img-shadow"}
 
 귀찮으면 아래 링크를 클릭해서 바로 다운로드를 시작할 수 있다.
 
