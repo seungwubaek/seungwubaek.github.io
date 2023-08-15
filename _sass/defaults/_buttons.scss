@@ -9,7 +9,7 @@
 .btn {
   /* default */
   display: inline-block;
-  margin-bottom: 0.25em;
+  margin-bottom: 0.25em;  // 버튼들이 여러줄에 걸쳐있을 수 있음
   padding: 0.5em 1em;
   font-family: $sans-serif;
   font-size: $type-size-6;
