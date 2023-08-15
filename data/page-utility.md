@@ -147,3 +147,14 @@ Kramdown 인라인 속성문 `{:style=""}`을 인라인 이미지 옆에 붙여�
 아래와 같이 감춰진 메모 클래스를 selector로 놓고 `data-type` 값에 따라 조건 분기 하기
 
 <div class="memo" hidden data-type="toc"></div>
+
+# Layout 관련
+
+## floating 요소의 크기를 고려하는 wrapper 생성 방법
+
+wrapper (`<div>` 등) 하위에 모든 요소가 `float` 속성을 가지고 있으면 wrapper의 높이가 0이 되는 문제가 있음
+
+https://stackoverflow.com/questions/2073087/wrapper-question-when-containing-floating-divs
+
+1. overflow: auto;
+2. <br style="clear:both" />

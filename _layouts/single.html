@@ -31,6 +31,11 @@ layout: default
           {% include my-breadcrumbs.html %}
         {% endunless %}
       {% endif %}
+
+      {% if page.share %}{% include my-social-share.html classes="page__share page__share-top" %}{% endif %}
+
+      {% include my-post_pagination.html %}
+
       {% unless page.header.overlay_color or page.header.overlay_image %}
       <div class="page__header">
         <header>
@@ -40,10 +45,6 @@ layout: default
         {% include page__header-category-list.html target=post %}
       </div>
       {% endunless %}
-
-      {% include my-post_pagination.html %}
-
-      {% if page.share %}{% include my-social-share.html classes="page__share page__share-top" %}{% endif %}
 
       <section class="page__content" itemprop="text">
         {% if page.toc-top %}

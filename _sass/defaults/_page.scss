@@ -332,15 +332,19 @@ body {
 
 .page__share-top {
   margin: 0 0 1em 0;
-  padding-bottom: 0;
+  padding: 0;
   border: 0;
+  text-align: right;
 
   .page__share-title {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
     font-size: 1.3em;
-    margin-top: 1em;
     text-transform: none;
+    vertical-align: middle;
     i {
-      margin-right: 4px;
+      margin-right: 8px;
     }
   }
 
@@ -355,8 +359,9 @@ body {
   }
 
   ul {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
   li:not(:last-child) {
