@@ -28,4 +28,5 @@ gem "minimal-mistakes-jekyll"
 group :jekyll_plugins do
     gem "tzinfo", '~> 1.2'
     gem "tzinfo-data"
+    gem "jekyll-target-blank"
 end
