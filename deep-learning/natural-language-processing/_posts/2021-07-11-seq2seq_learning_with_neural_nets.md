@@ -248,8 +248,8 @@ Recurrent Neural Network (RNN) [31, 28] 은 sequence들에 대한 feedforward ne
 inputs sequence ($$x_1, ..., x_T$$)가 주어질때, 표준 RNN은 다음의 방정식을 반복하면서 output sequence ($$y_1, ..., y_T$$)을 계산해낸다:
 </div>
 
-$$h_t = sigm(\mathit{W}^{hx}x_t+\mathit{W}^{hh}h_{t-1})$$<br/>
-$$y_t = \mathit{W}^{yh}h_t$$
+<span>$$h_t = sigm(\mathit{W}^{hx}x_t+\mathit{W}^{hh}h_{t-1})$$</span><br/>
+<span>$$y_t = \mathit{W}^{yh}h_t$$</span>
 
 <div class="md-paper-interpreted" markdown="1">
 $$t$$ 시점의 Hidden State (은닉 상태) $$h_t$$는 $$t$$ 시점의 input $$x_t$$와 이전 hidden state $$h_{t-1}$$ 결합으로 생성한다는 뜻.<br/>
@@ -297,7 +297,7 @@ LSTM은 먼저 LSTM의 마지막 hidden state로부터 주어진 input sequece $
 $$x_1, ..., x_T$$의 표현 $$v$$로 주어진 표준 LSTM-LM 공식으로 $$y_1, ..., y_{T^{\prime}}$$의 확률을 계산하여 이 조건부 확률을 계산한다:
 </div>
 
-$$p(y_1, ..., y_{T^{\prime}}\vert x_1, ..., x_T)=\prod_{t=1}^{T^{\prime}} p(y_t\vert v, y_1, ..., y_{t-1})$$
+<span>$$p(y_1, ..., y_{T^{\prime}}\vert x_1, ..., x_T)=\prod_{t=1}^{T^{\prime}} p(y_t\vert v, y_1, ..., y_{t-1})$$</span>
 <span style="display: inline-block; max-width: 40px; width: 100%;"></span>(1)
 {:id="equation-1"}
 
@@ -425,7 +425,7 @@ Once training is complete, we produce translations by finding the most likely tr
 학습이 완료되고 나면, LSTM으로 가장 가능성 높은 번역을 찾아 번역한다:
 </div>
 
-$$\hat{T}=\underset{T}{\operatorname{arg max}}p(T\vert S)$$
+<span>$$\hat{T}=\underset{T}{\operatorname{arg max}}p(T\vert S)$$</span>
 <span style="display: inline-block; max-width: 40px; width: 100%;"></span>(2)
 
 <div class="md-paper-origin" markdown="1">
@@ -852,5 +852,5 @@ Wolfgang Machery, Rajat Monga, Vincent Vanhoucke, Peng Xu, Wojciech Zaremba, and
 [^SMT]: SMT: Statistical Machine Translation
 [^beam-search]: beam search: 트리를 탐색하는 기법 중 하나. Ref. <https://velog.io/@nawnoes/%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC-Beam-Search>
 [^non-monotonic]: 추론의 특성을 나타내는 말. 일반적으로 삼단논법(A이면 B이다. B이면 C이다. 따라서 A이면 C이다.) 처럼 사실이 주어지면 그에 따라 새로운 정리가 도출되고 또 이 도출된 정리로 인해 다른 정리 또는 사실이 나타내는 것을 '단조(Monotonic)하다'라고 한다. 이처럼 단조적인 경우 어 '참'인 공리가 줄어들지 않는데 반해, 비단조(Non-Monotonic)는 연역적이지 않음을 의미하며 이미 밝혀진 사실이나 새로운 정리가 더이상 효력이 없을 수 있음을 뜻한다. '새는 날 수 있다'라는 정리에서 죽은 새는 날 수 없으므로 '만약(What if) 죽은 새가 아니라면 새는 날 수 있다' 와 같은 추론이 비단조적 추론이 된다. Ref. <http://www.aistudy.co.kr/expert/inference_lee.htm#_bookmark_1d3dab8>, <http://www.aistudy.co.kr/reasoning/nonmonotonic_reasoning.htm>
-[^perplexity]: perplexity: 언어 모델 성능 측정 지표 중 하나로 모델이 내놓은 답의 혼란한 정도를 표현. 언어 모델이 테스트 문장에 대한 답에 확신(probability)을 가질수록 혼란도(perplexity)는 낮아진다. 자주 사용되는 혼란도 계산식은 다음과 같다. $$N$$개의 단어 $$w_1, w_2, ..., w_N$$로 이루어진 문장 $$W$$에 대한 모델의 perplexity(혼란도)($$PPL$$)는 $$PPL(W)=\sqrt[N]{\frac{1}{P(w_1, w_2, ..., w_N)}}$$ 이다. Ref. <https://towardsdatascience.com/perplexity-in-language-models-87a196019a94>
+[^perplexity]: perplexity: 언어 모델 성능 측정 지표 중 하나로 모델이 내놓은 답의 혼란한 정도를 표현. 언어 모델이 테스트 문장에 대한 답에 확신(probability)을 가질수록 혼란도(perplexity)는 낮아진다. 자주 사용되는 혼란도 계산식은 다음과 같다. <span>$$N$$</span>개의 단어 <span>$$w_1, w_2, ..., w_N$$</span>로 이루어진 문장 <span>$$W$$</span>에 대한 모델의 perplexity(혼란도)(<span>$$PPL$$</span>)는 <span>$$PPL(W)=\sqrt[N]{\frac{1}{P(w_1, w_2, ..., w_N)}}$$</span> 이다. Ref. <https://towardsdatascience.com/perplexity-in-language-models-87a196019a94>
 [^multi-bleu-pl1]: multi-bleu.pl1: 몇개의 변이형 BLEU 점수가 있고 각 변이형은 perl script로 정의된다.
