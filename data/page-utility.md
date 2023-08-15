@@ -56,8 +56,6 @@ toc-top: true
 ```
 </div>
 
-# 수학
-
 ## MathJax
 
 ### Syntax
