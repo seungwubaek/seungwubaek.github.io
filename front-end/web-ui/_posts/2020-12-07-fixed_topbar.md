@@ -13,7 +13,7 @@ last_modified_at: "2020-12-09 21:26:00 +0900"
 
 ## Fixed Topbar 샘플
 
-아래는 Fixed Topbar 샘플이다. Topbar가 항상 최상위에 고정 되어있다.
+아래는 Fixed Topbar 샘플이다. 스크롤을 내려도 Topbar가 항상 최상위에 고정 되어있다.
 
 <iframe class="width-80-100" style="height: 300px;"
         src="/assets/iframes/fixed_topbar/fixed_topbar.html">Fixed Topbar Sample</iframe>
