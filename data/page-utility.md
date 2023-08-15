@@ -56,6 +56,20 @@ toc-top: true
 ```
 </div>
 
+# 수학
+
+## MathJax
+
+### Syntax
+
+달러 두개를 내용 앞뒤로 감싸서 표현
+
+`$$내용(MathJax Syntax)$$`
+
+### 주의
+
+inline expression은 `<span>`으로 감싸야 이상한 y scroll bar가 생기지 않는다.
+
 ## 논문 번역 포맷
 
 <div class="md-paper-origin">
@@ -101,6 +115,14 @@ Kramdown 인라인 속성문 `{:style=""}`을 인라인 이미지 옆에 붙여�
 <div style="font-size: .75em;" markdown=1>
 특별 출연한 귀여운 고양이의 이름은 <strong>까무</strong>입니다 😆
 </div>
+
+## 이미지의 그림자 테두리
+
+이미지 배경색이 흰색이면 블로그 배경색도 흰색이라 구분이 안간다 그럴때 사용.
+
+`![Unintended Y Scrollbar]({{ site.gdrive_url_prefix }}1nDda0kV_XigXhZXbV-04DhgETPU1lfbB){:style="max-width: 700px;" class="img-shadow"}`
+
+![Unintended Y Scrollbar]({{ site.gdrive_url_prefix }}1nDda0kV_XigXhZXbV-04DhgETPU1lfbB){:style="max-width: 700px;" class="img-shadow"}
 
 # Kramdown(Markdown) 관련
 ## Markdown Alias Link
