@@ -1,0 +1,12 @@
+
+- CRA
+- React Hooks
+- React Router
+- React Query
+- TypeScript
+- Styled Components
+- Recoil
+- Redux
+- PWA
+- SSR
+- React Native
