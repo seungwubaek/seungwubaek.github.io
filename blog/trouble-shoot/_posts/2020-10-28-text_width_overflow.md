@@ -2,6 +2,8 @@
 layout: single
 title: "텍스트가 웹 페이지의 가로 길이를 넘음"
 post-order: 1
+date: "2020-10-28 00:00:00 +0900"
+last_modified_at: "2023-08-15 18:10:00 +0900"
 ---
 이 포스트는 Jekyll에서 텍스트가 웹 페이지의 가로 길이를 넘게 되면서 UI가 깨지는 문제에 대한 Trouble Shooting 포스트이다.
 
