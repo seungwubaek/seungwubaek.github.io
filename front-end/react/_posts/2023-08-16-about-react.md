@@ -3,7 +3,7 @@ layout: single
 title: "React 란"
 post-order: 1
 date: "2023-08-16 01:42:00 +0900"
-last_modified_at: "2023-08-16 01:42:00 +0900"
+last_modified_at: "2023-08-16 17:03:00 +0900"
 ---
 
 React는 Javascript로 작성된 Web UI 라이브러리이다.
@@ -14,43 +14,11 @@ React는 SPA(Single Page Application) 방식의 웹 구현을 위해 사용하�
 
 React는 주로 아래와 같은 특징을 가진다.
 
-- Virtual DOM
-- Component 기반
 - JSX
+- Component 기반
+- Virtual DOM
 - 단방향 데이터 흐름
 - 활성화된 커뮤니티
-
-## Virtual DOM (Virtual Document Object Model)
-
-Virtual DOM은 React의 핵심적인 기능이다.
-Virtual DOM은 DOM이 변경될 때 변경된 부분만을 감지하여 렌더링(재조정 Reconciliation)하기 위해 사용된다.
-
-DOM은 CSS 등의 스타일이 적용되기 전에 웹 페이지의 구조를 표현하는 트리 구조이다.<br/>
-DOM을 얻기 위해서는 먼저 HTML로 웹 페이지를 구조화 해야하고, 브라우저는 이 HTML을 해석하여 DOM으로 변환한다.
-
-이때 React로 웹 페이지를 작성하면 Virtual DOM을 이용해서 브라우저의 DOM 생성 작업량을 최적화 할 수 있도록 돕는다.
-
-만약 웹 페이지에서 사용자의 액션 등으로 웹 페이지의 구조가 변화한다면,
-브라우저는 변경된 구조를 파악하고 렌더링 하기 위해 DOM을 다시 생성해야한다.
-
-그런데 짧은 시간동안 웹 페이지의 구조에 많은 변경이 발생하면
-브라우저의 DOM 생성작업에 부하가 걸리고 성능이 저하될 수 있다.
-
-React로 만든 웹 페이지는 DOM 생성 전에 먼저 메모리에 Virtual DOM을 생성하고,
-생성한 Virtual DOM을 기반으로 실제 DOM을 생성하게 된다.
-
-만약 React로 만든 웹 페이지에서 사용자 액션 등으로 구조의 변경이 발생하면,
-브라우저는 변경된 구조의 DOM을 바로 생성하는 것이 아니라, React를 통해 구조 변경에 대응하는 가상의 DOM(Virtual DOM)을 먼저 생성한다.
-
-그리고 그것을 실제 DOM(구조 변경 전)과 비교해서 변경이 발생한 부분을 감지하고 해당 부분을 변경해 주는 것으로 DOM의 생성 횟수를 최소화한다.
-
-### DOM vs Virtual DOM 예시
-
-예를들어 `for` loop로 `<li>` 태그를 500개 생성하는 코드가 있다고 가정하자.
-
-그러면 잠재적으로 500번의 DOM 생성이 발생할 수 있다. (사실 웹 브라우저가 그렇게 멍청하진 않겠지만)<br/>
-그러나 이때 React를 사용하면 `<li>` 500개 생성 작업을 Virtual DOM에 미리 그려보고,
-단 1번의 DOM 변경에서 `<li>` 500개를 담으면 된다는 것을 계산할 수 있다.
 
 ## JSX
 
@@ -151,6 +119,128 @@ React는 다양한 API와 Hook으로 Component에 더 많은 기능을 제공한
   * `useRef`: 렌더링을 발생시키지 않는 재사용 가능한 값 제작
   * `useContext`: Context API 사용
 
+## Virtual DOM (Virtual Document Object Model)
+
+Virtual DOM은 React의 핵심적인 기능이다.
+Virtual DOM은 DOM이 변경될 때 변경된 부분만을 감지하여 렌더링(재조정 Reconciliation)하기 위해 사용된다.
+
+먼저, DOM은 웹 페이지의 HTML을 메모리로 읽어와서 브라우저가 이해할 수 있도록 트리 구조로 표현한 것이자,
+트리 구조 내 구성 원소(node)의 추가/수정/제거 API와 속성, 스타일, 이벤트 등의 제어 API를 제공하는 인터페이스이다.
+
+각각의 브라우저(Chrome, Safari, Firefox)는 각자의 방식으로 DOM을 구현하고 있으며,
+DOM의 인터페이스 표준이 있기는 하지만 브라우저마다 약간의 차이가 있을 수 있다.
+
+이때, React로 웹 페이지를 작성하면 Virtual DOM을 이용해서 브라우저의 DOM 생성 작업량을 최적화 할 수 있도록 돕는다.
+
+만약 웹 페이지에서 사용자의 액션 등으로 웹 페이지의 구조가 변화한다면,
+브라우저는 변경된 구조를 파악하고 렌더링 하기 위해 DOM을 다시 생성해야한다.
+
+그런데 짧은 시간동안 웹 페이지의 구조에 잦은 변경이 발생하면
+브라우저는 매 변경마다 DOM을 다시 그려야하기 때문에 DOM 생성작업에 부하가 걸리고 성능이 저하될 수 있다.
+
+React로 만든 웹 페이지는 DOM 생성 전에 먼저 메모리에 Virtual DOM을 생성하고,
+생성한 Virtual DOM을 기반으로 실제 DOM을 생성하게 된다.
+
+만약 React로 만든 웹 페이지에서 사용자 액션 등으로 구조의 변경이 발생하면,
+브라우저는 변경된 구조의 DOM을 바로 생성하는 것이 아니라, React를 통해 구조 변경에 대응하는 가상의 DOM(Virtual DOM)을 먼저 생성한다.
+
+그리고 그것을 실제 DOM(구조 변경 전)과 비교해서 변경이 발생한 부분을 감지하고(diffing이라 한다)
+해당 부분을 변경해 주는 것으로 DOM의 생성 횟수를 최소화한다.
+
+### DOM vs Virtual DOM 예시
+
+위에서 Virtual DOM에 대해 개념적인 설명은 다 했지만,
+DOM과 Virtual DOM의 차이를 보여주는 명확한 예시는 찾을 수가 없었다...
+그래서 하나 만들어봤다. 😅
+근데 이것도 DOM과 Virtual DOM의 차이를 명확히 나타내는지는 모르겠다.
+
+화면에 그려야하는 어떤 긴 리스트가 유저 액션이나 서버 푸시 등에 의해 변하는 상황을 간단히 재현해보려고 한다.
+
+`data` 리스트 `['AAAA', 'BBBB', 'CCCC']`가 있다.<br/>
+이 `data`는 매초 Array의 두번째 인덱스 `'BBBB'`가 `'ZZZZ'`로 변했다가 다시 원래대로 돌아오길 반복한다.
+
+#### 전통적인 HTML, Javascript로 DOM 생성
+
+아래 코드는 Plain Javascript로 `<ul>`의 하위요소를 교체하는 코드이다.
+
+```html
+<!-- 이 ul 하위의 요소를 바꿀 것이다 -->
+<ul id="data-list"></ul>
+
+<!-- javascript 코드. `data` Array를 통째로 교체한다 -->
+<script>
+var data = ["AAAA", "BBBB", "CCCC"];
+setInterval(() => {
+  if (data[1] === "BBBB") {
+    data = ["AAAA", "ZZZZ", "CCCC"];
+  } else {
+    data = ["AAAA", "BBBB", "CCCC"];
+  }
+  const dataListHtml = data.map((item, index) => `<li>${item}</li>`).join("");
+
+  document.getElementById("data-list").innerHTML = dataListHtml;
+}, 1000);
+</script>
+```
+
+<ul id="data-list"></ul>
+<script>
+var data = ["AAAA", "BBBB", "CCCC"];
+setInterval(() => {
+  if (data[1] === "BBBB") {
+    data = ["AAAA", "ZZZZ", "CCCC"];
+  } else {
+    data = ["AAAA", "BBBB", "CCCC"];
+  }
+  const dataListHtml = data.map((item, index) => `<li>${item}</li>`).join("");
+
+  document.getElementById("data-list").innerHTML = dataListHtml;
+}, 1000);
+</script>
+
+`innerHTML`을 썼기 때문에 당연히 `<ul>` 태그 내부의 모든 요소가 다시 생성되었다.
+
+<video controls autoplay loop playsinline width="100%" style="max-width: 540px;">
+  <source src="{{ site.gdrive_url_prefix }}1YhNvP2niTN6ajSjECrudkB0szOkLHHjS">
+</video>
+
+#### React로 Virtual DOM 생성
+
+아래의 React 코드는 이번엔 `map`을 이용해서 `data` 리스트를 다시 생성하고 있다.
+
+```jsx
+function App() {
+  const [data, setData] = React.useState(['AAAA', 'BBBB', 'CCCC']);
+
+  // data Array를 매초 통째로 교체한다
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      if (data[1] === 'BBBB') {
+        setData(['AAAA', 'ZZZZ', 'CCCC']);
+      } else {
+        setData(['AAAA', 'BBBB', 'CCCC']);
+      }
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [data]);
+
+  // 매초 아래 JSX를 리턴하면서 화면이 갱신된다
+  return (
+    <ul>
+      {data.map((item, index) => (
+        <li key={index}>{item}</li>
+      ))}
+    </ul>
+  );
+}
+```
+
+그럼에도 불구하고 오직 두번째 요소만 다시 생성되는 것을 볼 수 있다.
+
+<video controls autoplay loop playsinline width="100%" style="max-width: 540px;">
+  <source src="{{ site.gdrive_url_prefix }}1DWOfGy0YoWZV3-Dta4SnGi3s20HMQ9OG">
+</video>
+
 ## 단방향 데이터 흐름
 
 Component는 자신이 가진 어떤 상태(State) 정보 또는 데이터를 다른 Component에 전달할 수 있는데,
@@ -174,10 +264,10 @@ React는 커뮤니티가 매우 활성화 되어 있다.
 따라서 React 공식으로 제공해주지 못하는 많은 기능들도 커뮤니티 버전으로 제공받을 수 있다.
 
 특히 React는 모든 기능을 자체적으로 관리하지 않고 코어 기능에 집중하고 있으며,
-다른 부분들은 커뮤니티에 많이 이양하였기 때문에
+다른 부분들은 커뮤니티에 이양하였기 때문에
 React를 사용하려면 여러가지 커뮤니티 라이브러리를 함께 사용할 수 밖에 없다.
 
-### 대표적인 커뮤니티 기능 라이브러리
+### 대표적인 기능 라이브러리
 
 - Create React App (<https://create-react-app.dev/>)
 - React Router (<https://reactrouter.com/en/main/>)
@@ -187,14 +277,14 @@ React를 사용하려면 여러가지 커뮤니티 라이브러리를 함께 사
 - Redux (<https://ko.redux.js.org/>)
 - Swiper (<https://swiperjs.com/react/>)
 
-### 대표적인 커뮤니티 UI 라이브러리
+### 대표적인 UI 라이브러리
 
 - Material UI (<https://mui.com/>)
 - Ant Design (<https://ant.design/>)
 - Chakra UI (<https://chakra-ui.com/>)
 - Tailwind CSS (<https://tailwindcss.com/>)
 
-## 웹 개발을 위해 어떤 라이브러리를 쓰는게 좋을까?
+# 웹 개발을 위해 어떤 라이브러리를 쓰는게 좋을까?
 
 결론부터 말하자면 답은 없다.
 
@@ -203,17 +293,21 @@ React를 사용하려면 여러가지 커뮤니티 라이브러리를 함께 사
 실제로 사용해 보는 것만 제외하고 React, Vue.js, Angular에 대해 여러가지 조사를 했고 결국 React를 선택했지만,
 아무리 조사를 한들, 실제로 익히고 실무에서 사용해보기 전까지 알 수 없는 것들이 많았다.
 
+## React 선택에 분명한 이유는 없다
+
 ### JSX의 indentation 지옥(까지는 아니지만.. 자꾸만 신경쓰이게 하는걸)
 
 내가 React를 선택한 가장 큰 이유는 JSX 였다.<br/>
 JSX의 Javascript는 웹 특화 프로그래밍 언어로 기초적인 사용법은 이미 알고 있는 경우(내 경우가 그랬다)가 많고
-모르더라도 배우기 쉽기 때문에, Javascript로 작성할 수 있는 React는 다른 진영의 라이브러리와 비교했을 때
+모르더라도 배우기 쉽다.
+
+따라서 JSX(Javascript)로 작성할 수 있는 React는 다른 진영의 라이브러리와 비교했을 때
 상대적으로 초기 학습 비용이 적고 그만큼 결과물도 빠르게 생산해 낼 수 있다는 점이 아주 큰 강점이라고 생각한다.
 <span class="md-monologue">정작 React 사용법을 빠르게 익히지 못한다면 이야기가 달라지지만...</span>
 
 하지만, JSX 문법은 어떻게보면 indentation이 지나치게 많고 가독성이 떨어져 보이기도 하다.
-지난 1년 간 React로 여러 랜딩페이지, 회사 홈페이지, 이커머스 웹 플랫폼을 배포해 오면서
-이제 JSX 코딩 스타일에 익숙해질법도 하건만 `return` 뒤에 이어지는 JSX에 indentation들을 보면
+지난 1년 간 React로 여러 랜딩페이지, 회사 홈페이지, 이커머스 웹 플랫폼을 배포해 왔고,
+이제 JSX 코딩 스타일에 익숙해질법도 하건만 `return` 뒤에 이어지는 JSX의 indentation들을 보면
 '어떻게 좀 개선하면 안될까' 라는 생각이 들곤한다.
 
 #### 예
@@ -277,7 +371,8 @@ React를 선택하는데 있어서 긍정적인 요소로 생각했다.
 
 Virtual DOM은 엄밀히 따지면 자동화를 통해 DOM 생성을 가능한 빠르고 효율적으로 생성하는 방법이므로
 준수한 퀄리티를 내면서 생산성을 올려주는 테크닉이며,
-DOM 생성의 효율화만 놓고 보자면 수동으로 최적화하는 것이 더 효과적일 수도 있다.
+DOM 생성의 효율화만 놓고 보자면 수동으로 최적화하는 것이 더 효과적일 수도 있다.<br/>
+<span class="md-monologue">그래서 Virtual DOM 안쓸래? 아니 쓸래 🥹</span>
 
 ### 객체 지향 방식(Class Component) 선호
 
@@ -285,7 +380,8 @@ DOM 생성의 효율화만 놓고 보자면 수동으로 최적화하는 것이 
 Functional Component 보다 Class Component 접근 방식으로 문제를 풀었으면 훨씬 쉽게 해결될 이슈들이 종종 있었다.
 
 그래서 `useEffect` 같은 Hook 기법은 기발하지만 Functional Component를 추천한다는 공식적인 메시지를 보기 전까지,
-나는 `componentDidMount` 같은 Class Component 기반의 로직을 작성했었다.
+나는 `componentDidMount` 같은 Class Component 기반의 로직을 작성했었다.<br/>
+그렇게 하는 편이 로직을 세부 기능 별로 캡슐화해서 구상하기 수월하기 때문이다.
 
 ### 단방향 데이터 흐름은 불편할 수 있다
 
@@ -309,7 +405,7 @@ React의 단점은 다른 라이브러리들의 장점이 될 수 있고, 다른
 마지막으로 웹 개발을 위한 라이브러리 선택에 대해 하고 싶은 말은,
 React는 현재 충분히 유명하며 활성화 되어있고 매력적이라는 것이다.
 
-구글 트렌드: <https://trends.google.co.kr/trends/explore?cat=5&date=today%205-y&q=React,Angular,Vue.js&hl=ko>
+구글 트렌드: <https://trends.google.co.kr/trends/explore?cat=5&date=today%205-y&q=React,Angular,Vue.js&hl=ko>{:target="_blank"}
 
 <div class="md-reference" markdown=1>
 * <https://react.dev/blog/2023/03/16/introducing-react-dev>
@@ -322,4 +418,6 @@ React는 현재 충분히 유명하며 활성화 되어있고 매력적이라는
 * <https://wit.nts-corp.com/2019/02/14/5522>
 * <https://junghyunkim.tistory.com/entry/번역-Virtual-DOM-이-뭔데-한번-만들어보기>
 * <https://react.dev/reference/react/Component>
+* <https://stackoverflow.com/questions/37039667/executing-multiple-dom-updates-with-javascript-efficiently>
+* <https://medium.com/devinder/react-virtual-dom-vs-real-dom-23749ff7adc9>
 </div>
