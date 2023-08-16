@@ -14,7 +14,7 @@
   width: 100%; // It is needed by 'position: fixed;'. I am not sure why it's needed suddenly..
   height: $masthead-height;
   border: 0;
-  background-color: $footer-background-color;
+  background-color: $masthead-background-color;
 
   &__inner-wrap {
     @include clearfix;

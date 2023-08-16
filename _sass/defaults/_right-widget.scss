@@ -77,6 +77,7 @@
     display: inline-block;
     width: 100%;
     background-color: $right-widget__body-backgroundcolor;
+    opacity: $right-widget__body-background-opacity;
     padding: 0 1em 1em 1em;
     position: relative;
     .right-widget__resizer {

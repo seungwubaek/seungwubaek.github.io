@@ -65,6 +65,7 @@ $h-size-6: 1em !default;
    Colors
    ========================================================================== */
 
+$black: #222 !default;
 $gray: #7a8288 !default;
 $dark-gray: mix(#000, $gray, 50%) !default;
 $darker-gray: mix(#000, $gray, 60%) !default;
@@ -74,11 +75,11 @@ $lighter-gray: mix(#fff, $gray, 90%) !default;
 $background-color: #fff !default;
 $code-background-color: #fafafa !default;
 $code-background-color-dark: $light-gray !default;
-$text-color: #000 !default;
+$text-color: $black !default;
 $muted-text-color: $text-color !default;
 $border-color: mix(#fff, $text-color, 75%) !default;
 $form-background-color: $lighter-gray !default;
-$footer-background-color: #000 !default;
+$layout-ui-background-color: $black !default;
 
 $primary-color: #ff0000 !default;
 $success-color: #3fa63f !default;
@@ -97,7 +98,7 @@ $yiq-debug: false !default;
 /* brands */
 $behance-color: #1769ff !default;
 $bitbucket-color: #205081 !default;
-$clipboard-color: black !default;
+$clipboard-color: $black !default;
 $dribbble-color: #ea4c89 !default;
 $facebook-color: #3b5998 !default;
 $flickr-color: #ff0084 !default;
@@ -218,21 +219,18 @@ $masthead-text-color: white; // text color is white, basically.
 $masthead-height: calc(3 * #{$masthead-font-size});
 $masthead-home-height: calc(2 * #{$masthead-font-size});
 $masthead-menu-height: calc(1.1 * #{$masthead-home-height});
+$masthead-background-color: $layout-ui-background-color;
 
 // right-widget
-$right-widget-background-color: black;
+$right-widget-background-color: $layout-ui-background-color;
 $right-widget-width: 400px;
 $right-widget-height: calc(100vh - calc(#{$masthead-height}));
 $right-widget__btn-border-color: $border-color;
 $right-widget__btn-arrow-height: 20px; // 7px;
 $right-widget__btn-arrow-width: 20px; // 50px;
 $right-widget__btn-arrow-color: $primary-color;
-$right-widget__body-backgroundcolor: rgba(
-  0,
-  0,
-  0,
-  0.9
-); // mix(black, #fff, 85%);
+$right-widget__body-backgroundcolor: $layout-ui-background-color;
+$right-widget__body-background-opacity: 0.95;
 
 // initial-content
 $initial-content-top: calc(#{$masthead-height} + 8px);
@@ -257,5 +255,5 @@ $wholetoc-view-card-width-large: 120px;
 // page
 $code-light-gray: mix(#fff, $gray, 70%);
 
-/* brands */
-// merged with mmistakes _variables.scss
+// footer
+$footer-background-color: $layout-ui-background-color;
