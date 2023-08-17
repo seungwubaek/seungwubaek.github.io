@@ -623,12 +623,12 @@ footer {
 .page__related {
   @include clearfix();
   float: left;
-  padding: 1em 1em 1em;
+  padding: 1em 0 1em;
   background-color: $background-color;
 
   @include breakpoint($large) {
     float: right;
-    padding: 1em $right-sidebar-width-narrow/2 1em;
+    padding: 1em $right-sidebar-width-narrow 1em;
     width: calc(100% - #{$left-sidebar-width} - 1em);
   }
 
@@ -640,13 +640,22 @@ footer {
 
 .page__related-wrapper {
   @include clearfix();
-  margin: 0 1em 0;
+  padding: 0;
+  margin: 0;
   border-top: 1px solid $border-color;
+
+  .grid__wrapper {
+    margin-top: 1.5em;
+  }
+
+  .archive__item-title {
+    color: $link-color;
+  }
 }
 
 .page__related-title {
   margin-bottom: 10px;
-  font-size: $type-size-6;
+  font-size: $type-size-5;
   text-transform: uppercase;
 }
 

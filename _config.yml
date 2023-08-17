@@ -15,147 +15,145 @@
 # minimal_mistakes_skin    : "contrast" # "air(default)", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "ko-KR"
-title                    : "ExtraBrain"
-title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Sammy Baek"
-description              : "Mainly IT Tech Blog. Front-End, Back-End, Deeplearning, Linux etc. or Anything I'm interested in."
-url                      : "https://seungwubaek.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "https://github.com/seungwubaek/seungwubaek.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
-teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
-logo                     : "/favicon.ico" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
-breadcrumbs            : true # true, false (default)
-words_per_minute         : 200
+locale: 'ko-KR'
+title: 'ExtraBrain'
+title_separator: '-'
+subtitle: # site tagline that appears below site title in masthead
+name: 'Sammy Baek'
+description: "Mainly IT Tech Blog. Front-End, Back-End, Deeplearning, Linux etc. or Anything I'm interested in."
+url: 'https://seungwubaek.github.io' # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl: # the subpath of your site, e.g. "/blog"
+repository: 'https://github.com/seungwubaek/seungwubaek.github.io' # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+teaser: # path of fallback teaser image, e.g. "/assets/images/500x300.png"
+logo: '/favicon.ico' # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
+masthead_title: # overrides the website title displayed in the masthead, use " " for no title
+breadcrumbs: true # true, false (default)
+words_per_minute: 200
 comments:
-  provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
+  provider: 'disqus' # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
-    shortname            : "sammywhite" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname: 'sammywhite' # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
-    server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
+    server: # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
     # https://developers.facebook.com/docs/plugins/comments
-    appid                :
-    num_posts            : # 5 (default)
-    colorscheme          : # "light" (default), "dark"
+    appid:
+    num_posts: # 5 (default)
+    colorscheme: # "light" (default), "dark"
   utterances:
-    theme                : # "github-light" (default), "github-dark"
-    issue_term           : # "pathname" (default)
+    theme: # "github-light" (default), "github-dark"
+    issue_term: # "pathname" (default)
   staticman:
-    branch               : # "master"
-    endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
+    branch: # "master"
+    endpoint: # "https://{your Staticman v3 API}/v3/entry/github/"
 reCaptcha:
-  siteKey                :
-  secret                 :
+  siteKey:
+  secret:
 atom_feed:
-  path                   : # blank (default) uses feed.xml
-search                   : true # true, false (default)
-search_full_content      : true # true, false (default)
-search_provider          : lunr # lunr (default), algolia, google
+  path: # blank (default) uses feed.xml
+search: true # true, false (default)
+search_full_content: true # true, false (default)
+search_provider: lunr # lunr (default), algolia, google
 algolia:
-  application_id         : # YOUR_APPLICATION_ID
-  index_name             : # YOUR_INDEX_NAME
-  search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
-  powered_by             : # true (default), false
+  application_id: # YOUR_APPLICATION_ID
+  index_name: # YOUR_INDEX_NAME
+  search_only_api_key: # YOUR_SEARCH_ONLY_API_KEY
+  powered_by: # true (default), false
 google:
-  search_engine_id       : 3a7731ad2b0c322ed # YOUR_SEARCH_ENGINE_ID
-  instant_search         : # false (default), true
+  search_engine_id: 3a7731ad2b0c322ed # YOUR_SEARCH_ENGINE_ID
+  instant_search: # false (default), true
 # SEO Related
-google_site_verification : 25a3ZvMZGsmZzPWbowZjF0PcmXwRAjvYOeWxtx6mMp8
-bing_site_verification   :
-yandex_site_verification : 18bd19b04da3054f
-naver_site_verification  : naverefe0f9b104681f4f58138809dc14876e
+google_site_verification: 25a3ZvMZGsmZzPWbowZjF0PcmXwRAjvYOeWxtx6mMp8
+bing_site_verification:
+yandex_site_verification: 18bd19b04da3054f
+naver_site_verification: naverefe0f9b104681f4f58138809dc14876e
 
 # Social Sharing
 twitter:
-  username               :
+  username:
 facebook:
-  username               :
-  app_id                 :
-  publisher              :
-og_image                 : # Open Graph/Twitter default site image
+  username:
+  app_id:
+  publisher:
+og_image: # Open Graph/Twitter default site image
 # For specifying social profiles
 # - https://developers.google.com/structured-data/customize/social-profiles
 social:
-  type                   : # Person or Organization (defaults to Person)
-  name                   : # If the user or organization name differs from the site's name
+  type: # Person or Organization (defaults to Person)
+  name: # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
 
 # Analytics
 analytics:
-  provider               : "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider: 'google-gtag' # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    measurement_id       : "G-R3NFWBRGX6"
-    tracking_id          : "UA-179784517-1"
-    anonymize_ip         : # true, false (default)
-
+    measurement_id: 'G-R3NFWBRGX6'
+    tracking_id: 'UA-179784517-1'
+    anonymize_ip: # true, false (default)
 
 # Site Author
 author:
-  name             : "Sammy Baek"
-  name-link        : "https://seungwubaek.github.io/about/"
-  avatar           : "https://avatars.githubusercontent.com/u/22609242?v=4"  # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  avatar-link      : "https://seungwubaek.github.io/about/"
+  name: 'Sammy Baek'
+  name-link: 'https://seungwubaek.github.io/about/'
+  avatar: 'https://avatars.githubusercontent.com/u/22609242?v=4' # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  avatar-link: 'https://seungwubaek.github.io/about/'
   # avatar           : "/assets/images/christmas2020/my_face.jpg"  # for 2020 X-mas Theme
   # avatar: "/assets/images/happy_new_year_2021/my_face.jpg"  # for 2021 Happy New Year
-  bio              : "Software Engineer & Data Scientist<br/>CTO of MosePeople Co., Ltd."
-  location         : "Seoul, Rep. of Korea"
-  email            : "whitesw01@gmail.com"
+  bio: 'Software Engineer & Data Scientist<br/>CTO of MosePeople Co., Ltd.'
+  location: 'Seoul, Rep. of Korea'
+  email: 'whitesw01@gmail.com'
   links:
-    - label: ""
-      icon: "fas fa-fw fa-envelope-square"
+    - label: ''
+      icon: 'fas fa-fw fa-envelope-square'
       # url: "mailto:whitesw01@gmail.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
+    - label: 'Website'
+      icon: 'fas fa-fw fa-link'
       # url: "https://your-website.com"
-    - label: ""
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/seungwubaek"
-      itemprop: "sameAs"
-    - label: ""
-      icon: "fab fa-fw fa-instagram"
-      url: "https://www.instagram.com/sammy_baek"
-      itemprop: "sameAs"
-    - label: ""
-      icon: "fab fa-fw fa-facebook-square"
-      url: "https://facebook.com/sammybaek9"
-      itemprop: "sameAs"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
+    - label: ''
+      icon: 'fab fa-fw fa-github'
+      url: 'https://github.com/seungwubaek'
+      itemprop: 'sameAs'
+    - label: ''
+      icon: 'fab fa-fw fa-instagram'
+      url: 'https://www.instagram.com/sammy_baek'
+      itemprop: 'sameAs'
+    - label: ''
+      icon: 'fab fa-fw fa-facebook-square'
+      url: 'https://facebook.com/sammybaek9'
+      itemprop: 'sameAs'
+    - label: 'Twitter'
+      icon: 'fab fa-fw fa-twitter-square'
       # url: "https://twitter.com/"
 
 # Site Footer
 footer:
-  links:  # not used
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
+  links: # not used
+    - label: 'Twitter'
+      icon: 'fab fa-fw fa-twitter-square'
       # url:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
+    - label: 'Facebook'
+      icon: 'fab fa-fw fa-facebook-square'
       # url:
-    - label: ""
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/seungwubaek"
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
+    - label: ''
+      icon: 'fab fa-fw fa-github'
+      url: 'https://github.com/seungwubaek'
+    - label: 'GitLab'
+      icon: 'fab fa-fw fa-gitlab'
       # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
+    - label: 'Bitbucket'
+      icon: 'fab fa-fw fa-bitbucket'
       # url:
-    - label: ""
-      icon: "fab fa-fw fa-instagram"
-      url: "https://www.instagram.com/sammy_baek"
-
+    - label: ''
+      icon: 'fab fa-fw fa-instagram'
+      url: 'https://www.instagram.com/sammy_baek'
 
 # Reading Files
 include:
   - .htaccess
   - _pages
 exclude:
-  - "*.sublime-project"
-  - "*.sublime-workspace"
+  - '*.sublime-project'
+  - '*.sublime-workspace'
   - vendor
   - .asset-cache
   - .bundle
@@ -184,9 +182,8 @@ exclude:
 keep_files:
   - .git
   - .svn
-encoding: "utf-8"
-markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-
+encoding: 'utf-8'
+markdown_ext: 'markdown,mkdown,mkdn,mkd,md'
 
 # Conversion
 markdown: kramdown
@@ -194,7 +191,6 @@ highlighter: rouge
 lsi: false
 excerpt_separator: "\n\n"
 incremental: false
-
 
 # Markdown Processing
 kramdown:
@@ -210,19 +206,16 @@ kramdown:
     block:
       line_numbers: true
 
-
 # Sass/SCSS
 sass:
   sass_dir: _sass
   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
-
 
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
 timezone: Asia/Seoul # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-
 
 # Plugins (previously gems:)
 plugins:
@@ -239,7 +232,6 @@ whitelist:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
-
 
 # Archives
 #  Type
@@ -269,7 +261,6 @@ tag_archive:
 #     category: /categories/:name/
 #     tag: /tags/:name/
 
-
 # HTML Compression
 # - https://jch.penibelst.de/
 compress_html:
@@ -277,12 +268,11 @@ compress_html:
   ignore:
     envs: development
 
-
 # Defaults
 defaults:
   # default
   - scope:
-      path: ""
+      path: ''
     values:
       layout: home
       author_profile: true
@@ -290,7 +280,7 @@ defaults:
         nav: main-sidebar
   # _posts
   - scope:
-      path: ""
+      path: ''
       type: posts
     values:
       layout: single
@@ -307,11 +297,11 @@ defaults:
       sidebar:
         nav: main-sidebar
       right-widget:
-          toc: true
+        toc: true
       use_kakao-sdk: true
   # poem in _posts
   - scope:
-      path: "writing/poem"
+      path: 'writing/poem'
       type: posts
     values:
       title_align-center: true
@@ -327,5 +317,12 @@ footer_scripts:
   - /assets/js/customs.min.js
 
 # Global Variables
-gdrive_url_prefix: "https://drive.google.com/uc?export=view&id="
-raw_github_url_prefix: "https://raw.githubusercontent.com/seungwubaek/seungwubaek.github.io/master"
+variables:
+  screenSmall: 600
+  screenMedium: 768
+  screenLarge: 768
+  screenXLarge: 1440
+  screenMaxWidth: 1440
+
+gdrive_url_prefix: 'https://drive.google.com/uc?export=view&id='
+raw_github_url_prefix: 'https://raw.githubusercontent.com/seungwubaek/seungwubaek.github.io/master'

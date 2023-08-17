@@ -172,74 +172,11 @@ nav.breadcrumbs {
 /* Post pagination navigation links
 ========================================================================== */
 
-.pagination {
-  @include clearfix();
-  // float: left;
-  margin-top: 1em;
-  padding-top: 1em;
-  width: 100%;
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    font-family: $sans-serif;
-  }
-
-  li {
-    display: block;
-    float: left;
-    margin-left: -1px;
-
-    a {
-      display: block;
-      // margin-bottom: 0.25em;
-      padding: 0.5em 1em;
-      font-family: $sans-serif;
-      font-size: 14px;
-      font-weight: bold;
-      line-height: 1.5;
-      text-align: center;
-      text-decoration: none;
-      color: $muted-text-color;
-      border: 1px solid mix(#000, $border-color, 25%);
-      border-radius: 0;
-
-      &:hover {
-        // color: $link-color-hover;
-        background-color: $border-color;
-      }
-
-      &.current,
-      &.current.disabled {
-        color: #fff;
-        background: $primary-color;
-      }
-
-      &.disabled {
-        color: rgba($muted-text-color, 0.5);
-        pointer-events: none;
-        cursor: not-allowed;
-      }
-    }
-
-    &:first-child {
-      margin-left: 0;
-
-      a {
-        border-top-left-radius: $border-radius;
-        border-bottom-left-radius: $border-radius;
-      }
-    }
-
-    &:last-child {
-      a {
-        border-top-right-radius: $border-radius;
-        border-bottom-right-radius: $border-radius;
-      }
-    }
-  }
-}
+// _archive.scss에 있는 녀석이랑 왜 분리돼 있는걸까...
+// 내가 해놓고도 모르는 이 현실... 사실은 멀티버스일지도..?
+// .pagination {
+//   _archive.scss에 전부 병합시킴
+// }
 
 .page__content + .pagination,
 .page__meta + .pagination,

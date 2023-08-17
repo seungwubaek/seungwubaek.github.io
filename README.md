@@ -32,6 +32,12 @@ gem install bundler
 bundle install
 ```
 
+#### Packages
+
+```bash
+npm i
+```
+
 ### Usage
 
 ```bash

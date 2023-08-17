@@ -7,7 +7,7 @@
   // [Warning] fixed topbar covers content. If we use inner page link(move to #anchor),
   //    the browser scroll view's top coordinate to #anchor's top coordinate.
   //    but, top coordinate was occupied by topbar.
-  position: fixed;  // masthead always will be top of the site.
+  position: fixed; // masthead always will be top of the site.
   border-bottom: 1px solid $border-color;
   z-index: 20;
   top: 0;
@@ -51,7 +51,7 @@
       a {
         display: block;
         margin: 0 1rem;
-        color: $masthead-text-color;  // contrast skin has black text color and it is not suitable.
+        color: $masthead-text-color; // contrast skin has black text color and it is not suitable.
         text-decoration: none;
 
         &.site-logo {
@@ -159,7 +159,8 @@
           flex: none;
         }
 
-        a {  // it let be hard to understand for any other tag's padding or margin.
+        a {
+          // it let be hard to understand for any other tag's padding or margin.
           margin: 0;
           padding: 0;
         }
@@ -189,7 +190,7 @@
         .masthead__submenu {
           left: -9999px;
           position: absolute;
-          margin-right: -1px;  // shift border line to right a little. It looks good more.
+          margin-right: -1px; // shift border line to right a little. It looks good more.
           border-width: 0px 1px 1px 1px;
           border-color: $text-color;
           border-style: solid;
@@ -216,14 +217,13 @@
         position: absolute;
         top: 100%;
         margin-top: 0;
-        right: -1em;  // For pushing menu to the right of view. It came from masthead__inner-wrap padding-right.
+        right: -1em; // For pushing menu to the right of view. It came from masthead__inner-wrap padding-right.
         padding: 5px;
         border: 1px solid $border-color;
-        border-radius: $border-radius;
+        border-radius: $masthead-hidden-links-border-radius;
         background: $background-color;
-        -webkit-box-shadow: 0 2px 4px 0 rgba(#000, 0.16),
-          0 2px 10px 0 rgba(#000, 0.12);
-        box-shadow: 0 2px 4px 0 rgba(#000, 0.16), 0 2px 10px 0 rgba(#000, 0.12);
+        -webkit-box-shadow: $masthead-hidden-links-shadow;
+        box-shadow: $masthead-hidden-links-shadow;
         width: 85%;
 
         @include breakpoint($medium) {
@@ -239,7 +239,7 @@
           // padding: 10px 20px;
           padding: 0;
           font-size: $type-size-5;
-          color: $text-color;  // contrast skin has black text color and it is not suitable.
+          color: $text-color; // contrast skin has black text color and it is not suitable.
 
           &:hover {
             color: $masthead-link-color-hover;
@@ -262,7 +262,6 @@
 
         .masthead__submenu {
           position: relative;
-          background: $background-color;
         }
 
         .masthead__submenu-item {
@@ -270,7 +269,7 @@
           font-size: 1rem;
           overflow-x: hidden;
           .masthead__submenu-item-title {
-            padding: .3em 0;
+            padding: 0.3em 0;
           }
         }
       }

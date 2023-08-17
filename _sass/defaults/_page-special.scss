@@ -44,14 +44,34 @@ kbd {
 
 .code-reducible {
   position: relative;
+  padding-top: 6px;
   .code-reducible-icon {
     position: absolute;
     top: -16px;
     display: flex;
+    align-items: center;
     cursor: pointer;
   }
-  &.code-reduce table.rouge-table {
-    max-height: 350px;
+  span {
+    font-size: 0.9em;
+  }
+  span.fold-label {
+    display: inline-block;
+  }
+  span.unfold-label {
+    display: none;
+  }
+  &.code-reduced {
+    table.rouge-table {
+      max-height: 350px;
+    }
+
+    span.fold-label {
+      display: none;
+    }
+    span.unfold-label {
+      display: inline-block;
+    }
   }
 }
 

@@ -13,7 +13,9 @@
   //    the browser scroll view's top coordinate to #anchor's top coordinate.
   //    but, top coordinate was occupied by topbar.
   // masthead position is fixed. So, padding from masthead__inner-wrap + height masthead__menu
-  top: calc(#{$masthead-height} + 0.5em);  // masthead height + a little additional space
+  top: calc(
+    #{$masthead-height} + 0.5em
+  ); // masthead height + a little additional space
 
   @include breakpoint($large) {
     float: left;
@@ -110,6 +112,7 @@
             text-align: right;
             margin-top: auto;
             margin-bottom: auto;
+            padding: 0 5px;
             .fas.fa-plus.empty-icon {
               opacity: 0;
             }
@@ -137,14 +140,14 @@
           }
         }
       }
-      .nav__sub-title-stat, .nav__item-children-stat {
+      .nav__sub-title-stat,
+      .nav__item-children-stat {
         align-self: center;
         margin-right: 4px;
         color: white;
         font-size: 11px;
-        padding-left: 6px;
-        padding-right: 6px;
-        border-radius: 8px;
+        padding: 0 8px;
+        border-radius: 10px;
         font-weight: normal;
       }
       .nav__sub-title-stat {
@@ -157,7 +160,8 @@
         background-color: mix(orangered, #fff, 85%);
       }
     }
-    #ac-toc, label[for=ac-toc] {
+    #ac-toc,
+    label[for='ac-toc'] {
       display: none;
     }
   }
@@ -250,6 +254,7 @@
     button {
       position: relative;
       margin-bottom: 0;
+      border-radius: 15px;
 
       &:before {
         @supports (pointer-events: none) {
@@ -303,7 +308,7 @@
 
       &:before {
         display: block;
-        content: "";
+        content: '';
         position: absolute;
         top: -11px;
         // left: calc(50% - 10px);
@@ -321,7 +326,7 @@
 
       &:after {
         display: block;
-        content: "";
+        content: '';
         position: absolute;
         top: -10px;
         // left: calc(50% - 10px);
@@ -379,7 +384,7 @@
             padding: 0 5px 0 0;
           }
         }
-        li[itemprop="homeLocation"] {
+        li[itemprop='homeLocation'] {
           display: list-item;
           padding-top: 0;
           i {
@@ -394,12 +399,13 @@
     }
   }
 
-  &.sticky { // Only when sidebar sticky, specifically
+  &.sticky {
+    // Only when sidebar sticky, specifically
     // [Warning] fixed topbar covers content. If we use inner page link(move to #anchor),
     //    the browser scroll view's top coordinate to #anchor's top coordinate.
     //    but, top coordinate was occupied by topbar.
-    position: sticky;  // change 'sticky' to 'fixed'.
-    opacity: 1;  // Remove row opacity animation After/Before hovering
+    position: sticky; // change 'sticky' to 'fixed'.
+    opacity: 1; // Remove row opacity animation After/Before hovering
     padding-bottom: 1em;
 
     &::-webkit-scrollbar {
@@ -408,13 +414,13 @@
     &::-webkit-scrollbar-thumb {
       background: black;
       border-radius: 2px;
-      opacity: .4;
+      opacity: 0.4;
     }
     &::-webkit-scrollbar-track {
       background: $navicon-link-color-hover;
     }
 
-    width: $left-sidebar-width;  // important! it decide scrollbar position!
+    width: $left-sidebar-width; // important! it decide scrollbar position!
 
     .sidebar__meta {
       margin: 20px 0 3px 0;
@@ -440,15 +446,16 @@
 
       .author__urls {
         &.social-icons {
-          a, span {
+          a,
+          span {
             padding: 0;
           }
           li {
-             a {
-               font-size: 1.5em;
-             }
+            a {
+              font-size: 1.5em;
+            }
           }
-          li[itemprop="homeLocation"] {
+          li[itemprop='homeLocation'] {
             i {
               font-size: 1.2em;
             }
@@ -471,7 +478,7 @@
     &::-webkit-scrollbar-thumb {
       background: black;
       border-radius: 2px;
-      opacity: .4;
+      opacity: 0.4;
     }
     &::-webkit-scrollbar-track {
       background: $navicon-link-color-hover;

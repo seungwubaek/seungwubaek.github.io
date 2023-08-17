@@ -532,7 +532,7 @@
             white-space: nowrap;
             background-color: white;
             border: 1px solid $border-color;
-            border-radius: 4px;
+            border-radius: $border-radius;
             box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.16);
             width: fit-content;
             padding: 4px 6px;
@@ -557,6 +557,7 @@
         }
       }
     }
+
     #site-pagination-list {
       ul,
       li {
@@ -564,8 +565,29 @@
         margin: 0;
         list-style-type: none;
       }
-      & > ul > li:first-child > .list__item > article > h3 {
-        margin-top: 25px;
+      ul {
+        margin-top: 1em;
+      }
+      li {
+        .list__item {
+          article {
+            box-shadow: $box-shadow-pagination-item;
+            border-radius: 35px;
+            padding: 20px;
+            margin: 10px 0;
+            &:hover {
+              box-shadow: $box-shadow-pagination-item-hover;
+
+              h3 a,
+              .archive__item-excerpt {
+                text-decoration: none;
+              }
+            }
+          }
+          h3 {
+            margin-top: 0;
+          }
+        }
       }
       .archive__item-excerpt {
         max-height: 54px;
@@ -576,16 +598,14 @@
         display: none;
         position: relative;
         font-size: 10px;
-        width: fit-content;
-        margin-left: auto;
-        margin-right: auto;
+        width: 100%;
+        text-align: center;
         color: #0066ff;
+        margin-top: 5px;
         &:after {
           content: '«';
           position: absolute;
-          transform: rotateZ(270deg);
-          left: 12px;
-          bottom: -10px;
+          transform: rotateZ(-90deg);
         }
       }
       .archive__item-excerpt.truncated {
@@ -603,41 +623,124 @@
         }
       }
     }
+
     .paginator-area {
+      @include clearfix();
       display: flex;
       flex-wrap: wrap;
+      margin-top: 2em;
+      width: 100%;
       align-items: center;
+
+      &.pagination-top {
+        display: none;
+      }
+      &.pagination-bottom {
+        display: flex;
+      }
+
+      @include breakpoint($large) {
+        margin-top: 0;
+        &.pagination-top {
+          display: flex;
+        }
+        &.pagination-bottom {
+          display: none;
+        }
+      }
     }
-    #site-paginator {
+
+    .site-paginator {
+      ul {
+        margin: 0;
+        padding: 0;
+        height: 37px;
+        box-shadow: $box-shadow;
+        border-radius: $border-radius;
+        font-family: $sans-serif;
+        list-style-type: none;
+      }
       li {
+        display: block;
+        float: left;
+        margin-left: -1px;
+
+        a {
+          display: block;
+          padding: 0.5em 1em;
+          font-family: $sans-serif;
+          font-size: 14px;
+          font-weight: bold;
+          line-height: 1.5;
+          text-align: center;
+          text-decoration: none;
+          color: $muted-text-color;
+          border: 1px solid mix(#000, $border-color, 25%);
+          border-radius: 0;
+
+          &:hover {
+            background-color: $border-color;
+          }
+        }
+
         &.current > a,
         &.current.disabled > a {
           color: #fff;
           background: $primary-color;
         }
+
         &.disabled > a {
           color: rgba($muted-text-color, 0.5);
           pointer-events: none;
           cursor: not-allowed;
         }
+
+        &:first-child {
+          margin-left: 0;
+
+          a {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+          }
+        }
+
+        &:last-child {
+          a {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+          }
+        }
       }
+
       .paginationjs-pages {
         margin-top: 4px;
         margin-right: 8px;
       }
     }
+
     .paginator-support {
       display: flex;
-      .paginationjs-go-input {
+
+      .paginationjs-go-input,
+      .paginationjs-go-button {
         margin-top: 4px;
-        margin-right: 2px;
-        width: 40px;
         input {
+          font-size: 0.9em;
+          width: 37px;
+          height: 37px;
           text-align: center;
         }
       }
+
+      .paginationjs-go-input {
+        margin-right: 2px;
+        width: 50px;
+        input {
+          width: 50px;
+        }
+      }
+
       .paginationjs-go-button {
-        margin-top: 4px;
         input:hover {
           background-color: $border-color;
         }
