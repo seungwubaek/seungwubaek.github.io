@@ -5,10 +5,8 @@
 .page__footer {
   @include clearfix;
   float: left;
-  margin-left: 0;
-  margin-right: 0;
+  margin: 0;
   width: 100%;
-  margin-top: 3em;
   color: #fff !important; // override
   -webkit-animation: $intro-transition;
   animation: $intro-transition;
@@ -71,7 +69,7 @@
   }
 
   li + li:before {
-    content: "";
+    content: '';
     padding-right: 5px;
   }
 

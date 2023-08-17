@@ -12,7 +12,7 @@ $doc-font-size: 16 !default;
 $paragraph-indent: false !default; // true, false (default)
 $indent-var: 1.3em !default;
 $indent-top-var: 0.5em !default;
-$indent-bottom-var: 1.3em !default;
+$indent-bottom-var: 1em !default;
 
 /* system typefaces */
 $serif: Georgia, Times, serif !default;
@@ -71,9 +71,11 @@ $dark-gray: mix(#000, $gray, 50%) !default;
 $darker-gray: mix(#000, $gray, 60%) !default;
 $light-gray: mix(#fff, $gray, 50%) !default;
 $lighter-gray: mix(#fff, $gray, 90%) !default;
+$lightest-gray: mix(#fff, $gray, 95%) !default;
 
+$root-background-color: $lightest-gray !default;
 $background-color: #fff !default;
-$code-background-color: #fafafa !default;
+$code-background-color: #d7dadb !default;
 $code-background-color-dark: $light-gray !default;
 $text-color: $black !default;
 $muted-text-color: $text-color !default;
@@ -172,10 +174,9 @@ $left-sidebar-width: 216px; // left sidebar width + scroll bar space
 $left-sidebar-font-size: 14px;
 $left-sidebar-item-font-size: 14px;
 $right-sidebar-width: 200px;
-$right-sidebar-width-narrow: 200px !default;
-$author-bio-font-size: 12px;
-//
+$right-sidebar-width-narrow: 50px !default;
 // $right-sidebar-width-wide: 400px !default;
+$author-bio-font-size: 12px;
 
 /*
    Other
@@ -233,7 +234,7 @@ $right-widget__body-backgroundcolor: $layout-ui-background-color;
 $right-widget__body-background-opacity: 0.95;
 
 // initial-content
-$initial-content-top: calc(#{$masthead-height} + 8px);
+$initial-content-top: $masthead-height;
 
 // Whole TOC
 $wholetoc-opt-view-icon-width: 22px;

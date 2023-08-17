@@ -33,15 +33,22 @@ body {
 .initial-content,
 .search-content {
   flex: 1 0 auto;
+
+  @include breakpoint($large) {
+    background-color: $root-background-color;
+  }
 }
 
 .page {
+  padding-bottom: 2em;
+  background-color: $background-color;
+
   @include breakpoint($large) {
     float: right;
     width: calc(
       100% - #{$left-sidebar-width} - 1em
     ); // -1em from _mixins for padding of <div id='main'>.
-    padding-left: 1em;
+    padding-left: $right-sidebar-width-narrow;
     padding-right: $right-sidebar-width-narrow;
   }
 
@@ -102,7 +109,7 @@ body {
 
 .page__content {
   h2 {
-    padding-bottom: 0.5em;
+    padding-bottom: 0.25em;
     border-bottom: 1px solid $border-color;
   }
 
@@ -123,9 +130,9 @@ body {
       transition: opacity 0.2s ease-in-out 0.1s;
     }
     code.language-plaintext {
-      border: 1px solid black;
       border-radius: 4px;
       padding: 2px 4px;
+      background-color: $code-background-color;
     }
   }
   h1 {
@@ -616,23 +623,25 @@ footer {
 .page__related {
   @include clearfix();
   float: left;
-  margin-top: 2em;
-  padding-top: 1em;
-  border-top: 1px solid $border-color;
+  padding: 1em 1em 1em;
+  background-color: $background-color;
 
   @include breakpoint($large) {
     float: right;
-    width: calc(100% - #{$right-sidebar-width-narrow});
-  }
-
-  @include breakpoint($x-large) {
-    width: calc(100% - #{$right-sidebar-width});
+    padding: 1em $right-sidebar-width-narrow/2 1em;
+    width: calc(100% - #{$left-sidebar-width} - 1em);
   }
 
   a {
     color: inherit;
     text-decoration: none;
   }
+}
+
+.page__related-wrapper {
+  @include clearfix();
+  margin: 0 1em 0;
+  border-top: 1px solid $border-color;
 }
 
 .page__related-title {

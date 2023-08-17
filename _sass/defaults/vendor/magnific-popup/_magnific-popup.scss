@@ -325,8 +325,9 @@ button {
 // "1 of X" counter
 .mfp-counter {
   position: absolute;
-  top: 0;
-  right: 0;
+  text-align: center;
+  width: 100%;
+  padding: 0;
   color: $mfp-controls-text-color;
   font-size: 12px;
   line-height: 18px;

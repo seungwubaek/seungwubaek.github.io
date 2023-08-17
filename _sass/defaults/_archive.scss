@@ -3,13 +3,15 @@
    ========================================================================== */
 
 .archive {
-  margin-top: 1em;
-  margin-bottom: 2em;
+  padding: 1em 0 2em;
+  background-color: $background-color;
 
   @include breakpoint($large) {
     float: right;
-    width: calc(100% - #{$left-sidebar-width} - 1em); // -1em from _mixins for padding of <div id='main'>.
-    padding-left: 1em;
+    width: calc(
+      100% - #{$left-sidebar-width} - 1em
+    ); // -1em from _mixins for padding of <div id='main'>.
+    padding-left: $right-sidebar-width-narrow;
     padding-right: $right-sidebar-width-narrow;
   }
 }
@@ -23,7 +25,7 @@
     z-index: 10;
   }
 
-  a[rel="permalink"] {
+  a[rel='permalink'] {
     position: static;
   }
 
@@ -36,7 +38,8 @@
   }
 
   &:hover {
-    .archive__item-title > a, .archive__item-excerpt {
+    .archive__item-title > a,
+    .archive__item-excerpt {
       text-decoration: underline;
     }
   }
@@ -45,7 +48,7 @@
     margin: 0 0 4px;
     line-height: 1.2;
     .page__header-taxonomy {
-      font-size: .75em;
+      font-size: 0.75em;
       a {
         &:hover {
           background-color: mix(#000, #fff, 25%);
@@ -53,7 +56,7 @@
       }
     }
     .page__header-meta {
-      font-size: .75em;
+      font-size: 0.75em;
     }
   }
 }
@@ -77,7 +80,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 
-  a[rel="permalink"]::before {
+  a[rel='permalink']::before {
     content: '';
     position: absolute;
     left: 0;
@@ -177,7 +180,7 @@
 }
 
 .grid__item {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 
   @include breakpoint($small) {
     float: left;
@@ -469,7 +472,7 @@
    Wide Pages
    ========================================================================== */
 
-  .wide {
+.wide {
   .archive {
     @include breakpoint($large) {
       padding-right: 0;
@@ -484,9 +487,9 @@
 /* Place inside a single layout */
 
 .layout--single {
-	.feature__wrapper {
-		display: inline-block;
-	}
+  .feature__wrapper {
+    display: inline-block;
+  }
 }
 
 /* Place inside a home layout */
@@ -515,7 +518,7 @@
           display: flex;
           justify-content: flex-end;
           & > button {
-            font-size: .75em;
+            font-size: 0.75em;
             border: 1px solid $border-color;
             border-radius: 4px;
           }
@@ -530,18 +533,18 @@
             background-color: white;
             border: 1px solid $border-color;
             border-radius: 4px;
-            box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .16);
+            box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.16);
             width: fit-content;
             padding: 4px 6px;
-            -webkit-user-select: none;  /* Chrome all / Safari all */
-            -moz-user-select: none;   /* Firefox all */
-            -ms-user-select: none;    /* IE 10+ */
-            user-select: none;      /* Likely future */
+            -webkit-user-select: none; /* Chrome all / Safari all */
+            -moz-user-select: none; /* Firefox all */
+            -ms-user-select: none; /* IE 10+ */
+            user-select: none; /* Likely future */
             li:last-child {
               margin-bottom: 0;
             }
             label {
-              font-size: .75em;
+              font-size: 0.75em;
             }
             .sort-opt-radio {
               display: inline-block;
@@ -555,7 +558,8 @@
       }
     }
     #site-pagination-list {
-      ul, li {
+      ul,
+      li {
         padding: 0;
         margin: 0;
         list-style-type: none;
@@ -577,7 +581,7 @@
         margin-right: auto;
         color: #0066ff;
         &:after {
-          content: "«";
+          content: '«';
           position: absolute;
           transform: rotateZ(270deg);
           left: 12px;
@@ -587,7 +591,7 @@
       .archive__item-excerpt.truncated {
         position: relative;
         &:after {
-          content: "...";
+          content: '...';
           position: absolute;
           right: 0;
           bottom: 0;
@@ -606,7 +610,7 @@
     }
     #site-paginator {
       li {
-        &.current > a ,
+        &.current > a,
         &.current.disabled > a {
           color: #fff;
           background: $primary-color;
