@@ -3,7 +3,7 @@ layout: single
 title: "MathJax에서 의도하지 않은 Y축 스크롤바가 생기는 경우"
 post-order: 2
 date: "2023-08-15 19:04:00 +0900"
-last_modified_at: "2023-08-15 19:04:00 +0900"
+last_modified_at: "2023-08-17 17:56:00 +0900"
 ---
 
 MathJax 수식을 inline으로(문단 내부에 담아) 사용할 때
@@ -13,11 +13,14 @@ inline MathJax가 담긴 문단(`<p>`)에 의도하지 않은 Y축 스크롤바�
 
 명확한 원인은 찾지 못했지만 다음과 같은 상황에 발생하는 것을 확인했다.
 
-MathJax를 사용하는 경우 수식을 포함하는 `<p>` 태그에 자동으로 `overflow-x: auto;` 속성이 붙는다.
+MathJax를 사용하는 경우 수식을 포함하는 `<p>` 태그에 자동으로 `overflow-x: auto;` 속성이 붙는다.<br/>
 그리고 이때 아마도 수식이 가진 height가 수식을 포함하고 있는 부모 태그(`<p>`)의 height를 넘어서는 경우
 발생하는 것으로 추정된다.
 
-![Unintended Y Scrollbar]({{ site.gdrive_url_prefix }}1nDda0kV_XigXhZXbV-04DhgETPU1lfbB){:style="max-width: 700px;" class="align-center img-shadow"}
+아래 이미지에서 우측에 빨강으로 동그라미 쳐놓은 곳을 보면 뜬금없이 스크롤바가 붙어있는 것이 보인다.
+
+![Unintended Y Scrollbar]({{ site.gdrive_url_prefix }}1nDda0kV_XigXhZXbV-04DhgETPU1lfbB){:class="align-center img-shadow"}
+{:class="img-popup" data-title="Unintended Y Scrollbar}
 
 ## 해결
 
