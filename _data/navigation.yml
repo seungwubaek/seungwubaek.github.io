@@ -88,6 +88,9 @@ main-sidebar:
         url: '/front-end/react/'
       - title: 'React Native'
         url: '/front-end/react-native/'
+        children:
+          - title: 'Trouble Shoot'
+            url: '/front-end/react-native/trouble-shoot/'
       - title: 'Jekyll'
         url: '/front-end/jekyll/'
       - title: 'Liquid'
