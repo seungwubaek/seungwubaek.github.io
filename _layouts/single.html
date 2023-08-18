@@ -9,16 +9,19 @@ layout: default
 {% endif %}
 
 {% comment %} {% if page.url != "/" and site.breadcrumbs %}
-  {% unless paginator %}
-    {% include breadcrumbs.html %}
-  {% endunless %}
+{% unless paginator %}
+{% include breadcrumbs.html %}
+{% endunless %}
 {% endif %} {% endcomment %}
 
 <div id="main" role="main">
   {% include sidebar.html %}
   {% include right-widget.html %}
 
-  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+  <article
+    class="page"
+    itemscope
+    itemtype="https://schema.org/CreativeWork">
     {% if page.title %}<meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.excerpt %}<meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">{% endif %}
     {% if page.date %}<meta itemprop="datePublished" content="{{ page.date | date_to_xmlschema }}">{% endif %}
@@ -32,49 +35,78 @@ layout: default
         {% endunless %}
       {% endif %}
 
-      {% if page.share %}{% include my-social-share.html classes="page__share page__share-top" %}{% endif %}
+      {% if page.share %}
+        {% include my-social-share.html classes = "page__share page__share-top" %}{% endif %}
 
       {% include my-post_pagination.html %}
 
       {% unless page.header.overlay_color or page.header.overlay_image %}
-      <div class="page__header">
-        <header>
-          {% if page.title %}<h1 id="page-title" class="page__title{% if page.title_align-center %} text-center{% endif %}" itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>{% endif %}
-        </header>
-        {% include page__header-meta.html %}
-        {% include page__header-category-list.html target=post %}
-      </div>
+        <div class="page__header">
+          <header>
+            {% if page.title %}
+              <h1
+                id="page-title"
+                class="page__title{% if page.title_align-center %} text-center{% endif %}"
+                itemprop="headline">{{ page.title | markdownify | remove: "<p>" | remove: "</p>" }}</h1>
+            {% endif %}
+          </header>
+          {% include page__header-meta.html %}
+          {% include page__header-category-list.html target=post %}
+        </div>
       {% endunless %}
 
       <section class="page__content" itemprop="text">
         {% if page.toc-top %}
-        <nav class="toc-top">
-          <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
-          {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" %}
-        </nav>
-        {% include ads/google/horizontal_ad.html %}
-        <p></p>
+          <nav class="toc-top">
+            <header>
+              <h4 class="nav__title">
+                <i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i>
+                {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4>
+            </header>
+            {% include toc.html sanitize=true html=content h_min=1 h_max=6 class = "toc__menu" %}
+          </nav>
+          {% include ads/google/horizontal_ad.html %}
+          <p></p>
         {% endif %}
         {% if page.post_mode == "paper-analysis" %}
-        <div class="memo" hidden data-type="post-for-paper-analysis"></div>
+          <div
+            class="memo"
+            hidden
+            data-type="post-for-paper-analysis"></div>
           {% include pages/paper_revision_description.html %}
           <div id="post-ctrl-panel-for-paper-analysis">
             <div class="ctrl-option">
-              <input type="checkbox" id="show-origin" name="show-origin" checked>
+              <input
+                type="checkbox"
+                id="show-origin"
+                name="show-origin"
+                checked>
               <label for="show-origin">원문 보이기</label>
             </div>
             <div class="ctrl-option">
-              <input type="checkbox" id="show-translated" name="show-translated" checked>
+              <input
+                type="checkbox"
+                id="show-translated"
+                name="show-translated"
+                checked>
               <label for="show-translated">번역문 보이기</label>
             </div>
             <div class="ctrl-option">
-              <input type="checkbox" id="show-interpreted" name="show-interpreted" checked>
+              <input
+                type="checkbox"
+                id="show-interpreted"
+                name="show-interpreted"
+                checked>
               <label for="show-interpreted">해석문 보이기</label>
             </div>
           </div>
         {% endif %}
         {{ content }}
-        {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+        {% if page.link %}
+          <div>
+            <a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a>
+          </div>
+        {% endif %}
       </section>
 
       <p></p>
@@ -82,46 +114,24 @@ layout: default
 
       <footer class="page__meta">
         {% if site.data.ui-text[site.locale].meta_label %}
-          <h4 class="page__meta-title"><i class="far fa-file-alt"></i> {{ site.data.ui-text[site.locale].meta_label }}</h4>
+          <h4 class="page__meta-title">
+            <i class="far fa-file-alt"></i>
+            {{ site.data.ui-text[site.locale].meta_label }}</h4>
         {% endif %}
         {% include page__taxonomy.html %}
         {% include page__date.html %}
       </footer>
 
-      {% if page.share %}{% include social-share.html %}{% endif %}
+      {% if page.share %}
+        {% include social-share.html %}{% endif %}
 
-      {% include my-post_pagination.html %}
+      {% include my-post_pagination.html type = "bottom" %}
     </div>
 
     {% if jekyll.environment == 'production' and site.comments.provider and page.comments %}
       {% include comments.html %}
     {% endif %}
-  </article>
 
-  {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
-  {% if page.id and page.related and site.related_posts.size > 0 %}
-    <div class="page__related">
-      <div class="page__related-wrapper">
-        <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h4>
-        <div class="grid__wrapper">
-          {% for post in site.related_posts limit:4 %}
-            {% include archive-single.html type="grid" %}
-          {% endfor %}
-        </div>
-      </div>
-    </div>
-  {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
-  {% elsif page.id and page.related %}
-    <div class="page__related">
-      <h4 class="page__related-title">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent posts" }}</h4>
-      <div class="grid__wrapper">
-        {% for post in site.posts limit:4 %}
-          {% if post.id == page.id %}
-            {% continue %}
-          {% endif %}
-          {% include archive-single.html type="grid" %}
-        {% endfor %}
-      </div>
-    </div>
-  {% endif %}
+    {% include pages/related-posts.html %}
+  </article>
 </div>

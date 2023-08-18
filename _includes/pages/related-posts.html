@@ -1,0 +1,10 @@
+{% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
+
+<div class="page__related">
+  <h4 class="page__related-title">{{ site.data.ui-text[site.locale].related_label | default: "You May Also Enjoy" }}</h4>
+  <div class="page__related-list">
+    {% for post in site.related_posts limit: 4 %}
+      {% include pages/related-post-item.html %}
+    {% endfor %}
+  </div>
+</div>

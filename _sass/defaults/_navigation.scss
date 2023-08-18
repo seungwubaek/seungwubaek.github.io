@@ -458,9 +458,17 @@ nav.breadcrumbs {
   // 1. floating 요소의 크기를 고려하는 wrapper 생성 방법
   overflow: auto;
   // 2. 또는 <br style="clear:both" /> 를 wrapper에 삽입
+
   &.hidden {
     display: none;
   }
+
+  &.bottom {
+    margin-bottom: 0;
+    padding: 1em 0 0;
+    border-top: 1px solid $border-color;
+  }
+
   .pagination__pager {
     display: flex;
     font-weight: bold;
@@ -480,10 +488,6 @@ nav.breadcrumbs {
       .pager-arrow {
         margin-left: 4px;
       }
-    }
-    &.pager-prev,
-    &.pager-next {
-      margin-top: 0.5em;
     }
   }
 }

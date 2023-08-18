@@ -50,10 +50,10 @@ body {
     ); // -1em from _mixins for padding of <div id='main'>.
     padding-left: $right-sidebar-width-narrow;
     padding-right: $right-sidebar-width-narrow;
+    box-shadow: $box-shadow-spread;
   }
 
   .page__inner-wrap {
-    float: left;
     margin-top: 1em;
     margin-left: 0;
     margin-right: 0;
@@ -621,15 +621,14 @@ footer {
    ========================================================================== */
 
 .page__related {
-  @include clearfix();
-  float: left;
   padding: 1em 0 1em;
+  margin: 1em 0 0;
   background-color: $background-color;
+  border-top: 1px solid $border-color;
 
   @include breakpoint($large) {
-    float: right;
-    padding: 1em $right-sidebar-width-narrow 1em;
-    width: calc(100% - #{$left-sidebar-width} - 1em);
+    // padding: 1em $right-sidebar-width-narrow 1em;
+    // width: calc(100% - #{$left-sidebar-width} - 1em);
   }
 
   a {
@@ -638,25 +637,71 @@ footer {
   }
 }
 
-.page__related-wrapper {
-  @include clearfix();
-  padding: 0;
-  margin: 0;
-  border-top: 1px solid $border-color;
-
-  .grid__wrapper {
-    margin-top: 1.5em;
-  }
-
-  .archive__item-title {
-    color: $link-color;
-  }
+.page__related-title {
+  margin-top: 0.5em;
+  margin-bottom: 10px;
+  font-size: $type-size-4;
+  text-transform: uppercase;
 }
 
-.page__related-title {
-  margin-bottom: 10px;
-  font-size: $type-size-5;
-  text-transform: uppercase;
+.page__related-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.page__related-list__article {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+
+  @include breakpoint($large) {
+    padding: 15px;
+
+    &:hover {
+      box-shadow: $box-shadow-spread;
+      border-radius: 20px;
+    }
+  }
+
+  .article-title {
+    margin: 0.6em 0 0.15em;
+    font-size: $h-size-4-general;
+    color: $link-color;
+
+    @include breakpoint($large) {
+      margin: 0.5em 0 0.5em;
+    }
+
+    a:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: '';
+    }
+  }
+
+  .page-meta {
+    margin: 0 0 4px;
+    line-height: 1.2;
+    .page__header-taxonomy {
+      font-size: 0.75em;
+      a {
+        &:hover {
+          background-color: mix(#000, #fff, 25%);
+        }
+      }
+    }
+    .page__header-meta {
+      font-size: 0.75em;
+    }
+  }
+
+  .archive__item-excerpt {
+    margin: 0;
+  }
 }
 
 /*

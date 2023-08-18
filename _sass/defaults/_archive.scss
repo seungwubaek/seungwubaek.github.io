@@ -13,6 +13,7 @@
     ); // -1em from _mixins for padding of <div id='main'>.
     padding-left: $right-sidebar-width-narrow;
     padding-right: $right-sidebar-width-narrow;
+    box-shadow: $box-shadow-spread;
   }
 }
 

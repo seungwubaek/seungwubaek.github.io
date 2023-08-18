@@ -1,0 +1,22 @@
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<article
+  class="page__related-list__article"
+  itemscope
+  itemtype="https://schema.org/CreativeWork">
+  <h3 class="article-title no_toc" itemprop="headline">
+    <a href="{{ post.url | relative_url }}#page-title" rel="permalink">{{ title }}</a>
+  </h3>
+  <div class="page-meta">
+    {% include page__header-category-list.html target=post %} {% include page__header-meta.html target=post %}
+  </div>
+  {% if post.excerpt %}
+    <p class="archive__item-excerpt" itemprop="description">
+      {{ post.excerpt | markdownify | strip_html | truncate: 160 }}
+    </p>
+  {% endif %}
+</article>
