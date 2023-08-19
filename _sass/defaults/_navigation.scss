@@ -473,21 +473,27 @@ nav.breadcrumbs {
     display: flex;
     font-weight: bold;
     color: black;
+    .pager-arrow {
+      color: $primary-color;
+      margin-left: 4px;
+      margin-right: 0;
+      &.flip {
+        margin-left: 0; // transform을 언제 하느냐에 따라 달라져야하는데 안그러네? 뭐지
+        margin-right: 4px;
+        -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
+      }
+    }
     &.pager-prev {
       float: left;
       margin-right: 0.5em;
       text-align: left;
-      .pager-arrow {
-        margin-right: 4px;
-      }
     }
     &.pager-next {
       float: right;
       margin-left: 0.5em;
       text-align: right;
-      .pager-arrow {
-        margin-left: 4px;
-      }
     }
   }
 }

@@ -35,10 +35,11 @@ layout: default
         {% endunless %}
       {% endif %}
 
-      {% if page.share %}
-        {% include my-social-share.html classes = "page__share page__share-top" %}{% endif %}
-
       {% include my-post_pagination.html %}
+
+      {% if page.share %}
+        {% include my-social-share.html classes = "page__share page__share-top" %}
+      {% endif %}
 
       {% unless page.header.overlay_color or page.header.overlay_image %}
         <div class="page__header">
