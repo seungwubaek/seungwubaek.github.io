@@ -82,6 +82,11 @@ main-sidebar:
         url: '/front-end/html/'
       - title: 'JavaScript'
         url: '/front-end/javascript/'
+      - title: 'TypeScript'
+        url: '/front-end/typescript/'
+        children:
+          - title: 'Tips'
+            url: '/front-end/typescript/tips/'
       - title: 'Web UI'
         url: '/front-end/web-ui/'
       - title: 'React'
