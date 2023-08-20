@@ -10,7 +10,7 @@ main:
     dropdown:
       - title: '🌏 HomePage'
         url: 'https://www.mosepeople.com/'
-      - title: '🫱🏻‍🫲🏻 투자 (NextUnicorn)'
+      - title: '🤝🏻 투자 (NextUnicorn)'
         url: 'https://www.nextunicorn.kr/company/62a363e1bc7425ea?utm_source=share&utm_medium=copy&utm_campaign=companyProfile'
       - title: '🙋‍♂️ 채용'
         url: 'https://career.mosepeople.com/'
@@ -99,6 +99,13 @@ main-sidebar:
         url: '/front-end/liquid/'
   - title: 'Back-End'
     url: '/back-end/'
+    children:
+      - title: 'Django'
+        url: '/back-end/django/'
+      - title: 'FastAPI'
+        url: '/back-end/fastapi/'
+      - title: 'Flask'
+        url: '/back-end/flask/'
   - title: 'Tools'
     url: '/tools/'
     children:
@@ -106,8 +113,6 @@ main-sidebar:
         url: '/tools/aif360/'
       - title: 'FAISS'
         url: '/tools/faiss/'
-      - title: 'Flask'
-        url: '/tools/flask/'
       - title: 'Git'
         url: '/tools/git/'
       - title: 'Jupyter Notebook'
