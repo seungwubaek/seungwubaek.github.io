@@ -75,3 +75,25 @@ Layout Animation이 이어서 재생을 시작하면 문제가 발생한다.
 키보드가 내려가는 애니메이션을 먼저 재생시켰기 때문에
 다음 스크린으로 이동한 다음 재생되는 Layout Animation과 재생 타임라인이 겹치지 않게 되고
 Layout Animation이 정상적으로 재생된다.
+
+# TypeError: Cannot read property 'start' of undefined
+
+## 문제
+
+컴포넌트가 re-render 된 후, 그 전에 한번 호출했던 어떤 `Animated`의 `start` 함수를 다시 호출하면 발생.
+
+## 해결
+
+`Animated.reset()` 함수를 사용한다.
+
+<div class="notice--info" markdown=1>
+<https://reactnative.dev/docs/animated#reset>
+
+* `reset`<br/>
+  Stops any running animation and resets the value to its original.<br/>
+  실행 중인 애니메이션을 중지하고 값을 원래 값으로 재설정합니다.
+</div>
+
+
+* 해당 `Animated` 객체의 `start`를 호출하기 전에 `reset`을 호출한다.
+* 해당 `Animated`가 `sequence`, `loop` 등으로 연결된 `Animated.CompositeAnimation`이라면 nested `Animated`들도 `reset` 해야 할 수 있다.
