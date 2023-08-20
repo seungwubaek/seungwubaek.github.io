@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "PanResponder 내부에서 state 값이 업데이트 되지 않는 문제"
-post-order: 1
+post-order: 2
 date: "2023-08-18 16:48:00 +0900"
 last_modified_at: "2023-08-18 16:48:00 +0900"
 ---
