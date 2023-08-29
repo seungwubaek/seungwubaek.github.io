@@ -566,6 +566,11 @@ a.bmc-btn-container {
   text-decoration: none;
   color: $text-color;
   font-family: 'Comic Neue', cursive;
+  &:hover {
+    transform: scale(1.05);
+    transition: $bmc-transition;
+    box-shadow: $box-shadow-spread;
+  }
   img {
     max-width: 30px;
   }
