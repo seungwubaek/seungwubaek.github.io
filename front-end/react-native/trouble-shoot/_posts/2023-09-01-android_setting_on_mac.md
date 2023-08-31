@@ -3,7 +3,7 @@ layout: single
 title: "macOS에서 Android 환경 설정 시 발생하는 문제 모음"
 post-order: 4
 date: "2023-09-01 00:33:00 +0900"
-last_modified_at: "2023-09-01 00:33:00 +0900"
+last_modified_at: "2023-09-01 00:55:00 +0900"
 ---
 
 이 포스트는 macOS에서 Android 환경 설정 시 발생하는 문제들을 모아놓은 포스트이다.<br/>
@@ -18,28 +18,35 @@ macOS에서 Android 빌드 및 실행이 제대로 작동하지 않을때는 `np
 
 그 중에 `Android SDK version` 항목이 있는데 그 값이 무슨 짓을 해도 `N/A`로 표시되는 문제가 발생한다.
 
-이 문제는 아래의 설정들이 이미 정상적으로 설정되어 있음에도 발생한다.
+```
+✖ Android SDK - Required for building and installing your app on Android
+   - Versions found: N/A
+   - Version supported: 30.0.0
+```
 
-* `Node.js` 설치
-* `npm` 설치
-* `Watchman` 설치
-* `Adb` 설치 및 설정
-* `JDK` 설치 및 설정
-* `Android Studio` 설치 및 설정
-  * 올바른 `SDK`, `Google APIs ARM 64 v8a System Image` 등 설치
-* 환경변수 설정
-  * `ANDROID_HOME`
-  * `ANDROID_SDK_ROOT`
-    * react native 구버전에서 필요했던 것으로 보이며, 지금은 필요한지 확실치 않으나 일단 해둠
-    * `ANDROID_HOME`과 같은 경로로 설정
-  * `$ANDROID_SDK_ROOT/emulator`
-  * `$ANDROID_SDK_ROOT/tools`
-  * `$ANDROID_SDK_ROOT/platform-tools`
-  * `$ANDROID_SDK_ROOT/cmdline-tools/latest/bin`
-* `XCODE` 설치 및 설정
-* `Ruby` 설치 및 설정
-* `Cocoapods` 설치 및 설정
+이 문제는 아래의 설치 및 설정들이 이미 정상적으로 되어 있음에도 발생한다.
 
+```
+- `Node.js`
+- `npm`
+- `Watchman`
+- `Adb`
+- `JDK`
+- `Android Studio`
+  - 올바른 `Android SDK`, `Google APIs ARM 64 v8a System Image` 등 설치
+- 환경변수
+  - `ANDROID_HOME`
+  - `ANDROID_SDK_ROOT`
+    - react native 구버전에서 필요했던 것으로 보이며, 지금은 필요한지 확실치 않으나 일단 해둠
+    - `ANDROID_HOME`과 같은 경로로 설정
+  - `$ANDROID_SDK_ROOT/emulator`
+  - `$ANDROID_SDK_ROOT/tools`
+  - `$ANDROID_SDK_ROOT/platform-tools`
+  - `$ANDROID_SDK_ROOT/cmdline-tools/latest/bin`
+- `XCODE`
+- `Ruby`
+- `Cocoapods`
+```
 
 ## 해결
 
@@ -73,6 +80,27 @@ macOS에서 Android 빌드 및 실행이 제대로 작동하지 않을때는 `np
 따라서 환경변수를 설정할 때, `$ANDROID_SDK_ROOT/tools/bin` 경로는 설정하지 말아야한다.
 `$ANDROID_SDK_ROOT/cmdline-tools/10.0/bin` 경로에 있는 프로그램들과 중복되기 때문이다.
 
+아래는 내 `~/.zprofile` 파일의 관련 환경변수 설정 부분이다.
+
+```bash
+# JAVA
+export JAVA_HOME_11=$(/usr/libexec/java_home -v11)
+export JAVA_HOME_14=$(/usr/libexec/java_home -v14)
+export JAVA_HOME=$JAVA_HOME_14
+
+# ANDROID
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export PATH=$PATH:$ANDROID_SDK_ROOT
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools
+# export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/10.0/bin
+# export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+
+```
+
 <div class="md-reference" markdown="1">
 * <https://developer.android.com/studio/command-line?hl=ko#tools-sdk>{:target="_blank"}
 </div>
@@ -100,7 +128,9 @@ Windows의 Git Bash, Linux, macOS를 오고가며 `git clone`을 수행할 때�
 macOS m1, m2에서 Android 빌드 시 다음과 같은 메시지를 동반한 에러가 발생할 수 있다.
 
 ```
-reanimated:configureCMakeDebug[arm64-v8a]
+...
+Task :react-native-reanimated:configureCMakeDebug[arm64-v8a] FAILED
+...
 ```
 
 App을 개발하다보면 종종 `react-navigation` 패키지를 사용할 텐데,
@@ -109,7 +139,7 @@ App을 개발하다보면 종종 `react-navigation` 패키지를 사용할 텐�
 
 ## 해결
 
-원인은 `react-native-reanimated` 패키지와 m1, m2의 호환성 문제에 있지 않을까 싶다.
+원인은 `react-native-reanimated` 패키지과 Apple Silicon m1, m2 칩셋 간 호환성 문제에 있지 않을까 싶다.
 
 이를 해결하기 위해 다음과 같이 iTerm2의 `Rosetta` 사용 옵션을 활성화 하자.
 
