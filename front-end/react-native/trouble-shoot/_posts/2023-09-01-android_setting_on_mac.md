@@ -1,9 +1,9 @@
 ---
 layout: single
-title: "macOS에서 Android 환경 설정 시 발생하는 문제 모음"
+title: "macOS Android Setting Error 모음"
 post-order: 4
 date: "2023-09-01 00:33:00 +0900"
-last_modified_at: "2023-09-01 00:55:00 +0900"
+last_modified_at: "2023-09-01 11:34:00 +0900"
 ---
 
 이 포스트는 macOS에서 Android 환경 설정 시 발생하는 문제들을 모아놓은 포스트이다.<br/>
@@ -110,6 +110,12 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 ## 문제
 
 macOS에서 `npx react-native run-android` 명령어를 입력했음에도 app 설치가 진행되지 않는다.
+
+설치에 실패했다는 메시지 외에 다른 메시지가 없다.
+
+```
+failed to install the app
+```
 
 ## 해결
 
