@@ -47,9 +47,10 @@ Front-End, Back-End 프로그래밍 기술부터, Data Science, AI 등 IT들을 
 가르침을 받은 학생과 가르침을 준 선생은 이런 대화를 하는 경우가 잦다.
 
 선생: "🤦🏻‍♂️이거 분명히 내가 2번이나 설명해줬잖아요. 기억 안나요?"<br/>
-학생: "??? 🥹 ???? 감사합니다?"
+학생: "😃 ???? 감사합니다?"
 
-ㅋㅋ 따라서 나는 블로그를 통해 나 자신의 "선생"이 되고자 한다.<br/>
+ㅋㅋ 단순히 듣기만 하는 것 보다 많은 활동을 하면서 더 깊은 기억을 만들 수 있다는 것이다.
+따라서 나는 블로그를 통해 나 자신의 "선생"이 되고자 한다.<br/>
 추가로, 다른 분들이 우연히 내 블로그에서 각자 원하는 지식을 얻어 가신다면 그 또한 기쁘다.
 
 ## Blog History
@@ -96,11 +97,11 @@ Front-End, Back-End 프로그래밍 기술부터, Data Science, AI 등 IT들을 
 
 우리는 계속 과학 기술을 발전 시키고 있으며, 발전된 과학 기술은 또다시 우리의 적응과 발전을 필요로 할 것이다.
 
-그리고 이러한 달성-필요의 반복의 끝에 신체적 한계가 찾아올 것이다.<br/>
+그리고 이러한 달성-필요의 반복의 끝에 인간의 신체적 한계가 찾아올 것이다.<br/>
 그러므로 (기술적으로 충분히 진보했다면) 마침내 우리는 '자연적 나'와 '공학적 나'를 융합할 것이다.
 Artificial Self 라고 해야하나.
 
-기계공학의 정수이든 생명공학의 정수이든 둘 다 이든 어떤 분야가 그 미래를 선도하게 될지 모르겠지만<br/>
+기계공학의 정수이든 생명공학의 정수이든 둘 다 이든 어떤 분야가 그 미래를 선도하게 될지 모르겠지만
 지금은 그 미래의 자아를 반도체 칩으로 형상화하고 싶다.
 
 로고에서 노란색, 빨간색으로 표현한 뇌는 노란색, 빨간색 바이오드가 빛을 내는것 같기도 하다.<br/>
@@ -183,8 +184,8 @@ Artificial Self 라고 해야하나.
     <div style="display: flex; justify-content: center; align-items: center;">~</div>
     <div style="display: flex; justify-content: center; align-items: center;">2016.02.29</div>
   </td>
-  <td>Graduated <a href="https://www.yonsei.ac.kr/wj/">Yonsei Univ.</a> Bachelor of Science in <strong>Information Statistics</strong><br/>
-  성적우수상 2회 수령 ㅋ (코딱지만한 장학금도 함께 받아서 좋았음)</td>
+  <td>Graduated <a href="https://www.yonsei.ac.kr/wj/">Yonsei Univ. MiRae</a> Bachelor of Science in <strong>Information Statistics</strong><br/>
+  성적우수상 2회 수령 ㅋ (중요한건 성정우수 장학금을 받아서 좋았다는거)</td>
 </tr>
 <tr>
   <td>
@@ -192,18 +193,19 @@ Artificial Self 라고 해야하나.
     <div style="display: flex; justify-content: center; align-items: center;">~</div>
     <div style="display: flex; justify-content: center; align-items: center;">2016.04.11</div>
   </td>
-  <td><strong>Computer Engineering</strong>으로 진로 변경을 결심하다 (직업 측면에서)<br/>
-  이땐 몰랐지. 통계학과 컴퓨터 공학을 접목 할 수 있을 것이라곤..!<br/>
-  국가기간전략 IT 기술자 육성사업: <a href="http://www.bitcamp.co.kr/">비트컴퓨터 비트교육센터</a> - 사물지능통신기반 IT콘텐츠 고급개발자양성과정<br/>
-  6개월 동안 2시에 자고 6시에 일어나 콤팩트하게 공부 또 공부 !!<br/>
-  <ul style="margin: 0;">
-  <li style="margin: 0;">Final Project "Boogle"</li>
+  <td>
+    <strong>Computer Engineering</strong>으로 진로 변경을 결심하다 (직업 측면에서)<br/>
+    이땐 몰랐지. 통계학과 컴퓨터 공학을 접목 할 수 있을 것이라곤..!<br/>
+    국가기간전략 IT 기술자 육성사업: <a href="http://www.bitcamp.co.kr/">비트컴퓨터 비트교육센터</a> - 사물지능통신기반 IT콘텐츠 고급개발자양성과정<br/>
+    6개월 동안 2시에 자고 6시에 일어나 콤팩트하게 공부 또 공부 !!<br/>
     <ul style="margin: 0;">
-    <li style="margin: 0;">검색 엔진 개발 프로젝트</li>
-    <li style="margin: 0;">광범위한 웹 크롤링</li>
-    <li style="margin: 0;">Marcov Chain을 이용하여 탐색한 페이지의 scoring 알고리즘 도입 시도</li>
+      <li style="margin: 0;">Final Project "Boogle"</li>
+      <ul style="margin: 0;">
+        <li style="margin: 0;">검색 엔진 개발 프로젝트</li>
+        <li style="margin: 0;">광범위한 웹 크롤링</li>
+        <li style="margin: 0;">전공을 살려서 Marcov Chain을 이용하여 크롤한 페이지가 가진 정보의 신뢰도 scoring 알고리즘 도입 시도</li>
+      </ul>
     </ul>
-  </ul>
   </td>
 </tr>
 <tr>
@@ -213,55 +215,63 @@ Artificial Self 라고 해야하나.
     <div style="display: flex; justify-content: center; align-items: center;">2021.08.06</div>
   </td>
   <td>
-  신입사원으로 첫 입사!<br/>
-  <strong>Senior Engineer, AI Platform Research Team of <a href="http://mobigen.com/">Mobigen Co.</a></strong><br/>
-  일하다보니 왠걸, 컴퓨터 공학만으로도 재밌고 좋은데 기존에 알고있던 통계학을 접목하니 <strong>Deep Learning</strong>이 툭 튀어나오네? 😋<br/>
-  <ul style="margin: 0;">
-  <li style="margin: 0;">사내 솔루션 Dockerize</li>
-  <ul style="margin: 0;">
-    <li style="margin: 0;">사내 프로그램 모듈에 대한 이미지 제작 및 Container 운용</li>
-    <li style="margin: 0;">Opensource Zeppelin, R Studio, Jupyter Notebook 서버 이미지 제작 및 Container 운용</li>
-    <li style="margin: 0;">이미지 경량화 (디지게 힘들지만 재밌는 작업. 이거 하려면 각 프로그램의 빌드 과정부터 손대야 함)</li>
-  </ul>
-  <li style="margin: 0;">사내 솔루션 ETL 기능 및 웹 서비스 개발</li>
+    <img style="display: block; max-width: 250px; margin: 1em;" src="{{ site.gdrive_url_prefix }}1gGWWcYSIkookByz-yctV0KxdGiyA1Uax"/>
+    <strong>Senior Engineer, AI Platform Research Team of <a href="http://mobigen.com/">Mobigen Co.</a></strong><br/>
+    신입으로 첫 입사하여 수년간 기술을 갈고 닦다.<br/>
+    Mobigen 주종목인 빅데이터 및 데이터 엔지니어링과 나의 통계학을 접목하니, <strong>Deep Learning</strong>과 찰떡궁합이네? 😋<br/>
     <ul style="margin: 0;">
-    <li style="margin: 0;">Spring boot를 이용한 Web 서버 개발</li>
-    <li style="margin: 0;">ETL 도구 <a href="https://www.talend.com/">Telend</a> 프로그램 연동</li>
-    <li style="margin: 0;">ETL 에이전트 개발 - 일명 "EventFlow": 여러개의 Linux 프로세스 간 Stdin,out을 파이프로 연결하는 워크플로우 관리 도구</li>
+      <li style="margin: 0;">사내 솔루션 Dockerize</li>
+      <ul style="margin: 0;">
+        <li style="margin: 0;">사내 프로그램 모듈에 대한 이미지 제작 및 Container 운용</li>
+        <li style="margin: 0;">Opensource Zeppelin, R Studio, Jupyter Notebook 서버 이미지 제작 및 Container 운용</li>
+        <li style="margin: 0;">이미지 경량화 (디지게 힘들지만 재밌는 작업. 이거 하려면 각 프로그램의 빌드 과정부터 손대야 함)</li>
+      </ul>
+      <li style="margin: 0;">사내 솔루션 ETL 기능 및 웹 서비스 개발</li>
+      <ul style="margin: 0;">
+        <li style="margin: 0;">Spring boot를 이용한 Web 서버 개발</li>
+        <li style="margin: 0;">ETL 도구 <a href="https://www.talend.com/">Telend</a> 프로그램 연동</li>
+        <li style="margin: 0;">ETL 에이전트 개발 - 일명 "EventFlow": 여러개의 Linux 프로세스 간 Stdin,out을 파이프로 연결하는 워크플로우 관리 도구</li>
+      </ul>
+      <li style="margin: 0;">LG 냉장고 딥러닝을 이용한 사전진단 서비스 개발</li>
+      <ul style="margin: 0;">
+        <li style="margin: 0;">R을 이용한 데이터 Visualization, 센서 데이터 분석, 통계 정보 분석</li>
+        <li style="margin: 0;">TensorFlow 기반 딥러닝 모델 개발: Bi-LSTM 모델 & AutoEncoder 모델</li>
+        <li style="margin: 0;">사전 학습된 정상 패턴으로부터 임계값을 초과하는 데이터를 실시간 탐지(Clustering)</li>
+        <li style="margin: 0;">탐지 패턴으로부터 고장을 판단하고 약 10가지의 고장 종류를 분류(Classification)</li>
+        <li style="margin: 0;">모델 진단 결과를 출력하는 Python Tkinter GUI</li>
+      </ul>
+      <li style="margin: 0;">스마트시티 SW 보안 관제 시스템 개발</li>
+      <ul style="margin: 0;">
+        <li style="margin: 0;">내부자의 이상 행동의 종류 및 패턴 정의</li>
+        <li style="margin: 0;">Linux Subsystem "<a href="https://linux.die.net/man/8/auditd">AuditD</a>"를 이용한 Kernel & System Call 로그 감시</li>
+        <li style="margin: 0;">Vector Embedding & LSTM 기반 탐지 모델 개발</li>
+      </ul>
+      <li style="margin: 0;">주식 데이터 크롤링</li>
+      <ul style="margin: 0;">
+        <li style="margin: 0;">Linux KVM을 이용한 가상 OS 활용</li>
+        <li style="margin: 0;">자체제작한 PyQt와 금융사 HTS 간 API 연동</li>
+        <li style="margin: 0;">Hadoop HDFS을 이용한 데이터 저장</li>
+        <li style="margin: 0;">Spark를 이용한 일일 Batch 데이터 가공</li>
+      </ul>
+      <li style="margin: 0;">SKT 유사 음원 추천 기술 개발</li>
+      <li style="margin: 0;">SKT 추천 최적화 기술 개발</li>
+      <ul style="margin: 0;">
+        <li style="margin: 0;">TensorFlow 기반 딥러닝 모델 개발</li>
+        <li style="margin: 0;">Batch 동작형 자동화 플랫폼 구축</li>
+        <li style="margin: 0;">오픈소스 <a href="https://github.com/facebookresearch/faiss">FAISS</a> 서비스를 제공하는 Flask 기반 웹 서버 개발</li>
+      </ul>
+      <li style="margin: 0;">국책: 뇌인지-행동 데이터 기반 비대면 정신건강문제 실시간 인터렉티브 셀프 모니터링 플랫폼 개발</li>
+      <ul style="margin: 0;">
+        <li style="margin: 0;">센서 데이터 수집용 사내 솔루션 IRIS DB 구축</li>
+      </ul>
+      <li style="margin: 0;">국책: 데이터 품질 평가 기반 데이터 고도화 및 데이터셋 보정 기술 개발</li>
+      <ul style="margin: 0;">
+        <li style="margin: 0;">데이터 및 데이터셋의 공정성(Fairness) 연구</li>
+        <li style="margin: 0;">오픈소스 <a href="https://github.com/Trusted-AI/AIF360">AIF360</a> 적용</li>
+      </ul>
     </ul>
-  <li style="margin: 0;">LG 냉장고 딥러닝을 이용한 사전진단 서비스 개발</li>
-    <ul style="margin: 0;">
-    <li style="margin: 0;">센서 데이터 분석, 통계 정보 분석</li>
-    <li style="margin: 0;">TensorFlow 기반 딥러닝 모델 개발: Bi-LSTM 모델 & AutoEncoder 모델</li>
-    <li style="margin: 0;">사전 학습된 정상 패턴으로부터 임계값을 초과하는 데이터를 실시간 탐지(Clustering)</li>
-    <li style="margin: 0;">탐지 패턴으로부터 고장을 판단하고 약 10가지의 고장 종류를 분류(Classification)</li>
-    <li style="margin: 0;">모델 진단 결과를 출력하는 python GUI</li>
-    </ul>
-  <li style="margin: 0;">스마트시티 SW 보안 관제 시스템 개발</li>
-    <ul style="margin: 0;">
-    <li style="margin: 0;">내부자의 이상 행동의 종류 및 패턴 정의</li>
-    <li style="margin: 0;">Linux Subsystem "<a href="https://linux.die.net/man/8/auditd">AuditD</a>"를 이용한 Kernel & System Call 로그 감시</li>
-    <li style="margin: 0;">Vector Embedding & LSTM 기반 탐지 모델 개발</li>
-    </ul>
-  <li style="margin: 0;">SKT 유사 음원 추천 기술 개발</li>
-  <li style="margin: 0;">SKT 추천 최적화 기술 개발</li>
-    <ul style="margin: 0;">
-    <li style="margin: 0;">TensorFlow 기반 딥러닝 모델 개발</li>
-    <li style="margin: 0;">Batch 동작형 자동화 플랫폼 구축</li>
-    <li style="margin: 0;">오픈소스 <a href="https://github.com/facebookresearch/faiss">FAISS</a> 서비스를 제공하는 Flask 기반 웹 서버 개발</li>
-    </ul>
-  <li style="margin: 0;">국책: 뇌인지-행동 데이터 기반 비대면 정신건강문제 실시간 인터렉티브 셀프 모니터링 플랫폼 개발</li>
-    <ul style="margin: 0;">
-    <li style="margin: 0;">센서 데이터 수집용 사내 솔루션 IRIS DB 구축</li>
-    </ul>
-  <li style="margin: 0;">국책: 데이터 품질 평가 기반 데이터 고도화 및 데이터셋 보정 기술 개발</li>
-    <ul style="margin: 0;">
-    <li style="margin: 0;">데이터 및 데이터셋의 공정성(Fairness) 연구</li>
-    <li style="margin: 0;">오픈소스 <a href="https://github.com/Trusted-AI/AIF360">AIF360</a> 적용</li>
-    </ul>
-  </ul>
-  Data Scientist & Software Engineer 로 퇴사 !<br/>
-  이곳에서 직업적 정체성을 확립할 수 있었고 좋은 기술과 좋은 경영 전략들에 대해 많이 배웠다.
+    Data Scientist & Software Engineer 로 퇴사 !<br/>
+    이곳에서 직업적 정체성을 확립할 수 있었고 좋은 기술과 좋은 경영 전략들에 대해 많이 배웠다.
   </td>
 </tr>
 <tr>
@@ -272,7 +282,9 @@ Artificial Self 라고 해야하나.
   </td>
   <td>
   한달의 안식일<br/><i>"더 멀리 더 오래 달리기 위해서는, 잠시 늦춰서 숨을 고를 필요가 있다." - <a href="{{ site.url }}">Sammy Baek</a></i><br/>
-  취미로 블로그 만들고 RaspberryPi 만지고 Deep Learing 논문 보면서 놀았음 ㅋ</td>
+  취미로 블로그 만들고 RaspberryPi 만지고 Deep Learing 논문 보면서 놀았음 ㅋ<br/>
+  당시 기준, 세계적으로 연구성과가 더딘 Clustering 분야에서 허우적 대느라 지친상태...
+  Deep Learning 계에서 핫한 Computer Vision, Natural Language와 같은 Classification 분야를 해보고 싶었다.</td>
 </tr>
 <tr>
   <td>
@@ -281,7 +293,7 @@ Artificial Self 라고 해야하나.
     <div style="display: flex; justify-content: center; align-items: center;">2022.04.10</div>
   </td>
   <td>
-  <img style="display: block; max-height: 170px; margin-top: 1em;" src="{{ site.gdrive_url_prefix }}1gBTtxIoEctfCLHnmn70Odq04HMi-eNxx"/>
+  <img style="display: block; max-height: 170px; margin: 1em;" src="{{ site.gdrive_url_prefix }}1F8yxbyMOWEpTr4RCzjYWg5vBtOSQCFv3"/>
   뜻이 맞는 사람들이자 좋은 친구들과 함께 스타트업 도전<br/>
   Executive Director & CTO of <strong>Mose People</strong><br/>
   웹 사이트, E-Commerce 시스템, 앱 개발 등의 개발 참여 및 IT 총괄, 경영, 팀·프로젝트 관리 수행.<br/>
