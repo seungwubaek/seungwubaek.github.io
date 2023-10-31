@@ -6,6 +6,10 @@ main:
     url: /about/#page-title
   - title: '목차'
     url: /toc/#wholetoc__title
+  - title: 'Links'
+    dropdown:
+      - title: '🎯 My Career'
+        url: 'https://career.sammity.com/ko/me'
   # - title: "<img style='height: 80%' src='/assets/images/icon/mosepeople_logo.png'></img> MosePeople"
   #   dropdown:
   #     - title: '🌏 HomePage'

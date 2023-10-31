@@ -6,7 +6,7 @@ author_profile: true
 toc-top: true
 related: false
 date: "2020-10-04 18:47:00 +0900"
-last_modified_at: "2023-08-14 19:41:00 +0900"
+last_modified_at: "2023-10-31 09:41:00 +0900"
 ---
 
 Front-End, Back-End 프로그래밍 기술부터, Data Science, AI 등 IT들을 주제로 다루는 블로그.<br/>
@@ -216,23 +216,23 @@ Artificial Self 라고 해야하나.
   </td>
   <td>
     <img style="display: block; max-width: 250px; margin: 1em;" src="{{ site.gdrive_url_prefix }}1gGWWcYSIkookByz-yctV0KxdGiyA1Uax"/>
-    <strong>Senior Engineer, AI Platform Research Team of <a href="http://mobigen.com/">Mobigen Co.</a></strong><br/>
+    <strong>Senior Engineer, AI Platform Research Team of <a href="http://mobigen.com/" target="_blank">Mobigen Co., Ltd.</a></strong><br/>
     신입으로 첫 입사하여 수년간 기술을 갈고 닦다.<br/>
     Mobigen 주종목인 빅데이터 및 데이터 엔지니어링과 나의 통계학을 접목하니, <strong>Deep Learning</strong>과 찰떡궁합이네? 😋<br/>
     <ul style="margin: 0;">
-      <li style="margin: 0;">사내 솔루션 Dockerize</li>
+      <li style="margin: 0;"><strong>사내 솔루션 Dockerize</strong></li>
       <ul style="margin: 0;">
         <li style="margin: 0;">사내 프로그램 모듈에 대한 이미지 제작 및 Container 운용</li>
         <li style="margin: 0;">Opensource Zeppelin, R Studio, Jupyter Notebook 서버 이미지 제작 및 Container 운용</li>
         <li style="margin: 0;">이미지 경량화 (디지게 힘들지만 재밌는 작업. 이거 하려면 각 프로그램의 빌드 과정부터 손대야 함)</li>
       </ul>
-      <li style="margin: 0;">사내 솔루션 ETL 기능 및 웹 서비스 개발</li>
+      <li style="margin: 0;"><strong>사내 ETL 솔루션 기능 및 웹 서비스 개발</strong></li>
       <ul style="margin: 0;">
         <li style="margin: 0;">Spring boot를 이용한 Web 서버 개발</li>
         <li style="margin: 0;">ETL 도구 <a href="https://www.talend.com/">Telend</a> 프로그램 연동</li>
         <li style="margin: 0;">ETL 에이전트 개발 - 일명 "EventFlow": 여러개의 Linux 프로세스 간 Stdin,out을 파이프로 연결하는 워크플로우 관리 도구</li>
       </ul>
-      <li style="margin: 0;">LG 냉장고 딥러닝을 이용한 사전진단 서비스 개발</li>
+      <li style="margin: 0;"><strong>LG 냉장고 딥러닝을 이용한 사전진단 서비스 개발</strong></li>
       <ul style="margin: 0;">
         <li style="margin: 0;">R을 이용한 데이터 Visualization, 센서 데이터 분석, 통계 정보 분석</li>
         <li style="margin: 0;">TensorFlow 기반 딥러닝 모델 개발: Bi-LSTM 모델 & AutoEncoder 모델</li>
@@ -240,31 +240,31 @@ Artificial Self 라고 해야하나.
         <li style="margin: 0;">탐지 패턴으로부터 고장을 판단하고 약 10가지의 고장 종류를 분류(Classification)</li>
         <li style="margin: 0;">모델 진단 결과를 출력하는 Python Tkinter GUI</li>
       </ul>
-      <li style="margin: 0;">스마트시티 SW 보안 관제 시스템 개발</li>
+      <li style="margin: 0;"><strong>스마트시티 SW 보안 관제 시스템 개발</strong></li>
       <ul style="margin: 0;">
         <li style="margin: 0;">내부자의 이상 행동의 종류 및 패턴 정의</li>
         <li style="margin: 0;">Linux Subsystem "<a href="https://linux.die.net/man/8/auditd">AuditD</a>"를 이용한 Kernel & System Call 로그 감시</li>
         <li style="margin: 0;">Vector Embedding & LSTM 기반 탐지 모델 개발</li>
       </ul>
-      <li style="margin: 0;">주식 데이터 크롤링</li>
+      <li style="margin: 0;"><strong>주식 데이터 크롤링</strong></li>
       <ul style="margin: 0;">
         <li style="margin: 0;">Linux KVM을 이용한 가상 OS 활용</li>
         <li style="margin: 0;">자체제작한 PyQt와 금융사 HTS 간 API 연동</li>
         <li style="margin: 0;">Hadoop HDFS을 이용한 데이터 저장</li>
         <li style="margin: 0;">Spark를 이용한 일일 Batch 데이터 가공</li>
       </ul>
-      <li style="margin: 0;">SKT 유사 음원 추천 기술 개발</li>
-      <li style="margin: 0;">SKT 추천 최적화 기술 개발</li>
+      <li style="margin: 0;"><strong>SKT 유사 음원 추천 기술 개발</strong></li>
+      <li style="margin: 0;"><strong>SKT 추천 최적화 기술 개발</strong></li>
       <ul style="margin: 0;">
         <li style="margin: 0;">TensorFlow 기반 딥러닝 모델 개발</li>
         <li style="margin: 0;">Batch 동작형 자동화 플랫폼 구축</li>
         <li style="margin: 0;">오픈소스 <a href="https://github.com/facebookresearch/faiss">FAISS</a> 서비스를 제공하는 Flask 기반 웹 서버 개발</li>
       </ul>
-      <li style="margin: 0;">국책: 뇌인지-행동 데이터 기반 비대면 정신건강문제 실시간 인터렉티브 셀프 모니터링 플랫폼 개발</li>
+      <li style="margin: 0;"><strong>국책: 뇌인지-행동 데이터 기반 비대면 정신건강문제 실시간 인터렉티브 셀프 모니터링 플랫폼 개발</strong></li>
       <ul style="margin: 0;">
         <li style="margin: 0;">센서 데이터 수집용 사내 솔루션 IRIS DB 구축</li>
       </ul>
-      <li style="margin: 0;">국책: 데이터 품질 평가 기반 데이터 고도화 및 데이터셋 보정 기술 개발</li>
+      <li style="margin: 0;"><strong>국책: 데이터 품질 평가 기반 데이터 고도화 및 데이터셋 보정 기술 개발</strong></li>
       <ul style="margin: 0;">
         <li style="margin: 0;">데이터 및 데이터셋의 공정성(Fairness) 연구</li>
         <li style="margin: 0;">오픈소스 <a href="https://github.com/Trusted-AI/AIF360">AIF360</a> 적용</li>
@@ -293,26 +293,25 @@ Artificial Self 라고 해야하나.
     <div style="display: flex; justify-content: center; align-items: center;">2022.04.10</div>
   </td>
   <td>
-  <img style="display: block; max-height: 170px; margin: 1em;" src="{{ site.gdrive_url_prefix }}1F8yxbyMOWEpTr4RCzjYWg5vBtOSQCFv3"/>
+  <img style="display: block; max-height: 120px; margin: 1em;" src="{{ site.gdrive_url_prefix }}1F8yxbyMOWEpTr4RCzjYWg5vBtOSQCFv3" />
+  <strong>CTO & Executive Director of MosePeople</strong><br/>
   뜻이 맞는 사람들이자 좋은 친구들과 함께 스타트업 도전<br/>
-  Executive Director & CTO of <strong>Mose People</strong><br/>
   웹 사이트, E-Commerce 시스템, 앱 개발 등의 개발 참여 및 IT 총괄, 경영, 팀·프로젝트 관리 수행.<br/>
-  하나부터 열까지 스스로 다 만들어야 하지만 스스로 다 만들어 볼 수 있다고도 할 수 있다.
-  <br/><br/>
-  <ul style="margin: 0;">
+  하나부터 열까지 스스로 다 만들어야 하지만 스스로 다 만들어 볼 수 있다고도 할 수 있다.<br/>
+  <ul style="margin: 0; margin-top: 5px;">
     <li style="margin: 0;">
-      프로젝트 <span style="margin-top: 1em; font-size: 1.5em;">"<strong>바닷길</strong>"</span>
+      프로젝트 <span style="margin-top: 1em; font-size: 1.1em;"><strong>바닷길</strong></span>
       <ul style="margin: 0;">
-        <li>수산물 B2B 중개 및 유통 이커머스 플랫폼</li>
+        <li style="margin: 0;">수산물 B2B 중개 및 유통 이커머스 플랫폼</li>
         <li style="margin: 0;">기술보증기금 확보</li>
         <li style="margin: 0;">2021 해양수산부 컨설팅 업체로 지정</li>
         <li style="margin: 0;">프로젝트 관련 기술 특허 출원</li>
       </ul>
     </li>
     <li style="margin: 0;">
-      프로젝트 <span style="margin-top: 1em; font-size: 1.5em;">"<strong>도매공식</strong>"</span>
+      프로젝트 <span style="margin-top: 1em; font-size: 1.1em;"><strong>도매공식</strong></span>
       <ul style="margin: 0;">
-        <li>식자재 도매 B2B 유통 중개 및 배송 플랫폼</li>
+        <li style="margin: 0;">식자재 도매 B2B 유통 중개 및 배송 플랫폼</li>
       </ul>
     </li>
   </ul>
@@ -325,21 +324,22 @@ Artificial Self 라고 해야하나.
     <div style="display: flex; justify-content: center; align-items: center; color: green;"><strong>Now</strong></div>
   </td>
   <td>
+  <img style="display: block; max-width: 350px; width: 100%; margin: 1em;" src="{{ site.gdrive_url_prefix }}12fIV8S19WwrAWYeoCOiNbQONVQh9Ew2m" />
+  <strong>CTO & Executive Director of <a href="https://www.mosepeople.com/" target="_blank">MosePeople Co., Ltd.</a></strong><br/>
   (주)모세피플 법인 설립<br/>
-  Mose People Korea LLC. 우즈베키스탄 법인 설립
-  <br/><br/>
-  <ul style="margin: 0;">
+  (주)모세피플 우즈베키스탄 설립 (현지 법인) MosePeople Korea LLC.<br/>
+  <ul style="margin: 0; margin-top: 5px;">
     <li style="margin: 0;">
-      프로젝트 <span style="margin-top: 1em; font-size: 1.5em;">"<strong>OBAIL</strong>"</span>
+      프로젝트 <span style="margin-top: 1em; font-size: 1.1em;"><strong>OBAIL</strong></span>
       <ul style="margin: 0;">
-        <li>글로벌 한국 제품 도매 발주 플랫폼</li>
-        <li>국가·지역·카테고리 별 수요 예측 Deep-AI 연구개발</li>
+        <li style="margin: 0;">글로벌 한국 제품 도매 발주 플랫폼</li>
+        <li style="margin: 0;">국가·지역·카테고리 별 수요 예측 Deep-AI 연구개발</li>
       </ul>
     </li>
     <li style="margin: 0;">
-      프로젝트 <span style="margin-top: 1em; font-size: 1.5em;">"<strong>KOMART</strong>"</span>
+      프로젝트 <span style="margin-top: 1em; font-size: 1.1em;"><strong>KOMART</strong></span>
       <ul style="margin: 0;">
-        <li>우즈베키스탄에서 서비스하는 한국 제품 B2B 도소매 플랫폼</li>
+        <li style="margin: 0;">우즈베키스탄에서 서비스하는 한국 제품 B2B 도소매 플랫폼</li>
       </ul>
     </li>
   </ul>
