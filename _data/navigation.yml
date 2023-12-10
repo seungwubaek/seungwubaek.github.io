@@ -43,6 +43,9 @@ main-sidebar:
         url: '/language/javascript/'
       - title: 'TypeScript'
         url: '/language/typescript/'
+        children:
+          - title: 'Tips'
+            url: '/language/typescript/tips/'
   - title: 'Front-End'
     url: '/front-end/'
     children:
@@ -50,13 +53,6 @@ main-sidebar:
         url: '/front-end/css/'
       - title: 'HTML'
         url: '/front-end/html/'
-      - title: 'JavaScript'
-        url: '/front-end/javascript/'
-      - title: 'TypeScript'
-        url: '/front-end/typescript/'
-        children:
-          - title: 'Tips'
-            url: '/front-end/typescript/tips/'
       - title: 'Web UI'
         url: '/front-end/web-ui/'
       - title: 'React'
