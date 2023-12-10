@@ -29,4 +29,5 @@ group :jekyll_plugins do
     gem "tzinfo", '~> 1.2'
     gem "tzinfo-data"
     gem "jekyll-seo-tag"
+    gem "jekyll-redirect-from"
 end

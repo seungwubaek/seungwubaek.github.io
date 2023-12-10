@@ -4,6 +4,8 @@ title: "윈도우 운영체제에서 파이썬 Miniconda를 이용한 Package �
 date: "2022-04-03 21:19:00 +0900"
 last_modified_at: "2022-04-03 22:21:00 +0900"
 post-order: 4
+redirect_from:
+  - /computing/programming/python/install_packages/
 ---
 윈도우 운영체제에서 패키지 관리 도구인 Miniconda를 이용해서 파이썬과 파이썬 패키지 `Selenium`을 설치하는 과정을
 통해 파이썬 가상환경 구축 방법과 파이썬 패키지 설치 방법에 관해 간단히 알아본다.

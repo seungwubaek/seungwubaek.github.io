@@ -3,6 +3,8 @@ layout: single
 title: "데이터 용량 단위"
 date: "2021-06-14 22:31:00 +0900"
 last_modified_at: "2021-06-14 22:31:00 +0900"
+redirect_from:
+  - /computing/computer/data-storage/units_of_data_size/
 ---
 데이터 양을 표현하는 단위를 보다보면 `Kilobyte`와 `Kibibyte`와 같이 비슷하게 발음되는 표현을 보았을 것이다.
 이 두 단위의 차이는 Decimal 단위와 Binary 단위의 차이에서 온 것이다.<br/>
