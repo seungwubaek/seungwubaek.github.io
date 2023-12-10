@@ -27,13 +27,6 @@ main:
 # [권장]
 # 1. CSS 적용 문제로 children 깊이는 2까지만 하는것을 권장. 즉, children의 children까지만.
 main-sidebar:
-  - title: 'Blog'
-    url: '/blog/'
-    children:
-      - title: 'Trouble Shoot'
-        url: '/blog/trouble-shoot/'
-      - title: 'Tips'
-        url: '/blog/tips/'
   - title: 'Computer'
     url: '/computer/'
     children:
@@ -41,13 +34,6 @@ main-sidebar:
         url: '/computer/cpu/'
       - title: 'Data Storage'
         url: '/computer/data-storage/'
-  - title: 'Linux'
-    url: '/linux/'
-    children:
-      - title: 'Commands'
-        url: '/linux/commands/'
-      - title: 'Config'
-        url: '/linux/config/'
   - title: 'Language'
     url: '/language/'
     children:
@@ -57,50 +43,6 @@ main-sidebar:
         url: '/language/javascript/'
       - title: 'TypeScript'
         url: '/language/typescript/'
-  # 아래 주석처리된 리스트는 모두 Redirect 됨
-  # - title: 'Computing'
-  #   url: '/computing/'
-  #   children:
-  #     - title: 'Computer'
-  #       url: '/computing/computer/'
-  #       children:
-  #         - title: 'CPU'
-  #           url: '/computing/computer/cpu/'
-  #         - title: 'Data Storage'
-  #           url: '/computing/computer/data-storage/'
-  #     - title: 'Linux'
-  #       url: '/computing/linux/'
-  #       children:
-  #         - title: 'Commands'
-  #           url: '/computing/linux/commands/'
-  #         - title: 'Config'
-  #           url: '/computing/linux/config/'
-  #     - title: 'Programming'
-  #       url: '/computing/programming/'
-  #       children:
-  #         - title: 'Python'
-  #           url: '/computing/programming/python/'
-  - title: 'Deep Learning'
-    url: '/deep-learning/'
-    children:
-      - title: 'Computer Vision'
-        url: '/deep-learning/computer-vision/'
-      - title: 'Natural Language Processing'
-        url: '/deep-learning/natural-language-processing/'
-  - title: 'Mathematics'
-    url: '/mathematics/'
-    children:
-      - title: 'Linear Algebra'
-        url: '/mathematics/linear-algebra/'
-      - title: 'Statistics'
-        url: '/mathematics/statistics/'
-  - title: 'Data Engineering'
-    url: '/data-engineering/'
-    children:
-      - title: 'Hadoop'
-        url: '/data-engineering/hadoop/'
-      - title: 'Spark'
-        url: '/data-engineering/spark/'
   - title: 'Front-End'
     url: '/front-end/'
     children:
@@ -152,8 +94,66 @@ main-sidebar:
         url: '/tools/jupyter-notebook/'
       - title: 'Numpy'
         url: '/tools/numpy/'
+  - title: 'Linux'
+    url: '/linux/'
+    children:
+      - title: 'Commands'
+        url: '/linux/commands/'
+      - title: 'Config'
+        url: '/linux/config/'
+  - title: 'Data Engineering'
+    url: '/data-engineering/'
+    children:
+      - title: 'Hadoop'
+        url: '/data-engineering/hadoop/'
+      - title: 'Spark'
+        url: '/data-engineering/spark/'
+  - title: 'Deep Learning'
+    url: '/deep-learning/'
+    children:
+      - title: 'Computer Vision'
+        url: '/deep-learning/computer-vision/'
+      - title: 'Natural Language Processing'
+        url: '/deep-learning/natural-language-processing/'
+  - title: 'Mathematics'
+    url: '/mathematics/'
+    children:
+      - title: 'Linear Algebra'
+        url: '/mathematics/linear-algebra/'
+      - title: 'Statistics'
+        url: '/mathematics/statistics/'
+  - title: 'Blog'
+    url: '/blog/'
+    children:
+      - title: 'Trouble Shoot'
+        url: '/blog/trouble-shoot/'
+      - title: 'Tips'
+        url: '/blog/tips/'
   # - title: "Writing"
   #   url: "/writing/"
   #   children:
   #   - title: "Poem"
   #     url: "/writing/poem/"
+  # 아래 주석처리된 리스트는 모두 Redirect 됨
+  # - title: 'Computing'
+  #   url: '/computing/'
+  #   children:
+  #     - title: 'Computer'
+  #       url: '/computing/computer/'
+  #       children:
+  #         - title: 'CPU'
+  #           url: '/computing/computer/cpu/'
+  #         - title: 'Data Storage'
+  #           url: '/computing/computer/data-storage/'
+  #     - title: 'Linux'
+  #       url: '/computing/linux/'
+  #       children:
+  #         - title: 'Commands'
+  #           url: '/computing/linux/commands/'
+  #         - title: 'Config'
+  #           url: '/computing/linux/config/'
+  #     - title: 'Programming'
+  #       url: '/computing/programming/'
+  #       children:
+  #         - title: 'Python'
+  #           url: '/computing/programming/python/'
