@@ -3,7 +3,7 @@ layout: single
 title: "[TypeScript] Type Alias vs Interface"
 post-order: 1
 date: "2023-12-11 02:34:00 +0900"
-last_modified_at: "2023-12-11 14:03:53 +0900"
+last_modified_at: "2023-12-14 10:27:00 +0900"
 ---
 
 Type Alias와 Interface 중 어느것을 사용해야 할까?<br/>
@@ -27,7 +27,7 @@ Python의 `typing` 모듈의 이름과 어울리는 것은 TypeScript의 Type Al
 또한 Java에도 `interface`가 있는데 TypeScript의 `interface`와 개념적으로 차이가 있다고 느껴졌기 때문에
 `interface`로 타입을 선언하는 것이 불편했다.
 
-나는 TypeScript에서 거의 타입 힌트을 목적으로 타이핑을 사용했다.
+나는 TypeScript를 작성할때 거의 타입 힌트를 목적으로 보고 타이핑을 사용했다.
 따라서 목적에 걸맞게 키워드 `type`을 사용하는 것이 직관적으로 이해가 쉬웠다.<br/>
 만약 타이핑 목적이 추상화 또는 다형성에 초점을 맞추고 있었다면 `interface`를 사용하게 됐을 것이다.
 
