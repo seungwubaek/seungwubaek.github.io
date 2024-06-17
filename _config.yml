@@ -326,5 +326,5 @@ variables:
   screenXLarge: 1440
   screenMaxWidth: 1440
 
-gdrive_url_prefix: 'https://drive.google.com/uc?export=view&id='
+gdrive_url_prefix: 'https://drive.google.com/thumbnail?sz=w1000&id='
 raw_github_url_prefix: 'https://raw.githubusercontent.com/seungwubaek/seungwubaek.github.io/master'
